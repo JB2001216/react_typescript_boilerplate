@@ -91,5 +91,10 @@
     "react": "16.7.0-alpha.0",
     "react-dom": "16.7.0-alpha.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gery": "^1.1.2",
+    "gql-tag": "^1.0.1",
+    "request-hooks": "^1.0.3",
+    "stamen": "^1.6.0"
+  }
 }
