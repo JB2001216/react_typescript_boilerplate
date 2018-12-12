@@ -7,7 +7,7 @@
     "@types/node": "10.12.12",
     "@types/react": "16.7.13",
     "@types/react-dom": "16.0.11",
-    "dahlia": "^1.6.0",
+    "dahlia": "^1.6.1",
     "gery": "^1.1.2",
     "gql-tag": "^1.0.1",
     "react": "^16.7.0-alpha.2",

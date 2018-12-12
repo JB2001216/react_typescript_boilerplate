@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import dahlia, { gql, useQuery } from 'dahlia'
+import Dahlia, { gql, useQuery } from 'dahlia'
 
-dahlia.init({
+Dahlia.init({
   graphql: {
     endpoint: 'https://graphql-compose.herokuapp.com/user',
   },
