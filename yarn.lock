@@ -4378,10 +4378,10 @@ request-hooks@^1.0.1:
     gery "^1.1.2"
     request-hooks "^1.0.1"
 
-request-hooks@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/request-hooks/-/request-hooks-1.0.3.tgz#042127ee46bf7b0c4433cf1b6c23a76085d87393"
-  integrity sha512-wR4BBxBUNDUt3gvz60vymfDx1r6+8dKGz8XsoaQ7nSGy4xP1N2cWicsSqzF07oDeFr7uFD62rDVqoncR0eHhTQ==
+request-hooks@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/request-hooks/download/request-hooks-1.1.0.tgz#6704dde613da4300a55fa94a1dcf5133bbacade6"
+  integrity sha1-ZwTd5hPaQwClX6lKHc9RM7usreY=
   dependencies:
     cross-fetch "^3.0.0"
     gery "^1.1.2"
