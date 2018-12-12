@@ -9,7 +9,7 @@ interface Options {
   }
 }
 
-export const dahlia = {
+export const Dahlia = {
   init(options: Options) {
     console.log('options:', options)
     requestHooks.init(options)

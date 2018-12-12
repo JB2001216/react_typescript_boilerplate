@@ -18,7 +18,7 @@ yarn add dahlia
 ```js
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { gql, useQuery } from 'dahlia'
+import dahlia, { gql, useQuery } from 'dahlia'
 
 dahlia.init({
   graphql: {
@@ -51,6 +51,13 @@ const App = () => {
 
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
+
+Check on CodeSandbox: [Demo](https://codesandbox.io/s/p3xx0ymn9x)
+
+## More examples
+
+- [useQuery](https://github.com/forsigner/dahlia/tree/master/examples/useQuery)
+- [useFetch](https://github.com/forsigner/dahlia/tree/master/examples/useFetch)
 
 ## License
 
