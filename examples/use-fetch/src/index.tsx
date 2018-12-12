@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import dahlia, { useFetch } from 'dahlia'
+import Dahlia, { useFetch } from 'dahlia'
 
-dahlia.init({
+Dahlia.init({
   rest: {
     endpoint: 'https://jsonplaceholder.typicode.com',
   },

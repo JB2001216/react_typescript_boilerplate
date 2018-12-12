@@ -56,8 +56,8 @@ Check on CodeSandbox: [Demo](https://codesandbox.io/s/p3xx0ymn9x)
 
 ## More examples
 
-- [useQuery](https://github.com/forsigner/dahlia/tree/master/examples/useQuery)
-- [useFetch](https://github.com/forsigner/dahlia/tree/master/examples/useFetch)
+- [useQuery](https://github.com/forsigner/dahlia/tree/master/examples/use-query)
+- [useFetch](https://github.com/forsigner/dahlia/tree/master/examples/use-fetch)
 
 ## License
 
