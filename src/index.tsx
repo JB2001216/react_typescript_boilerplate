@@ -1,12 +1,12 @@
 import React from 'react'
-// import { render } from 'react-dom'
+import { render } from 'react-dom'
 import { requestHooks } from 'request-hooks'
 import { createStore } from 'stamen'
 import gql from 'gql-tag'
 import { useQuery, useMutate, useFetch, useUpdate } from 'request-hooks'
 
 import { config, Options } from './config'
-// import Router from './components/Router'
+import Router from './components/Router'
 
 function configure(options: Options): void {
   const { router, graphql, rest } = options
@@ -15,10 +15,7 @@ function configure(options: Options): void {
 }
 
 function bootstrap(selector: string) {
-  console.log(selector)
-  return <div />
-  // render(<div />, document.querySelector(selector))
-  // render(<Router />, document.querySelector(selector))
+  render(<Router />, document.querySelector(selector))
 }
 
 const Dahlia = {
