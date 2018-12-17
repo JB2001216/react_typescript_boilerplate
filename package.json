@@ -1,6 +1,6 @@
 {
   "name": "dahlia",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "An opinionated React Framework for building modern web applications.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -38,7 +38,7 @@
     ]
   },
   "lint-staged": {
-    "{src,__tests__}/*.{js,ts,tsx}": [
+    "{src,__tests__}/**/*.{js,ts,tsx}": [
       "npm run format",
       "npm run lint:fix",
       "git add"
@@ -73,7 +73,7 @@
     "lint-staged": "^7.2.2",
     "prettier": "^1.14.2",
     "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2",
+    "react-dom": "^16.6.3",
     "react-test-renderer": "16.7.0-alpha.0",
     "rimraf": "^2.6.2",
     "rollup": "^0.64.1",

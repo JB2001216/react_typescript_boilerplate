@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.1"></a>
+## [1.7.1](https://github.com/forsigner/dahlia/compare/v1.7.0...v1.7.1) (2018-12-17)
+
+
+### Bug Fixes
+
+* render router ([851843a](https://github.com/forsigner/dahlia/commit/851843a))
+
+
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/forsigner/dahlia/compare/v1.6.1...v1.7.0) (2018-12-15)
 
