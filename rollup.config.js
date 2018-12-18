@@ -18,7 +18,7 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['request-hooks', 'gql-tag', 'stamen', 'react', 'react-dom', 'react-router-dom'],
+  external: ['request-hooks', 'gql-tag', 'stamen', 'react', 'react-dom', 'corolla'],
   plugins: [
     typescript({
       rollupCommonJSResolveHack: true,
