@@ -1,63 +1,50 @@
-# dahlia
+# Dahlia
 
 [![npm](https://img.shields.io/npm/v/dahlia.svg)](https://www.npmjs.com/package/dahlia) [![Build Status](https://travis-ci.org/forsigner/dahlia.svg?branch=master)](https://travis-ci.org/forsigner/dahlia) [](https://coveralls.io/github/forsigner/dahlia?branch=master)
 [![npm](https://img.shields.io/badge/TypeScript-%E2%9C%93-007ACC.svg)](https://www.typescriptlang.org/) [![GitHub license](https://img.shields.io/github/license/forsigner/dahlia.svg)](https://github.com/forsigner/dahlia/blob/master/LICENSE)
 
 > An opinionated React Framework for building modern web applications.
 
-React hooks、GraphQL、Restful、TypeScript... If You like these techniques, you can try `Dahlia`, It will make you comfortable and efficient。
-
-## Installation
-
-```sh
-yarn add dahlia
-```
+React hooks、GraphQL、TypeScript... If You like these techniques, you can try `Dahlia`, It will make you comfortable and efficient。
 
 ## Quick Start
 
-```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import dahlia, { gql, useQuery } from 'dahlia'
+Install Dahlia CLI:
 
-dahlia.init({
-  graphql: {
-    endpoint: 'https://graphql-compose.herokuapp.com/user',
-  },
-})
-
-const GET_USER = gql`
-  query User {
-    userById(_id: "57bb44dd21d2befb7ca3f010") {
-      name
-      gender
-      age
-    }
-  }
-`
-
-const App = () => {
-  const { loading, data, error } = useQuery(GET_USER)
-
-  if (loading) return <div>loading...</div>
-  if (error) return <div>Error!</div>
-
-  return (
-    <div className="App">
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
-  )
-}
-
-ReactDOM.render(<App />, document.getElementById('root'))
+```bash
+yarn global add dahlia-cli
 ```
 
-Check on CodeSandbox: [Demo](https://codesandbox.io/s/p3xx0ymn9x)
+New a Dahlia app:
 
-## More examples
+```bash
+dh new my-app
+```
 
-- [useQuery](https://github.com/forsigner/dahlia/tree/master/examples/use-query)
-- [useFetch](https://github.com/forsigner/dahlia/tree/master/examples/use-fetch)
+You will get:
+
+```bash
+.
+├── README.md
+├── node_modules
+├── package.json
+├── public
+│   └── index.html
+├── src
+│   ├── pages
+│   ├── routes.ts
+│   └── index.tsx
+└── tsconfig.json
+```
+
+Run dev server:
+
+```bash
+cd my-app
+dh dev
+```
+
+![dh](http://forsigner.com/images/dahlia/dahlia-app.png)
 
 ## License
 
