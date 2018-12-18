@@ -4,25 +4,30 @@ import { requestHooks } from 'request-hooks'
 import { createStore } from 'stamen'
 import gql from 'gql-tag'
 import { useQuery, useMutate, useFetch, useUpdate } from 'request-hooks'
+import { Router, Routes as CorollaRoutes, Link, routerStore } from 'corolla'
 
-import { config, Options } from './config'
-import Router from './components/Router'
+import { Options } from './config'
 
-function configure(options: Options): void {
-  const { router, graphql, rest } = options
-  config.router = router
+export type Routes = CorollaRoutes
+
+function bootstrap(options: Options) {
+  const { routes, graphql, rest, selector } = options
   requestHooks.config({ graphql, rest })
-}
-
-function bootstrap(selector: string) {
-  render(<Router />, document.querySelector(selector))
+  render(<Router routes={routes} />, document.querySelector(selector))
 }
 
 const Dahlia = {
-  config: configure,
   bootstrap,
+  gql,
+  useQuery,
+  useMutate,
+  useFetch,
+  useUpdate,
+  createStore,
+  routerStore,
+  Link,
 }
 
-export { gql, useQuery, useMutate, useFetch, useUpdate, createStore }
+export { gql, useQuery, useMutate, useFetch, useUpdate, createStore, routerStore, Link }
 
 export default Dahlia

@@ -1,5 +1,8 @@
+import { Routes } from 'corolla'
+
 export interface Options {
-  router: any[]
+  routes: Routes
+  selector: string
   graphql?: {
     endpoint: string
   }
