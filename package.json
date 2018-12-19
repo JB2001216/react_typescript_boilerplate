@@ -1,6 +1,6 @@
 {
   "name": "dahlia",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "description": "An opinionated React Framework for building modern web applications.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
