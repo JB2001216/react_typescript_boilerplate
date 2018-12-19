@@ -9,7 +9,7 @@ React hooks、GraphQL、TypeScript... If You like these techniques, you can try 
 
 ## Quick Start
 
-Install Dahlia CLI:
+Install Dahlia CLI:
 
 ```bash
 yarn global add dahlia-cli
