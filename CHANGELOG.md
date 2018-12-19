@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/forsigner/dahlia/compare/v1.7.1...v1.8.0) (2018-12-19)
+
+
+### Features
+
+* export type Routes ([838c91f](https://github.com/forsigner/dahlia/commit/838c91f))
+* use corolla as router ([d92f6ec](https://github.com/forsigner/dahlia/commit/d92f6ec))
+
+
+
 <a name="1.7.1"></a>
 ## [1.7.1](https://github.com/forsigner/dahlia/compare/v1.7.0...v1.7.1) (2018-12-17)
 
