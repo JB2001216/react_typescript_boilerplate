@@ -1,10 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { requestHooks } from 'request-hooks'
-import { createStore } from 'stamen'
+import { Router } from 'corolla'
 import gql from 'gql-tag'
-import { useQuery, useMutate, useFetch, useUpdate } from 'request-hooks'
-import { Router, Routes, Link, routerStore } from 'corolla'
 
 import { Options } from './config'
 
@@ -18,6 +16,6 @@ const Dahlia = {
   bootstrap,
 }
 
-export { gql, useQuery, useMutate, useFetch, useUpdate, createStore, routerStore, Link, Routes }
+export { gql }
 
 export default Dahlia
