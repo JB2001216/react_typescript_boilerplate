@@ -2,26 +2,39 @@ import typescript from 'rollup-plugin-typescript2'
 
 import pkg from './package.json'
 
-export default {
-  input: 'src/index.tsx',
-  output: [
+const external = ['request-hooks', 'gql-tag', 'stamen', 'react', 'react-dom', 'corolla']
+
+const plugins = [
+  typescript({
+    rollupCommonJSResolveHack: true,
+  }),
+]
+
+const getOutput = file => {
+  const output = [
     {
-      file: pkg.main,
+      file: `${file}.js`,
       format: 'cjs',
       exports: 'named',
       sourcemap: true,
     },
-    {
-      file: pkg.module,
+  ]
+  if (file === 'index') {
+    output.push({
+      file: `${file}.es.js`,
       format: 'es',
       exports: 'named',
       sourcemap: true,
-    },
-  ],
-  external: ['request-hooks', 'gql-tag', 'stamen', 'react', 'react-dom', 'corolla'],
-  plugins: [
-    typescript({
-      rollupCommonJSResolveHack: true,
-    }),
-  ],
+    })
+  }
+  return output
 }
+
+const files = ['index', 'router', 'store', 'http', 'form']
+
+export default files.map(file => ({
+  input: `src/${file}.tsx`,
+  output: getOutput(file),
+  external,
+  plugins,
+}))
