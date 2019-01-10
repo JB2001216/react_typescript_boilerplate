@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/forsigner/dahlia/compare/v1.8.1...v1.9.0) (2019-01-10)
+
+
+### Features
+
+* form works ([97a01f0](https://github.com/forsigner/dahlia/commit/97a01f0))
+
+
+
 <a name="1.8.1"></a>
 ## [1.8.1](https://github.com/forsigner/dahlia/compare/v1.8.0...v1.8.1) (2018-12-20)
 
