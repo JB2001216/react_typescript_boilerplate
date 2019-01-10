@@ -16,6 +16,6 @@ const Dahlia = {
   bootstrap,
 }
 
-export { gql }
+export { bootstrap, gql }
 
 export default Dahlia

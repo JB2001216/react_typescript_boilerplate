@@ -1,10 +1,10 @@
 import typescript from 'rollup-plugin-typescript2'
+import autoExternal from 'rollup-plugin-auto-external'
 
 import pkg from './package.json'
 
-const external = ['request-hooks', 'gql-tag', 'stamen', 'react', 'react-dom', 'corolla']
-
 const plugins = [
+  autoExternal(),
   typescript({
     rollupCommonJSResolveHack: true,
   }),
@@ -35,6 +35,5 @@ const files = ['index', 'router', 'store', 'http', 'form']
 export default files.map(file => ({
   input: `src/${file}.tsx`,
   output: getOutput(file),
-  external,
   plugins,
 }))
