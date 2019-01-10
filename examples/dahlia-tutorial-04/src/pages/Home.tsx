@@ -1,5 +1,5 @@
 import React from 'react'
-import { useFetch } from 'dahlia'
+import { useFetch } from 'dahlia/http'
 
 interface User {
   id: number

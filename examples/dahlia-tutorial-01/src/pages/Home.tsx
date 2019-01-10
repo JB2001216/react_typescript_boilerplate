@@ -1,3 +1,7 @@
 import React from 'react'
 
-export const Home = () => <div>Hi, Dahlia</div>
+console.log('object....')
+export const Home = () => {
+  console.log('home..')
+  return <div>Hi, Dahlia</div>
+}

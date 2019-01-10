@@ -1,5 +1,6 @@
 import React from 'react'
-import { gql, useQuery } from 'dahlia'
+import { useQuery } from 'dahlia/http'
+import { gql } from 'dahlia'
 
 interface UserMany {
   userMany: Array<{

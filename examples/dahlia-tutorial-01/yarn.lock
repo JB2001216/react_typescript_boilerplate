@@ -2185,6 +2185,68 @@ check-types@^7.3.0:
   resolved "https://registry.yarnpkg.com/check-types/-/check-types-7.4.0.tgz#0378ec1b9616ec71f774931a3c6516fad8c152f4"
   integrity sha512-YbulWHdfP99UfZ73NcUDlNJhEIDgm9Doq9GhpyXbF+7Aegi3CVV7qqMCKTTqJxlvEvnQBp9IA+dxsGN6xK/nSg==
 
+checkok-email@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/checkok-email/download/checkok-email-1.0.1.tgz#b0f2ab22a867b3afb2173b79b2305e8798d3b13b"
+  integrity sha1-sPKrIqhns6+yFzt5sjBeh5jTsTs=
+  dependencies:
+    util-is-email "^1.0.0"
+    util-result "^1.0.0"
+
+checkok-max@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/checkok-max/download/checkok-max-1.0.1.tgz#ef9ada88c45822de28ec360eafb615b53520de3a"
+  integrity sha1-75raiMRYIt4o7DYOr7YVtTUg3jo=
+  dependencies:
+    util-is-number "^1.0.0"
+    util-is-string "^1.0.0"
+    util-result "^1.0.0"
+
+checkok-min@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/checkok-min/download/checkok-min-1.0.1.tgz#1d936b14369aed9649b8faf94f97bbb96788259f"
+  integrity sha1-HZNrFDaa7ZZJuPr5T5e7uWeIJZ8=
+  dependencies:
+    util-is-number "^1.0.0"
+    util-is-string "^1.0.0"
+    util-result "^1.0.0"
+
+checkok-number@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/checkok-number/download/checkok-number-1.0.0.tgz#a3166ab83c81a2b05f3f8ae8829e9575cbdbd3cd"
+  integrity sha1-oxZquDyBorBfP4rogp6Vdcvb080=
+  dependencies:
+    util-is-number "^1.0.0"
+    util-result "^1.0.0"
+
+checkok-required@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/checkok-required/download/checkok-required-1.0.0.tgz#fa9c91671db3919665bf0de24e8bb12c8af7ce4a"
+  integrity sha1-+pyRZx2zkZZlvw3iTouxLIr3zko=
+  dependencies:
+    util-result "^1.0.0"
+
+checkok-string@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/checkok-string/download/checkok-string-1.0.1.tgz#a0c4115e947452de65a4553df3f714c3253dd7d8"
+  integrity sha1-oMQRXpR0Ut5lpFU98/cUwyU919g=
+  dependencies:
+    util-is-string "^1.0.0"
+    util-result "^1.0.0"
+
+checkok-url@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/checkok-url/download/checkok-url-1.0.1.tgz#2778d956c4f85f1bc1f45617ceb3cc7d6aa1bdcc"
+  integrity sha1-J3jZVsT4XxvB9FYXzrPMfWqhvcw=
+  dependencies:
+    util-is-url "^1.0.1"
+    util-result "^1.0.0"
+
+checkok@^1.1.0, checkok@^1.1.1:
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/checkok/download/checkok-1.1.1.tgz#43d72df123eda6f05c721f64959ff094f0778892"
+  integrity sha1-Q9ct8SPtpvBcch9klZ/wlPB3iJI=
+
 chokidar@^2.0.0, chokidar@^2.0.2, chokidar@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.0.4.tgz#356ff4e2b0e8e43e322d18a372460bbcf3accd26"
@@ -2524,12 +2586,20 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
 
 corolla@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/corolla/-/corolla-1.1.0.tgz#96a9fcdf70c5f2cbbde26de6039443341a6360cb"
-  integrity sha512-X0BPGfVLria0NEHVZWxHvP+FJG6PZxeK4YfS3EXS9LOuvea4kdy7W2srTUPs7PmN6TBOqZk6FFCXQPbuhtMM+w==
+  resolved "http://registry.npm.taobao.org/corolla/download/corolla-1.1.0.tgz#96a9fcdf70c5f2cbbde26de6039443341a6360cb"
+  integrity sha1-lqn833DF8su94m3mA5RDNBpjYMs=
   dependencies:
     path-parser "^4.2.0"
     react-transition-group "^2.5.0"
     stamen "^1.8.0"
+
+corolla@^1.1.1:
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/corolla/download/corolla-1.1.1.tgz#c223d74f0e15c2169da2fdfb77794eed38a3ac9b"
+  integrity sha1-wiPXTw4Vwhadov37d3lO7TijrJs=
+  dependencies:
+    path-parser "^4.2.0"
+    stamen "^1.8.1"
 
 cosmiconfig@^4.0.0:
   version "4.0.0"
@@ -2843,16 +2913,25 @@ cyclist@~0.2.2:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
-dahlia@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/dahlia/-/dahlia-1.8.0.tgz#70bde6a1c90d97bca9e72702401447b1040b0e83"
-  integrity sha512-2xVobr3zkMUsp7mftlVQuttszfdToj0UE1ZWOMDjjtwyTJsVtTatw9fBL2/Crs6gSRxT1so/UrAC1heRJMy2rg==
+dahlia@^1.9.0:
+  version "1.9.0"
+  resolved "http://registry.npm.taobao.org/dahlia/download/dahlia-1.9.0.tgz#0cf0e3451f758739f0db1b918ffb5c9dec075992"
+  integrity sha1-DPDjRR91hznw2xuRj/tcnewHWZI=
   dependencies:
-    corolla "^1.1.0"
+    checkok "^1.1.1"
+    checkok-email "^1.0.1"
+    checkok-max "^1.0.1"
+    checkok-min "^1.0.1"
+    checkok-number "^1.0.0"
+    checkok-required "^1.0.0"
+    checkok-string "^1.0.1"
+    checkok-url "^1.0.1"
+    corolla "^1.1.1"
+    fooks "^1.2.0"
     gery "^1.1.3"
     gql-tag "^1.0.1"
     request-hooks "^1.2.0"
-    stamen "^1.7.0"
+    stamen "^1.8.1"
 
 damerau-levenshtein@^1.0.4:
   version "1.0.4"
@@ -2939,6 +3018,11 @@ deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   integrity sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
+
+deepmerge@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/deepmerge/download/deepmerge-3.0.0.tgz#ca7903b34bfa1f8c2eab6779280775a411bfc6ba"
+  integrity sha1-ynkDs0v6H4wuq2d5KAd1pBG/xro=
 
 default-gateway@^2.6.0:
   version "2.7.2"
@@ -3957,6 +4041,19 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "=3.1.0"
 
+fooks@^1.2.0:
+  version "1.2.0"
+  resolved "http://registry.npm.taobao.org/fooks/download/fooks-1.2.0.tgz#dac26c31ef89d98b37d6829ae8eeb1e19306c329"
+  integrity sha1-2sJsMe+J2Ys31oKa6O6x4ZMGwyk=
+  dependencies:
+    checkok "^1.1.0"
+    deepmerge "^3.0.0"
+    fast-deep-equal "^2.0.1"
+    immer "^1.10.0"
+    lodash.get "^4.4.2"
+    lodash.set "^4.3.2"
+    util-is-array "^1.0.0"
+
 for-in@^0.1.3:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.8.tgz#d8773908e31256109952b1fdb9b3fa867d2775e1"
@@ -4663,6 +4760,11 @@ immer@1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/immer/-/immer-1.7.2.tgz#a51e9723c50b27e132f6566facbec1c85fc69547"
   integrity sha512-4Urocwu9+XLDJw4Tc6ZCg7APVjjLInCFvO4TwGsAYV5zT6YYSor14dsZR0+0tHlDIN92cFUOq+i7fC00G5vTxA==
+
+immer@^1.10.0:
+  version "1.10.0"
+  resolved "http://registry.npm.taobao.org/immer/download/immer-1.10.0.tgz#bad67605ba9c810275d91e1c2a47d4582e98286d"
+  integrity sha1-utZ2BbqcgQJ12R4cKkfUWC6YKG0=
 
 immer@^1.7.2:
   version "1.9.3"
@@ -5937,10 +6039,20 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
 
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "http://registry.npm.taobao.org/lodash.get/download/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
+
+lodash.set@^4.3.2:
+  version "4.3.2"
+  resolved "http://registry.npm.taobao.org/lodash.set/download/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
+  integrity sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -8943,6 +9055,16 @@ stamen@^1.7.0, stamen@^1.8.0:
     immer "^1.7.2"
     stamen "^1.7.0"
 
+stamen@^1.8.1:
+  version "1.8.1"
+  resolved "http://registry.npm.taobao.org/stamen/download/stamen-1.8.1.tgz#1f354eea0e6707db4d22ee1cfe53fbf41be0e73a"
+  integrity sha1-HzVO6g5nB9tNIu4c/lP79Bvg5zo=
+  dependencies:
+    fast-deep-equal "^2.0.1"
+    gery "^1.1.2"
+    immer "^1.7.2"
+    stamen "^1.7.0"
+
 static-extend@^0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/static-extend/-/static-extend-0.1.2.tgz#60809c39cbff55337226fd5e0b520f341f1fb5c6"
@@ -9572,6 +9694,36 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+
+util-is-array@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/util-is-array/download/util-is-array-1.0.0.tgz#fd9d8a0d9f960d27ad86874065a1d5733a718ddd"
+  integrity sha1-/Z2KDZ+WDSethodAZaHVczpxjd0=
+
+util-is-email@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/util-is-email/download/util-is-email-1.0.0.tgz#f87bfcdb90bb9aa89dc7b536ef2d45355a856fb0"
+  integrity sha1-+Hv825C7mqidx7U27y1FNVqFb7A=
+
+util-is-number@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/util-is-number/download/util-is-number-1.0.0.tgz#2839f3d907aff039ec540cf188ec3ab4f8b73c1d"
+  integrity sha1-KDnz2Qev8DnsVAzxiOw6tPi3PB0=
+
+util-is-string@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/util-is-string/download/util-is-string-1.0.0.tgz#d42fb597e55c63f38591c8ae6cbdf03691aadb87"
+  integrity sha1-1C+1l+VcY/OFkciubL3wNpGq24c=
+
+util-is-url@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/util-is-url/download/util-is-url-1.0.1.tgz#b42eb6114628c249cf28f68ef053f894c717a014"
+  integrity sha1-tC62EUYowknPKPaO8FP4lMcXoBQ=
+
+util-result@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/util-result/download/util-result-1.0.0.tgz#e0886f7faaa34a14f5e89e6d7268e8a3999c7b11"
+  integrity sha1-4Ihvf6qjShT16J5tcmjoo5mcexE=
 
 util.promisify@1.0.0, util.promisify@^1.0.0, util.promisify@~1.0.0:
   version "1.0.0"
