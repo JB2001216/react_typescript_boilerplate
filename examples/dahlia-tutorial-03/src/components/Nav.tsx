@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '../src'
+import { Link } from 'dahlia/router'
 
 export const Nav = () => (
   <div>
