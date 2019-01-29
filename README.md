@@ -5,7 +5,11 @@
 
 > An opinionated React Framework for building modern web applications.
 
-React hooks、GraphQL、TypeScript... If You like these techniques, you can try `Dahlia`, It will make you comfortable and efficient。
+
+
+<a href="https://dahlia.gitbook.io/dahlia/" target="_blank">Doc(Coming...)</a>
+ |
+<a href="https://dahlia-cn.gitbook.io/dahlia/" target="_blank">文档</a>
 
 ## Quick Start
 
