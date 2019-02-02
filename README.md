@@ -45,7 +45,7 @@ Run dev server:
 
 ```bash
 cd my-app
-dh dev
+dh start
 ```
 
 ![dh](http://forsigner.com/images/dahlia/dahlia-app.png)
