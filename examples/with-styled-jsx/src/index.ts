@@ -1,4 +1,4 @@
-import Dahlia from './src'
+import Dahlia from 'dahlia'
 import { routes } from './routes'
 
 Dahlia.bootstrap({
