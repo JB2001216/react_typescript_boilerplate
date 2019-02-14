@@ -7,15 +7,15 @@ import gql from 'gql-tag'
 import { Config } from './config'
 
 function bootstrap(options: Config) {
-  const { routes, graphql, rest, selector } = options
+  const { routes, graphql, rest, root } = options
   requestHooks.config({ graphql, rest })
-  render(<Router routes={routes} />, document.querySelector(selector))
+  render(<Router routes={routes} />, document.querySelector(root))
 }
 
 const Dahlia = {
   bootstrap,
 }
 
-export { bootstrap, gql, Config }
-
+export { bootstrap, gql }
+export * from './config'
 export default Dahlia
