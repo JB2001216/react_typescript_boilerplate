@@ -4,9 +4,9 @@ import { requestHooks } from 'request-hooks'
 import { Router } from 'corolla'
 import gql from 'gql-tag'
 
-import { Options } from './config'
+import { Config } from './config'
 
-function bootstrap(options: Options) {
+function bootstrap(options: Config) {
   const { routes, graphql, rest, selector } = options
   requestHooks.config({ graphql, rest })
   render(<Router routes={routes} />, document.querySelector(selector))
@@ -16,6 +16,6 @@ const Dahlia = {
   bootstrap,
 }
 
-export { bootstrap, gql }
+export { bootstrap, gql, Config }
 
 export default Dahlia

@@ -1,6 +1,6 @@
 import { Routes } from 'corolla'
 
-export interface Options {
+export interface Config {
   routes: Routes
   selector: string
   graphql?: {
@@ -11,4 +11,4 @@ export interface Options {
   }
 }
 
-export const config: Options = {} as Options
+export const config: Config = {} as Config
