@@ -1377,6 +1377,14 @@ cross-fetch@^3.0.0:
     node-fetch "2.3.0"
     whatwg-fetch "3.0.0"
 
+cross-fetch@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.0.1.tgz#3f207bbd829a76e9aa2a953348bd1f2a3cf388a7"
+  integrity sha512-qWtpgBAF8ioqBOddRD+pHhrdzm/UWOArkrlIU7c08DlNbOxo5GfUbSY2vr90ZypWf0raW+HNN1F38pi5CEOjiQ==
+  dependencies:
+    node-fetch "2.3.0"
+    whatwg-fetch "3.0.0"
+
 cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "http://registry.npm.taobao.org/cross-spawn/download/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -2000,8 +2008,8 @@ fn-name@~2.0.1:
 
 fooks@^1.2.0:
   version "1.2.0"
-  resolved "http://registry.npm.taobao.org/fooks/download/fooks-1.2.0.tgz#dac26c31ef89d98b37d6829ae8eeb1e19306c329"
-  integrity sha1-2sJsMe+J2Ys31oKa6O6x4ZMGwyk=
+  resolved "https://registry.yarnpkg.com/fooks/-/fooks-1.2.0.tgz#dac26c31ef89d98b37d6829ae8eeb1e19306c329"
+  integrity sha512-wEzJy4Pzp5S5f6HkMrei24ek/qVWn19mGl2j/yMu5O3n6it4V51n191SKToYvLf21d3Ywl/tzlt3uejouNlZuw==
   dependencies:
     checkok "^1.1.0"
     deepmerge "^3.0.0"
@@ -2418,6 +2426,11 @@ immer@^1.10.0, immer@^1.7.2:
   version "1.12.1"
   resolved "http://registry.npm.taobao.org/immer/download/immer-1.12.1.tgz#40c6e5b292c00560836c2993bda3a24379d466f5"
   integrity sha1-QMblspLABWCDbCmTvaOiQ3nUZvU=
+
+immer@^2.1.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-2.1.1.tgz#13abfc251e742b7dbc23e7444a3bd288c7394e43"
+  integrity sha512-+S4ktJM7ugEy1aIfpsjTVf7ZLMMuwz8QqSxpJRZaCM+0ujfeU4kWcj57P02qQ/KRGMw7DwUS4lCKNNROHasXkw==
 
 import-fresh@^2.0.0:
   version "2.0.0"
@@ -4784,14 +4797,13 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request-hooks@^1.0.1, request-hooks@^1.2.0:
-  version "1.2.0"
-  resolved "http://registry.npm.taobao.org/request-hooks/download/request-hooks-1.2.0.tgz#e745e331ae898e7ee53b40a1c5a5caff0a215021"
-  integrity sha1-50XjMa6Jjn7lO0ChxaXK/wohUCE=
+request-hooks@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/request-hooks/-/request-hooks-1.3.0.tgz#ad6492a70df6851a3d3dfe84c341db33e29eff3a"
+  integrity sha512-RJ5x6k7Jbeu77wehAQ1a26ITQ5lpLtjaXsni94FUFP7yUCm2hYDvcW+hqI/akYrNJvn7NxJ3X32asqCKQGxEmg==
   dependencies:
     cross-fetch "^3.0.0"
     gery "^1.1.2"
-    request-hooks "^1.0.1"
 
 request-promise-core@1.1.1:
   version "1.1.1"
@@ -5276,6 +5288,16 @@ stamen@^1.7.0, stamen@^1.8.1:
     gery "^1.1.2"
     immer "^1.7.2"
     stamen "^1.7.0"
+
+stamen@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/stamen/-/stamen-1.9.0.tgz#915183283a761e5ffc9b82e45d080639666e00e7"
+  integrity sha512-Mel3eOKPtGyOeCy0zhojd2mvA+t9hlFuNFKPT8NZRjj3pppGnWS9bEvjvDRclXDbHWstm0u2zrBD0QY1xO9UnA==
+  dependencies:
+    cross-fetch "^3.0.1"
+    fast-deep-equal "^2.0.1"
+    gery "^1.1.3"
+    immer "^2.1.0"
 
 standard-version@^4.4.0:
   version "4.4.0"
