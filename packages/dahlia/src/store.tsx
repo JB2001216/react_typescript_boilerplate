@@ -1,3 +1,1 @@
-import { createStore } from 'dahlia-store'
-
-export { createStore }
+export * from 'dahlia-store'
