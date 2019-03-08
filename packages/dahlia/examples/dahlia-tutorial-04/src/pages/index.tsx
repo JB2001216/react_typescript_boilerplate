@@ -10,7 +10,7 @@ interface User {
   website: string
 }
 
-export const Home = () => {
+export default () => {
   const { loading, data: users, error } = useFetch<User[]>('/users')
 
   if (loading) return <div>loading....</div>
@@ -21,7 +21,7 @@ export const Home = () => {
       <h2>User List: </h2>
       <ol>
         {users.map(user => (
-          <li>
+          <li key={user.id}>
             <strong>{user.name}</strong> ({user.email})
           </li>
         ))}

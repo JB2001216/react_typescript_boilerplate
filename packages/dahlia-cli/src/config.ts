@@ -42,28 +42,29 @@ let config: Config = {
 } as Config
 
 if (NODE_ENV === 'development') {
-  const { config: devConfig } = require('./config/config.dev')
+  const devConfig = require('./config/config.dev').default
   config = {
     ...config,
     ...devConfig,
   }
 } else {
-  const { config: prodConfig } = require('./config/config.prod')
+  const prodConfig = require('./config/config.prod').default
   config = {
     ...config,
     ...prodConfig,
   }
 }
 
-const lang = localStorage.getItem('__lang__') || 'en'
+Dahlia.bootstrap(config)
 
-import('../locales/' + lang + '.ts')
-  .then(i => {
-    ;(window as any).__locale__ = i.default
-    Dahlia.bootstrap(config)
-  })
-  .catch(() => {
-    Dahlia.bootstrap(config)
-  })
+// const lang = localStorage.getItem('__lang__') || 'en'
+// import('../locales/' + lang + '.ts')
+//   .then(i => {
+//     ;(window as any).__locale__ = i.default
+//     Dahlia.bootstrap(config)
+//   })
+//   .catch(() => {
+//     Dahlia.bootstrap(config)
+//   })
 
 `

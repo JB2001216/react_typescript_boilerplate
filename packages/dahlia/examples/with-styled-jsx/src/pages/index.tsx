@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Home = () => (
+export default () => (
   <div>
     Hi, Dahlia
     <p>scoped!</p>

@@ -1,7 +1,8 @@
+
 import React from 'react'
 import { createForm } from 'dahlia/form'
 
-import './home.css'
+import './index.css'
 
 const basicForm = createForm({
   initialValues: {
@@ -14,7 +15,7 @@ const basicForm = createForm({
   },
 })
 
-export const Home = () => {
+export default () => {
   const { submitting } = basicForm.useForm()
 
   return (

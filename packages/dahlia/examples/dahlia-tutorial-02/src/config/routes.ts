@@ -1,8 +1,8 @@
 import { Routes } from 'dahlia/router'
-import { Home } from './pages/Home'
-import { About } from './pages/About'
+import Home from '../pages/home'
+import About from '../pages/about'
 
-export const routes: Routes = [
+const routes: Routes = [
   {
     path: '/',
     component: Home,
@@ -12,3 +12,5 @@ export const routes: Routes = [
     component: About,
   },
 ]
+
+export default routes
