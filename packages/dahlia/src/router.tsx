@@ -1,1 +1,1 @@
-export * from 'corolla'
+export * from 'dahlia-router'

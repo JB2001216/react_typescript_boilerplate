@@ -1,4 +1,4 @@
-import { createForm } from 'fooks'
+import { createForm } from 'dahlia-form'
 import { check } from 'checkok'
 import string from 'checkok-string'
 import number from 'checkok-number'

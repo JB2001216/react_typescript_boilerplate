@@ -1,41 +1,26 @@
 {
-  "name": "example",
+  "name": "field",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@types/jest": "23.3.10",
-    "@types/lodash.get": "^4.4.4",
-    "@types/lodash.set": "^4.3.4",
-    "@types/node": "10.12.12",
-    "@types/react": "16.7.13",
-    "@types/react-dom": "16.0.11",
-    "@types/yup": "^0.26.3",
-    "deepmerge": "^3.0.0",
-    "fast-deep-equal": "^2.0.1",
-    "fooks": "^1.2.0",
-    "immer": "^1.9.3",
-    "lodash.get": "^4.4.2",
-    "lodash.set": "^4.3.2",
-    "react": "16.7.0-alpha.0",
-    "react-dom": "16.7.0-alpha.0",
-    "react-scripts": "2.1.1",
-    "stamen": "^1.8.1",
-    "styled-components": "^4.1.3",
-    "typescript": "3.2.1"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "start": "dh start ",
+    "build": "dh build",
+    "test": "dh test"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "dependencies": {
+    "@types/jest": "^24.0.9",
+    "@types/react": "^16.8.7",
+    "@types/react-dom": "^16.8.2",
+    "dahlia": "^1.10.4",
+    "dahlia-cli": "^1.2.0",
+    "dahlia-form": "^0.1.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "typescript": "^3.3.3333"
+  }
 }

@@ -1,14 +1,14 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { requestHooks } from 'request-hooks'
-import { Router } from 'corolla'
+import { config } from 'dahlia-http'
+import { Router } from 'dahlia-router'
 import gql from 'gql-tag'
 
 import { Config } from './config'
 
 function bootstrap(options: Config) {
   const { routes, graphql, rest, root } = options
-  requestHooks.config({ graphql, rest })
+  config({ graphql, rest })
   render(<Router routes={routes} />, document.querySelector(root))
 }
 

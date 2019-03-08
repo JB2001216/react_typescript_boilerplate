@@ -11,18 +11,7 @@
   "scripts": {
     "clean:dist": "rimraf dist/*",
     "build": "npm run clean:dist && rollup -c",
-    "build:watch": "npm run clean:dist && rollup -c -w",
-    "format": "prettier --write \"src/**/*.{js,ts,tsx}\"",
-    "format:check": "prettier --list-different \"src/**/*.{js,ts,tsx}\"",
-    "lint": "tslint -c tslint.json \"src/**/*.{ts,tsx}\"",
-    "lint:fix": "tslint -c tslint.json \"src/**/*.{ts,tsx}\" --fix",
-    "release": "standard-version"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "build:watch": "npm run clean:dist && rollup -c -w"
   },
   "jest": {
     "preset": "ts-jest",
@@ -30,18 +19,6 @@
       "/node_modules/",
       "/dist/",
       "/.history/"
-    ]
-  },
-  "lint-staged": {
-    "{examples_src,src}/**/*.{js,ts,tsx}": [
-      "npm run format",
-      "npm run lint:fix",
-      "git add"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
     ]
   },
   "repository": {
@@ -55,17 +32,11 @@
   },
   "homepage": "https://github.com/forsigner/dahlia#README",
   "devDependencies": {
-    "@commitlint/cli": "^7.5.2",
-    "@commitlint/config-conventional": "^7.5.0",
     "@types/fetch-mock": "^7.2.3",
     "@types/jest": "^24.0.9",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
-    "coveralls": "^3.0.3",
-    "husky": "^1.3.1",
     "jest": "^24.3.1",
-    "lint-staged": "^8.1.5",
-    "prettier": "^1.16.4",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "rimraf": "^2.6.3",
@@ -73,11 +44,6 @@
     "rollup-plugin-typescript2": "^0.19.3",
     "standard-version": "^5.0.1",
     "ts-jest": "^24.0.0",
-    "tslint": "^5.13.1",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "tslint-plugin-prettier": "^2.0.1",
-    "tslint-react": "^3.6.0",
     "typescript": "^3.3.3333"
   },
   "peerDependencies": {
