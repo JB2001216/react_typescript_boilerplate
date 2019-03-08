@@ -18,7 +18,7 @@ const GET_USER = gql`
   }
 `
 
-export const Home = () => {
+export default () => {
   const { loading, data, error } = useQuery<UserMany>(GET_USER)
 
   if (loading) return <div>loading....</div>

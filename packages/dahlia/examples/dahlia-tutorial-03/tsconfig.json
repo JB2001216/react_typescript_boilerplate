@@ -36,6 +36,7 @@
     "acceptance-tests",
     "webpack",
     "jest",
+    "src/.dahlia",
     "src/setupTests.ts"
   ],
   "include": [

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'dahlia/router'
 
-export const Nav = () => (
+export default () => (
   <div>
     <ul>
       <li>

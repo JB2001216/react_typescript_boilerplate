@@ -1,9 +1,9 @@
-import Home from '../../pages/Home'
+import Index from '../../pages/index'
 
 const routes = [
   {
-    path: '/Home',
-    component: Home,
+    path: '/',
+    component: Index,
   },
 ]
 

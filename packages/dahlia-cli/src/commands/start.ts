@@ -5,7 +5,7 @@ import { createEntryFile } from '../utils/createEntryFile'
 import { createConfigFile } from '../utils/createConfigFile'
 import { createRoutesFile } from '../utils/createRoutesFile'
 import { createLocaleTypings } from '../utils/createLocaleTypings'
-import { createLocalesFiles } from '../utils/createLocalesFiles'
+// import { createLocalesFiles } from '../utils/createLocalesFiles'
 import { watchConfig } from '../utils/watchConfig'
 import { watchRoutes } from '../utils/watchRoutes'
 import { watchPages } from '../utils/watchPages'
@@ -28,7 +28,7 @@ export default class Start extends Command {
     createEntryFile()
     createConfigFile()
     createRoutesFile()
-    createLocalesFiles()
+    // createLocalesFiles()
     await createLocaleTypings()
 
     // watch files

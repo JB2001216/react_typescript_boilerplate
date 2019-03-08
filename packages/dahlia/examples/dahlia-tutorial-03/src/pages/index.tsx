@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStore, dispatch } from '../stores/counterStore'
 
-export const Home = () => {
+export default () => {
   const count = useStore(S => S.count)
   return (
     <div>
