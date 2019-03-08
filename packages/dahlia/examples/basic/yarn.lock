@@ -3346,10 +3346,10 @@ dahlia-webpack-styled-jsx@^1.0.1:
   dependencies:
     customize-cra "^0.2.11"
 
-dahlia@^1.10.5:
-  version "1.10.5"
-  resolved "https://registry.yarnpkg.com/dahlia/-/dahlia-1.10.5.tgz#a2da46094f15960ef90e9d4f21e62b4c8bb82859"
-  integrity sha512-5sKtS+D2fyBS7u8Bt5kofBdy5c6cEbyM0znVSiL5tJAKT+cVr7vWhWlaCaKncrD60CM4dfnIW5w0lfvh3p4rIA==
+dahlia@^1.10.6:
+  version "1.10.6"
+  resolved "https://registry.yarnpkg.com/dahlia/-/dahlia-1.10.6.tgz#cf90ee9f7aac7833b0445fc8a0ced22d46855702"
+  integrity sha512-3ffJUDRdXx9uiYwuW5y9JuvogAA9TtjLNOgnQXJgxYCjX1VnCwr3kMDxcYEh1wFmWWXklrFAyyBpildoS9Oe6g==
   dependencies:
     "@types/styled-components" "^4.1.12"
     "@types/styled-jsx" "^2.2.8"
