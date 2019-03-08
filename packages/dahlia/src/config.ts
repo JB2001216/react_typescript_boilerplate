@@ -1,4 +1,4 @@
-import { Routes } from 'corolla'
+import { Routes } from 'dahlia-router'
 
 export interface Config {
   routes: Routes

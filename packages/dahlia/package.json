@@ -1,132 +1,83 @@
 {
-  "name": "dahlia",
-  "version": "1.10.4",
-  "description": "An opinionated React Framework for building modern web applications.",
-  "main": "index.js",
-  "module": "index.es.js",
-  "files": [
-    "config.d.ts",
-    "form.d.ts",
-    "form.js",
-    "form.js.map",
-    "http.d.ts",
-    "http.js",
-    "http.js.map",
-    "index.d.ts",
-    "index.es.js",
-    "index.es.js.map",
-    "index.js",
-    "index.js.map",
-    "index.min.js",
-    "router.d.ts",
-    "router.js",
-    "router.js.map",
-    "store.d.ts",
-    "store.js",
-    "store.js.map"
-  ],
-  "scripts": {
-    "clean": "rimraf dist/*",
-    "tsc": "npm run clean:dist && tsc",
-    "min": "terser index.js -o index.min.js",
-    "build": "rollup -c && npm run min",
-    "build:watch": "rollup -c -w",
-    "format": "prettier --write \"src/**/*.{js,ts,tsx}\"",
-    "format:check": "prettier --list-different \"src/**/*.{js,ts,tsx}\"",
-    "lint": "tslint -c tslint.json \"src/**/*.{ts,tsx}\"",
-    "lint:fix": "tslint -c tslint.json \"src/**/*.{ts,tsx}\" --fix",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "release": "standard-version"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/examples/",
-      "/.history/"
-    ]
-  },
-  "lint-staged": {
-    "{src,__tests__}/**/*.{js,ts,tsx}": [
-      "npm run format",
-      "npm run lint:fix",
-      "git add"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/forsigner/dahlia.git"
-  },
-  "author": "forsigner",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://.com/forsigner/dahlia/issues"
-  },
-  "homepage": "https://github.com/forsigner/dahlia#README",
-  "devDependencies": {
-    "@commitlint/cli": "^7.5.0",
-    "@commitlint/config-conventional": "^7.5.0",
-    "@types/jest": "^23.3.13",
-    "@types/react": "^16.8.1",
-    "@types/react-dom": "^16.0.11",
-    "@types/react-test-renderer": "^16.0.3",
-    "coveralls": "^3.0.2",
-    "husky": "^1.3.1",
-    "jest": "^24.0.0",
-    "lint-staged": "^8.1.1",
-    "prettier": "^1.16.3",
-    "react": "^16.8.0-alpha.0",
-    "react-dom": "^16.8.0-alpha.0",
-    "react-test-renderer": "16.7.0",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.1.2",
-    "rollup-plugin-auto-external": "^2.0.0",
-    "rollup-plugin-typescript2": "^0.19.2",
-    "standard-version": "^4.4.0",
-    "terser": "^3.14.1",
-    "ts-jest": "^23.10.5",
-    "tslint": "^5.12.1",
-    "tslint-config-prettier": "^1.17.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "tslint-plugin-prettier": "^2.0.1",
-    "tslint-react": "^3.6.0",
-    "typescript": "^3.3.1"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0-alpha.0",
-    "react-dom": "^16.8.0-alpha.0"
-  },
-  "dependencies": {
-    "@types/styled-components": "^4.1.6",
-    "@types/styled-jsx": "^2.2.7",
-    "checkok": "^1.1.1",
-    "checkok-email": "^1.0.1",
-    "checkok-max": "^1.0.1",
-    "checkok-min": "^1.0.1",
-    "checkok-number": "^1.0.0",
-    "checkok-required": "^1.0.0",
-    "checkok-string": "^1.0.1",
-    "checkok-url": "^1.0.1",
-    "corolla": "^1.1.1",
-    "fooks": "^1.2.0",
-    "gery": "^1.1.3",
-    "gql-tag": "^1.0.1",
-    "request-hooks": "^1.3.0",
-    "stamen": "^1.9.0",
-    "styled-components": "^4.1.3",
-    "styled-jsx": "^3.2.0"
-  }
+	"name": "dahlia",
+	"version": "1.10.4",
+	"description": "An opinionated React Framework for building modern web applications.",
+	"main": "index.js",
+	"module": "index.es.js",
+	"files": [
+		"config.d.ts",
+		"form.d.ts",
+		"form.js",
+		"form.js.map",
+		"http.d.ts",
+		"http.js",
+		"http.js.map",
+		"index.d.ts",
+		"index.es.js",
+		"index.es.js.map",
+		"index.js",
+		"index.js.map",
+		"index.min.js",
+		"router.d.ts",
+		"router.js",
+		"router.js.map",
+		"store.d.ts",
+		"store.js",
+		"store.js.map"
+	],
+	"jest": {
+		"preset": "ts-jest",
+		"testPathIgnorePatterns": [
+			"/node_modules/",
+			"/examples/",
+			"/.history/"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/forsigner/dahlia.git"
+	},
+	"author": "forsigner",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://.com/forsigner/dahlia/issues"
+	},
+	"homepage": "https://github.com/forsigner/dahlia#README",
+	"devDependencies": {
+		"@types/jest": "^24.0.9",
+		"@types/react": "^16.8.7",
+		"@types/react-dom": "^16.8.2",
+		"@types/react-test-renderer": "^16.8.1",
+		"jest": "^24.3.1",
+		"react": "^16.8.4",
+		"react-dom": "^16.8.4",
+		"react-test-renderer": "16.7.0",
+		"rimraf": "^2.6.3",
+		"rollup": "^1.6.0",
+		"rollup-plugin-auto-external": "^2.0.0",
+		"rollup-plugin-typescript2": "^0.19.3",
+		"terser": "^3.16.1",
+		"ts-jest": "^24.0.0",
+		"typescript": "^3.3.3333"
+	},
+	"peerDependencies": {
+		"react": "^16.8.0-alpha.0",
+		"react-dom": "^16.8.0-alpha.0"
+	},
+	"dependencies": {
+		"@types/styled-components": "^4.1.12",
+		"@types/styled-jsx": "^2.2.8",
+		"checkok": "^1.1.1",
+		"checkok-email": "^1.0.1",
+		"checkok-max": "^1.0.1",
+		"checkok-min": "^1.0.1",
+		"checkok-number": "^1.0.0",
+		"checkok-required": "^1.0.0",
+		"checkok-string": "^1.0.1",
+		"checkok-url": "^1.0.1",
+		"gery": "^1.1.3",
+		"gql-tag": "^1.0.1",
+		"styled-components": "^4.1.3",
+		"styled-jsx": "^3.2.0"
+	}
 }
