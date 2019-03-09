@@ -1,4 +1,4 @@
-import { createStore } from 'stamen'
+import { createStore } from 'dahlia/store'
 
 export const { useStore, dispatch, query } = createStore({
   name: 'todoStore',
@@ -11,7 +11,7 @@ export const { useStore, dispatch, query } = createStore({
     },
   },
   reducers: {
-    T(state, payload) {
+    updateTodo(state, payload) {
       state.currentItem = payload
     },
   },
@@ -19,7 +19,7 @@ export const { useStore, dispatch, query } = createStore({
     async fetchTodo(payload) {
       const url = `https://jsonplaceholder.typicode.com/todos/${payload}`
       const data = await fetch(url).then(response => response.json())
-      dispatch(A => A.T, data)
+      dispatch(A => A.updateTodo, data)
     },
   },
 })

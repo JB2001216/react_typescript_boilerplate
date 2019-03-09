@@ -1,24 +1,25 @@
 {
-  "name": "counter-example",
+  "name": "basic",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "axios": "^0.18.0",
-    "fast-deep-equal": "^2.0.1",
-    "react": "16.7.0-alpha.0",
-    "react-dom": "16.7.0-alpha.0",
-    "react-scripts-ts": "2.17.0",
-    "stamen": "^1.6.0"
-  },
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "start": "dh start ",
+    "build": "dh build",
+    "test": "dh test"
   },
-  "devDependencies": {
-    "@types/react": "^16.7.13",
-    "@types/react-dom": "^16.0.11",
-    "tslint-eslint-rules": "^5.4.0"
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "@types/jest": "^24.0.9",
+    "@types/react": "^16.8.7",
+    "@types/react-dom": "^16.8.2",
+    "dahlia": "^1.10.6",
+    "dahlia-cli": "^1.2.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "typescript": "^3.3.3333"
   }
 }
