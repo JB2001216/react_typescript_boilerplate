@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import crossfetch from 'cross-fetch'
-
 import produce from 'immer'
+import { GraphQLClient } from 'gery'
+import { dahliaHttpConfig } from 'dahlia-http'
 // import equal from 'fast-deep-equal'
 
-import { GraphQLClient } from 'gery'
 import { useMount, useUnmount, getActionName } from './util'
 import {
   Opt,
@@ -16,24 +16,7 @@ import {
   Updater,
   Result,
   Variables,
-  Config,
 } from './typings'
-
-let config: Config = {
-  rest: {
-    endpoint: '',
-  },
-  graphql: {
-    endpoint: '',
-    headers: {},
-  },
-}
-
-const stamen = {
-  init: (initConfig: Config) => {
-    config = initConfig
-  },
-}
 
 function createStore<S, R extends Reducers<S>, E extends Effects>(opt: Opt<S, R, E>) {
   let storeState: S = opt.state
@@ -106,7 +89,7 @@ function createStore<S, R extends Reducers<S>, E extends Effects>(opt: Opt<S, R,
 
   async function fetch(url: string, options?: any) {
     const { stateKey } = options || ({} as any)
-    const { endpoint } = config.rest
+    const { endpoint } = dahliaHttpConfig.rest
     const key = stateKey || url
 
     updateStore(key, true)
@@ -130,8 +113,8 @@ function createStore<S, R extends Reducers<S>, E extends Effects>(opt: Opt<S, R,
 
   async function query(gqlStr: string, variables?: Variables, options?: any) {
     const { stateKey } = options || ({} as any)
-    const { endpoint, headers } = config.graphql
-    const client = new GraphQLClient({ endpoint, headers })
+    const { endpoint } = dahliaHttpConfig.graphql
+    const client = new GraphQLClient({ endpoint, headers: {} })
     const key = stateKey || gqlStr
 
     updateStore(key, true)
@@ -155,5 +138,4 @@ function createStore<S, R extends Reducers<S>, E extends Effects>(opt: Opt<S, R,
   return { useStore, dispatch, fetch, query, getState }
 }
 
-export default stamen
 export { createStore, Result }

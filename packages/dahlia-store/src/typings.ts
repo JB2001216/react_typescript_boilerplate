@@ -39,21 +39,3 @@ export interface Result<T> {
 export interface Variables {
   [key: string]: any
 }
-
-export interface Config {
-  rest: {
-    endpoint: string
-    body?: {
-      [key: string]: string
-    }
-    headers?: {
-      [key: string]: string
-    }
-  }
-  graphql: {
-    endpoint: string
-    headers?: {
-      [key: string]: string
-    }
-  }
-}

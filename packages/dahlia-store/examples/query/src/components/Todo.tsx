@@ -26,7 +26,6 @@ const Todo = () => {
       console.log(error)
     }
   })
-  console.log('------');
 
   return (
     <div className="App">

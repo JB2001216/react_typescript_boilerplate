@@ -3315,10 +3315,10 @@ dahlia-cli@^1.2.0:
     react-scripts "^2.1.3"
     tslib "^1.9.3"
 
-dahlia-form@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dahlia-form/-/dahlia-form-1.0.0.tgz#dd695ab70f42fe804298f6bd0b8ee84e80f3cef9"
-  integrity sha512-UI0CYK+0pLMGbEpW4cq7L89Rh7sk7tvVzYBBLgkFCwaQu9dZQ7wGxrZ27rvqA8ZXFM0LTvZlf6u6MDBbMxoP9w==
+dahlia-form@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/dahlia-form/download/dahlia-form-1.0.1.tgz#80b89dd233ec0fee0115a7abf966deeca29892f1"
+  integrity sha1-gLid0jPsD+4BFaer+Wbe7KKYkvE=
   dependencies:
     checkok "^1.1.1"
     deepmerge "^3.2.0"
@@ -3328,18 +3328,18 @@ dahlia-form@^1.0.0:
     lodash.set "^4.3.2"
     util-is-array "^1.0.0"
 
-dahlia-http@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dahlia-http/-/dahlia-http-1.0.0.tgz#8ee7adf5c61320810045fe1311d2959871855a53"
-  integrity sha512-aGimwy636tmcoLa4ivzDCsqwcxg373yp1Zq0Ed6mSSjNfj9IaiKScFC+WpNoSp0M7ZeJSA8iSmmWj1m7BmKkeQ==
-  dependencies:
-    cross-fetch "^3.0.1"
-    gery "^1.1.3"
-
 dahlia-http@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/dahlia-http/download/dahlia-http-1.0.1.tgz#7bff7b69dbb5b404a67062b7d2284011086eeb09"
   integrity sha1-e/97adu1tASmcGK30ihAEQhu6wk=
+  dependencies:
+    cross-fetch "^3.0.1"
+    gery "^1.1.3"
+
+dahlia-http@^1.0.2:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/dahlia-http/download/dahlia-http-1.0.2.tgz#b717e237a78009c47344defb1fe1a76820bcae89"
+  integrity sha1-txfiN6eACcRzRN77H+GnaCC8rok=
   dependencies:
     cross-fetch "^3.0.1"
     gery "^1.1.3"
@@ -3352,10 +3352,10 @@ dahlia-router@^1.0.0:
     path-parser "^4.2.0"
     stamen "^1.9.0"
 
-dahlia-store@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dahlia-store/-/dahlia-store-1.0.0.tgz#f8947a9ad3fb674191e419d6249b0e1ac7beeba8"
-  integrity sha512-If5Xu1pYnwYgQ8Th5fJwNU7j9nzrEXP4fJ4kUarVsu8AdxxYzZqTXG0Z9lSuKZL0QQmvxwAsniTxi5kLsL+ERg==
+dahlia-store@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.0.1.tgz#d7b072c3b163fd31acef56d5cc2308092827da93"
+  integrity sha1-17Byw7Fj/TGs71bVzCMICSgn2pM=
   dependencies:
     cross-fetch "^3.0.1"
     fast-deep-equal "^2.0.1"
@@ -3391,10 +3391,10 @@ dahlia-webpack-styled-jsx@^1.0.1:
   dependencies:
     customize-cra "^0.2.11"
 
-dahlia@^1.10.6:
-  version "1.10.6"
-  resolved "https://registry.yarnpkg.com/dahlia/-/dahlia-1.10.6.tgz#cf90ee9f7aac7833b0445fc8a0ced22d46855702"
-  integrity sha512-3ffJUDRdXx9uiYwuW5y9JuvogAA9TtjLNOgnQXJgxYCjX1VnCwr3kMDxcYEh1wFmWWXklrFAyyBpildoS9Oe6g==
+dahlia@^1.10.8:
+  version "1.10.8"
+  resolved "http://registry.npm.taobao.org/dahlia/download/dahlia-1.10.8.tgz#e723ba8b197165048e3957a9dc9b0e5c4d0c0946"
+  integrity sha1-5yO6ixlxZQSOOVep3JsOXE0MCUY=
   dependencies:
     "@types/styled-components" "^4.1.12"
     "@types/styled-jsx" "^2.2.8"
@@ -3406,10 +3406,10 @@ dahlia@^1.10.6:
     checkok-required "^1.0.0"
     checkok-string "^1.0.1"
     checkok-url "^1.0.1"
-    dahlia-form "^1.0.0"
-    dahlia-http "^1.0.0"
+    dahlia-form "^1.0.1"
+    dahlia-http "^1.0.2"
     dahlia-router "^1.0.0"
-    dahlia-store "^1.0.0"
+    dahlia-store "^1.0.1"
     gery "^1.1.3"
     gql-tag "^1.0.1"
     styled-components "^4.1.3"

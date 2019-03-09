@@ -18,7 +18,7 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['immer', 'fast-deep-equal', 'gery', 'cross-fetch', 'react', 'react-dom'],
+  external: ['immer', 'fast-deep-equal', 'gery', 'cross-fetch', 'dahlia-http', 'react', 'react-dom'],
   plugins: [
     typescript({
       rollupCommonJSResolveHack: true,
