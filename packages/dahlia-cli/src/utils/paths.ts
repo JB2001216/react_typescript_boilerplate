@@ -27,8 +27,6 @@ export const configs = [
   },
 ]
 
-// console.log(__dirname)
-
 export const routesPath = `${srcDir}/config/routes.ts`
 
 export const tmpRoutesPath = `${srcDir}/.dahlia/config/routes.ts`
@@ -48,14 +46,24 @@ export const localesDir = `${projectDir}/src/locales`
 export const defaultLocalePath = `${projectDir}/src/locales/default.ts`
 export const localeTypingsPath = `${projectDir}/src/locales/i18n.ts`
 
-// TODO:
-// export const reactScripts = path.join(projectDir, 'node_modules', '.bin', 'react-scripts')
-export const reactScripts = path.join(baseDir, 'node_modules', '.bin', 'react-scripts')
+export const reactScripts = path.join(
+  projectDir,
+  'node_modules',
+  '.bin',
+  'react-scripts',
+)
 
-// TODO:
-// export const reactScriptsModulePath = path.join(projectDir, 'node_modules', 'react-scripts')
-export const reactScriptsModulePath = path.join(baseDir, 'node_modules', 'react-scripts')
+const useProjectCli = __dirname.includes(
+  path.join(projectDir, 'node_modules', 'dahlia-cli'),
+)
+const reactScriptsBaseDir = useProjectCli ? projectDir : baseDir
 
-export const webpackConfigPath = `${reactScriptsModulePath}/config/webpack.config.js`
+const reactScriptsModulePath = path.join(
+  reactScriptsBaseDir,
+  'node_modules',
+  'react-scripts',
+)
+const webpackConfigPath = `${reactScriptsModulePath}/config/webpack.config.js`
+const devServerConfigPath = `${reactScriptsModulePath}/config/webpackDevServer.config.js`
 
-export const devServerConfigPath = `${reactScriptsModulePath}/config/webpackDevServer.config.js`
+export { reactScriptsModulePath, webpackConfigPath, devServerConfigPath }
