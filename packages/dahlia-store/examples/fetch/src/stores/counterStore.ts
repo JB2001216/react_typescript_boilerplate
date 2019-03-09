@@ -1,4 +1,4 @@
-import { createStore } from '../src'
+import { createStore } from 'dahlia/store'
 
 const { useStore, dispatch, getState, query } = createStore({
   state: {

@@ -48,7 +48,6 @@
     "rimraf": "^2.6.3",
     "rollup": "^1.4.0",
     "rollup-plugin-typescript2": "^0.19.3",
-    "standard-version": "^5.0.1",
     "terser": "^3.16.1",
     "ts-jest": "^24.0.0",
     "typescript": "^3.3.3333"

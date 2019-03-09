@@ -1,7 +1,7 @@
 import React from 'react'
 import { useMount } from 'react-use'
 
-import todoStore from '@stores/todoStore'
+import todoStore from '../stores/todoStore'
 
 const TodoItem = () => {
   const { useStore } = todoStore
@@ -26,6 +26,7 @@ const Todo = () => {
       console.log(error)
     }
   })
+  console.log('------');
 
   return (
     <div className="App">

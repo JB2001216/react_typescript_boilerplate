@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import classnames from 'classnames'
 import TodoTextInput from './TodoTextInput'
-import { dispatch } from '@stores/TodoStore'
+import { dispatch } from '../stores/TodoStore'
 
 interface Props {
   todo: object | any // TODO

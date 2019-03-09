@@ -1,4 +1,4 @@
-import { createStore } from 'stamen'
+import { createStore } from 'dahlia/store'
 
 export const { useStore, dispatch } = createStore({
   state: {
