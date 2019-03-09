@@ -84,6 +84,7 @@
     "checkok-required": "^1.0.0",
     "checkok-string": "^1.0.1",
     "checkok-url": "^1.0.1",
+    "dahlia-cli": "^1.2.3",
     "dahlia-form": "^1.0.1",
     "dahlia-http": "^1.0.2",
     "dahlia-router": "^1.0.0",
