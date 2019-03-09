@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { config, request } from './src'
+import { config, request } from 'dahlia-http'
 
 interface Todo {
   userId: number
