@@ -5,6 +5,7 @@ import { reactScriptsModulePath } from '../utils/paths'
 import { createEntryFile } from '../utils/createEntryFile'
 import { disableCheckRequiredFilesPath } from '../utils/disableCheckRequiredFilesPath'
 import { disableCheckTS } from '../utils/disableCheckTS'
+import { customizePaths } from '../utils/customizePaths'
 import { customizeWebpack } from '../utils/customizeWebpack'
 
 export default class Build extends Command {
@@ -16,7 +17,8 @@ export default class Build extends Command {
     process.env.NODE_ENV = 'production'
 
     createEntryFile()
-    customizeWebpack('production')
+    customizePaths()
+    customizeWebpack()
     disableCheckRequiredFilesPath()
     disableCheckTS()
 

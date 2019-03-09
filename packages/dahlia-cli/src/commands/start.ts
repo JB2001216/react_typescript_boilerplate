@@ -13,6 +13,7 @@ import { watchLocale } from '../utils/watchLocale'
 import { disableCheckRequiredFilesPath } from '../utils/disableCheckRequiredFilesPath'
 import { disableClearConsole } from '../utils/disableClearConsole'
 import { disableCheckTS } from '../utils/disableCheckTS'
+import { customizePaths } from '../utils/customizePaths'
 import { customizeWebpack } from '../utils/customizeWebpack'
 import { customizeServer } from '../utils/customizeServer'
 
@@ -38,7 +39,8 @@ export default class Start extends Command {
     watchLocale()
 
     // customize cra
-    customizeWebpack('development')
+    customizePaths()
+    customizeWebpack()
     customizeServer()
     disableCheckRequiredFilesPath()
     disableClearConsole()

@@ -7,44 +7,42 @@ export const projectDir = path.resolve(fs.realpathSync(process.cwd()))
 
 export const dahliaConfigPath = `${projectDir}/dahlia.config.ts`
 
-export const srcDir = `${projectDir}/src`
+export const tmpDir = `${projectDir}/.dahlia`
+export const tmpConfigDir = `${projectDir}/.dahlia/config`
 
-export const tmpDir = `${srcDir}/.dahlia`
-export const tmpConfigDir = `${srcDir}/.dahlia/config`
+export const pagesDir = `${projectDir}/pages`
 
-export const pagesDir = `${srcDir}/pages`
-
-export const pageFiles = `${srcDir}/pages/**/*.{ts,tsx}`
+export const pageFiles = `${projectDir}/pages/**/*.{ts,tsx}`
 
 export const configs = [
   {
-    origin: `${srcDir}/config/config.dev.ts`,
-    target: `${srcDir}/.dahlia/config/config.dev.ts`,
+    origin: `${projectDir}/config/config.dev.ts`,
+    target: `${projectDir}/.dahlia/config/config.dev.ts`,
   },
   {
-    origin: `${srcDir}/config/config.prod.ts`,
-    target: `${srcDir}/.dahlia/config/config.prod.ts`,
+    origin: `${projectDir}/config/config.prod.ts`,
+    target: `${projectDir}/.dahlia/config/config.prod.ts`,
   },
 ]
 
-export const routesPath = `${srcDir}/config/routes.ts`
+export const routesPath = `${projectDir}/config/routes.ts`
 
-export const tmpRoutesPath = `${srcDir}/.dahlia/config/routes.ts`
+export const tmpRoutesPath = `${projectDir}/.dahlia/config/routes.ts`
 
-export const devConfigPath = `${projectDir}/src/config/config.dev.ts`
+export const devConfigPath = `${projectDir}/config/config.dev.ts`
 
-export const tmpDevConfigPath = `${projectDir}/src/.dahlia/config/config.dev.ts`
+export const tmpDevConfigPath = `${projectDir}/.dahlia/config/config.dev.ts`
 
-export const tmpProdConfigPath = `${projectDir}/src/.dahlia/config/config.prod.ts`
+export const tmpProdConfigPath = `${projectDir}/.dahlia/config/config.prod.ts`
 
-export const tmpRoutesConfigPath = `${projectDir}/src/.dahlia/config/routes.ts`
+export const tmpRoutesConfigPath = `${projectDir}/.dahlia/config/routes.ts`
 
-export const entryPath = `${projectDir}/src/.dahlia/index.ts`
+export const entryPath = `${projectDir}/.dahlia/index.ts`
 
-export const localesDir = `${projectDir}/src/locales`
+export const localesDir = `${projectDir}/locales`
 
-export const defaultLocalePath = `${projectDir}/src/locales/default.ts`
-export const localeTypingsPath = `${projectDir}/src/locales/i18n.ts`
+export const defaultLocalePath = `${projectDir}/locales/default.ts`
+export const localeTypingsPath = `${projectDir}/locales/i18n.ts`
 
 export const reactScripts = path.join(
   projectDir,
@@ -66,4 +64,6 @@ const reactScriptsModulePath = path.join(
 const webpackConfigPath = `${reactScriptsModulePath}/config/webpack.config.js`
 const devServerConfigPath = `${reactScriptsModulePath}/config/webpackDevServer.config.js`
 
-export { reactScriptsModulePath, webpackConfigPath, devServerConfigPath }
+const reactScriptsPaths = `${reactScriptsModulePath}/config/paths.js`
+
+export { reactScriptsModulePath, webpackConfigPath, devServerConfigPath, reactScriptsPaths }

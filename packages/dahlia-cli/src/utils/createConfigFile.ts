@@ -1,8 +1,9 @@
 import fs from 'fs-extra'
-import { entryText } from '../config'
 import { tmpConfigDir, tmpDevConfigPath, tmpProdConfigPath } from './paths'
+import { formatCode } from './formatCode'
 
-const configText = `export const config = {
+const configText = formatCode(`
+const config = {
   rest: {
     endpoint: '/',
   },
@@ -11,7 +12,8 @@ const configText = `export const config = {
   },
   root: '#root'
 }
-`
+export default config
+`)
 
 export const createConfigFile = () => {
   fs.ensureDirSync(tmpConfigDir)
