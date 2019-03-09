@@ -3286,6 +3286,14 @@ dahlia-cli@^1.2.0:
     react-scripts "^2.1.3"
     tslib "^1.9.3"
 
+dahlia-http@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/dahlia-http/download/dahlia-http-1.0.1.tgz#7bff7b69dbb5b404a67062b7d2284011086eeb09"
+  integrity sha1-e/97adu1tASmcGK30ihAEQhu6wk=
+  dependencies:
+    cross-fetch "^3.0.1"
+    gery "^1.1.3"
+
 dahlia-webpack-less@^1.0.6:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/dahlia-webpack-less/-/dahlia-webpack-less-1.0.10.tgz#535f9b1a10896b1062c1e296f34d6c4d96cf6f32"
