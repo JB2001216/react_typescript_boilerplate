@@ -3328,14 +3328,6 @@ dahlia-form@^1.0.1:
     lodash.set "^4.3.2"
     util-is-array "^1.0.0"
 
-dahlia-http@^1.0.1:
-  version "1.0.1"
-  resolved "http://registry.npm.taobao.org/dahlia-http/download/dahlia-http-1.0.1.tgz#7bff7b69dbb5b404a67062b7d2284011086eeb09"
-  integrity sha1-e/97adu1tASmcGK30ihAEQhu6wk=
-  dependencies:
-    cross-fetch "^3.0.1"
-    gery "^1.1.3"
-
 dahlia-http@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/dahlia-http/download/dahlia-http-1.0.2.tgz#b717e237a78009c47344defb1fe1a76820bcae89"
@@ -3358,6 +3350,17 @@ dahlia-store@^1.0.1:
   integrity sha1-17Byw7Fj/TGs71bVzCMICSgn2pM=
   dependencies:
     cross-fetch "^3.0.1"
+    fast-deep-equal "^2.0.1"
+    gery "^1.1.3"
+    immer "^2.1.0"
+
+dahlia-store@^1.0.2:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.0.2.tgz#90bcb04739dc8f8cfddd0d6b6f2b7636868cdf03"
+  integrity sha1-kLywRzncj4z93Q1rbyt2NoaM3wM=
+  dependencies:
+    cross-fetch "^3.0.1"
+    dahlia-http "^1.0.2"
     fast-deep-equal "^2.0.1"
     gery "^1.1.3"
     immer "^2.1.0"
