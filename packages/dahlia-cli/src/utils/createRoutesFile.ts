@@ -20,14 +20,14 @@ function getPageName(path: string = '') {
 
 function formatPages(pages: string[]) {
   return pages.map(item => {
-    const HOME_PAGE = 'src/pages/index.tsx'
+    const HOME_PAGE = 'pages/index.tsx'
     let routerPath: string
     const pageName = getPageName(item)
-    const pageImportPath = item.replace(/^src/, '../..').replace(/\.tsx$/, '')
+    const pageImportPath = item.replace(/^pages/, '../../pages').replace(/\.tsx$/, '')
     if (item === HOME_PAGE) {
       routerPath = '/'
     } else {
-      routerPath = item.replace(/src\/pages/, '').replace(/\.tsx$/, '')
+      routerPath = item.replace(/^pages/, '').replace(/\.tsx$/, '')
     }
     return {
       pageName,
