@@ -1,7 +1,8 @@
 import fs from 'fs-extra'
 import { join } from 'path'
 import { Configuration } from 'webpack-dev-server'
-import { dahliaConfigPath, devServerConfigPath, projectDir } from './paths'
+import { devServerConfigPath, projectDir } from './paths'
+import { getDahliaConfig } from './getDahliaConfig'
 
 export const customizeServer = () => {
   const devServerConfig = require(devServerConfigPath)
@@ -19,11 +20,11 @@ export const customizeServer = () => {
     return config
   }
 
-  if (fs.existsSync(dahliaConfigPath)) {
-    const dahliaConfig = require(dahliaConfigPath)
-    if (dahliaConfig.devServer) {
-      devServer = dahliaConfig.devServer
-    }
+  const dahliaConfig = getDahliaConfig()
+
+  if (dahliaConfig && dahliaConfig.devServer) {
+    // TODO: handle any
+    devServer = dahliaConfig.devServer as any
   }
 
   require.cache[require.resolve(devServerConfigPath)].exports = devServer(

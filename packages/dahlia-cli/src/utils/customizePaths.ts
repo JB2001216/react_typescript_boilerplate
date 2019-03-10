@@ -10,5 +10,4 @@ export const customizePaths = () => {
 
   require(reactScriptsPaths)
   require.cache[require.resolve(reactScriptsPaths)].exports = paths
-
 }
