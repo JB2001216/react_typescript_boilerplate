@@ -1,6 +1,7 @@
 import { Command } from '@oclif/command'
 
 import { reactScriptsModulePath } from '../utils/paths'
+import { customizeAppInfo } from '../utils/customizeAppInfo'
 import { createEntryFile } from '../utils/createEntryFile'
 import { createHtmlFile } from '../utils/createHtmlFile'
 import { createPublicFiles } from '../utils/createPublicFiles'
@@ -18,7 +19,6 @@ import { disableCheckTS } from '../utils/disableCheckTS'
 import { customizePaths } from '../utils/customizePaths'
 import { customizeWebpack } from '../utils/customizeWebpack'
 import { customizeServer } from '../utils/customizeServer'
-import { customizeAppInfo } from '../utils/customizeAppInfo'
 
 export default class Start extends Command {
   static description = 'Run a dev server for development'

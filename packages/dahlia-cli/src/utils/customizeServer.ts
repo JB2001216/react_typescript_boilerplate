@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
 import { join } from 'path'
 import { Configuration } from 'webpack-dev-server'
-import { devServerConfigPath, projectDir } from './paths'
+import { devServerConfigPath, appDir } from './paths'
 import { getDahliaConfig } from './getDahliaConfig'
 
 export const customizeServer = () => {
@@ -14,8 +14,8 @@ export const customizeServer = () => {
     const config: Configuration = configFunction(proxy, allowedHost, env)
     // TODO
     config.contentBase = [
-      join(projectDir, '.dahlia', 'public'),
-      join(projectDir, 'public'),
+      join(appDir, '.dahlia', 'public'),
+      join(appDir, 'public'),
     ]
     return config
   }

@@ -2,6 +2,7 @@ import { Command } from '@oclif/command'
 
 import { reactScriptsModulePath } from '../utils/paths'
 
+import { customizeAppInfo } from '../utils/customizeAppInfo'
 import { createEntryFile } from '../utils/createEntryFile'
 import { createHtmlFile } from '../utils/createHtmlFile'
 import { createPublicFiles } from '../utils/createPublicFiles'
@@ -18,9 +19,13 @@ export default class Build extends Command {
   async run() {
     process.env.NODE_ENV = 'production'
 
+    customizeAppInfo()
+
+    // create file
     createEntryFile()
     createHtmlFile()
     createPublicFiles()
+
     customizePaths()
     customizeWebpack()
     disableCheckRequiredFilesPath()

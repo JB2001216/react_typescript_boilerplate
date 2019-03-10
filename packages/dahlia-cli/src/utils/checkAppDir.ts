@@ -3,8 +3,8 @@ import chalk from 'chalk'
 import { filesToCheck } from './config'
 
 export function checkAppDir(root: string, appName: string) {
-  const projectDirFiles = fs.readdirSync(root)
-  const conflictFiles = projectDirFiles.reduce(
+  const appDirFiles = fs.readdirSync(root)
+  const conflictFiles = appDirFiles.reduce(
     (result: string[], cur) => (filesToCheck.includes(cur) ? [...result, cur] : result),
     [],
   )
