@@ -18,6 +18,7 @@ import { disableCheckTS } from '../utils/disableCheckTS'
 import { customizePaths } from '../utils/customizePaths'
 import { customizeWebpack } from '../utils/customizeWebpack'
 import { customizeServer } from '../utils/customizeServer'
+import { customizeAppInfo } from '../utils/customizeAppInfo'
 
 export default class Start extends Command {
   static description = 'Run a dev server for development'
@@ -26,6 +27,8 @@ export default class Start extends Command {
 
   async run() {
     process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+
+    customizeAppInfo()
 
     // create files
     createEntryFile()
