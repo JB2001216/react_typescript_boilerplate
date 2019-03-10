@@ -1,7 +1,7 @@
 import spawn from 'cross-spawn'
 
 import { canUseYarn } from './canUseYarn'
-import { deps } from '../config'
+import { deps } from './config'
 
 function getInstallArgs(root: string) {
   const useYarn = canUseYarn()

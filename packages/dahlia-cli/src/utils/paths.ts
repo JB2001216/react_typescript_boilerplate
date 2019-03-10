@@ -39,6 +39,9 @@ export const tmpRoutesConfigPath = `${projectDir}/.dahlia/config/routes.ts`
 
 export const entryPath = `${projectDir}/.dahlia/index.ts`
 
+export const htmlPath = `${projectDir}/.dahlia/index.html`
+export const publicDir = `${projectDir}/.dahlia/public`
+
 export const localesDir = `${projectDir}/locales`
 
 export const defaultLocalePath = `${projectDir}/locales/default.ts`

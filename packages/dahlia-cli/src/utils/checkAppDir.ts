@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import chalk from 'chalk'
-import { filesToCheck } from '../config'
+import { filesToCheck } from './config'
 
 export function checkAppDir(root: string, appName: string) {
   const projectDirFiles = fs.readdirSync(root)

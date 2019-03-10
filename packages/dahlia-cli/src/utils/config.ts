@@ -1,3 +1,5 @@
+import { formatCode } from './formatCode'
+
 export const deps = [
   '@types/jest',
   '@types/react',
@@ -29,7 +31,30 @@ export const filesToCheck = [
   'README.md',
 ]
 
-export const entryText = `
+export const htmlText = formatCode(
+  `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <title>Dahlia App</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+  </body>
+</html>
+`,
+  'html',
+)
+
+export const entryText = formatCode(`
 import Dahlia, { Config } from 'dahlia'
 import routes from './config/routes'
 
@@ -65,5 +90,4 @@ Dahlia.bootstrap(config)
 //   .catch(() => {
 //     Dahlia.bootstrap(config)
 //   })
-
-`
+`)
