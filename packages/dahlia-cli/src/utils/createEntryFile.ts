@@ -1,5 +1,5 @@
 import fs from 'fs-extra'
-import { entryText } from '../config'
+import { entryText } from './config'
 import { tmpDir, entryPath } from './paths'
 
 export const createEntryFile = () => {

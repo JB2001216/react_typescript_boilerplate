@@ -2,6 +2,8 @@ import { Command } from '@oclif/command'
 
 import { reactScriptsModulePath } from '../utils/paths'
 import { createEntryFile } from '../utils/createEntryFile'
+import { createHtmlFile } from '../utils/createHtmlFile'
+import { createPublicFiles } from '../utils/createPublicFiles'
 import { createConfigFile } from '../utils/createConfigFile'
 import { createRoutesFile } from '../utils/createRoutesFile'
 import { createLocaleTypings } from '../utils/createLocaleTypings'
@@ -27,6 +29,8 @@ export default class Start extends Command {
 
     // create files
     createEntryFile()
+    createPublicFiles()
+    createHtmlFile()
     createConfigFile()
     createRoutesFile()
     // createLocalesFiles()
