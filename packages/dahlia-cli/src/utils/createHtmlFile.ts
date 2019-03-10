@@ -1,8 +1,8 @@
 import fs from 'fs-extra'
-import { htmlText } from './config'
+import texts from './texts'
 import { tmpDir, htmlPath } from './paths'
 
 export const createHtmlFile = () => {
   fs.ensureDirSync(tmpDir)
-  fs.writeFileSync(htmlPath, htmlText, { encoding: 'utf8' })
+  fs.writeFileSync(htmlPath, texts.html, { encoding: 'utf8' })
 }

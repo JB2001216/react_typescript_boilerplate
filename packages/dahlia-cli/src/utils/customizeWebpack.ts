@@ -17,10 +17,11 @@ export const customizeWebpack = () => {
       styledJsx(),
       overrideWebpackExclude(),
     )
+    // TODO: node
     if (fs.existsSync(dahliaConfigPath)) {
       const dahliaConfig = require(dahliaConfigPath)
-      if (dahliaConfig.webpack) {
-        return dahliaConfig.webpack(newConfig, env)
+      if (dahliaConfig.default && dahliaConfig.default.webpack) {
+        return dahliaConfig.default.webpack(newConfig, env)
       }
       return newConfig
     }
