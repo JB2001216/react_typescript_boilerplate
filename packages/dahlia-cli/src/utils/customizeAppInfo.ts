@@ -1,17 +1,15 @@
 import fs from 'fs-extra'
 import { dahliaConfigPath } from './paths'
 import texts from './texts'
+import { getDahliaConfig } from './getDahliaConfig'
 
 export const customizeAppInfo = () => {
   if (fs.existsSync(dahliaConfigPath)) {
-    const dahliaConfig = require(dahliaConfigPath)
-    // TODO: need check config file
-    if (!dahliaConfig.default) {
-      return;
-    }
-    const config = dahliaConfig.default
-    if (config.title) {
-      texts.html = texts.html.replace('%TITLE%', config.title)
+    const dahliaConfig = getDahliaConfig()
+
+    if (!dahliaConfig) return
+    if (dahliaConfig.title) {
+      texts.html = texts.html.replace('%TITLE%', dahliaConfig.title)
     }
   }
 }
