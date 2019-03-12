@@ -7,11 +7,18 @@ import { Update, UpdateResult } from './types'
 export const useUpdate = <T extends {}>(url: string) => {
   const initialState = {} as UpdateResult<T>
   const [result, setState] = useState(initialState)
-  const { endpoint } = dahliaHttpConfig.rest
 
   const updateData = async () => {
     try {
-      const res = await fetch(endpoint + url)
+      let reqURL = url
+
+      if (dahliaHttpConfig.rest) {
+        const { endpoint } = dahliaHttpConfig.rest
+        const isAbsoluteURL = /http:\/\/|https:\/\//.test(url)
+        reqURL = isAbsoluteURL ? url : endpoint + url
+      }
+      const res = await fetch(reqURL)
+
       if (res.status >= 400) {
         throw new Error('Bad response from server')
       }

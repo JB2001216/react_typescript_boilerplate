@@ -7,7 +7,10 @@ import { Variables, Mutate, MutateResult } from './types'
 export const useMutate = <T extends {}>(gqlStr: string) => {
   const initialState = {} as MutateResult<T>
   const [result, setState] = useState(initialState)
-  const { endpoint } = dahliaHttpConfig.graphql
+  let endpoint = ''
+  if (dahliaHttpConfig.graphql) {
+    endpoint = dahliaHttpConfig.graphql.endpoint
+  }
 
   const fetchData = async (variables: Variables = {}) => {
     try {
