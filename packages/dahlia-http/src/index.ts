@@ -1,8 +1,6 @@
-import { request } from './request'
-import { useQuery } from './use-query'
-import { useMutate } from './use-mutate'
-import { useFetch } from './use-fetch'
-import { useUpdate } from './use-update'
-import { config, dahliaHttpConfig } from './config'
-
-export { request, useQuery, useMutate, useFetch, useUpdate, config, dahliaHttpConfig }
+export * from './request'
+export * from './use-query'
+export * from './use-mutate'
+export * from './use-fetch'
+export * from './use-update'
+export * from './config'
