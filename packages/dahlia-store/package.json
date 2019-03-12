@@ -57,7 +57,6 @@
     "react-dom": "^16.8.3"
   },
   "dependencies": {
-    "cross-fetch": "^3.0.1",
     "dahlia-http": "^1.0.4",
     "fast-deep-equal": "^2.0.1",
     "gery": "^1.1.3",

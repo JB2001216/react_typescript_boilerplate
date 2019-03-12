@@ -1,4 +1,4 @@
-import { createStore, Result } from 'dahlia-store'
+import { createStore, Result } from '../src'
 
 interface TodoItem {
   id: number
