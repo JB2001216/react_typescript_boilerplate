@@ -4,13 +4,13 @@ import { query } from 'gery'
 import { dahliaHttpConfig } from './config'
 import { Variables, QueryResult } from './types'
 
-export const useQuery = <T extends {}>(
-  gqlStr: string,
-  variables?: Variables,
-) => {
+export const useQuery = <T extends {}>(gqlStr: string, variables?: Variables) => {
   const initialState = {} as QueryResult<T>
   const [result, setState] = useState(initialState)
-  const { endpoint } = dahliaHttpConfig.graphql
+  let endpoint = ''
+  if (dahliaHttpConfig.graphql) {
+    endpoint = dahliaHttpConfig.graphql.endpoint
+  }
 
   const fetchData = async (variables: Variables = {}) => {
     setState(prev => ({ ...prev, loading: true }))

@@ -1,3 +1,21 @@
+export interface Interceptor {
+  request?: (data: any) => any
+  response?: (data: any) => any
+}
+
+export interface DahliaHttpConfig {
+  graphql?: {
+    endpoint: string
+  }
+  rest?: {
+    endpoint: string
+    interceptors?: Array<{
+      request?: (data: any) => any
+      response?: (data: any) => any
+    }>
+  }
+}
+
 export let dahliaHttpConfig = {
   graphql: {
     endpoint: '/graphql',
@@ -5,8 +23,8 @@ export let dahliaHttpConfig = {
   rest: {
     endpoint: '/',
   },
-}
+} as DahliaHttpConfig
 
-export function config(options: Partial<typeof dahliaHttpConfig>) {
+export function config(options: DahliaHttpConfig) {
   dahliaHttpConfig = { ...dahliaHttpConfig, ...options }
 }

@@ -9,3 +9,5 @@ node_modules/
 *.swp
 dist/
 coverage/
+
+.dahlia/

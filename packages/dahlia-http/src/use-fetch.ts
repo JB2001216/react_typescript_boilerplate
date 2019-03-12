@@ -7,13 +7,19 @@ import { FetchResult } from './types'
 export const useFetch = <T extends {}>(url: string) => {
   const initialState = { loading: true } as FetchResult<T>
   const [result, setState] = useState(initialState)
-  const { endpoint } = dahliaHttpConfig.rest
 
-  const fetchData = async (path: string) => {
+  const fetchData = async (url: string) => {
     setState(prev => ({ ...prev, loading: true }))
-    const url = /http:\/\/|https:\/\//.test(path) ? path : endpoint + path
+
+    let reqURL = url
+
+    if (dahliaHttpConfig.rest) {
+      const { endpoint } = dahliaHttpConfig.rest
+      const isAbsoluteURL = /http:\/\/|https:\/\//.test(url)
+      reqURL = isAbsoluteURL ? url : endpoint + url
+    }
     try {
-      const res = await fetch(url)
+      const res = await fetch(reqURL)
       if (res.status >= 400) {
         throw new Error('Bad response from server')
       }
