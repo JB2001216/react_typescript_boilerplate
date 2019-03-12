@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import fetch from 'cross-fetch'
 
-import { dahliaHttpConfig } from './config'
 import { Update, UpdateResult } from './types'
+import { request } from './request'
 
 export const useUpdate = <T extends {}>(url: string) => {
   const initialState = {} as UpdateResult<T>
@@ -10,19 +9,7 @@ export const useUpdate = <T extends {}>(url: string) => {
 
   const updateData = async () => {
     try {
-      let reqURL = url
-
-      if (dahliaHttpConfig.rest) {
-        const { endpoint } = dahliaHttpConfig.rest
-        const isAbsoluteURL = /http:\/\/|https:\/\//.test(url)
-        reqURL = isAbsoluteURL ? url : endpoint + url
-      }
-      const res = await fetch(reqURL)
-
-      if (res.status >= 400) {
-        throw new Error('Bad response from server')
-      }
-      const data = await res.json()
+      const data: T = await request(url)
       setState(prev => ({ ...prev, loading: false, data }))
     } catch (error) {
       setState(prev => ({ ...prev, loading: false, error }))
