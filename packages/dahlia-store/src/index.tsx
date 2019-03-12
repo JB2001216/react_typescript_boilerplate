@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import crossfetch from 'cross-fetch'
 import produce from 'immer'
 import { GraphQLClient } from 'gery'
-import { dahliaHttpConfig } from 'dahlia-http'
+import { dahliaHttpConfig, request } from 'dahlia-http'
 // import equal from 'fast-deep-equal'
 
 import { useMount, useUnmount, getActionName } from './util'
@@ -89,18 +88,15 @@ function createStore<S, R extends Reducers<S>, E extends Effects>(opt: Opt<S, R,
 
   async function fetch(url: string, options?: any) {
     const { stateKey } = options || ({} as any)
-    const { endpoint } = dahliaHttpConfig.rest
     const key = stateKey || url
+    setTimeout(() => {
+      console.log('dahliaHttpConfig:', dahliaHttpConfig)
+    }, 1500)
 
     updateStore(key, true)
 
     try {
-      const res: any = await crossfetch(endpoint + url)
-      if (res.status >= 400) {
-        throw new Error('Bad response from server')
-      }
-      const data = await res.json()
-
+      const data = await request(url)
       updateStore(key, false, data)
       return data
     } catch (error) {
@@ -113,7 +109,10 @@ function createStore<S, R extends Reducers<S>, E extends Effects>(opt: Opt<S, R,
 
   async function query(gqlStr: string, variables?: Variables, options?: any) {
     const { stateKey } = options || ({} as any)
-    const { endpoint } = dahliaHttpConfig.graphql
+    let endpoint: string = '/graphql'
+    if (dahliaHttpConfig.graphql) {
+      endpoint = dahliaHttpConfig.graphql.endpoint
+    }
     const client = new GraphQLClient({ endpoint, headers: {} })
     const key = stateKey || gqlStr
 

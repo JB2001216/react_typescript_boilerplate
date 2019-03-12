@@ -1,6 +1,5 @@
 import React from 'react'
 import { useMount } from 'react-use'
-
 import todoStore from '../stores/todoStore'
 
 const TodoItem = () => {
