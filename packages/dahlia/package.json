@@ -1,6 +1,6 @@
 {
   "name": "dahlia",
-  "version": "1.11.2",
+  "version": "1.11.3",
   "description": "An opinionated React Framework for building modern web applications.",
   "main": "index.js",
   "module": "index.es.js",
@@ -84,7 +84,7 @@
     "dahlia-form": "^1.0.3",
     "dahlia-http": "^1.0.6",
     "dahlia-router": "^1.0.2",
-    "dahlia-store": "^1.2.0",
+    "dahlia-store": "^1.2.1",
     "gery": "^1.1.3",
     "gql-tag": "^1.0.1",
     "styled-components": "^4.1.3",
