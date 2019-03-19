@@ -32,6 +32,7 @@
     "react-dom": "^16.8.4",
     "rimraf": "^2.6.3",
     "rollup": "^1.6.0",
+    "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-typescript2": "^0.19.3",
     "typescript": "^3.3.3333"
