@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2'
+import autoExternal from 'rollup-plugin-auto-external'
 
 import pkg from './package.json'
 
@@ -18,8 +19,9 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['react', 'react-dom', 'path-parser', 'stamen'],
+  external: ['react', 'react-dom'],
   plugins: [
+    autoExternal(),
     typescript({
       rollupCommonJSResolveHack: true,
     }),
