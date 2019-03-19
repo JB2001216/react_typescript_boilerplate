@@ -882,6 +882,11 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
+"@nx-js/observer-util@^4.2.1":
+  version "4.2.2"
+  resolved "http://registry.npm.taobao.org/@nx-js/observer-util/download/@nx-js/observer-util-4.2.2.tgz#faea1bc61936653486d1b5dec7485220991e628d"
+  integrity sha1-+uobxhk2ZTSG0bXex0hSIJkeYo0=
+
 "@oclif/command@^1.5.8":
   version "1.5.11"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.5.11.tgz#5f540b2eba234cfda9bd8102076ba99b9e821e85"
@@ -8935,6 +8940,13 @@ react-dom@^16.8.0-alpha.1, react-dom@^16.8.4:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.13.4"
+
+react-easy-state@^6.1.1:
+  version "6.1.1"
+  resolved "http://registry.npm.taobao.org/react-easy-state/download/react-easy-state-6.1.1.tgz#29a1abcda4566d305fb2312c7ca7cb147ca879cd"
+  integrity sha1-KaGrzaRWbTBfsjEsfKfLFHyoec0=
+  dependencies:
+    "@nx-js/observer-util" "^4.2.1"
 
 react-error-overlay@^5.1.4:
   version "5.1.4"

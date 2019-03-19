@@ -1,10 +1,11 @@
 import React from 'react'
-import { createStore, Observer } from '../src'
+
+import { createStore, Observer, observe } from '../src'
 
 const counterStore = createStore({
   count: 10,
   increment() {
-    console.log('...');
+    console.log('...')
     counterStore.count++
   },
   decrement() {
@@ -20,11 +21,34 @@ const counterStore = createStore({
   },
 })
 
+class A extends React.Component<{ p: string }> {
+  render() {
+    return (
+      <div>
+        <Observer>{<span>{counterStore.count}</span>}</Observer>
+        <button onClick={counterStore.decrement}>-</button>
+        <button onClick={counterStore.increment}>+</button>
+        <button onClick={counterStore.asyncIncrement}>async+</button>
+      </div>
+    )
+  }
+}
+
+const App = observe(A)
+
+// const App = observe<{ p: string }>(() => {
+//   return (
+//     <div>
+//       <Observer>{() => <span>{counterStore.count}</span>}</Observer>
+//       <button onClick={counterStore.decrement}>-</button>
+//       <button onClick={counterStore.increment}>+</button>
+//       <button onClick={counterStore.asyncIncrement}>async+</button>
+//     </div>
+//   )
+// })
+
 export default () => (
   <div>
-    <Observer>{() => <span>{counterStore.count}</span>}</Observer>
-    <button onClick={counterStore.decrement}>-</button>
-    <button onClick={counterStore.increment}>+</button>
-    <button onClick={counterStore.asyncIncrement}>async+</button>
+    <App p={'qwerty'} />
   </div>
 )
