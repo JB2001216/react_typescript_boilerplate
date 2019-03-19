@@ -18,6 +18,9 @@
     "@types/react-dom": "^16.8.2",
     "dahlia": "^1.10.6",
     "dahlia-cli": "^1.2.0",
+    "dahlia-http": "^1.0.5",
+    "dahlia-store": "^1.1.0",
+    "immer": "^2.1.3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "typescript": "^3.3.3333"
