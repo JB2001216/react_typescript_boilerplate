@@ -1,0 +1,46 @@
+{
+  "name": "dahlia-observable",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "clean:dist": "rimraf dist/*",
+    "build": "npm run clean:dist && rollup -c && npm run min",
+    "build:watch": "npm run clean:dist && rollup -c -w",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/examples/",
+      "/.history/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/forsigner/dahlia.git"
+  },
+  "author": "forsigner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://.com/forsigner/dahlia/issues"
+  },
+  "homepage": "https://github.com/forsigner/dahlia#README",
+  "devDependencies": {
+    "@types/jest": "^24.0.9",
+    "jest": "^24.1.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.4.0",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.19.3",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  }
+}
