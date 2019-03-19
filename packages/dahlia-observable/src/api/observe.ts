@@ -16,4 +16,5 @@ export function observe(reaction: Reaction, options?: Options): any {
 
   globalState.runners.push(runner)
   if (!isLazy(options)) reaction()
+  return reaction
 }
