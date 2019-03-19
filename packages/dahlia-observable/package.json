@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "clean:dist": "rimraf dist/*",
-    "build": "npm run clean:dist && rollup -c && npm run min",
+    "build": "npm run clean:dist && rollup -c",
     "build:watch": "npm run clean:dist && rollup -c -w",
     "test": "jest",
     "test:watch": "jest --watch"
