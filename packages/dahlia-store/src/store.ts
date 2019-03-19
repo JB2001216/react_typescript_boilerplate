@@ -1,1 +1,5 @@
-export { observable as createStore } from 'dahlia-observable'
+import { observable } from 'dahlia-observable'
+
+export function createStore<T extends object>(obj: T) {
+  return observable(obj, true)
+}

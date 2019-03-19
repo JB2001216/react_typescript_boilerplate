@@ -5,7 +5,7 @@ export class Observer extends React.Component {
   constructor(props: any) {
     super(props)
 
-    observe(this.render, {
+    this.render = observe(this.render, {
       scheduler: () => this.setState({}),
       lazy: true,
     })
