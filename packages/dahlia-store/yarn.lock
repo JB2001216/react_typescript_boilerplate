@@ -276,11 +276,6 @@
     "@types/istanbul-lib-coverage" "^1.1.0"
     "@types/yargs" "^12.0.9"
 
-"@nx-js/observer-util@^4.2.2":
-  version "4.2.2"
-  resolved "http://registry.npm.taobao.org/@nx-js/observer-util/download/@nx-js/observer-util-4.2.2.tgz#faea1bc61936653486d1b5dec7485220991e628d"
-  integrity sha1-+uobxhk2ZTSG0bXex0hSIJkeYo0=
-
 "@types/babel__core@^7.1.0":
   version "7.1.0"
   resolved "http://registry.npm.taobao.org/@types/babel__core/download/@types/babel__core-7.1.0.tgz#710f2487dda4dcfd010ca6abb2b4dc7394365c51"
@@ -869,6 +864,11 @@ csstype@^2.2.0:
   version "2.6.3"
   resolved "http://registry.npm.taobao.org/csstype/download/csstype-2.6.3.tgz#b701e5968245bf9b08d54ac83d00b624e622a9fa"
   integrity sha1-twHlloJFv5sI1UrIPQC2JOYiqfo=
+
+dahlia-observable@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.0.tgz#0f304a0084836e9579f569dedaffa3f154482db2"
+  integrity sha1-DzBKAISDbpV59Wne2v+j8VRILbI=
 
 dashdash@^1.12.0:
   version "1.14.1"

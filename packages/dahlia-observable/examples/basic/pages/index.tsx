@@ -1,5 +1,5 @@
 import React from 'react'
-import { observe, observable } from '../src'
+import { observe, observable } from 'dahlia-observable'
 
 const store = observable({
   count: 10,

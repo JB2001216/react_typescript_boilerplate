@@ -1,1 +1,1 @@
-export { observable as store } from '@nx-js/observer-util'
+export { observable as createStore } from 'dahlia-observable'
