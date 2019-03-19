@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import Path from 'path-parser'
-
 import { Page, Pages } from './typings'
 
 interface Route {

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Link } from 'corolla'
+import { Router, Link } from './src/index'
 
 const Home = () => (
   <div className="home">

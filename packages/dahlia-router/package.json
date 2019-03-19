@@ -38,7 +38,7 @@
     "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "path-parser": "^4.2.0",
-    "stamen": "^1.9.0"
+    "dahlia-store": "^1.2.4",
+    "path-parser": "^4.2.0"
   }
 }

@@ -1,5 +1,5 @@
-import { dispatch } from './routerStore'
+import store from './routerStore'
 
 export default function navigate(to: string, replace?: boolean) {
-  dispatch(A => A.go, { path: to, replace })
+  store.go({ path: to, replace })
 }
