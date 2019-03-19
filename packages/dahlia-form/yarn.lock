@@ -3707,8 +3707,8 @@ rimraf@^2.5.4, rimraf@^2.6.2, rimraf@^2.6.3:
 
 rollup-plugin-auto-external@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-auto-external/-/rollup-plugin-auto-external-2.0.0.tgz#98fd137d66c1cbe0f4e245b31560a72dbde896aa"
-  integrity sha512-HQM3ZkZYfSam1uoZtAB9sK26EiAsfs1phrkf91c/YX+S07wugyRXSigBxrIwiLr5EPPilKYmoMxsrnlGBsXnuQ==
+  resolved "http://registry.npm.taobao.org/rollup-plugin-auto-external/download/rollup-plugin-auto-external-2.0.0.tgz#98fd137d66c1cbe0f4e245b31560a72dbde896aa"
+  integrity sha1-mP0TfWbBy+D04kWzFWCnLb3olqo=
   dependencies:
     builtins "^2.0.0"
     read-pkg "^3.0.0"
