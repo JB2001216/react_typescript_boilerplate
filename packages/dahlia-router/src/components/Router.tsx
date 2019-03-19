@@ -1,23 +1,20 @@
 import React from 'react'
+import { Observer } from 'dahlia-store'
 
 import { getPath, createPage, useMount, useUnmount } from '../util'
-import { useStore, dispatch } from '../routerStore'
+import store from '../routerStore'
 
 const handlePop = () => {
-  dispatch(A => A.go, { path: getPath(), replace: false })
+  store.go({ path: getPath(), replace: false })
 }
 
-const Router: React.SFC<{ routes: any[] }> = props => {
-  const { currentPage, defaultPage, inited } = useStore(S => ({
-    currentPage: S.currentPage,
-    defaultPage: S.defaultPage,
-    inited: S.inited,
-  }))
+const Router: any = (props: any) => {
+  const { currentPage, defaultPage, inited } = store
 
   useMount(() => {
     addEventListener('popstate', handlePop)
-    dispatch(A => A.init, props.routes)
-    dispatch(A => A.go, { path: getPath() })
+    store.init(props.routes)
+    store.go({ path: getPath() })
   })
 
   useUnmount(() => {
@@ -25,10 +22,12 @@ const Router: React.SFC<{ routes: any[] }> = props => {
   })
 
   const DefaultPage = defaultPage.component
+
   if (!currentPage) {
     return inited ? <DefaultPage /> : null
   }
-  return createPage([currentPage], [])
+
+  return <Observer>{() => createPage([store.currentPage], [])}</Observer>
 }
 
 export default Router
