@@ -1,20 +1,18 @@
-import React, { Props } from 'react'
+import React  from 'react'
 import { observe as run } from 'dahlia-observable'
 import equal from 'fast-deep-equal'
 
-export function observe(WrappedComponent: any) {
-  return class extends React.Component {
-    constructor(props: Props<any>) {
-      super(props)
+export function observe(Comp: any) {
+  const isSFC = !(Comp.prototype && Comp.prototype.isReactComponent)
+  const BaseComp = isSFC ? React.Component : Comp
 
-      run(this.render, {
+  return class extends BaseComp {
+    constructor(props: any) {
+      super(props)
+      this.render = run(this.render, {
         scheduler: () => this.setState({}),
         lazy: true,
       })
-    }
-
-    render() {
-      return <WrappedComponent {...this.props} />
     }
 
     shouldComponentUpdate(nextProps: any, nextState: any) {
@@ -29,6 +27,10 @@ export function observe(WrappedComponent: any) {
       if (state !== nextState) return true
 
       return !equal(props, nextProps)
+    }
+
+    render() {
+      return isSFC ? Comp(this.props, this.context) : super.render()
     }
   }
 }

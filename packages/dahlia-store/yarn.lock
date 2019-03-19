@@ -865,10 +865,10 @@ csstype@^2.2.0:
   resolved "http://registry.npm.taobao.org/csstype/download/csstype-2.6.3.tgz#b701e5968245bf9b08d54ac83d00b624e622a9fa"
   integrity sha1-twHlloJFv5sI1UrIPQC2JOYiqfo=
 
-dahlia-observable@^1.0.2:
-  version "1.0.2"
-  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.2.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fdahlia-observable%2Fdownload%2Fdahlia-observable-1.0.2.tgz#d567852b4dbed16b641604197a41b118851520a2"
-  integrity sha1-1WeFK02+0WtkFgQZekGxGIUVIKI=
+dahlia-observable@^1.0.3:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.3.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fdahlia-observable%2Fdownload%2Fdahlia-observable-1.0.3.tgz#a8ed9f7116e6c2c573c3259b198344cfeccf1e05"
+  integrity sha1-qO2fcRbmwsVzwyWbGYNEz+zPHgU=
 
 dashdash@^1.12.0:
   version "1.14.1"
