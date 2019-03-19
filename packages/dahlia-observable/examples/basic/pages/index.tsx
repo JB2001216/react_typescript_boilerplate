@@ -1,8 +1,12 @@
 import React from 'react'
-import { observe, observable } from 'dahlia-observable'
+import { observe, observable, raw } from '../src'
 
 const store = observable({
   count: 10,
+  about: {
+    name: 'couter',
+    init: 10,
+  },
   increment() {
     store.count++
   },
@@ -21,5 +25,9 @@ observe(() => {
 
 store.increment()
 store.asyncIncrement()
+console.log(store);
+console.log(store.about);
+console.log(raw(store));
+console.log(raw(store.about));
 
 export default () => <div>hi dahlia</div>
