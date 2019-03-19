@@ -1,7 +1,7 @@
 import React from 'react'
-import { store, Observer } from '../src'
+import { createStore, Observer } from '../src'
 
-const counterStore = store({
+const counterStore = createStore({
   count: 10,
   increment() {
     console.log('...');

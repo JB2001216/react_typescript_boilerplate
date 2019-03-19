@@ -3307,6 +3307,11 @@ dahlia-http@^1.0.5:
     cross-fetch "^3.0.1"
     gery "^1.1.3"
 
+dahlia-observable@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.0.tgz#0f304a0084836e9579f569dedaffa3f154482db2"
+  integrity sha1-DzBKAISDbpV59Wne2v+j8VRILbI=
+
 dahlia-router@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dahlia-router/-/dahlia-router-1.0.0.tgz#888f76da6494417417b42c769395039c6cb5519e"

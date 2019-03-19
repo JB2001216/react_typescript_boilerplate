@@ -54,7 +54,7 @@
     "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "@nx-js/observer-util": "^4.2.2",
+    "dahlia-observable": "^1.0.0",
     "fast-deep-equal": "^2.0.1"
   }
 }
