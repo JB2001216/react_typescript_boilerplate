@@ -26,5 +26,6 @@ export let dahliaHttpConfig = {
 } as DahliaHttpConfig
 
 export function config(options: DahliaHttpConfig) {
+  console.log('optins:', options);
   dahliaHttpConfig = { ...dahliaHttpConfig, ...options }
 }

@@ -3,8 +3,8 @@ import React from 'react'
 import { config, useFetch } from './src'
 
 config({
-  rest: {
-    endpoint: 'https://jsonplaceholder.typicode.com',
+  graphql: {
+    endpoint: 'https://api.graph.cool/simple/v1/swapi',
   },
 })
 
