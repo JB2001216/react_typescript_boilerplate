@@ -27,7 +27,6 @@ export const request = async <T extends any>(url: string): Promise<T> => {
     interceptors.forEach(item => {
       if (!item.response) return
       responseData = item.response(responseData)
-      console.log('responseData:', responseData)
     })
 
     return responseData
