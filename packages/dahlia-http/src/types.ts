@@ -1,3 +1,12 @@
+export interface Options {
+  method?: 'GET' | 'POST' | 'DELETE' | 'PUT' | 'PATCH'
+  body?: string
+  headers?: {
+    [key: string]: string
+  }
+  credentials?: 'omit' | 'same-origin' | 'include'
+}
+
 export interface Variables {
   [key: string]: any
 }

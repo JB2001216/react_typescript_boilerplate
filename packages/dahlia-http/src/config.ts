@@ -28,3 +28,4 @@ export let dahliaHttpConfig = {
 export function config(options: DahliaHttpConfig) {
   dahliaHttpConfig = { ...dahliaHttpConfig, ...options }
 }
+

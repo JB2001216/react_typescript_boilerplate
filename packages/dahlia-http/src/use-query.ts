@@ -4,7 +4,7 @@ import { query } from 'gery'
 import { dahliaHttpConfig } from './config'
 import { Variables, QueryResult } from './types'
 
-export const useQuery = <T extends {}>(gqlStr: string, variables?: Variables) => {
+export const useQuery = <T extends any>(gqlStr: string, variables?: Variables) => {
   const initialState = {} as QueryResult<T>
   const [result, setState] = useState(initialState)
   let endpoint = ''

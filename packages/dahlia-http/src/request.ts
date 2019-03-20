@@ -1,7 +1,8 @@
 import fetch from 'cross-fetch'
 import { dahliaHttpConfig, Interceptor } from './config'
+import { Options } from './types'
 
-export const request = async <T extends any>(url: string): Promise<T> => {
+export const request = async <T extends any>(url: string, options?: Options): Promise<T> => {
   let reqURL: string = url
   let interceptors: Interceptor[] = []
 
@@ -15,8 +16,9 @@ export const request = async <T extends any>(url: string): Promise<T> => {
     }
   }
 
+  const args: [string, Options?] = !options ? [reqURL] : [reqURL, options]
   try {
-    const res = await fetch(reqURL)
+    const res = await fetch(...args)
     if (res.status >= 400) {
       throw new Error('Bad response from server')
     }
