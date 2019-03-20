@@ -1,36 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Link } from './src/index'
+import { Router, Link } from './src'
 
 const Home = () => (
   <div className="home">
-    <Link to="/">Home</Link>
-    <br />
-    <Link to="/about">About</Link>
-    <br />
-    <Link to="/contact">Contact</Link>
     <h1>Home</h1>
   </div>
 )
 
 const About = () => (
   <div className="about">
-    <Link to="/">Home</Link>
-    <br />
-    <Link to="/about">About</Link>
-    <br />
-    <Link to="/contact">Contact</Link>
     <h1>About</h1>
   </div>
 )
 
 const Contact = () => (
   <div className="contact">
-    <Link to="/">Home</Link>
-    <br />
-    <Link to="/about">About</Link>
-    <br />
-    <Link to="/contact">Contact</Link>
     <h1>Contact</h1>
   </div>
 )
@@ -50,6 +35,17 @@ const routes = [
   },
 ]
 
-const App = () => <Router routes={routes} />
+const App = () => (
+  <div>
+    <Link to="/">Home</Link>
+    <br />
+    <Link to="/about">About</Link>
+    <br />
+    <Link to="/contact">Contact</Link>
+    <div>
+      <Router routes={routes} />
+    </div>
+  </div>
+)
 
 ReactDOM.render(<App />, document.getElementById('root'))

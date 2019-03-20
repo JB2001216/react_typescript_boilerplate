@@ -59,7 +59,6 @@ const store = createStore({
       store.currentPath = path
       store.currentPage = rootPage
       store.params = params || {}
-      console.log('store.currentPage:', store.currentPage)
       replace ? replaceState(path) : pushState(path)
     }
   },

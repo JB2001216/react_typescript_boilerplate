@@ -1,5 +1,5 @@
 import React from 'react'
-import { Observer } from 'dahlia-store'
+import { observe } from 'dahlia-store'
 
 import store from '../routerStore'
 import navigate from '../navigate'
@@ -26,24 +26,20 @@ function getClassName(props: Props, currentPath: string): string {
   return classes.join(' ')
 }
 
-const Link: React.SFC<Props> = props => {
+const Link = observe<Props>(props => {
   const { currentPath } = store
   if (!currentPath) return null
   const { to, replace, className, activeClassName, ...restProps } = props
   return (
-    <Observer>
-      {() => (
-        <a
-          href={to}
-          onClick={e => go(e, to, !!replace)}
-          className={getClassName(props, currentPath)}
-          {...restProps}
-        >
-          {props.children}
-        </a>
-      )}
-    </Observer>
+    <a
+      href={to}
+      onClick={e => go(e, to, !!replace)}
+      className={getClassName(props, currentPath)}
+      {...restProps}
+    >
+      {props.children}
+    </a>
   )
-}
+})
 
 export default Link
