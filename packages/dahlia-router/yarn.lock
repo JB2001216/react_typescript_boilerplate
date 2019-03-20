@@ -158,10 +158,10 @@ dahlia-observable@^1.0.3:
   resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.3.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fdahlia-observable%2Fdownload%2Fdahlia-observable-1.0.3.tgz#a8ed9f7116e6c2c573c3259b198344cfeccf1e05"
   integrity sha1-qO2fcRbmwsVzwyWbGYNEz+zPHgU=
 
-dahlia-store@^1.2.4:
-  version "1.2.4"
-  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.4.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fdahlia-store%2Fdownload%2Fdahlia-store-1.2.4.tgz#7296446eb002ce896ed31e0ebd3b80bc8215584c"
-  integrity sha1-cpZEbrACzolu0x4OvTuAvIIVWEw=
+dahlia-store@^1.2.5:
+  version "1.2.5"
+  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.5.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fdahlia-store%2Fdownload%2Fdahlia-store-1.2.5.tgz#2750b633e31ac880ab4f3068583243f97efff9c2"
+  integrity sha1-J1C2M+MayICrTzBoWDJD+X7/+cI=
   dependencies:
     dahlia-observable "^1.0.3"
     fast-deep-equal "^2.0.1"
