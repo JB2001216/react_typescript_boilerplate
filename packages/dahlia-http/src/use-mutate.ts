@@ -4,7 +4,7 @@ import { query } from 'gery'
 import { dahliaHttpConfig } from './config'
 import { Variables, Mutate, MutateResult } from './types'
 
-export const useMutate = <T extends {}>(gqlStr: string) => {
+export const useMutate = <T extends any>(gqlStr: string) => {
   const initialState = {} as MutateResult<T>
   const [result, setState] = useState(initialState)
   let endpoint = ''
