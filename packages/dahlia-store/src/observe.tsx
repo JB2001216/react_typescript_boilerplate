@@ -1,6 +1,6 @@
 import React, { ComponentType } from 'react'
 
-import { observe as run } from 'dahlia-observable'
+import { observe as run, unobserve } from 'dahlia-observable'
 import equal from 'fast-deep-equal'
 
 export function observe<P>(Comp: ComponentType<P>) {
@@ -17,6 +17,10 @@ export function observe<P>(Comp: ComponentType<P>) {
       const { props, state } = this
       if (state !== nextState) return true
       return !equal(props, nextProps)
+    }
+
+    componentWillUnmount() {
+      unobserve(this.render)
     }
 
     render() {

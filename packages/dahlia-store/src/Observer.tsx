@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { observe } from 'dahlia-observable'
+import { observe, unobserve } from 'dahlia-observable'
 import equal from 'fast-deep-equal'
 
 export class Observer extends React.Component {
@@ -16,6 +16,10 @@ export class Observer extends React.Component {
     const { props, state } = this
     if (state !== nextState) return true
     return !equal(props, nextProps)
+  }
+
+  componentWillUnmount() {
+    unobserve(this.render)
   }
 
   render() {
