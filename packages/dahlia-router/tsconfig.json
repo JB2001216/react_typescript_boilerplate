@@ -4,7 +4,7 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "target": "es5",
-    "lib": ["es7", "dom"],
+    "lib": ["es7", "dom", "esnext.asynciterable"],
     "declaration": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
