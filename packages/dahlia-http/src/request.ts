@@ -18,7 +18,6 @@ function getDefaultOpt(options: Options = {}): Options {
 
 function getOpt(options?: Options) {
   const defaultOpt = getDefaultOpt(options)
-
   if (!options) return defaultOpt
   const { headers } = options
   options.headers = { ...defaultOpt.headers, ...headers }
