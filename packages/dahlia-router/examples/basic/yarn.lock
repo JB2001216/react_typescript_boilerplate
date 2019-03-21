@@ -2849,17 +2849,17 @@ cyclist@~0.2.2:
   resolved "http://registry.npm.taobao.org/cyclist/download/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
-dahlia-observable@^1.0.3:
-  version "1.0.3"
-  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.3.tgz#a8ed9f7116e6c2c573c3259b198344cfeccf1e05"
-  integrity sha1-qO2fcRbmwsVzwyWbGYNEz+zPHgU=
+dahlia-observable@^1.0.4:
+  version "1.0.4"
+  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.4.tgz#7b7f69e09e9c208444bd19d0d6fc3f7fef874734"
+  integrity sha1-e39p4J6cIIREvRnQ1vw/f++HRzQ=
 
-dahlia-store@^1.2.2:
-  version "1.2.4"
-  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.4.tgz#7296446eb002ce896ed31e0ebd3b80bc8215584c"
-  integrity sha1-cpZEbrACzolu0x4OvTuAvIIVWEw=
+dahlia-store@^1.2.7:
+  version "1.2.7"
+  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.7.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fdahlia-store%2Fdownload%2Fdahlia-store-1.2.7.tgz#ddbb20a2fc33bf66a3407bd9599b2f029e0b517e"
+  integrity sha1-3bsgovwzv2ajQHvZWZsvAp4LUX4=
   dependencies:
-    dahlia-observable "^1.0.3"
+    dahlia-observable "^1.0.4"
     fast-deep-equal "^2.0.1"
 
 damerau-levenshtein@^1.0.4:
