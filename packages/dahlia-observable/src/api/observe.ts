@@ -15,9 +15,7 @@ export function observe(reaction: Reaction, options?: Options): any {
   const { runners } = globalState
   const runner: Runner = { reaction, scheduler }
 
-  const find = runners.find(item => item.reaction === runner.reaction)
-
-  if (!find) runners.push(runner)
+  runners.push(runner)
 
   if (!isLazy(options)) reaction()
   return reaction
