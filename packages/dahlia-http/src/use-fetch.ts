@@ -7,30 +7,29 @@ import { Options } from './types'
 export const useFetch = <T extends any>(url: string, options?: Options) => {
   const initialState = { loading: true } as FetchResult<T>
   const [result, setState] = useState(initialState)
+  let unmounted = false
 
   const fetchData = async (url: string) => {
-    setState(prev => ({ ...prev, loading: true }))
-
     const args: [string, Options?] = !options ? [url] : [url, options]
     try {
       const data: T = await request(...args)
-      setState(prev => ({ ...prev, loading: false, data }))
+      !unmounted && setState(prev => ({ ...prev, loading: false, data }))
     } catch (error) {
-      setState(prev => ({ ...prev, loading: false, error }))
+      !unmounted && setState(prev => ({ ...prev, loading: false, error }))
     }
   }
 
   const refetch = (url: string): any => {
+    setState(prev => ({ ...prev, loading: true }))
     fetchData(url)
   }
 
-  useMount(() => {
+  useEffect(() => {
     fetchData(url)
-  })
+    return () => {
+      unmounted = true
+    }
+  }, [])
 
   return { ...result, refetch }
-}
-
-function useMount(mount: any): void {
-  useEffect(mount, [])
 }
