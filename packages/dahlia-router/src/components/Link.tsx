@@ -28,7 +28,6 @@ function getClassName(props: Props, currentPath: string): string {
 
 const Link = observe<Props>(props => {
   const { currentPath } = store
-  if (!currentPath) return null
   const { to, replace, className, activeClassName, ...restProps } = props
   return (
     <a
