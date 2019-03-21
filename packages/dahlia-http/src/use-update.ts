@@ -4,14 +4,20 @@ import { Update, UpdateResult } from './types'
 import { request } from './request'
 import { Options } from './types'
 
+function getOptions(options?: Options): Options {
+  const defaultOpt = { method: 'POST' } as Options
+  if (!options) return defaultOpt
+  return { ...defaultOpt, ...options }
+}
+
 export const useUpdate = <T extends any>(url: string, options?: Options) => {
   const initialState = {} as UpdateResult<T>
   const [result, setState] = useState(initialState)
 
   const updateData = async () => {
     try {
-      const args: [string, Options?] = !options ? [url] : [url, options]
-      const data: T = await request(...args)
+      const opt = getOptions(options)
+      const data: T = await request(url, opt)
       setState(prev => ({ ...prev, loading: false, data }))
     } catch (error) {
       setState(prev => ({ ...prev, loading: false, error }))
