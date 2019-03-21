@@ -1,6 +1,6 @@
 {
   "name": "dahlia-router",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -38,7 +38,7 @@
     "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "dahlia-store": "^1.2.5",
+    "dahlia-store": "^1.2.6",
     "path-parser": "^4.2.0"
   }
 }
