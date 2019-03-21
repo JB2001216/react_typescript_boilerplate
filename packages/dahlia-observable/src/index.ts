@@ -1,7 +1,6 @@
 export { observable } from './api/observable'
 export { observe } from './api/observe'
+export { unobserve } from './api/unobserve'
 export { action } from './api/action'
 export { raw } from './api/raw'
 export { isObservable } from './api/isObservable'
-
-
