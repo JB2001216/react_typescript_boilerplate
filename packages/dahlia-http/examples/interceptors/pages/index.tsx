@@ -26,7 +26,7 @@ config({
 
 const AppFetch = () => {
   const { loading, data, error, refetch } = useFetch(
-    'http://localhost:7001/v1/api/check-points/count?reportId=1',
+    '/todos/1',
   )
 
   if (loading) return <div>loading....</div>

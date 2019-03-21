@@ -3304,10 +3304,10 @@ dahlia-http@^1.0.0:
     cross-fetch "^3.0.1"
     gery "^1.1.3"
 
-dahlia-http@^1.0.5:
-  version "1.0.5"
-  resolved "http://registry.npm.taobao.org/dahlia-http/download/dahlia-http-1.0.5.tgz#c88be3a1b16bc0e6832fd8f38836ba9f4a823dbb"
-  integrity sha1-yIvjobFrwOaDL9jziDa6n0qCPbs=
+dahlia-http@^1.0.8:
+  version "1.0.8"
+  resolved "http://registry.npm.taobao.org/dahlia-http/download/dahlia-http-1.0.8.tgz#45a57bdf3b4f53eb310f7af19aeec29f650e7401"
+  integrity sha1-RaV73ztPU+sxD3rxmu7Cn2UOdAE=
   dependencies:
     cross-fetch "^3.0.1"
     gery "^1.1.3"
