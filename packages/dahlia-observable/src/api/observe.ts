@@ -12,9 +12,13 @@ function getScheduler(options?: Options): Scheduler | undefined {
 
 export function observe(reaction: Reaction, options?: Options): any {
   const scheduler = getScheduler(options)
+  const { runners } = globalState
   const runner: Runner = { reaction, scheduler }
 
-  globalState.runners.push(runner)
+  const find = runners.find(item => item.reaction === runner.reaction)
+
+  if (!find) runners.push(runner)
+
   if (!isLazy(options)) reaction()
   return reaction
 }
