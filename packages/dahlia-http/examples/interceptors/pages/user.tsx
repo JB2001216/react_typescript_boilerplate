@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 // import { config, request } from 'dahlia-http'
-import { config, request, useFetch, useUpdate } from '../src'
+import { config, request, useFetch } from '../src'
 import Nav from '../components/Nav'
 
 interface Todo {
@@ -34,24 +34,8 @@ const AppFetch = () => {
 
   return (
     <div className="App">
-      <pre>{JSON.stringify(data, null, 2)}</pre>
       <button onClick={() => refetch('/todos/2')}>refetch</button>
-    </div>
-  )
-}
-
-const AppUpdate = () => {
-  const [addTodo, { loading, data, error }] = useUpdate('/todos/10')
-
-  return (
-    <div className="App">
-      <button onClick={() => addTodo()}>
-        {loading === undefined && 'Add Todo'}
-        {loading !== undefined && (loading ? 'loading...' : ' Added')}
-      </button>
-
-      {error && <pre>{JSON.stringify(error, null, 2)}</pre>}
-      {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   )
 }
@@ -76,7 +60,6 @@ const App = () => {
       <Nav />
       <pre>{JSON.stringify(data, null, 2)}</pre>
       <AppFetch />
-      <AppUpdate />
     </div>
   )
 }
