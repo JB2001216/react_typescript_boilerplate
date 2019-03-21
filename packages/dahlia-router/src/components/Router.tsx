@@ -8,7 +8,7 @@ const handlePop = () => {
   store.go({ path: getPath(), replace: false })
 }
 
-const Router = observe<{routes: any[]}>((props) => {
+const Router = observe<{ routes: any[] }>(props => {
   const { currentPage, defaultPage, inited } = store
 
   useMount(() => {
@@ -23,10 +23,11 @@ const Router = observe<{routes: any[]}>((props) => {
 
   const DefaultPage = defaultPage.component
 
-  if (!currentPage) {
+  if (currentPage && !Object.keys(currentPage).length) {
     return inited ? <DefaultPage /> : null
   }
-  return createPage([store.currentPage], [])
+
+  return createPage([currentPage], [])
 })
 
 export default Router
