@@ -13,11 +13,7 @@ const counterStore = createStore({
     counterStore.count--
   },
   async asyncIncrement() {
-    await new Promise(resolve => {
-      setTimeout(() => {
-        resolve()
-      }, 3000)
-    })
+    await new Promise(resolve => setTimeout(resolve, 1000))
     counterStore.count++
   },
 })
