@@ -20,6 +20,7 @@
     "dahlia": "^1.10.10",
     "dahlia-cli": "^1.2.0",
     "dahlia-http": "^1.0.1",
+    "dahlia-store": "^1.2.11",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "typescript": "^3.3.3333"
