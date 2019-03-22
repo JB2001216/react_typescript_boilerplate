@@ -15,6 +15,7 @@ export const useUpdate = <T extends any>(url: string, options?: Options) => {
   const [result, setState] = useState(initialState)
 
   const updateData = async () => {
+    setState(prev => ({ ...prev, loading: true }))
     try {
       const opt = getOptions(options)
       const data: T = await request(url, opt)
@@ -25,7 +26,6 @@ export const useUpdate = <T extends any>(url: string, options?: Options) => {
   }
 
   const update = (): any => {
-    setState(prev => ({ ...prev, loading: true }))
     updateData()
   }
 

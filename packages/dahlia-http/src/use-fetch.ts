@@ -36,6 +36,7 @@ export function useFetch<T extends any>(url: string, optionsOrDeps?: Deps | Opti
   const dependences = getDeps(optionsOrDeps, deps)
 
   const fetchData = async (url: string, options?: Options) => {
+    setState(prev => ({ ...prev, loading: true }))
     try {
       const data: T = await request(url, options)
       !unmounted && setState(prev => ({ ...prev, loading: false, data }))
@@ -45,8 +46,7 @@ export function useFetch<T extends any>(url: string, optionsOrDeps?: Deps | Opti
   }
 
   const refetch = (url: string, options?: Options): any => {
-    setState(prev => ({ ...prev, loading: true }))
-    fetchData(url, options|| {})
+    fetchData(url, options || {})
   }
 
   useEffect(() => {
