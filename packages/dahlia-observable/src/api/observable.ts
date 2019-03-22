@@ -3,20 +3,22 @@ import { action } from '../api/action'
 import { globalState } from '../core/globalState'
 import { invokeRunners } from '../core/invokeRunners'
 
-export function observable<T extends object>(obj: T, init?: boolean) {
-  if (init === undefined) init = true
+export function observable<T extends object>(obj: T): T
+export function observable<T extends object>(obj: T, root: boolean): T
+
+export function observable<T extends object>(obj: T, root?: boolean) {
+  if (root === undefined) root = true
 
   if (!canObservable(obj)) return obj
 
-  const object: T = globalState.proxies.get(obj) || toObservable(obj, init)
+  const object: T = globalState.proxies.get(obj) || toObservable(obj, root)
   return object
 }
 
 export function toObservable<T extends object>(obj: T, init: boolean) {
   if (init) {
     const fnKeys = Object.keys(obj).reduce(
-      (result, key) =>
-        typeof obj[key] === 'function' ? [...result, key] : result,
+      (result, key) => (typeof obj[key] === 'function' ? [...result, key] : result),
       [] as string[],
     )
 
