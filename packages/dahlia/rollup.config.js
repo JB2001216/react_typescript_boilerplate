@@ -20,6 +20,7 @@ const getOutput = file => {
   if (file === 'index') {
     output.push({
       file: `${file}.es.js`,
+
       format: 'es',
       exports: 'named',
       sourcemap: true,
@@ -33,5 +34,6 @@ const files = ['index', 'router', 'store', 'http', 'form']
 export default files.map(file => ({
   input: `src/${file}.tsx`,
   output: getOutput(file),
+  external: ['react', 'react-dom'],
   plugins,
 }))
