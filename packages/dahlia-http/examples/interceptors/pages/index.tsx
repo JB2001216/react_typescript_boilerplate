@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import { createStore, observe } from 'dahlia-store'
+
 // import { config, request } from 'dahlia-http'
 import { config, request, useFetch, useUpdate } from '../src'
 import Nav from '../components/Nav'
@@ -23,22 +25,32 @@ config({
     ],
   },
 })
+const store = createStore({
+  id: 1,
+  setId() {
+    store.id++
+  },
+})
 
-const AppFetch = () => {
-  const { loading, data, error, refetch } = useFetch(
-    '/todos/1',
-  )
+setTimeout(() => {
+  store.setId()
+}, 3000)
+
+const AppFetch = observe(() => {
+  const { loading, data, error, refetch } = useFetch(`/todos/${store.id}`, [store.id])
 
   if (loading) return <div>loading....</div>
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>
+  console.log('render appp.....')
 
   return (
     <div className="App">
+      count: {store.id}
       <pre>{JSON.stringify(data, null, 2)}</pre>
       <button onClick={() => refetch('/todos/2')}>refetch</button>
     </div>
   )
-}
+})
 
 const AppUpdate = () => {
   const [addTodo, { loading, data, error }] = useUpdate('/todos/10')

@@ -3445,6 +3445,11 @@ dahlia-http@^1.0.2:
     cross-fetch "^3.0.1"
     gery "^1.1.3"
 
+dahlia-observable@^1.0.5:
+  version "1.0.5"
+  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.5.tgz#6b717c54f8812021884ce79569e285d0c38b3e86"
+  integrity sha1-a3F8VPiBICGITOeVaeKF0MOLPoY=
+
 dahlia-router@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/dahlia-router/download/dahlia-router-1.0.0.tgz#888f76da6494417417b42c769395039c6cb5519e"
@@ -3463,6 +3468,14 @@ dahlia-store@^1.0.3:
     fast-deep-equal "^2.0.1"
     gery "^1.1.3"
     immer "^2.1.0"
+
+dahlia-store@^1.2.11:
+  version "1.2.11"
+  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.11.tgz#3fbdfff93b7ea11107032324f2abda535268ae1f"
+  integrity sha1-P73/+Tt+oREHAyMk8qvaU1Jorh8=
+  dependencies:
+    dahlia-observable "^1.0.5"
+    fast-deep-equal "^2.0.1"
 
 dahlia-webpack-less@^1.0.6, dahlia-webpack-less@^1.0.7:
   version "1.0.10"
