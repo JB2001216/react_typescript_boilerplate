@@ -20,7 +20,7 @@ yarn global add dahlia-cli
 New a Dahlia app:
 
 ```bash
-dh new my-app
+dh new myapp
 ```
 
 You will get:
@@ -29,19 +29,15 @@ You will get:
 .
 ├── README.md
 ├── package.json
-├── public
-│   └── index.html
-├── src
-│   └── pages
-│       └── index.tsx
-├── tsconfig.json
-└── yarn.lock
+├── pages
+│   └── index.tsx
+└── tsconfig.json
 ```
 
 Run dev server:
 
 ```bash
-cd my-app
+cd myapp
 dh start
 ```
 
