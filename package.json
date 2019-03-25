@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "dahlia-project",
   "scripts": {
     "build": "lerna run --parallel --stream build",
     "build:watch": "lerna run --parallel --stream build:watch",
