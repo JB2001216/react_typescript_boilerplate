@@ -14,6 +14,7 @@ export const useQuery = <T extends any>(gqlStr: string, variables?: Variables) =
   }
 
   const fetchData = async (variables: Variables = {}) => {
+    setState(prev => ({ ...prev, loading: true }))
     try {
       const data = await query<T>(endpoint, gqlStr, variables)
       !unmounted && setState(prev => ({ ...prev, loading: false, data }))
@@ -23,7 +24,6 @@ export const useQuery = <T extends any>(gqlStr: string, variables?: Variables) =
   }
 
   const refetch = (variables?: Variables): any => {
-    setState(prev => ({ ...prev, loading: true }))
     fetchData(variables)
   }
 
