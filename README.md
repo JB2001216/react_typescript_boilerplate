@@ -5,44 +5,23 @@
 
 > An opinionated React Framework for building modern web applications.
 
-<a href="https://dahlia.gitbook.io/dahlia/" target="_blank">Doc(Coming...)</a>
-|
 <a href="https://dahlia-cn.gitbook.io/dahlia/" target="_blank">文档</a>
 
 ## Quick Start
 
-Install Dahlia CLI:
 
 ```bash
+# Install Dahlia CLI
 yarn global add dahlia-cli
-```
 
-New a Dahlia app:
+# New a Dahlia app
+dh new myapp
 
-```bash
-dh new my-app
-```
+# Run dev server:
+cd myapp && dh start
 
-You will get:
-
-```bash
-.
-├── README.md
-├── package.json
-├── public
-│   └── index.html
-├── src
-│   └── pages
-│       └── index.tsx
-├── tsconfig.json
-└── yarn.lock
-```
-
-Run dev server:
-
-```bash
-cd my-app
-dh start
+# Build to deploy
+dh build
 ```
 
 ![dh](http://forsigner.com/images/dahlia/dahlia-app.png)
