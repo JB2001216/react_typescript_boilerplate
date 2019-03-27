@@ -4,5 +4,5 @@ import { tmpDir, baseDir, publicDir } from './paths'
 
 export const createPublicFiles = () => {
   fs.ensureDirSync(tmpDir)
-  fs.copySync(join(baseDir, 'src', 'assets', 'public'), publicDir)
+  fs.copySync(join(baseDir, 'assets', 'public'), publicDir)
 }
