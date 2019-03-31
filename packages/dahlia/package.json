@@ -75,6 +75,7 @@
   "dependencies": {
     "@types/styled-components": "^4.1.12",
     "@types/styled-jsx": "^2.2.8",
+    "antd": "^3.15.2",
     "checkok": "^1.1.1",
     "checkok-email": "^1.0.1",
     "checkok-max": "^1.0.1",

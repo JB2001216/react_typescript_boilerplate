@@ -49,7 +49,7 @@ function getModalsConfig(modals: string[]) {
   const modalArr = formatModals(modals)
   const importFiles = modalArr
     .map(item => {
-      return `import ${item.modalName} from '${item.modalImportPath}'`
+      return `import ${item.cmpName} from '${item.modalImportPath}'`
     })
     .join('\n')
   const modalsString = modalArr
@@ -85,9 +85,7 @@ function writeFileFromModalsFile() {
   writeFile(text)
 }
 
-function createFile() {}
-
-export const createModalsFile = () => {
+export const createModalConfig = () => {
   fs.ensureDirSync(tmpConfigDir)
 
   if (fs.existsSync(modalConfigPath)) {

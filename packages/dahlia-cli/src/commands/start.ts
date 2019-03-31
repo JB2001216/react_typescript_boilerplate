@@ -6,13 +6,15 @@ import { createEntryFile } from '../utils/createEntryFile'
 import { createHtmlFile } from '../utils/createHtmlFile'
 import { createPublicFiles } from '../utils/createPublicFiles'
 import { createConfigFile } from '../utils/createConfigFile'
-import { createRoutesFile } from '../utils/createRoutesFile'
-import { createModalsFile } from '../utils/createModalsFile'
+import { createRouterConfig } from '../utils/createRouterConfig'
+import { createModalConfig } from '../utils/createModalConfig'
 import { createLocaleTypings } from '../utils/createLocaleTypings'
 // import { createLocalesFiles } from '../utils/createLocalesFiles'
 import { watchConfig } from '../utils/watchConfig'
-import { watchRoutes } from '../utils/watchRoutes'
+import { watchRouterConfig } from '../utils/watchRouterConfig'
+import { watchModalConfig } from '../utils/watchModalConfig'
 import { watchPages } from '../utils/watchPages'
+import { watchModals } from '../utils/watchModals'
 import { watchLocale } from '../utils/watchLocale'
 import { disableCheckRequiredFilesPath } from '../utils/disableCheckRequiredFilesPath'
 import { disableClearConsole } from '../utils/disableClearConsole'
@@ -36,15 +38,17 @@ export default class Start extends Command {
     createPublicFiles()
     createHtmlFile()
     createConfigFile()
-    createRoutesFile()
-    createModalsFile()
+    createRouterConfig()
+    createModalConfig()
     // createLocalesFiles()
     await createLocaleTypings()
 
     // watch files
     watchConfig()
-    watchRoutes()
+    watchRouterConfig()
     watchPages()
+    watchModalConfig()
+    watchModals()
     watchLocale()
 
     // customize cra
