@@ -3747,10 +3747,10 @@ cyclist@~0.2.2:
   resolved "http://registry.npm.taobao.org/cyclist/download/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
-dahlia-cli@^1.2.8:
-  version "1.2.8"
-  resolved "http://registry.npm.taobao.org/dahlia-cli/download/dahlia-cli-1.2.8.tgz#bc19f304a316f20b115134231d6e00bc163ec801"
-  integrity sha1-vBnzBKMW8gsRUTQjHW4AvBY+yAE=
+dahlia-cli@^1.2.9:
+  version "1.2.9"
+  resolved "http://registry.npm.taobao.org/dahlia-cli/download/dahlia-cli-1.2.9.tgz#5899c4e0b9a55e320ccb8604b1d2d2adabe30d92"
+  integrity sha1-WJnE4LmlXjIMy4YEsdLSravjDZI=
   dependencies:
     "@oclif/command" "^1.5.12"
     "@oclif/config" "^1.12.11"
@@ -3774,10 +3774,10 @@ dahlia-cli@^1.2.8:
     react-scripts "^2.1.8"
     tslib "^1.9.3"
 
-dahlia-form@^1.0.3:
-  version "1.0.3"
-  resolved "http://registry.npm.taobao.org/dahlia-form/download/dahlia-form-1.0.3.tgz#6278133f74085175fbe2fbaf759233bb9230a0be"
-  integrity sha1-YngTP3QIUXX74vuvdZIzu5IwoL4=
+dahlia-form@^1.0.4:
+  version "1.0.4"
+  resolved "http://registry.npm.taobao.org/dahlia-form/download/dahlia-form-1.0.4.tgz#497198aff188b5aa89411f761580d4da832a572a"
+  integrity sha1-SXGYr/GItaqJQR92FYDU2oMqVyo=
   dependencies:
     checkok "^1.1.1"
     deepmerge "^3.2.0"
@@ -3787,33 +3787,40 @@ dahlia-form@^1.0.3:
     lodash.set "^4.3.2"
     util-is-array "^1.0.0"
 
-dahlia-http@^1.0.9:
-  version "1.0.9"
-  resolved "http://registry.npm.taobao.org/dahlia-http/download/dahlia-http-1.0.9.tgz#8b3a12483ab7370b08a808d642983c9c8a72ba81"
-  integrity sha1-izoSSDq3NwsIqAjWQpg8nIpyuoE=
+dahlia-http@^1.0.12:
+  version "1.0.12"
+  resolved "http://registry.npm.taobao.org/dahlia-http/download/dahlia-http-1.0.12.tgz#7668a9d69cb8ece59ef5178e769e1a177b5b1b8b"
+  integrity sha1-dmip1py47OWe9ReOdp4aF3tbG4s=
   dependencies:
     cross-fetch "^3.0.1"
     gery "^1.1.3"
 
-dahlia-observable@^1.0.5:
-  version "1.0.5"
-  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.5.tgz#6b717c54f8812021884ce79569e285d0c38b3e86"
-  integrity sha1-a3F8VPiBICGITOeVaeKF0MOLPoY=
-
-dahlia-router@^1.0.11:
-  version "1.0.11"
-  resolved "http://registry.npm.taobao.org/dahlia-router/download/dahlia-router-1.0.11.tgz#6e6a2f17171a48042ba10540c7ae96bc4239aa33"
-  integrity sha1-bmovFxcaSAQroQVAx66WvEI5qjM=
+dahlia-modal@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/dahlia-modal/download/dahlia-modal-1.0.0.tgz#fc09130f3d07ce0deab0398dd5c30b6dbfd3ae40"
+  integrity sha1-/AkTDz0Hzg3qsDmN1cMLbb/TrkA=
   dependencies:
-    dahlia-store "^1.2.11"
+    dahlia-store "^1.2.14"
+
+dahlia-observable@^1.0.8:
+  version "1.0.8"
+  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.8.tgz#570f67c1bf8fef21fc1c10bfe7fd2090d3be8d19"
+  integrity sha1-Vw9nwb+P7yH8HBC/5/0gkNO+jRk=
+
+dahlia-router@^1.0.14:
+  version "1.0.14"
+  resolved "http://registry.npm.taobao.org/dahlia-router/download/dahlia-router-1.0.14.tgz#f64d63a94c2d6acb90a4faa54893a10cb999bcff"
+  integrity sha1-9k1jqUwtasuQpPqlSJOhDLmZvP8=
+  dependencies:
+    dahlia-store "^1.2.14"
     path-parser "^4.2.0"
 
-dahlia-store@^1.2.11:
-  version "1.2.11"
-  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.11.tgz#3fbdfff93b7ea11107032324f2abda535268ae1f"
-  integrity sha1-P73/+Tt+oREHAyMk8qvaU1Jorh8=
+dahlia-store@^1.2.14:
+  version "1.2.14"
+  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.14.tgz#75dc5dd7f4225dbae3ac0d32e7c60c647bcd601a"
+  integrity sha1-ddxd1/QiXbrjrA0y58YMZHvNYBo=
   dependencies:
-    dahlia-observable "^1.0.5"
+    dahlia-observable "^1.0.8"
     fast-deep-equal "^2.0.1"
 
 dahlia-webpack-less@^1.0.10:

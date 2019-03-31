@@ -83,6 +83,7 @@
     "dahlia-cli": "^1.2.9",
     "dahlia-form": "^1.0.4",
     "dahlia-http": "^1.0.12",
+    "dahlia-modal": "^1.0.0",
     "dahlia-router": "^1.0.14",
     "dahlia-store": "^1.2.14",
     "gery": "^1.1.3",
