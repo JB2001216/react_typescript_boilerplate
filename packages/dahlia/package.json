@@ -21,6 +21,9 @@
     "router.d.ts",
     "router.js",
     "router.js.map",
+    "modal.d.ts",
+    "modal.js",
+    "modal.js.map",
     "store.d.ts",
     "store.js",
     "store.js.map"
