@@ -1,6 +1,6 @@
 {
   "name": "dahlia-cli",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "CLI tool for Dahlia",
   "author": "forsigner",
   "bin": {
