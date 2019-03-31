@@ -29,7 +29,7 @@ const getOutput = file => {
   return output
 }
 
-const files = ['index', 'router', 'store', 'http', 'form']
+const files = ['index', 'router', 'store', 'http', 'form', 'modal']
 
 export default files.map(file => ({
   input: `src/${file}.tsx`,
