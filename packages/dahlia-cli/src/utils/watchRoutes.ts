@@ -1,9 +1,9 @@
 import { watch } from 'chokidar'
-import { routesPath } from './paths'
+import { routerConfigPath } from './paths'
 import { createRoutesFile } from './createRoutesFile'
 
 export const watchRoutes = () => {
-  watch(routesPath, {
+  watch(routerConfigPath, {
     ignoreInitial: true,
   }).on('all', eventType => {
     if (['add', 'change', 'unlink'].includes(eventType)) {

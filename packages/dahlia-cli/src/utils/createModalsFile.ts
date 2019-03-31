@@ -2,7 +2,7 @@ import fs from 'fs-extra'
 import jetpack from 'fs-jetpack'
 
 import {
-  modalsPath,
+  modalConfigPath,
   modalsDir,
   tmpConfigDir,
   tmpModalsConfigPath,
@@ -77,7 +77,7 @@ function writeFile(text: string) {
 }
 
 function writeFileFromModalsFile() {
-  const routesConfig = fs.readFileSync(modalsPath, { encoding: 'utf8' })
+  const routesConfig = fs.readFileSync(modalConfigPath, { encoding: 'utf8' })
   const text = routesConfig
     .replace(/\.\.\/modals/g, '../../modals')
     .replace(/\.\.\/layouts/g, '../../layouts')
@@ -85,15 +85,20 @@ function writeFileFromModalsFile() {
   writeFile(text)
 }
 
+function createFile() {}
+
 export const createModalsFile = () => {
   fs.ensureDirSync(tmpConfigDir)
 
-  if (fs.existsSync(modalsPath)) {
+  if (fs.existsSync(modalConfigPath)) {
     writeFileFromModalsFile()
     return
   }
 
-  const modals = jetpack.find(modalsDir, { matching: '**/*.tsx' })
+  const modals: string[] = fs.existsSync(modalsDir)
+    ? jetpack.find(modalsDir, { matching: '**/*.tsx' })
+    : []
+
   const modasText = getModalsConfig(modals)
   const code = formatCode(modasText)
   writeFile(code)

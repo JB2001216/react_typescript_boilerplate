@@ -25,8 +25,8 @@ const htmlText = formatCode(
 
 export const entryText = formatCode(`
 import Dahlia, { Config } from '../src'
-import routes from './config/routes'
-import modals from './config/modals'
+import routes from './config/router.config'
+import modals from './config/modal.config'
 
 const { NODE_ENV } = process.env
 

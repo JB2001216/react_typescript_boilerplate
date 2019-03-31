@@ -2,7 +2,7 @@ import fs from 'fs-extra'
 import jetpack from 'fs-jetpack'
 
 import {
-  routesPath,
+  routerConfigPath,
   pagesDir,
   tmpConfigDir,
   tmpRoutesConfigPath,
@@ -76,7 +76,7 @@ function writeFile(text: string) {
 }
 
 function writeFileFromRoutesFile() {
-  const routesConfig = fs.readFileSync(routesPath, { encoding: 'utf8' })
+  const routesConfig = fs.readFileSync(routerConfigPath, { encoding: 'utf8' })
   const text = routesConfig
     .replace(/\.\.\/pages/g, '../../pages')
     .replace(/\.\.\/layouts/g, '../../layouts')
@@ -88,7 +88,7 @@ function writeFileFromRoutesFile() {
 export const createRoutesFile = () => {
   fs.ensureDirSync(tmpConfigDir)
 
-  if (fs.existsSync(routesPath)) {
+  if (fs.existsSync(routerConfigPath)) {
     writeFileFromRoutesFile()
     return
   }
