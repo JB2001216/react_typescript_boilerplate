@@ -2,6 +2,7 @@ import { Routes } from 'dahlia-router'
 
 export interface Config {
   routes: Routes
+  modals: any
   graphql?: {
     endpoint: string
   }
