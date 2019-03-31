@@ -7,6 +7,7 @@ import { createHtmlFile } from '../utils/createHtmlFile'
 import { createPublicFiles } from '../utils/createPublicFiles'
 import { createConfigFile } from '../utils/createConfigFile'
 import { createRoutesFile } from '../utils/createRoutesFile'
+import { createModalsFile } from '../utils/createModalsFile'
 import { createLocaleTypings } from '../utils/createLocaleTypings'
 // import { createLocalesFiles } from '../utils/createLocalesFiles'
 import { watchConfig } from '../utils/watchConfig'
@@ -36,6 +37,7 @@ export default class Start extends Command {
     createHtmlFile()
     createConfigFile()
     createRoutesFile()
+    createModalsFile()
     // createLocalesFiles()
     await createLocaleTypings()
 

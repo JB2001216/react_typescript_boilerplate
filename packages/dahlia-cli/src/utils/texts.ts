@@ -24,13 +24,15 @@ const htmlText = formatCode(
 )
 
 export const entryText = formatCode(`
-import Dahlia, { Config } from 'dahlia'
+import Dahlia, { Config } from '../src'
 import routes from './config/routes'
+import modals from './config/modals'
 
 const { NODE_ENV } = process.env
 
 let config: Config = {
   routes,
+  modals,
   root: '#root',
 } as Config
 

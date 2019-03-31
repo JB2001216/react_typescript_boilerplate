@@ -1,7 +1,12 @@
 import fs from 'fs-extra'
 import jetpack from 'fs-jetpack'
 
-import { routesPath, pagesDir, tmpConfigDir, tmpRoutesConfigPath } from './paths'
+import {
+  routesPath,
+  pagesDir,
+  tmpConfigDir,
+  tmpRoutesConfigPath,
+} from './paths'
 import { formatCode } from './formatCode'
 
 function last(arr: string[]): string {
@@ -23,7 +28,9 @@ function formatPages(pages: string[]) {
     const HOME_PAGE = 'pages/index.tsx'
     let routerPath: string
     const pageName = getPageName(item)
-    const pageImportPath = item.replace(/^pages/, '../../pages').replace(/\.tsx$/, '')
+    const pageImportPath = item
+      .replace(/^pages/, '../../pages')
+      .replace(/\.tsx$/, '')
     if (item === HOME_PAGE) {
       routerPath = '/'
     } else {
