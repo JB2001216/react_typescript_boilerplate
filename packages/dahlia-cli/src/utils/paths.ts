@@ -27,11 +27,11 @@ export const configs = [
   },
 ]
 
-export const routesPath = `${appDir}/config/routes.ts`
+export const routerConfigPath = `${appDir}/config/router.config.ts`
 
-export const modalsPath = `${appDir}/config/modals.ts`
+export const modalConfigPath = `${appDir}/config/modal.config.ts`
 
-export const tmpRoutesPath = `${appDir}/.dahlia/config/routes.ts`
+export const tmpRouterConfigPath = `${appDir}/.dahlia/config/router.config.ts`
 
 export const devConfigPath = `${appDir}/config/config.dev.ts`
 
@@ -39,9 +39,9 @@ export const tmpDevConfigPath = `${appDir}/.dahlia/config/config.dev.ts`
 
 export const tmpProdConfigPath = `${appDir}/.dahlia/config/config.prod.ts`
 
-export const tmpRoutesConfigPath = `${appDir}/.dahlia/config/routes.ts`
+export const tmpRoutesConfigPath = `${appDir}/.dahlia/config/router.config.ts`
 
-export const tmpModalsConfigPath = `${appDir}/.dahlia/config/modals.ts`
+export const tmpModalsConfigPath = `${appDir}/.dahlia/config/modal.config.ts`
 
 export const entryPath = `${appDir}/.dahlia/index.ts`
 
