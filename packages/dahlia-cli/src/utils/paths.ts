@@ -14,7 +14,7 @@ export const pagesDir = `${appDir}/pages`
 export const pageFiles = `${appDir}/pages/**/*.{ts,tsx}`
 
 export const modalsDir = `${appDir}/modals`
-export const modalsFiles = `${appDir}/modals/**/*.{ts,tsx}`
+export const modalFiles = `${appDir}/modals/**/*.{ts,tsx}`
 
 export const configs = [
   {

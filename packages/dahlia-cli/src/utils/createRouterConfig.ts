@@ -85,7 +85,7 @@ function writeFileFromRoutesFile() {
   writeFile(text)
 }
 
-export const createRoutesFile = () => {
+export const createRouterConfig = () => {
   fs.ensureDirSync(tmpConfigDir)
 
   if (fs.existsSync(routerConfigPath)) {
