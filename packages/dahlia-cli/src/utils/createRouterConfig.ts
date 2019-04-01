@@ -5,7 +5,7 @@ import {
   routerConfigPath,
   pagesDir,
   tmpConfigDir,
-  tmpRoutesConfigPath,
+  tmpRouterConfigPath,
 } from './paths'
 import { formatCode } from './formatCode'
 
@@ -72,7 +72,7 @@ export default routes;
 }
 
 function writeFile(text: string) {
-  fs.writeFileSync(tmpRoutesConfigPath, text, { encoding: 'utf8' })
+  fs.writeFileSync(tmpRouterConfigPath, text, { encoding: 'utf8' })
 }
 
 function writeFileFromRoutesFile() {

@@ -14,7 +14,9 @@ const localeObj = {
 const localeText = `export default ${JSON.stringify(localeObj, null, 2)}`
 
 function writeDefaultFile() {
-  fs.writeFileSync(defaultLocalePath, formatCode(localeText), { encoding: 'utf8' })
+  fs.writeFileSync(defaultLocalePath, formatCode(localeText), {
+    encoding: 'utf8',
+  })
 }
 
 function createLocalesDir() {

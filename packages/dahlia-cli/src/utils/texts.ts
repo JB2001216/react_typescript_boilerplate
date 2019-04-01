@@ -25,8 +25,15 @@ const htmlText = formatCode(
 
 export const entryText = formatCode(`
 import Dahlia, { Config } from 'dahlia'
+import { ResponseInterceptor } from 'dahlia/http'
 import routes from './config/router.config'
 import modals from './config/modal.config'
+import response from './interceptors/response'
+
+const responseInterceptors: ResponseInterceptor[] = Array.isArray(response)
+  ? response
+  : [response]
+
 
 const { NODE_ENV } = process.env
 
@@ -42,6 +49,9 @@ if (NODE_ENV === 'development') {
     ...config,
     ...devConfig,
   }
+  // TODO: set
+  config.rest.interceptor = {} as any
+  config.rest.interceptor.responses = responseInterceptors
 } else {
   const prodConfig = require('./config/config.prod').default
   config = {
