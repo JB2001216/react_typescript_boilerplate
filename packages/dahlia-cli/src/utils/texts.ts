@@ -26,6 +26,10 @@ const htmlText = formatCode(
 export const entryText = formatCode(`
 import Dahlia, { Config } from 'dahlia'
 import { ResponseInterceptor } from 'dahlia/http'
+
+import configDefault from './config/config.default'
+import configLocal from './config/config.local'
+import configProd from './config/config.prod'
 import routes from './config/router.config'
 import modals from './config/modal.config'
 import response from './interceptors/response'
@@ -34,33 +38,29 @@ const responseInterceptors: ResponseInterceptor[] = Array.isArray(response)
   ? response
   : [response]
 
-
 const { NODE_ENV } = process.env
 
-let config: Config = {
+const config = {
   routes,
   modals,
   root: '#root',
 } as Config
 
-if (NODE_ENV === 'development') {
-  const devConfig = require('./config/config.dev').default
-  config = {
-    ...config,
-    ...devConfig,
-  }
-  // TODO: set
-  config.rest.interceptor = {} as any
-  config.rest.interceptor.responses = responseInterceptors
-} else {
-  const prodConfig = require('./config/config.prod').default
-  config = {
-    ...config,
-    ...prodConfig,
-  }
-}
+const isProd = NODE_ENV === 'production'
 
-Dahlia.bootstrap(config)
+const userConfig = isProd
+  ? { ...configDefault, ...configProd }
+  : { ...configDefault, ...configLocal }
+
+const finalConfig = {
+  ...config,
+  ...userConfig,
+} as Config
+
+finalConfig.rest.interceptor = {} as any
+finalConfig.rest.interceptor.responses = responseInterceptors
+
+Dahlia.bootstrap(finalConfig)
 
 // const lang = localStorage.getItem('__lang__') || 'en'
 // import('../locales/' + lang + '.ts')
@@ -71,16 +71,31 @@ Dahlia.bootstrap(config)
 //   .catch(() => {
 //     Dahlia.bootstrap(config)
 //   })
+
 `)
 
-const interceptorText = `
+const interceptor = formatCode(`
 export default (data: any) => {
   return data
 }
-`
+`)
+
+const config = formatCode(`
+const config = {
+  rest: {
+    endpoint: '/',
+  },
+  graphql: {
+    endpoint: '/',
+  },
+  root: '#root'
+}
+export default config
+`)
 
 export default {
   entry: entryText,
   html: htmlText,
-  interceptorText,
+  interceptor,
+  config,
 }

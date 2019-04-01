@@ -1,10 +1,9 @@
 import fs from 'fs-extra'
-import { interceptorPaths, interceptorsDir, tmpInterceptorsDir } from './paths'
+import { interceptorPaths, tmpInterceptorsDir } from './paths'
 import texts from './texts'
-import { formatCode } from './formatCode'
 
 function writeDefaultFile(target: string) {
-  fs.writeFileSync(target, formatCode(texts.interceptorText), {
+  fs.writeFileSync(target, texts.interceptor, {
     encoding: 'utf8',
   })
 }

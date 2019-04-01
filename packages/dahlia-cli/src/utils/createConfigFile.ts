@@ -1,22 +1,25 @@
 import fs from 'fs-extra'
-import { tmpConfigDir, tmpDevConfigPath, tmpProdConfigPath } from './paths'
-import { formatCode } from './formatCode'
+import { configPaths, tmpConfigDir } from './paths'
+import texts from './texts'
 
-const configText = formatCode(`
-const config = {
-  rest: {
-    endpoint: '/',
-  },
-  graphql: {
-    endpoint: '/',
-  },
-  root: '#root'
+function writeDefaultFile(target: string) {
+  fs.writeFileSync(target, texts.config, {
+    encoding: 'utf8',
+  })
 }
-export default config
-`)
+
+function createTmpConifgDir() {
+  fs.ensureDirSync(tmpConfigDir)
+}
 
 export const createConfigFile = () => {
-  fs.ensureDirSync(tmpConfigDir)
-  fs.writeFileSync(tmpDevConfigPath, configText, { encoding: 'utf8' })
-  fs.writeFileSync(tmpProdConfigPath, configText, { encoding: 'utf8' })
+  createTmpConifgDir()
+
+  configPaths.forEach(({ origin, target }) => {
+    if (fs.existsSync(origin)) {
+      fs.copyFileSync(origin, target)
+    } else {
+      writeDefaultFile(target)
+    }
+  })
 }
