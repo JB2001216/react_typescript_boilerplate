@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { createStore, observe } from 'dahlia-store'
 
 // import { config, request } from 'dahlia-http'
-import { config, request, useFetch, useUpdate } from '../src'
+import { request, useFetch, useUpdate } from 'dahlia/http'
 import Nav from '../components/Nav'
 
 interface Todo {
@@ -13,18 +13,6 @@ interface Todo {
   completed: boolean
 }
 
-config({
-  rest: {
-    endpoint: 'https://jsonplaceholder.typicode.com',
-    interceptors: [
-      {
-        response: (data: any) => {
-          return data.title
-        },
-      },
-    ],
-  },
-})
 const store = createStore({
   id: 1,
   setId() {
@@ -37,7 +25,9 @@ setTimeout(() => {
 }, 3000)
 
 const AppFetch = observe(() => {
-  const { loading, data, error, refetch } = useFetch(`/todos/${store.id}`, [store.id])
+  const { loading, data, error, refetch } = useFetch(`/todos/${store.id}`, [
+    store.id,
+  ])
 
   if (loading) return <div>loading....</div>
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>

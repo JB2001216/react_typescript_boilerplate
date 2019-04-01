@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-// import { config, request } from 'dahlia-http'
-import { config, request, useFetch } from '../src'
+import { useFetch, request } from 'dahlia/http'
 import Nav from '../components/Nav'
 
 interface Todo {
@@ -11,23 +10,8 @@ interface Todo {
   completed: boolean
 }
 
-config({
-  rest: {
-    endpoint: 'https://jsonplaceholder.typicode.com',
-    interceptors: [
-      {
-        response: (data: any) => {
-          return data.title
-        },
-      },
-    ],
-  },
-})
-
 const AppFetch = () => {
-  const { loading, data, error, refetch } = useFetch(
-    '/todos/2',
-  )
+  const { loading, data, error, refetch } = useFetch('/todos/2')
 
   if (loading) return <div>loading....</div>
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>
