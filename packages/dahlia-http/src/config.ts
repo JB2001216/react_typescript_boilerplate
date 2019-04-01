@@ -1,6 +1,13 @@
+export type RequestInterceptor = (config: any) => any
+export type RequestErrorInterceptor = (config: any) => any
+export type ResponseInterceptor = (error: any) => any
+export type ResponseErrorInterceptor = (error: any) => any
+
 export interface Interceptor {
-  request?: (data: any) => any
-  response?: (data: any) => any
+  requests?: RequestInterceptor[]
+  requestErrors?: RequestErrorInterceptor[]
+  responses?: ResponseInterceptor[]
+  responseErrors?: ResponseErrorInterceptor[]
 }
 
 export interface DahliaHttpConfig {
@@ -9,10 +16,7 @@ export interface DahliaHttpConfig {
   }
   rest?: {
     endpoint: string
-    interceptors?: Array<{
-      request?: (data: any) => any
-      response?: (data: any) => any
-    }>
+    interceptor?: Interceptor
   }
 }
 
@@ -28,4 +32,3 @@ export let dahliaHttpConfig = {
 export function config(options: DahliaHttpConfig) {
   dahliaHttpConfig = { ...dahliaHttpConfig, ...options }
 }
-
