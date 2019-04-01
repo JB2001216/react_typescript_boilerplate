@@ -26,10 +26,10 @@ function getOpt(options?: Options) {
 
 export const request = async <T extends any>(url: string, options?: Options): Promise<T> => {
   let reqURL: string = url
-  let interceptors: Interceptor[] = []
+  let interceptors = {} as Interceptor
 
   if (dahliaHttpConfig.rest) {
-    const { endpoint, interceptors: configInterceptors } = dahliaHttpConfig.rest
+    const { endpoint, interceptor: configInterceptors } = dahliaHttpConfig.rest
     const isAbsoluteURL = /http:\/\/|https:\/\//.test(url)
     reqURL = isAbsoluteURL ? url : endpoint + url
 
@@ -49,10 +49,11 @@ export const request = async <T extends any>(url: string, options?: Options): Pr
     const data: T = await res.json()
     let responseData: T = data
 
-    interceptors.forEach(item => {
-      if (!item.response) return
-      responseData = item.response(responseData)
-    })
+    if (interceptors.responses) {
+      interceptors.responses.forEach(item => {
+        responseData = item(responseData)
+      })
+    }
 
     return responseData
   } catch (error) {
