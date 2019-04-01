@@ -16,10 +16,14 @@ export const pageFiles = `${appDir}/pages/**/*.{ts,tsx}`
 export const modalsDir = `${appDir}/modals`
 export const modalFiles = `${appDir}/modals/**/*.{ts,tsx}`
 
-export const configs = [
+export const configPaths = [
   {
-    origin: `${appDir}/config/config.dev.ts`,
-    target: `${tmpDir}/config/config.dev.ts`,
+    origin: `${appDir}/config/config.local.ts`,
+    target: `${tmpDir}/config/config.local.ts`,
+  },
+  {
+    origin: `${appDir}/config/config.default.ts`,
+    target: `${tmpDir}/config/config.default.ts`,
   },
   {
     origin: `${appDir}/config/config.prod.ts`,
