@@ -73,7 +73,14 @@ Dahlia.bootstrap(config)
 //   })
 `)
 
+const interceptorText = `
+export default (data: any) => {
+  return data
+}
+`
+
 export default {
   entry: entryText,
   html: htmlText,
+  interceptorText,
 }
