@@ -27,6 +27,25 @@ export const configs = [
   },
 ]
 
+export const interceptorPaths = [
+  {
+    origin: `${appDir}/interceptors/response.ts`,
+    target: `${tmpDir}/interceptors/response.ts`,
+  },
+  {
+    origin: `${appDir}/interceptors/responseError.ts`,
+    target: `${tmpDir}/interceptors/responseError.ts`,
+  },
+  {
+    origin: `${appDir}/interceptors/request.ts`,
+    target: `${tmpDir}/interceptors/request.ts`,
+  },
+  {
+    origin: `${appDir}/interceptors/requestError.ts`,
+    target: `${tmpDir}/interceptors/requestError.ts`,
+  },
+]
+
 export const devConfigPath = `${appDir}/config/config.dev.ts`
 export const tmpDevConfigPath = `${tmpDir}/config/config.dev.ts`
 export const tmpProdConfigPath = `${tmpDir}/config/config.prod.ts`

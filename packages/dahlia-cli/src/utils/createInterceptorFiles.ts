@@ -1,12 +1,13 @@
 import fs from 'fs-extra'
-import { interceptorsDir, tmpInterceptorsDir } from './paths'
-// import { formatCode } from './formatCode'
+import { interceptorPaths, interceptorsDir, tmpInterceptorsDir } from './paths'
+import texts from './texts'
+import { formatCode } from './formatCode'
 
-// function writeDefaultFile() {
-//   fs.writeFileSync(defaultLocalePath, formatCode(localeText), {
-//     encoding: 'utf8',
-//   })
-// }
+function writeDefaultFile(target: string) {
+  fs.writeFileSync(target, formatCode(texts.interceptorText), {
+    encoding: 'utf8',
+  })
+}
 
 function createTmpInterceportsDir() {
   fs.ensureDirSync(tmpInterceptorsDir)
@@ -14,8 +15,11 @@ function createTmpInterceportsDir() {
 
 export function createInterceptorFiles() {
   createTmpInterceportsDir()
-  if (fs.existsSync(interceptorsDir)) {
-    fs.copySync(interceptorsDir, tmpInterceptorsDir)
-  }
-  // writeDefaultFile()
+  interceptorPaths.forEach(({ origin, target }) => {
+    if (fs.existsSync(origin)) {
+      fs.copyFileSync(origin, target)
+    } else {
+      writeDefaultFile(target)
+    }
+  })
 }
