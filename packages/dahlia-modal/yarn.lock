@@ -1043,13 +1043,13 @@ csstype@^2.2.0:
 
 dahlia-observable@^1.0.8:
   version "1.0.8"
-  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.8.tgz#570f67c1bf8fef21fc1c10bfe7fd2090d3be8d19"
-  integrity sha1-Vw9nwb+P7yH8HBC/5/0gkNO+jRk=
+  resolved "https://registry.yarnpkg.com/dahlia-observable/-/dahlia-observable-1.0.8.tgz#570f67c1bf8fef21fc1c10bfe7fd2090d3be8d19"
+  integrity sha512-ifauZcF/NK62d/jE/rzMdAABXJGdde7AAOUkhMBCuRAQd8keR6/hvUPCN7wMkQcFnsOigqBsxfEEH66aXPJwjA==
 
 dahlia-store@^1.2.14:
   version "1.2.14"
-  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.14.tgz#75dc5dd7f4225dbae3ac0d32e7c60c647bcd601a"
-  integrity sha1-ddxd1/QiXbrjrA0y58YMZHvNYBo=
+  resolved "https://registry.yarnpkg.com/dahlia-store/-/dahlia-store-1.2.14.tgz#75dc5dd7f4225dbae3ac0d32e7c60c647bcd601a"
+  integrity sha512-AjgSPvoHQdGXmLtftn9vtAD8WZV3vCV2dSyCiuBaKTkCFSzGoitNO8YNlL8AB70FkCMaNvQuvSjMZt+ZQu1KLw==
   dependencies:
     dahlia-observable "^1.0.8"
     fast-deep-equal "^2.0.1"
