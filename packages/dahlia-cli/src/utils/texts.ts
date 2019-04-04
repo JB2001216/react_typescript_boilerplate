@@ -62,7 +62,6 @@ finalConfig.rest.interceptor.responses = responseInterceptors
 
 
 const lang = localStorage.getItem('__lang__') || 'default'
-console.log('lang:', lang)
 
 import('../locales/' + lang + '.ts')
   .then(i => {
