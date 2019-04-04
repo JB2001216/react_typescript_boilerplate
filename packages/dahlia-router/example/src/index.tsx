@@ -2,13 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Link, Routes, intercept } from './src/index'
 
-intercept((ctx, next) => {
-  console.log(ctx)
-  if (ctx.to === '/about') {
-    return open('http://google.com')
-  }
-  next()
-})
+// intercept((ctx, next) => {
+//   console.log(ctx)
+//   if (ctx.to === '/about') {
+//     return open('http://google.com')
+//   }
+//   next()
+// })
 
 const Home = () => (
   <div>

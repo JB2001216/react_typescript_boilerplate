@@ -12,4 +12,4 @@ lerna-debug.log
 .DS_Store
 *.swp
 
-docs/.vuepress/dist
+.dahlia

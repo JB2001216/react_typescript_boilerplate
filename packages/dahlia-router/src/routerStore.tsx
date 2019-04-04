@@ -52,20 +52,23 @@ const store = createStore({
     const rootPage = findRooPage(pages, path)
     const params = getParams(pages)
 
-    let canNext = false
-    for (const intercept of interceptors) {
-      canNext = false
-      intercept(
-        {
-          to: path,
-          from: store.currentPath,
-        },
-        () => (canNext = true),
-      )
-      if (!canNext) break
-    }
+    // handle interceptors
+    if (interceptors.length) {
+      let canNext = false
+      for (const intercept of interceptors) {
+        canNext = false
+        intercept(
+          {
+            to: path,
+            from: store.currentPath,
+          },
+          () => (canNext = true),
+        )
+        if (!canNext) break
+      }
 
-    if (!canNext) return
+      if (!canNext) return
+    }
 
     if (!store.inited) {
       store.inited = true
