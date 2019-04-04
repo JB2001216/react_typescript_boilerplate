@@ -11,3 +11,5 @@ lerna-debug.log
 .idea/
 .DS_Store
 *.swp
+
+docs/.vuepress/dist

@@ -5,7 +5,8 @@ import { filesToCheck } from './config'
 export function checkAppDir(root: string, appName: string) {
   const appDirFiles = fs.readdirSync(root)
   const conflictFiles = appDirFiles.reduce(
-    (result: string[], cur) => (filesToCheck.includes(cur) ? [...result, cur] : result),
+    (result: string[], cur) =>
+      filesToCheck.includes(cur) ? [...result, cur] : result,
     [],
   )
 

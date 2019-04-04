@@ -9,7 +9,7 @@ import { createConfigFile } from '../utils/createConfigFile'
 import { createRouterConfig } from '../utils/createRouterConfig'
 import { createModalConfig } from '../utils/createModalConfig'
 import { createLocaleTypings } from '../utils/createLocaleTypings'
-// import { createLocalesFiles } from '../utils/createLocalesFiles'
+import { createLocalesFiles } from '../utils/createLocalesFiles'
 import { createInterceptorFiles } from '../utils/createInterceptorFiles'
 import { watchConfig } from '../utils/watchConfig'
 import { watchRouterConfig } from '../utils/watchRouterConfig'
@@ -41,7 +41,7 @@ export default class Start extends Command {
     createConfigFile()
     createRouterConfig()
     createModalConfig()
-    // createLocalesFiles()
+    createLocalesFiles()
     await createLocaleTypings()
     createInterceptorFiles()
 

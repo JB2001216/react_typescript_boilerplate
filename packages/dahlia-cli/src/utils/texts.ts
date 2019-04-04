@@ -60,17 +60,17 @@ const finalConfig = {
 finalConfig.rest.interceptor = {} as any
 finalConfig.rest.interceptor.responses = responseInterceptors
 
-Dahlia.bootstrap(finalConfig)
 
-// const lang = localStorage.getItem('__lang__') || 'en'
-// import('../locales/' + lang + '.ts')
-//   .then(i => {
-//     ;(window as any).__locale__ = i.default
-//     Dahlia.bootstrap(config)
-//   })
-//   .catch(() => {
-//     Dahlia.bootstrap(config)
-//   })
+const lang = localStorage.getItem('__lang__') || 'en'
+
+import('../locales/' + lang + '.ts')
+  .then(i => {
+    ;(window as any).__locale__ = i.default
+    Dahlia.bootstrap(finalConfig)
+  })
+  .catch(() => {
+    Dahlia.bootstrap(finalConfig)
+  })
 
 `)
 
