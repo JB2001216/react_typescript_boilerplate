@@ -9,7 +9,8 @@
     "test": "lerna run --parallel --stream test",
     "test:watch": "lerna run --parallel --stream test:watch",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "bootstrap": "lerna bootstrap"
+    "docs:dev": "docsify serve ./docs",
+    "docs:deploy": "./deploy"
   },
   "husky": {
     "hooks": {
@@ -21,11 +22,6 @@
       "npm run format",
       "npm run lint:fix",
       "git add"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
     ]
   },
   "jest": {
@@ -41,8 +37,6 @@
   },
   "homepage": "https://github.com/forsigner/dahlia#README",
   "devDependencies": {
-    "@commitlint/cli": "^7.5.2",
-    "@commitlint/config-conventional": "^7.5.0",
     "@types/jest": "^23.3.10",
     "coveralls": "^3.0.2",
     "husky": "^1.3.1",
