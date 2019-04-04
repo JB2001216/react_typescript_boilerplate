@@ -3,11 +3,6 @@ import Link from './components/Link'
 import navigate from './navigate'
 import routerStore from './routerStore'
 
-interface Route {
-  path?: string
-  component?: any
-  children?: Routes
-}
-export type Routes = Route[]
-
+export { intercept } from './interceptor'
+export * from './typings'
 export { Router, Link, navigate, routerStore }

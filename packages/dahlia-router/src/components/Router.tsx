@@ -3,12 +3,13 @@ import { observe } from 'dahlia-store'
 
 import { getPath, createPage, useMount, useUnmount } from '../util'
 import store from '../routerStore'
+import { Routes } from '../typings'
 
 const handlePop = () => {
   store.go({ path: getPath(), replace: false })
 }
 
-const Router = observe<{ routes: any[] }>(props => {
+const Router = observe<{ routes: Routes }>(props => {
   const { currentPage, defaultPage, inited } = store
 
   useMount(() => {

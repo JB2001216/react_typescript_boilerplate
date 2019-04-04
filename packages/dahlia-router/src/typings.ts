@@ -1,7 +1,3 @@
-export interface Window {
-  [propName: string]: any
-}
-
 export type Pages = Page[]
 export interface Page {
   path?: string
@@ -23,3 +19,22 @@ export interface State {
   currentPage?: Page
   currentPath?: string
 }
+
+export type Routes = Route[]
+
+export interface Route {
+  path?: string
+  pathMatch?: string
+  component?: any
+  redirectTo?: string
+  children?: Routes
+}
+
+interface Ctx {
+  from: string
+  to: string
+}
+
+type Next = () => any
+
+export type Interceptor = (ctx: Ctx, next: Next) => void
