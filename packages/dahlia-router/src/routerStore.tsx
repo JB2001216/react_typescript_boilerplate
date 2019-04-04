@@ -1,6 +1,7 @@
 import React from 'react'
 import { createStore } from 'dahlia-store'
 import { NO_ROUTE_MATCH } from './constant'
+import { interceptors } from './interceptor'
 
 import {
   pushState,
@@ -50,6 +51,21 @@ const store = createStore({
     const { pages } = store
     const rootPage = findRooPage(pages, path)
     const params = getParams(pages)
+
+    let canNext = false
+    for (const intercept of interceptors) {
+      canNext = false
+      intercept(
+        {
+          to: path,
+          from: store.currentPath,
+        },
+        () => (canNext = true),
+      )
+      if (!canNext) break
+    }
+
+    if (!canNext) return
 
     if (!store.inited) {
       store.inited = true
