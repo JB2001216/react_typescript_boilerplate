@@ -69,7 +69,7 @@ export const localesDir = `${appDir}/locales`
 export const defaultLocalePath = `${appDir}/locales/default.ts`
 export const tmpLocalesDir = `${tmpDir}/locales`
 export const tmpDefaultLocalePath = `${tmpDir}/locales/default.ts`
-export const localeTypingsPath = `${tmpDir}/locales/i18n.ts`
+export const localeTypingsPath = `${tmpDir}/locales/i18n.d.ts`
 export const localeFiles = `${appDir}/locales/**/*.{ts,tsx}`
 
 export const interceptorsDir = `${appDir}/interceptors`

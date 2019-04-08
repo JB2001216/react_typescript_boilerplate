@@ -5,7 +5,15 @@ import { formatCode } from './formatCode'
 
 function writeFile(text: string) {
   fs.ensureDirSync(tmpLocalesDir)
-  fs.writeFileSync(localeTypingsPath, `export ${text}`, { encoding: 'utf8' })
+
+  const typingText = formatCode(`
+    import 'dahlia-i18n'
+    declare module 'dahlia-i18n' {
+      ${text}
+    }
+  `)
+
+  fs.writeFileSync(localeTypingsPath, typingText, { encoding: 'utf8' })
 }
 
 export async function createLocaleTypings() {
