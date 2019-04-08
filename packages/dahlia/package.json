@@ -21,12 +21,15 @@
     "router.d.ts",
     "router.js",
     "router.js.map",
+    "store.d.ts",
+    "store.js",
+    "store.js.map",
     "modal.d.ts",
     "modal.js",
     "modal.js.map",
-    "store.d.ts",
-    "store.js",
-    "store.js.map"
+    "i18n.d.ts",
+    "i18n.js",
+    "i18n.js.map"
   ],
   "scripts": {
     "clean": "rimraf dist/*",
