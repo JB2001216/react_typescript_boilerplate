@@ -19,7 +19,7 @@ function t(key: string) {
 }
 
 function getLocale() {
-  return localStorage.getItem('__lang__') || 'cn'
+  return localStorage.getItem('__lang__') || 'default'
 }
 
 function setLocale(lang: string) {
