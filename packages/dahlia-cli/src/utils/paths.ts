@@ -9,6 +9,7 @@ export const tmpDir = `${appDir}/.dahlia`
 export const tmpConfigDir = `${tmpDir}/config`
 
 export const dahliaConfigPath = `${appDir}/dahlia.config.ts`
+export const tmpDahliaConfigPath = `${tmpDir}/dahlia.config.js`
 
 export const pagesDir = `${appDir}/pages`
 export const pageFiles = `${appDir}/pages/**/*.{ts,tsx}`
@@ -70,6 +71,8 @@ export const localeTypingsPath = `${appDir}/locales/i18n.ts`
 
 export const interceptorsDir = `${appDir}/interceptors`
 export const tmpInterceptorsDir = `${tmpDir}/interceptors`
+
+export const tscScript = path.join(appDir, 'node_modules', '.bin', 'tsc')
 
 export const reactScripts = path.join(
   appDir,

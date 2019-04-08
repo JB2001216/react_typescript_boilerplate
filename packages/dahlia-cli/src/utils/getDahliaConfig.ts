@@ -1,10 +1,10 @@
 import fs from 'fs-extra'
-import { dahliaConfigPath } from './paths'
+import { tmpDahliaConfigPath } from './paths'
 import { Configuration } from '../typings/configuration'
 
 export function getDahliaConfig(): null | Configuration {
-  if (!fs.existsSync(dahliaConfigPath)) return null
-  const dahliaConfig = require(dahliaConfigPath)
+  if (!fs.existsSync(tmpDahliaConfigPath)) return null
+  const dahliaConfig = require(tmpDahliaConfigPath)
   if (dahliaConfig.default) {
     return dahliaConfig.default
   }
