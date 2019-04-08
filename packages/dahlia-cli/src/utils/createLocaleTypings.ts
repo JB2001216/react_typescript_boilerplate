@@ -15,9 +15,11 @@ export async function createLocaleTypings() {
   try {
     delete require.cache[require.resolve(tmpDefaultLocalePath)]
     const locale = require(tmpDefaultLocalePath)
-    const jsonText = JSON.stringify(locale.default)
-    const typings = json2ts(jsonText, { rootName: 'I18n', prefix: '' })
-    writeFile(formatCode(typings))
+    const typings = json2ts(JSON.stringify(locale), {
+      rootName: 'I18n',
+      prefix: '',
+    })
+    writeFile(typings)
   } catch (e) {
     console.log('[国际化处理错误]', e)
   }

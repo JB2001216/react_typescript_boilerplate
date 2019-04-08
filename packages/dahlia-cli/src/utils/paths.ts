@@ -66,10 +66,10 @@ export const htmlPath = `${tmpDir}/index.html`
 export const publicDir = `${tmpDir}/public`
 
 export const localesDir = `${appDir}/locales`
-export const defaultLocalePath = `${appDir}/locales/default.ts`
 export const tmpLocalesDir = `${tmpDir}/locales`
-export const tmpDefaultLocalePath = `${tmpDir}/locales/default.ts`
-export const localeFiles = `${appDir}/locales/**/*.{ts,tsx}`
+export const defaultLocalePath = `${appDir}/locales/default.json`
+export const tmpDefaultLocalePath = `${tmpDir}/locales/default.json`
+export const localeFiles = `${appDir}/locales/**/*.json`
 export const localeTypingsPath = path.join(
   appDir,
   'node_modules',
