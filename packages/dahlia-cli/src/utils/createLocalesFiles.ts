@@ -5,7 +5,6 @@ import {
   defaultLocalePath,
   tmpDefaultLocalePath,
 } from './paths'
-import { formatCode } from './formatCode'
 
 const localeObj = {
   appName: '一个牛逼的平台',
@@ -16,11 +15,11 @@ const localeObj = {
   },
 }
 
-const localeText = `export default ${JSON.stringify(localeObj, null, 2)}`
+const localeText = JSON.stringify(localeObj, null, 2)
 
 function writeDefaultFile() {
   createLocalesDir()
-  fs.writeFileSync(tmpDefaultLocalePath, formatCode(localeText), {
+  fs.writeFileSync(tmpDefaultLocalePath, localeText, {
     encoding: 'utf8',
   })
 }
@@ -39,6 +38,7 @@ export function createLocalesFiles() {
   } else {
     // 存在用户的 locales
 
+    console.log('copy.....')
     fs.copySync(localesDir, tmpLocalesDir)
   }
 }
