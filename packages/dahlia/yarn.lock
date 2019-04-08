@@ -3840,10 +3840,10 @@ cyclist@~0.2.2:
   resolved "http://registry.npm.taobao.org/cyclist/download/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
-dahlia-cli@^1.2.13:
-  version "1.2.13"
-  resolved "http://registry.npm.taobao.org/dahlia-cli/download/dahlia-cli-1.2.13.tgz#893ca89f5fdf4ec9e9c4f689ff5db2f61b1abcf2"
-  integrity sha1-iTyon1/fTsnpxPaJ/12y9hsavPI=
+dahlia-cli@^1.3.0:
+  version "1.3.0"
+  resolved "http://registry.npm.taobao.org/dahlia-cli/download/dahlia-cli-1.3.0.tgz#751df3639648d7642635fe1e5c3ae7cca4a9efb3"
+  integrity sha1-dR3zY5ZI12QmNf4eXDrnzKSp77M=
   dependencies:
     "@oclif/command" "^1.5.12"
     "@oclif/config" "^1.12.12"
@@ -3888,10 +3888,17 @@ dahlia-http@^1.1.1:
     cross-fetch "^3.0.1"
     gery "^1.1.3"
 
-dahlia-modal@^1.1.0:
-  version "1.1.0"
-  resolved "http://registry.npm.taobao.org/dahlia-modal/download/dahlia-modal-1.1.0.tgz#4b9996c8bd6de44505c5e1a583ddb0d3e1a7a997"
-  integrity sha1-S5mWyL1t5EUFxeGlg92w0+GnqZc=
+dahlia-i18n@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/dahlia-i18n/download/dahlia-i18n-1.0.0.tgz#b677e9dce49ae5521824309bcd0452158b570f39"
+  integrity sha1-tnfp3OSa5VIYJDCbzQRSFYtXDzk=
+  dependencies:
+    lodash.get "^4.4.2"
+
+dahlia-modal@^1.1.1:
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/dahlia-modal/download/dahlia-modal-1.1.1.tgz#f8d120640b663a38fed07082389aa0f4746eceea"
+  integrity sha1-+NEgZAtmOjj+0HCCOJqg9HRuzuo=
   dependencies:
     dahlia-store "^1.2.14"
 
@@ -3900,10 +3907,10 @@ dahlia-observable@^1.0.8:
   resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.8.tgz#570f67c1bf8fef21fc1c10bfe7fd2090d3be8d19"
   integrity sha1-Vw9nwb+P7yH8HBC/5/0gkNO+jRk=
 
-dahlia-router@^1.1.2:
-  version "1.1.2"
-  resolved "http://registry.npm.taobao.org/dahlia-router/download/dahlia-router-1.1.2.tgz#e1a611fb299724615d72cb67b7d91e8474645953"
-  integrity sha1-4aYR+ymXJGFdcstnt9kehHRkWVM=
+dahlia-router@^1.1.3:
+  version "1.1.3"
+  resolved "http://registry.npm.taobao.org/dahlia-router/download/dahlia-router-1.1.3.tgz#514726a3e5189754fb1aec49092267b33d49d682"
+  integrity sha1-UUcmo+UYl1T7GuxJCSJnsz1J1oI=
   dependencies:
     dahlia-store "^1.2.14"
     path-parser "^4.2.0"
