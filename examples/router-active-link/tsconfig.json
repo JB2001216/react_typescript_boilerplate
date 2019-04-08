@@ -1,20 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": ".",
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
-    "lib": [
-      "es7",
-      "dom",
-      "esnext.asynciterable"
-    ],
+    "lib": ["es7", "dom", "esnext.asynciterable"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "preserve",
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": false,
@@ -27,7 +24,19 @@
     "strict": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@utils/*": ["utils/*"],
+      "@stores/*": ["stores/*"],
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@pages/*": ["pages/*"],
+      "@modals/*": ["modals/*"],
+      "@config/*": ["config/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@locales/*": ["locales/*"]
+    }
   },
   "exclude": [
     "node_modules",
@@ -36,9 +45,5 @@
     "acceptance-tests",
     "webpack",
     "jest",
-    "src/setupTests.ts"
-  ],
-  "include": [
-    "src"
   ]
 }
