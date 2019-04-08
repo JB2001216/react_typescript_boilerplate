@@ -1,5 +1,10 @@
 import fs from 'fs-extra'
-import { localesDir, defaultLocalePath } from './paths'
+import {
+  localesDir,
+  tmpLocalesDir,
+  defaultLocalePath,
+  tmpDefaultLocalePath,
+} from './paths'
 import { formatCode } from './formatCode'
 
 const localeObj = {
@@ -14,19 +19,26 @@ const localeObj = {
 const localeText = `export default ${JSON.stringify(localeObj, null, 2)}`
 
 function writeDefaultFile() {
-  fs.writeFileSync(defaultLocalePath, formatCode(localeText), {
+  createLocalesDir()
+  fs.writeFileSync(tmpDefaultLocalePath, formatCode(localeText), {
     encoding: 'utf8',
   })
 }
 
 function createLocalesDir() {
-  fs.ensureDirSync(localesDir)
+  fs.ensureDirSync(tmpLocalesDir)
 }
 
 export function createLocalesFiles() {
-  createLocalesDir()
-  if (fs.existsSync(defaultLocalePath)) {
-    return
+  const shouldCreateDefaultLocales =
+    !fs.existsSync(localesDir) || !fs.existsSync(defaultLocalePath)
+
+  // 不存在用户的 locales, 使用默认的
+  if (shouldCreateDefaultLocales) {
+    writeDefaultFile()
+  } else {
+    // 存在用户的 locales
+
+    fs.copySync(localesDir, tmpLocalesDir)
   }
-  writeDefaultFile()
 }

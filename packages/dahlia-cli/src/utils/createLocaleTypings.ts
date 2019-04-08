@@ -1,20 +1,21 @@
 import { json2ts } from 'json-ts'
-import fs from 'fs'
-import { localeTypingsPath, defaultLocalePath } from './paths'
+import fs from 'fs-extra'
+import { localeTypingsPath, tmpLocalesDir, tmpDefaultLocalePath } from './paths'
 import { formatCode } from './formatCode'
 
 function writeFile(text: string) {
+  fs.ensureDirSync(tmpLocalesDir)
   fs.writeFileSync(localeTypingsPath, `export ${text}`, { encoding: 'utf8' })
 }
 
 export async function createLocaleTypings() {
   try {
-    delete require.cache[require.resolve(defaultLocalePath)]
-    const locale = require(defaultLocalePath)
+    delete require.cache[require.resolve(tmpDefaultLocalePath)]
+    const locale = require(tmpDefaultLocalePath)
     const jsonText = JSON.stringify(locale.default)
     const typings = json2ts(jsonText, { rootName: 'I18n', prefix: '' })
     writeFile(formatCode(typings))
   } catch (e) {
-    // TODO:
+    console.log('[国际化处理错误]', e)
   }
 }

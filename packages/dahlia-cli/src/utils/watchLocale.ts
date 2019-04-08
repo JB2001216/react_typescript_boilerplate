@@ -1,18 +1,24 @@
 import { watch } from 'chokidar'
-import { defaultLocalePath } from './paths'
+import { localeFiles, localesDir, defaultLocalePath } from './paths'
 import { createLocaleTypings } from './createLocaleTypings'
 import { createLocalesFiles } from './createLocalesFiles'
 
 export const watchLocale = () => {
-  watch(defaultLocalePath, {
-    ignoreInitial: true,
+  watch(localesDir, {
+    ignoreInitial: false,
   }).on('all', eventType => {
-    if (['add', 'change'].includes(eventType)) {
-      createLocaleTypings()
-    }
-
     if (['unlink'].includes(eventType)) {
       createLocalesFiles()
+      createLocaleTypings()
+    }
+  })
+
+  watch(localeFiles, {
+    ignoreInitial: true,
+  }).on('all', eventType => {
+    if (['add', 'change', 'unlink'].includes(eventType)) {
+      createLocalesFiles()
+      createLocaleTypings()
     }
   })
 }
