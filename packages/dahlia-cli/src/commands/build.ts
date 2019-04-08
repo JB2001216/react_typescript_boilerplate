@@ -1,7 +1,7 @@
 import { Command } from '@oclif/command'
 
 import { reactScriptsModulePath } from '../utils/paths'
-
+import { createDahliaConfig } from '../utils/createDahliaConfig'
 import { customizeAppInfo } from '../utils/customizeAppInfo'
 import { createEntryFile } from '../utils/createEntryFile'
 import { createHtmlFile } from '../utils/createHtmlFile'
@@ -18,6 +18,8 @@ export default class Build extends Command {
 
   async run() {
     process.env.NODE_ENV = 'production'
+
+    createDahliaConfig()
 
     customizeAppInfo()
 
