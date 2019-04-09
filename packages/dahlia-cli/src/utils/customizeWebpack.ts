@@ -36,6 +36,7 @@ export const customizeWebpack = () => {
     )
 
     const dahliaConfig = getDahliaConfig()
+
     if (dahliaConfig && dahliaConfig.webpack) {
       return dahliaConfig.webpack(newConfig, env)
     }

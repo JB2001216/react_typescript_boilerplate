@@ -101,20 +101,23 @@ export const reactScripts = path.join(
   'react-scripts',
 )
 
-const useProjectCli = __dirname.includes(
-  path.join(appDir, 'node_modules', 'dahlia-cli'),
-)
-const reactScriptsBaseDir = useProjectCli ? appDir : baseDir
+// const useProjectCli = __dirname.includes(
+//   path.join(appDir, 'node_modules', 'dahlia-cli'),
+// )
+// const reactScriptsBaseDir = useProjectCli ? appDir : baseDir
 
-const reactScriptsModulePath = path.join(
-  reactScriptsBaseDir,
-  'node_modules',
-  'react-scripts',
-)
-const webpackConfigPath = `${reactScriptsModulePath}/config/webpack.config.js`
-const devServerConfigPath = `${reactScriptsModulePath}/config/webpackDevServer.config.js`
+// const reactScriptsModulePath = path.join(
+//   reactScriptsBaseDir,
+//   'node_modules',
+//   'react-scripts',
+// )
 
-const reactScriptsPaths = `${reactScriptsModulePath}/config/paths.js`
+const reactScriptsModulePath = 'react-scripts'
+
+const webpackConfigPath = `${reactScriptsModulePath}/config/webpack.config`
+const devServerConfigPath = `${reactScriptsModulePath}/config/webpackDevServer.config`
+
+const reactScriptsPaths = `${reactScriptsModulePath}/config/paths`
 
 export {
   reactScriptsModulePath,

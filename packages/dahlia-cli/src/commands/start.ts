@@ -20,7 +20,7 @@ export default class Start extends Command {
   async run() {
     process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
-    prepare()
+    await prepare()
     watcher()
 
     // customize cra
@@ -31,7 +31,6 @@ export default class Start extends Command {
     customizeServer()
     disableCheckRequiredFilesPath()
     disableClearConsole()
-
     disableCheckTS()
 
     require(`${reactScriptsModulePath}/scripts/start`)

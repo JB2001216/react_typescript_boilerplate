@@ -4,6 +4,7 @@ import { getDahliaConfig } from './getDahliaConfig'
 
 export const customizePaths = () => {
   const paths = require(reactScriptsPaths)
+
   paths.appSrc = appDir
   paths.appIndexJs = entryPath
   paths.appHtml = join(appDir, '.dahlia', 'index.html')
