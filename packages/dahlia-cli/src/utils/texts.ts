@@ -65,7 +65,7 @@ finalConfig.rest.interceptor.responses = responseInterceptors
 
 const lang = localStorage.getItem('__lang__') || 'default'
 
-import('./locales/' + lang + '.ts')
+import('./locales/' + lang + '.json')
   .then(i => {
     ;(window as any).__locale__ = i.default
     Dahlia.bootstrap(finalConfig)

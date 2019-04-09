@@ -18,7 +18,7 @@ export const createDahliaConfig = () => {
     '--outDir',
     tmpDir,
   ]
-  spawn(tscScript, args, {
+  spawn.sync(tscScript, args, {
     stdio: 'inherit',
   })
 }
