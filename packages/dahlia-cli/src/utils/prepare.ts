@@ -1,6 +1,6 @@
+import { rmTmpDir } from './rmTmpDir'
 import { createDahliaConfig } from './createDahliaConfig'
 import { customizeAppInfo } from './customizeAppInfo'
-
 import { createEntryFile } from './createEntryFile'
 import { createHtmlFile } from './createHtmlFile'
 import { createPublicFiles } from './createPublicFiles'
@@ -13,6 +13,7 @@ import { createLocalesFiles } from './createLocalesFiles'
 import { createInterceptorFiles } from './createInterceptorFiles'
 
 export async function prepare() {
+  rmTmpDir()
   createDahliaConfig()
 
   customizeAppInfo()
