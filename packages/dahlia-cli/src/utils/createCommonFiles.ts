@@ -3,7 +3,8 @@ import { join } from 'path'
 import { baseDir, commonPaths, tmpCommonDir } from './paths'
 
 function writeDefaultFile(name: string) {
-  fs.copySync(join(baseDir, 'assets', 'common', name), tmpCommonDir)
+  const path = join(baseDir, 'assets', 'common', name)
+  fs.copyFileSync(path, join(tmpCommonDir, name))
 }
 
 function createTmpCommonDir() {
