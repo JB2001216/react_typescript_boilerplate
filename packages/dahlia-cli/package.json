@@ -56,7 +56,6 @@
     "/bin",
     "/lib",
     "/assets",
-    "/common",
     "/oclif.manifest.json"
   ],
   "homepage": "https://github.com/forsigner/dahlia",

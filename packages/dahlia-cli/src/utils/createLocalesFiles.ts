@@ -38,7 +38,6 @@ export function createLocalesFiles() {
   } else {
     // 存在用户的 locales
 
-    console.log('copy.....')
     fs.copySync(localesDir, tmpLocalesDir)
   }
 }
