@@ -1,11 +1,8 @@
 import { Command } from '@oclif/command'
 
 import { reactScriptsModulePath } from '../utils/paths'
-import { createDahliaConfig } from '../utils/createDahliaConfig'
-import { customizeAppInfo } from '../utils/customizeAppInfo'
-import { createEntryFile } from '../utils/createEntryFile'
-import { createHtmlFile } from '../utils/createHtmlFile'
-import { createPublicFiles } from '../utils/createPublicFiles'
+import { prepare } from '../utils/prepare'
+
 import { disableCheckRequiredFilesPath } from '../utils/disableCheckRequiredFilesPath'
 import { disableCheckTS } from '../utils/disableCheckTS'
 import { customizePaths } from '../utils/customizePaths'
@@ -19,14 +16,7 @@ export default class Build extends Command {
   async run() {
     process.env.NODE_ENV = 'production'
 
-    createDahliaConfig()
-
-    customizeAppInfo()
-
-    // create file
-    createEntryFile()
-    createHtmlFile()
-    createPublicFiles()
+    prepare()
 
     customizePaths()
     customizeWebpack()

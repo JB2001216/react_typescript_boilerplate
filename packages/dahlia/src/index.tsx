@@ -8,13 +8,16 @@ import gql from 'gql-tag'
 import { Config } from './config'
 
 function bootstrap(options: Config) {
-  const { routes, graphql, rest, root, modals } = options
+  const { routes, graphql, rest, root, modals, app } = options
+  console.log('app:', app)
   config({ graphql, rest })
+  const Wrapper = app ? app : Fragment
+
   render(
-    <Fragment>
+    <Wrapper>
       <Router routes={routes} />
       <Modals config={modals} />
-    </Fragment>,
+    </Wrapper>,
     document.querySelector(root),
   )
 }

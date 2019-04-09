@@ -33,6 +33,7 @@ import configProd from './config/config.prod'
 import routes from './config/router.config'
 import modals from './config/modal.config'
 import response from './interceptors/response'
+import App from './common/app'
 
 const responseInterceptors: ResponseInterceptor[] = Array.isArray(response)
   ? response
@@ -44,6 +45,7 @@ const config = {
   routes,
   modals,
   root: '#root',
+  app: App,
 } as Config
 
 const isProd = NODE_ENV === 'production'

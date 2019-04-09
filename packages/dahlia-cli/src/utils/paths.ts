@@ -51,6 +51,17 @@ export const interceptorPaths = [
   },
 ]
 
+export const tmpCommonDir = `${tmpDir}/common`
+export const commonDir = `${appDir}/common`
+export const commonFiles = `${appDir}/common/**/*.{ts,tsx}`
+export const commonPaths = [
+  {
+    name: 'app.tsx',
+    origin: `${appDir}/common/app.tsx`,
+    target: `${tmpDir}/common/app.tsx`,
+  },
+]
+
 export const devConfigPath = `${appDir}/config/config.dev.ts`
 export const tmpDevConfigPath = `${tmpDir}/config/config.dev.ts`
 export const tmpProdConfigPath = `${tmpDir}/config/config.prod.ts`
@@ -61,7 +72,7 @@ export const tmpRouterConfigPath = `${tmpDir}/config/router.config.ts`
 export const modalConfigPath = `${appDir}/config/modal.config.ts`
 export const tmpModalsConfigPath = `${tmpDir}/config/modal.config.ts`
 
-export const entryPath = `${tmpDir}/index.ts`
+export const entryPath = `${tmpDir}/index.tsx`
 export const htmlPath = `${tmpDir}/index.html`
 export const publicDir = `${tmpDir}/public`
 
