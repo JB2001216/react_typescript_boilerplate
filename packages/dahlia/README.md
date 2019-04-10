@@ -5,10 +5,6 @@
 
 > An opinionated React Framework for building modern web applications.
 
-<a href="https://dahlia.gitbook.io/dahlia/" target="_blank">Doc(Coming...)</a>
-|
-<a href="https://dahlia-cn.gitbook.io/dahlia/" target="_blank">文档</a>
-
 ## Quick Start
 
 Install Dahlia CLI:
