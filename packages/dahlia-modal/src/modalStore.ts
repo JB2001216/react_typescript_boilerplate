@@ -3,7 +3,7 @@ import { createStore } from 'dahlia-store'
 interface ModalInstnce {
   name: string
   data: any
-  isOpen: boolean
+  visible: boolean
 }
 
 interface Modals {
@@ -12,16 +12,20 @@ interface Modals {
 
 export const modalStore = createStore({
   modals: {} as Modals,
+  ModalContainer: null,
+  setModalContainer(cmp: any) {
+    modalStore.ModalContainer = cmp
+  },
   open(name: string, data?: any) {
     modalStore.modals[name] = {
       name,
       data,
-      isOpen: true,
+      visible: true,
     }
   },
 
   close(name: string) {
-    modalStore.modals[name].isOpen = false
+    modalStore.modals[name].visible = false
   },
 
   getModal(name: string) {
