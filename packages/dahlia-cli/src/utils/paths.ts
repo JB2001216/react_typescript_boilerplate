@@ -56,9 +56,14 @@ export const commonDir = `${appDir}/common`
 export const commonFiles = `${appDir}/common/**/*.{ts,tsx}`
 export const commonPaths = [
   {
-    name: 'app.tsx',
-    origin: `${appDir}/common/app.tsx`,
-    target: `${tmpDir}/common/app.tsx`,
+    name: 'App.tsx',
+    origin: `${appDir}/common/App.tsx`,
+    target: `${tmpDir}/common/App.tsx`,
+  },
+  {
+    name: 'Modal.tsx',
+    origin: `${appDir}/common/Modal.tsx`,
+    target: `${tmpDir}/common/Modal.tsx`,
   },
 ]
 
@@ -100,17 +105,6 @@ export const reactScripts = path.join(
   '.bin',
   'react-scripts',
 )
-
-// const useProjectCli = __dirname.includes(
-//   path.join(appDir, 'node_modules', 'dahlia-cli'),
-// )
-// const reactScriptsBaseDir = useProjectCli ? appDir : baseDir
-
-// const reactScriptsModulePath = path.join(
-//   reactScriptsBaseDir,
-//   'node_modules',
-//   'react-scripts',
-// )
 
 const reactScriptsModulePath = 'react-scripts'
 
