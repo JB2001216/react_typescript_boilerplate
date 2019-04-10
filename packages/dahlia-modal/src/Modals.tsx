@@ -1,6 +1,6 @@
 import React, { ComponentType, Fragment } from 'react'
 import { observe } from 'dahlia-store'
-import DefaultModalContainer from './DefaultModalContainer'
+import { DefaultModalContainer } from './DefaultModalContainer'
 import { modalStore } from './modalStore'
 import { ModalConfig } from './typings'
 
