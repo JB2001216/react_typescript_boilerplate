@@ -2,7 +2,6 @@ import React, { FunctionComponent, useState, useEffect, useRef, CSSProperties } 
 
 interface Props {
   visible: boolean
-  className?: string
 }
 
 const overlay: CSSProperties = {
@@ -22,31 +21,24 @@ const content: CSSProperties = {
   padding: '20px',
 }
 
-const DefaultModalContainer: FunctionComponent<Props> = props => {
-  const { visible, className } = props
+export const DefaultModalContainer: FunctionComponent<Props> = ({ visible, children }) => {
   const ref = useRef({} as HTMLDivElement)
-  const [prevStatus, setStatus] = useState(false)
-
   const toggle = () => {
     ref.current.style.display = visible ? 'block' : 'none'
   }
 
-  if (props.visible !== prevStatus) {
-    setStatus(props.visible)
+  useEffect(toggle, [])
+
+  const [prevStatus, setStatus] = useState(visible)
+  if (visible !== prevStatus) {
+    setStatus(visible)
     toggle()
   }
-
-  useEffect(() => {
-    toggle()
-    if (className) {
-      ref.current.classList.add(className)
-    }
-  }, [])
 
   return (
     <div className="dahlia-modal" ref={ref} style={overlay}>
       <div className="dahlia-modal-content" style={content}>
-        {props.children}
+        {children}
       </div>
     </div>
   )
@@ -55,5 +47,3 @@ const DefaultModalContainer: FunctionComponent<Props> = props => {
 DefaultModalContainer.defaultProps = {
   visible: false,
 }
-
-export default DefaultModalContainer
