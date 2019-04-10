@@ -9,7 +9,6 @@ import { Config } from './config'
 
 function bootstrap(options: Config) {
   const { routes, graphql, rest, root, modals, app } = options
-  console.log('app:', app)
   config({ graphql, rest })
   const Wrapper = app ? app : Fragment
 
