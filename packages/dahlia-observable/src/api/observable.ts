@@ -4,7 +4,7 @@ import { globalState } from '../core/globalState'
 import { invokeRunners } from '../core/invokeRunners'
 
 export function observable<T extends object>(obj: T): T
-export function observable<T extends object>(obj: T, root: boolean): T
+export function observable<T extends object>(obj: T, root?: boolean): T
 
 export function observable<T extends object>(obj: T, root?: boolean) {
   if (root === undefined) root = true
