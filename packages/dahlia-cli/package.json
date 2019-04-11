@@ -29,7 +29,8 @@
     "json-ts": "^1.6.4",
     "prettier": "^1.16.4",
     "react-scripts": "^2.1.8",
-    "tslib": "^1.9.3"
+    "tslib": "^1.9.3",
+    "webpackbar": "^3.1.5"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.0",
@@ -42,6 +43,7 @@
     "@types/mocha": "^5.2.6",
     "@types/node": "^11.13.2",
     "@types/prettier": "^1.16.1",
+    "@types/webpackbar": "^2.6.0",
     "chai": "^4.2.0",
     "globby": "^9.2.0",
     "mocha": "^6.1.2",

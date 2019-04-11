@@ -8,6 +8,7 @@ import { Configuration } from 'webpack'
 import { webpackConfigPath, appDir } from './paths'
 import { overrideWebpackExclude } from './overrideWebpackExclude'
 import { getDahliaConfig } from './getDahliaConfig'
+import WebpackBar from 'webpackbar'
 
 function resolve(path: string) {
   return join(appDir, path)
@@ -17,6 +18,10 @@ export const customizeWebpack = () => {
   const webpackConfig = require(webpackConfigPath)
   require.cache[require.resolve(webpackConfigPath)].exports = (env: string) => {
     const config: Configuration = webpackConfig(env)
+
+    if (config.plugins) {
+      config.plugins.push(new WebpackBar())
+    }
 
     const newConfig = override(config, env).pipe(
       styleComponents(),
