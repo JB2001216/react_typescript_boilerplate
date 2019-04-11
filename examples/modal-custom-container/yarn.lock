@@ -308,8 +308,8 @@ dahlia-store@^1.2.15:
 
 dahlia@^1.13.5:
   version "1.13.5"
-  resolved "https://registry.yarnpkg.com/dahlia/-/dahlia-1.13.5.tgz#1c000569858c3fdb84ad0b0992f8d0713d5b57a8"
-  integrity sha512-6hUhpfzawdmNJeINAqAUwftZKIR9y6/+gzsyTWbx8O9FL9wy3qWa8tEROy6bS0h6BNV1BLCT1r/o3Ho1U23vuA==
+  resolved "http://registry.npm.taobao.org/dahlia/download/dahlia-1.13.5.tgz#1c000569858c3fdb84ad0b0992f8d0713d5b57a8"
+  integrity sha1-HAAFaYWMP9uErQsJkvjQcT1bV6g=
   dependencies:
     "@types/styled-components" "^4.1.14"
     "@types/styled-jsx" "^2.2.8"
