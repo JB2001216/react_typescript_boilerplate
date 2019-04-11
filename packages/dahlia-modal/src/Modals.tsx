@@ -21,8 +21,8 @@ export const Modals: ComponentType<{ config: ModalConfig }> = observe<{ config: 
     return (
       <Fragment>
         {config.map(({ name, component }) => {
-          const Current = component
-          const props = Current.modalProps || {}
+          const Content = component
+          const props = Content.modalProps || {}
           return (
             <Modal
               visible={isVisible(name)}
@@ -30,7 +30,7 @@ export const Modals: ComponentType<{ config: ModalConfig }> = observe<{ config: 
               key={name}
               {...props}
             >
-              <Current />
+              <Content />
             </Modal>
           )
         })}
