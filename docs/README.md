@@ -1,3 +1,0 @@
-# dahlia
-
-> An awesome project.

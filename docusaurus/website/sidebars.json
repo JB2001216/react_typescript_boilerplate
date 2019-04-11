@@ -1,0 +1,40 @@
+{
+  "docs": {
+    "简介": ["intro/quick-start", "intro/about"],
+    "样式": [
+      "styles/css",
+      "styles/css-modules",
+      "styles/sass",
+      "styles/less",
+      "styles/styled-components",
+      "styles/styled-jsx"
+    ],
+    "路由": [
+      "router/basic",
+      "router/config",
+      "router/link",
+      "router/navigate",
+      "router/url-params",
+      "router/nested",
+      "router/active-link",
+      "router/intercept"
+    ],
+    "网络请求": ["doc3"],
+    "状态管理": ["doc3"],
+    "表单": ["doc3"],
+    "弹窗": [
+      "modal/basic",
+      "modal/config"
+    ],
+    "命令行工具": [
+      "cli/dh-basic",
+      "cli/dh-help",
+      "cli/dh-new",
+      "cli/dh-start",
+      "cli/dh-build",
+      "cli/dh-generate"
+    ],
+    "例子": ["doc3"],
+    "FAQ": ["faq"]
+  }
+}
