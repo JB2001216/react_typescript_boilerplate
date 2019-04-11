@@ -11,6 +11,7 @@ const overlay: CSSProperties = {
   right: 0,
   bottom: 0,
   backgroundColor: 'rgba(0,0,0, 0.6)',
+  display: 'none',
 }
 
 const content: CSSProperties = {
