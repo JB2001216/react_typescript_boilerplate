@@ -1,14 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Link, Routes, intercept } from './src/index'
-
-// intercept((ctx, next) => {
-//   console.log(ctx)
-//   if (ctx.to === '/about') {
-//     return open('http://google.com')
-//   }
-//   next()
-// })
+import { Router, Link, Routes, routerStore } from './src/index'
 
 const Home = () => (
   <div>
@@ -26,6 +18,15 @@ const About = () => (
   </div>
 )
 
+const User = () => {
+  const { params } = routerStore
+  return (
+    <div>
+      <h1>User Name: {params.name}</h1>
+    </div>
+  )
+}
+
 const NotFound = () => <div>404 not found</div>
 
 const routes: Routes = [
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: '/about',
     component: About,
+  },
+  {
+    path: '/users/:name',
+    component: User,
   },
   {
     path: '**',

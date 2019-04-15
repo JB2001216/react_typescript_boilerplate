@@ -1,13 +1,3 @@
----
-id: nested
-title: 嵌套路由
-sidebar_label: 嵌套路由
----
-
-
-路由配置：
-
-```tsx
 import { Routes } from 'dahlia/router'
 import Index from '@pages/index'
 import Settings from '@pages/settings'
@@ -36,24 +26,3 @@ const routes: Routes = [
 ]
 
 export default routes
-```
-
-注意，路由父组件需要渲染 `children`：
-
-```tsx
-import React, { FunctionComponent } from 'react'
-import Nav from '@components/Nav'
-
-const Settings: FunctionComponent = ({ children }) => (
-  <div>
-    <h1>Settings</h1>
-    <Nav />
-    {children}
-  </div>
-)
-
-export default Settings
-```
-
-完整例子： TODO: //
-

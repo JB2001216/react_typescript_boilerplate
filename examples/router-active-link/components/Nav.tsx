@@ -1,13 +1,3 @@
----
-id: active-link
-title: Active Link
-sidebar_label: Active Link
----
-
-
-使用 `activeClassName` 实现 Active Link: 
-
-```tsx
 import React from 'react'
 import { Link } from 'dahlia/router'
 
@@ -24,13 +14,3 @@ export default () => (
     </Link>
   </div>
 )
-```
-
-样式：
-
-```css
-/* Nav.css */
-.selected {
-  color: red
-}
-```

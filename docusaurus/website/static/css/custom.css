@@ -2,7 +2,7 @@ header.postHeader:empty {
   display: none;
 }
 
-header.postHeader:empty + article h1 {
+header.postHeader:empty+article h1 {
   margin-top: 0;
 }
 
@@ -172,12 +172,12 @@ header.postHeader:empty + article h1 {
   max-height: 60px;
 }
 
-.featureBlock .blockContent > div p,
-.docsSurvey .blockContent > div p {
+.featureBlock .blockContent>div p,
+.docsSurvey .blockContent>div p {
   text-align: left;
 }
 
-.libBlock > div p {
+.libBlock>div p {
   text-align: center;
 }
 
@@ -302,37 +302,25 @@ header.postHeader:empty + article h1 {
   color: #000;
 }
 
-.homeContainer {
-  /* background: pink; */
-  /* background: powderblue; */
-}
-
-.mainContainer {
-  /* background: powderblue; */
-
-  /* color: #f8bc45; */
-}
-
-.nav-footer {
-  /* background: powderblue; */
-
-  /* background: bisque; */
-  /* color: #000; */
-}
-
-.navigationSlider .slidingNav ul li.siteNavItemActive > a, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+.navigationSlider .slidingNav ul li.siteNavItemActive>a,
+.navigationSlider .slidingNav ul li.siteNavGroupActive>a {
   background-color: transparent;
   color: #000;
 }
 
-.navigationSlider .slidingNav ul.nav-site a:hover, .navigationSlider .slidingNav ul.nav-site a:focus, .navigationSlider .slidingNav ul.nav-site a:active {
+.navigationSlider .slidingNav ul.nav-site a:hover,
+.navigationSlider .slidingNav ul.nav-site a:focus,
+.navigationSlider .slidingNav ul.nav-site a:active {
   color: #000;
   font-weight: 400;
   text-decoration: underline;
 }
 
-.navigationSlider .slidingNav ul li > a:hover,
-.navigationSlider .slidingNav ul li > a:focus, .navigationSlider .slidingNav ul li > a:hover, .navigationSlider .slidingNav ul li.siteNavItemActive > a, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+.navigationSlider .slidingNav ul li>a:hover,
+.navigationSlider .slidingNav ul li>a:focus,
+.navigationSlider .slidingNav ul li>a:hover,
+.navigationSlider .slidingNav ul li.siteNavItemActive>a,
+.navigationSlider .slidingNav ul li.siteNavGroupActive>a {
   background-color: transparent;
 }
 
@@ -350,4 +338,14 @@ header.postHeader:empty + article h1 {
   padding: 0;
   font-size: 18px;
   width: 140px;
+}
+
+input#search_input_react {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+input#search_input_react:focus,
+input#search_input_react:active {
+  color: #000;
 }

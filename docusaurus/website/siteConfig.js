@@ -29,11 +29,11 @@ const siteConfig = {
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
-  // algolia: {
-  //   apiKey: '518c6e3c629811d8daa1d21dc8bcfa37',
-  //   indexName: 'redux',
-  //   algoliaOptions: {}
-  // },
+  algolia: {
+    apiKey: 'e1ed6793785967a2b94621f71637d7f0',
+    indexName: 'dahliajs',
+    algoliaOptions: {},
+  },
 
   // Used for publishing and more
   projectName: 'dahliajs.github.io',
@@ -63,7 +63,7 @@ const siteConfig = {
   /* Colors for website */
   colors: {
     primaryColor: '#E84424',
-    secondaryColor: '#40216F',
+    secondaryColor: '#E84424',
     accentColor1: '#717171',
     accentColor2: '#F3EAFF',
     accentColor3: '#D2B9F3',
@@ -88,6 +88,8 @@ const siteConfig = {
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} forsigner`,
+
+  usePrism: true,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
