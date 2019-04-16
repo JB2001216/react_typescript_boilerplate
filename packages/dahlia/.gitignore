@@ -19,9 +19,12 @@ config.d.ts
 form.d.ts
 form.js
 form.js.map
-http.d.ts
-http.js
-http.js.map
+rest.d.ts
+rest.js
+rest.js.map
+graphql.d.ts
+graphql.js
+graphql.js.map
 index.d.ts
 index.es.js
 index.es.js.map
