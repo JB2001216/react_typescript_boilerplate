@@ -1,9 +1,4 @@
-import { Interceptor } from './types'
-export interface RestConfig {
-  endpoint: string
-  interceptor?: Interceptor
-  headers?: HeadersInit
-}
+import { RestConfig } from './types'
 
 export let restConfig = {
   endpoint: location.protocol + '//' + location.host,
