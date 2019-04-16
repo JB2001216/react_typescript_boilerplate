@@ -1,4 +1,8 @@
-# 约定式弹窗
+---
+id: basic
+title: 约定式弹窗
+sidebar_label: 约定式弹窗
+---
 
 Dahlia 使用类似约定式路由的约定式弹窗：
 
@@ -11,17 +15,16 @@ Dahlia 使用类似约定式路由的约定式弹窗：
 └── tsconfig.json
 ```
 
-举个例子，下面文件会直接到 url 的 path: `/about`。
+弹窗可以是任何 React 组件：
 
 ```js
 import React from 'react'
 
-const About = () => (
+const ModalLogin = () => (
   <div>
-    <h1>Page About</h1>
-    <p>About me</p>
+    <h1>Modal Login Content</h1>
   </div>
 )
 
-export default About
+export default ModalLogin
 ```

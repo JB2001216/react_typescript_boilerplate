@@ -24,7 +24,7 @@
     "表单": ["doc3"],
     "弹窗": [
       "modal/basic",
-      "modal/config"
+      "modal/antd"
     ],
     "命令行工具": [
       "cli/dh-basic",
