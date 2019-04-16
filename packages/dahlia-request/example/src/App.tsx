@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { request } from './src'
+import { request } from 'dahlia-request'
 
 class App extends Component {
   state = {
     data: '...',
   }
   async componentDidMount() {
-    const f = await fetch('https://jsonplaceholder.typicode.com/todos/1', {})
-    const j = await f.json()
-    console.log('f:')
+    // const f = await fetch('https://jsonplaceholder.typicode.com/todos/1', {})
+    // const j = await f.json()
+    // console.log('f:')
     const data = await request('https://jsonplaceholder.typicode.com/todos/1', {
       query: {
         foo: 'bar',

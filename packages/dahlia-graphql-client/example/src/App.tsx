@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { query } from '../../src/client'
+import { query } from '../../src'
 import gql from 'gql-tag' // editor helper
 
 class App extends Component {
