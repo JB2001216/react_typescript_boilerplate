@@ -1,6 +1,4 @@
-export interface GraphqlConfig {
-  endpoint: string
-}
+import { GraphqlConfig } from './types'
 
 export let graphqlConfig = {
   endpoint: '/graphql',

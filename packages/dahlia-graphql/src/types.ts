@@ -16,3 +16,7 @@ export interface MutateResult<T> {
   data: T
   error: any
 }
+
+export interface GraphqlConfig {
+  endpoint: string
+}
