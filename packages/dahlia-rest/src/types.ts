@@ -24,3 +24,9 @@ export interface Interceptor {
   responses?: ResponseInterceptor[]
   responseErrors?: ResponseErrorInterceptor[]
 }
+
+export interface RestConfig {
+  endpoint: string
+  interceptor?: Interceptor
+  headers?: HeadersInit
+}
