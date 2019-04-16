@@ -1,0 +1,53 @@
+{
+  "name": "dahlia-graphql-client",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "clean:dist": "rimraf dist/*",
+    "build": "npm run clean:dist && rollup -c",
+    "build:watch": "npm run clean:dist && rollup -c -w"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/.history/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/forsigner/dahlia.git"
+  },
+  "author": "forsigner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forsigner/dahlia/issues"
+  },
+  "homepage": "https://github.com/forsigner/dahlia#README",
+  "devDependencies": {
+    "@types/fetch-mock": "^7.2.3",
+    "@types/jest": "^24.0.11",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.4",
+    "jest": "^24.7.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.10.0",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "standard-version": "^5.0.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.3"
+  },
+  "dependencies": {
+    "dahlia-request": "^0.1.1"
+  }
+}
