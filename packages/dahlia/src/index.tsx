@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { render } from 'react-dom'
-import { config } from 'dahlia-http'
+import { config as configRest } from 'dahlia-rest'
+import { config as configGraphql } from 'dahlia-graphql'
 import { Router } from 'dahlia-router'
 import { Modals } from 'dahlia-modal'
 import gql from 'gql-tag'
@@ -9,7 +10,8 @@ import { Config } from './config'
 
 function bootstrap(options: Config) {
   const { routes, graphql, rest, root, modals, app } = options
-  config({ graphql, rest })
+  configRest(rest)
+  configGraphql(graphql)
   const Wrapper = app ? app : Fragment
 
   render(
