@@ -905,19 +905,6 @@ csstype@^2.2.0:
   resolved "http://registry.npm.taobao.org/csstype/download/csstype-2.6.3.tgz#b701e5968245bf9b08d54ac83d00b624e622a9fa"
   integrity sha1-twHlloJFv5sI1UrIPQC2JOYiqfo=
 
-dahlia-observable@^1.0.8:
-  version "1.0.8"
-  resolved "http://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.8.tgz#570f67c1bf8fef21fc1c10bfe7fd2090d3be8d19"
-  integrity sha1-Vw9nwb+P7yH8HBC/5/0gkNO+jRk=
-
-dahlia-store@^1.2.14:
-  version "1.2.14"
-  resolved "http://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.14.tgz#75dc5dd7f4225dbae3ac0d32e7c60c647bcd601a"
-  integrity sha1-ddxd1/QiXbrjrA0y58YMZHvNYBo=
-  dependencies:
-    dahlia-observable "^1.0.8"
-    fast-deep-equal "^2.0.1"
-
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "http://registry.npm.taobao.org/dashdash/download/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
@@ -2132,10 +2119,10 @@ jest-worker@^24.6.0:
     merge-stream "^1.0.1"
     supports-color "^6.1.0"
 
-jest@^24.5.0:
+jest@^24.7.1:
   version "24.7.1"
-  resolved "http://registry.npm.taobao.org/jest/download/jest-24.7.1.tgz#0d94331cf510c75893ee32f87d7321d5bf8f2501"
-  integrity sha1-DZQzHPUQx1iT7jL4fXMh1b+PJQE=
+  resolved "https://registry.yarnpkg.com/jest/-/jest-24.7.1.tgz#0d94331cf510c75893ee32f87d7321d5bf8f2501"
+  integrity sha512-AbvRar5r++izmqo5gdbAjTeA6uNRGoNRuj5vHB0OnDXo2DXWZJVuaObiGgtlvhKb+cWy2oYbQSfxv7Q7GjnAtA==
   dependencies:
     import-local "^2.0.0"
     jest-cli "^24.7.1"

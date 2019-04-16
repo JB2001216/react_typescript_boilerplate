@@ -1109,17 +1109,17 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
-dahlia-graphql-client@^0.2.0:
-  version "0.2.0"
-  resolved "http://registry.npm.taobao.org/dahlia-graphql-client/download/dahlia-graphql-client-0.2.0.tgz#7f8b4f4dce639cf85284e36347f6381d9a35923a"
-  integrity sha1-f4tPTc5jnPhShONjR/Y4HZo1kjo=
+dahlia-graphql-client@^0.2.1:
+  version "0.2.1"
+  resolved "http://registry.npm.taobao.org/dahlia-graphql-client/download/dahlia-graphql-client-0.2.1.tgz#19549acc6b640633546b46be23d2181766619c57"
+  integrity sha1-GVSazGtkBjNUa0a+I9IYF2ZhnFc=
   dependencies:
-    dahlia-request "^0.1.1"
+    dahlia-request "^0.1.2"
 
-dahlia-request@^0.1.1:
-  version "0.1.1"
-  resolved "http://registry.npm.taobao.org/dahlia-request/download/dahlia-request-0.1.1.tgz#d81ed5f8e49e660c59e2e288eb103b0fa7f0ea36"
-  integrity sha1-2B7V+OSeZgxZ4uKI6xA7D6fw6jY=
+dahlia-request@^0.1.2:
+  version "0.1.2"
+  resolved "http://registry.npm.taobao.org/dahlia-request/download/dahlia-request-0.1.2.tgz#54f236e5c3db7b8b8b70c53173fd329b0e06d8df"
+  integrity sha1-VPI25cPbe4uLcMUxc/0ymw4G2N8=
   dependencies:
     cross-fetch "^3.0.1"
     qs "^6.7.0"

@@ -1109,10 +1109,10 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
-dahlia-request@^0.1.1:
-  version "0.1.1"
-  resolved "http://registry.npm.taobao.org/dahlia-request/download/dahlia-request-0.1.1.tgz#d81ed5f8e49e660c59e2e288eb103b0fa7f0ea36"
-  integrity sha1-2B7V+OSeZgxZ4uKI6xA7D6fw6jY=
+dahlia-request@^0.1.2:
+  version "0.1.2"
+  resolved "http://registry.npm.taobao.org/dahlia-request/download/dahlia-request-0.1.2.tgz#54f236e5c3db7b8b8b70c53173fd329b0e06d8df"
+  integrity sha1-VPI25cPbe4uLcMUxc/0ymw4G2N8=
   dependencies:
     cross-fetch "^3.0.1"
     qs "^6.7.0"
@@ -2998,7 +2998,7 @@ nice-try@^1.0.4:
 
 node-fetch@2.3.0:
   version "2.3.0"
-  resolved "http://registry.npm.taobao.org/node-fetch/download/node-fetch-2.3.0.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fnode-fetch%2Fdownload%2Fnode-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
+  resolved "http://registry.npm.taobao.org/node-fetch/download/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
   integrity sha1-Gh2UC7+5FqHT4CGfA36J5x+MX6U=
 
 node-int64@^0.4.0:
@@ -3464,7 +3464,7 @@ q@^1.5.1:
 
 qs@^6.7.0:
   version "6.7.0"
-  resolved "http://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fqs%2Fdownload%2Fqs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
+  resolved "http://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
 
 qs@~6.5.2:
