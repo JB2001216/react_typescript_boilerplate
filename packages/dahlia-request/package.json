@@ -1,0 +1,55 @@
+{
+  "name": "dahlia-request",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "clean:dist": "rimraf dist/*",
+    "build": "npm run clean:dist && rollup -c",
+    "build:watch": "npm run clean:dist && rollup -c -w"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/.history/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/forsigner/dahlia.git"
+  },
+  "author": "forsigner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forsigner/dahlia/issues"
+  },
+  "homepage": "https://github.com/forsigner/dahlia#README",
+  "devDependencies": {
+    "@types/fetch-mock": "^7.2.3",
+    "@types/jest": "^24.0.11",
+    "@types/qs": "^6.5.3",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.2",
+    "jest": "^24.5.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.6.0",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "standard-version": "^5.0.2",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.0.1",
+    "qs": "^6.7.0"
+  }
+}
