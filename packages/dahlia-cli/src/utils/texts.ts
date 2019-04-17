@@ -46,6 +46,12 @@ const { NODE_ENV } = process.env
 const config = {
   routes,
   modals,
+  graphql: {
+    endpoint: '/graphql',
+  },
+  rest: {
+    endpoint: location.protocol + '//' + location.host,
+  },
   root: '#root',
   app: App,
 } as Config
@@ -66,7 +72,6 @@ const finalConfig = {
 
 finalConfig.rest.interceptor = {} as any
 finalConfig.rest.interceptor.responses = responseInterceptors
-
 
 const lang = localStorage.getItem('__lang__') || 'default'
 
