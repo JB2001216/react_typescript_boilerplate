@@ -38,7 +38,7 @@ const UseUpdateApp = () => {
 
   return (
     <div className="App">
-      <button onClick={() => addTodo()}>
+      <button onClick={() => addTodo({ title: 'New TODO' })}>
         {loading === undefined && 'Add Todo'}
         {loading !== undefined && (loading ? 'loading...' : ' Added')}
       </button>
