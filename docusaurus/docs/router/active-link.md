@@ -7,7 +7,7 @@ sidebar_label: Active Link
 
 使用 `activeClassName` 实现 Active Link: 
 
-```tsx
+```jsx
 import React from 'react'
 import { Link } from 'dahlia/router'
 

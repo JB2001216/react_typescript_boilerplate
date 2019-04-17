@@ -4,7 +4,7 @@ title: useQuery
 sidebar_label: useQuery
 ---
 
-```tsx
+```jsx
 import React from 'react'
 import { useQuery } from 'dahlia/graphql'
 

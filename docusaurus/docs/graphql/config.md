@@ -4,8 +4,8 @@ title: 配置 endpoint
 sidebar_label: 配置 endpoint
 ---
 
-
 ## 使用配置文件
+
 在使用 GraphQL 获取数据之前，你需要配置 GraphQL 的 endpoint，配置类似：
 
 ```js
@@ -19,7 +19,6 @@ const config = {
 
 export default config
 ```
-
 
 ## 使用动态配置
 

@@ -4,7 +4,7 @@ title: query
 sidebar_label: query
 ---
 
-```tsx
+```jsx
 import React, { useState, useEffect } from 'react'
 import { query } from 'dahlia/graphql'
 

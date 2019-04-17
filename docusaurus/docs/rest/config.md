@@ -6,7 +6,7 @@ sidebar_label: 配置
 
 首先，你需要
 
-```ts
+```js
 // config/config.default
 const config = {
   rest: {

@@ -4,7 +4,7 @@ title: useFetch
 sidebar_label: useFetch
 ---
 
-```tsx
+```jsx
 import React from 'react'
 import { useFetch } from 'dahlia/rest'
 

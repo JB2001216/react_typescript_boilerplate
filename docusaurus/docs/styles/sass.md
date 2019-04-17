@@ -16,7 +16,7 @@ sidebar_label: 使用 Sass
 
 **`Button.js`**
 
-```tsx
+```jsx
 import React from 'react'
 
 import './button.scss'

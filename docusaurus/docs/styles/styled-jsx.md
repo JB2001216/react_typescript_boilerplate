@@ -6,7 +6,7 @@ sidebar_label: 使用 styled-jsx
 
 `styled-jsx` 是一个非常优秀的 React CSS 解决方案，`Dahlia` 默认支持 `styled-jsx`，你可以直接使用：
 
-```tsx
+```jsx
 import React from 'react';
 
 export const App = () => (

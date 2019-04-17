@@ -4,7 +4,7 @@ title: useMutate
 sidebar_label: useMutate
 ---
 
-```tsx
+```jsx
 import React from 'react'
 import { useMutate } from 'dahlia/graphql'
 

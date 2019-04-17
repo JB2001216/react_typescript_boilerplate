@@ -16,7 +16,7 @@ sidebar_label: 使用 Less
 
 **`Button.js`**
 
-```tsx
+```jsx
 import React from 'react'
 
 import './button.scss'

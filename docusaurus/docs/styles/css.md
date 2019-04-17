@@ -18,7 +18,7 @@ sidebar_label: 使用原生 CSS
 
 **`Button.js`**
 
-```tsx
+```jsx
 import React from 'react'
 import './button.css'
 
