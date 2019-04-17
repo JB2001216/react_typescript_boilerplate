@@ -1,4 +1,6 @@
-export type Update = () => any
+import { Body } from 'dahlia-request'
+
+export type Update = (body?: Body) => any
 
 export interface FetchResult<T> {
   loading: boolean | undefined

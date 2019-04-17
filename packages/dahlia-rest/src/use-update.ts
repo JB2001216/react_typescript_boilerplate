@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Options } from 'dahlia-request'
+import { Options, Body } from 'dahlia-request'
 import { fetch } from './fetch'
 import { Update, UpdateResult } from './types'
 
@@ -13,10 +13,12 @@ export const useUpdate = <T extends any>(url: string, options?: Options) => {
   const initialState = {} as UpdateResult<T>
   const [result, setState] = useState(initialState)
 
-  const updateData = async () => {
+  const updateData = async (body?: Body) => {
     setState(prev => ({ ...prev, loading: true }))
     try {
       const opt = getOptions(options)
+      if (body) opt.body = body
+
       const data: T = await fetch(url, opt)
       setState(prev => ({ ...prev, loading: false, data }))
     } catch (error) {
@@ -24,8 +26,8 @@ export const useUpdate = <T extends any>(url: string, options?: Options) => {
     }
   }
 
-  const update = (): any => {
-    updateData()
+  const update = (body?: Body): any => {
+    updateData(body)
   }
 
   const out: [Update, UpdateResult<T>] = [update, result]
