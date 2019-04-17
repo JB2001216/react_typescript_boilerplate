@@ -19,7 +19,21 @@
       "router/active-link",
       "router/intercept"
     ],
-    "网络请求": ["doc3"],
+    "网络请求(Rest)": [
+      "rest/basic",
+      "rest/useFetch",
+      "rest/useUpdate",
+      "rest/fetch",
+      "rest/config",
+      "rest/interceptor"
+    ],
+    "网络请求(GraphQL)": [
+      "graphql/basic",
+      "graphql/config",
+      "graphql/useQuery",
+      "graphql/useMutate",
+      "graphql/query"
+    ],
     "状态管理": ["doc3"],
     "表单": ["doc3"],
     "弹窗": [
