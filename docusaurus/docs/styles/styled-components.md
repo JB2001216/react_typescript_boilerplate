@@ -14,7 +14,7 @@ yarn add styled-components
 
 快速使用：
 
-```tsx
+```jsx
 import React from 'react'
 import styled from 'styled-components'
 

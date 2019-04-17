@@ -16,7 +16,7 @@ sidebar_label: 使用 CSS Modules
 
 **`Button.js`**
 
-```tsx
+```jsx
 import React from 'react'
 import styles from './button.module.css'
 

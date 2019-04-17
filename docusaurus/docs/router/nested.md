@@ -7,7 +7,7 @@ sidebar_label: 嵌套路由
 
 路由配置：
 
-```tsx
+```jsx
 import { Routes } from 'dahlia/router'
 import Index from '@pages/index'
 import Settings from '@pages/settings'
@@ -40,7 +40,7 @@ export default routes
 
 注意，路由父组件需要渲染 `children`：
 
-```tsx
+```jsx
 import React, { FunctionComponent } from 'react'
 import Nav from '@components/Nav'
 

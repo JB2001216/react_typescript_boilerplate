@@ -6,7 +6,7 @@ sidebar_label: 路由参数
 
 首先，在路由配置使用参数，例如`/users/:name` :
 
-```tsx
+```jsx
 // config/router.config.ts
 
 import { Routes } from 'dahlia/router'
@@ -29,7 +29,7 @@ export default routes
 
 在组件中获取路由参数：
 
-```tsx
+```jsx
 import React from 'react'
 import { routerStore } from 'dahlia/router'
 

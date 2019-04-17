@@ -4,7 +4,7 @@ title: useUpdate
 sidebar_label: useUpdate
 ---
 
-```tsx
+```jsx
 import React from 'react'
 import { useUpdate } from 'dahlia/rest'
 
