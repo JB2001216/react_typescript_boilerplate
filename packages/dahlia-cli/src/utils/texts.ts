@@ -25,7 +25,7 @@ const htmlText = formatCode(
 
 export const entryText = formatCode(`
 import Dahlia, { Config } from 'dahlia'
-import { ResponseInterceptor } from 'dahlia/http'
+import { ResponseInterceptor } from 'dahlia/rest'
 import { modalStore } from 'dahlia/modal'
 
 import configDefault from './config/config.default'
@@ -89,13 +89,6 @@ export default (data: any) => {
 
 const config = formatCode(`
 const config = {
-  rest: {
-    endpoint: '/',
-  },
-  graphql: {
-    endpoint: '/',
-  },
-  root: '#root'
 }
 export default config
 `)
