@@ -270,10 +270,10 @@ dahlia-graphql-client@^0.2.2:
   dependencies:
     dahlia-request "^0.1.2"
 
-dahlia-graphql@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/dahlia-graphql/-/dahlia-graphql-0.1.2.tgz#ad50c133ae5a5fad229af27bdb2cc79728ddc330"
-  integrity sha512-6xJHBcUUhDuJZWfLKp1XgLEeNICr1ZEJZBDoldQgRyyz7pdZhDldl8Qzv4TbZeElRLzMCMKUZTBAbPexodFnkg==
+dahlia-graphql@^0.1.3:
+  version "0.1.3"
+  resolved "http://registry.npm.taobao.org/dahlia-graphql/download/dahlia-graphql-0.1.3.tgz#c913968406ff33acae0f5f44508911626876bf37"
+  integrity sha1-yROWhAb/M6yuD19EUIkRYmh2vzc=
   dependencies:
     dahlia-graphql-client "^0.2.2"
 
@@ -304,10 +304,10 @@ dahlia-request@^0.1.2:
     cross-fetch "^3.0.1"
     qs "^6.7.0"
 
-dahlia-rest@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/dahlia-rest/-/dahlia-rest-0.2.2.tgz#5ba298842702ca4ce7eb2500789ec0200641e3ff"
-  integrity sha512-UDxhmgXTwrXBkmEPhCYwIlKgZthR8zcFAkimPNbO7kt5VpnU5e97ng+/PQiYMplwV2w8vmRp+uMhDLLC5G5uJg==
+dahlia-rest@^0.2.3:
+  version "0.2.3"
+  resolved "http://registry.npm.taobao.org/dahlia-rest/download/dahlia-rest-0.2.3.tgz#1d9a20575d2f8372d5c591176d8c51dda2c8c3cf"
+  integrity sha1-HZogV10vg3LVxZEXbYxR3aLIw88=
   dependencies:
     dahlia-request "^0.1.2"
 
@@ -327,10 +327,10 @@ dahlia-store@^1.2.15:
     dahlia-observable "^1.0.9"
     fast-deep-equal "^2.0.1"
 
-dahlia@^1.13.9:
-  version "1.13.9"
-  resolved "https://registry.yarnpkg.com/dahlia/-/dahlia-1.13.9.tgz#f8f0b7172aa8a7a7e9abdc4b03b8c1f2e9267315"
-  integrity sha512-7ZR21NYYXUUf8HUgViKtFu7uJP4pU5u8J1e+llu65CInyqmOD88P6+91zs/5FmXCHAgB1CHqbbf/+RPj1Ug8hw==
+dahlia@^1.13.10:
+  version "1.13.10"
+  resolved "http://registry.npm.taobao.org/dahlia/download/dahlia-1.13.10.tgz#07193237657f7e61da2fe4d54c27ba421ea68cd9"
+  integrity sha1-BxkyN2V/fmHaL+TVTCe6Qh6mjNk=
   dependencies:
     "@types/styled-components" "^4.1.14"
     "@types/styled-jsx" "^2.2.8"
@@ -343,10 +343,10 @@ dahlia@^1.13.9:
     checkok-string "^1.0.1"
     checkok-url "^1.0.1"
     dahlia-form "^1.0.4"
-    dahlia-graphql "^0.1.2"
+    dahlia-graphql "^0.1.3"
     dahlia-i18n "^1.0.2"
     dahlia-modal "^1.1.7"
-    dahlia-rest "^0.2.2"
+    dahlia-rest "^0.2.3"
     dahlia-router "^1.1.5"
     dahlia-store "^1.2.15"
     gery "^1.1.3"
