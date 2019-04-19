@@ -34,12 +34,16 @@
       "graphql/useMutate",
       "graphql/query"
     ],
-    "状态管理": ["doc3"],
-    "表单": ["doc3"],
-    "弹窗": [
-      "modal/basic",
-      "modal/antd"
+    "状态管理": [
+      "store/intro",
+      "store/started",
+      "store/async",
+      "store/computed",
+      "store/ts",
+      "store/dir"
     ],
+    "表单": ["doc3"],
+    "弹窗": ["modal/basic", "modal/antd"],
     "命令行工具": [
       "cli/dh-basic",
       "cli/dh-help",
