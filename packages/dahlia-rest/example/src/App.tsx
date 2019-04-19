@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { config, fetch, useFetch, useUpdate } from './src'
+import { config, fetch, useFetch, useUpdate } from '../../src'
 
 config({
   endpoint: 'https://jsonplaceholder.typicode.com',
@@ -38,7 +38,7 @@ const UseUpdateApp = () => {
 
   return (
     <div className="App">
-      <button onClick={() => addTodo({ title: 'New TODO' })}>
+      <button onClick={() => addTodo({ body: { title: 'New TODO' } })}>
         {loading === undefined && 'Add Todo'}
         {loading !== undefined && (loading ? 'loading...' : ' Added')}
       </button>

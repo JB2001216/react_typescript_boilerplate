@@ -1,6 +1,6 @@
-import { Body } from 'dahlia-request'
+import { Options } from 'dahlia-request'
 
-export type Update = (body?: Body) => any
+export type Update = (updateOptions?: Options) => any
 
 export interface FetchResult<T> {
   loading: boolean | undefined
