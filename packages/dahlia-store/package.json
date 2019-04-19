@@ -1,6 +1,6 @@
 {
   "name": "dahlia-store",
-  "version": "1.2.16",
+  "version": "1.2.17",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -54,7 +54,7 @@
     "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "dahlia-observable": "^1.0.10",
+    "dahlia-observable": "^1.0.11",
     "fast-deep-equal": "^2.0.1"
   }
 }
