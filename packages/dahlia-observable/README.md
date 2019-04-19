@@ -1,9 +1,5 @@
 # dahlia-observable
 
-[![npm](https://img.shields.io/npm/v/dahlia.svg)](https://www.npmjs.com/package/dahlia-observable) [![Build Status](https://travis-ci.org/forsigner/dahlia.svg?branch=master)](https://travis-ci.org/forsigner/dahlia) [](https://coveralls.io/github/forsigner/dahlia?branch=master)
-[![npm](https://img.shields.io/badge/TypeScript-%E2%9C%93-007ACC.svg)](https://www.typescriptlang.org/) [![GitHub license](https://img.shields.io/github/license/forsigner/dahlia.svg)](https://github.com/forsigner/dahlia/blob/master/LICENSE)
-
-
 ## Installation
 
 ```sh
@@ -13,16 +9,21 @@ yarn add dahlia-observable
 ## Quick Start
 
 ```js
-import { observable } from '@nx-js/observer-util';
+import { observable, observe } from 'dahlia-observable'
 
-const counter = observable({ num: 0 });
+const store = observable({
+  count: 1,
+  increment() {
+    store.count++
+  },
+})
 
-observe(() => console.log(counter.num));
+observe(() => {
+  console.log(store.count)
+})
 
-counter.num++ // log 1
-
-counter.num++ // log2
-
+store.increment() // 2
+store.increment() // 3
 ```
 
 ## License
