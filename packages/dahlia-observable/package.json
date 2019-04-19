@@ -17,9 +17,12 @@
   },
   "jest": {
     "preset": "ts-jest",
+    "testEnvironment": "node",
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/examples/",
+      "/example/",
+      "/dist/",
+      "/src/",
       "/.history/"
     ]
   },

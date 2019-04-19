@@ -9,4 +9,3 @@ node_modules/
 *.swp
 dist/
 coverage/
-.docz/

@@ -25,7 +25,6 @@ export const handler: ProxyHandler<any> = {
   set(target, key, value, receiver) {
     const oldValue = Reflect.get(target, key, receiver)
     const result = Reflect.set(target, key, value, receiver)
-
     if (globalState.collections.get(target) || value !== oldValue) {
       invokeRunners()
     }
