@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://.com/forsigner/dahlia/issues"
   },
-  "homepage": "https://github.com/forsigner/dahlia#README",
+  "homepage": "https://github.com/forsigner/dahlia/blob/master/packages/dahlia-observable/README.md",
   "devDependencies": {
     "@types/jest": "^24.0.9",
     "jest": "^24.1.0",

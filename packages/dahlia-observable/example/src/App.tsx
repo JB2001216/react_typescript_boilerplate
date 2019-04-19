@@ -2,30 +2,21 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-import { observable, observe } from './src'
+import { observable, observe } from '../../src'
 
 const store = observable({
   count: 1,
-  user: {
-    name: 'foo',
-  },
-  get num(): number {
-    return store.count + 1
-  },
-  inc() {
-    // store.count++
-    store.user.name = 'bar'
+  increment() {
+    store.count++
   },
 })
 
 observe(() => {
-  // console.log(store.count)
-  console.log('num:', store.num)
+  console.log(store.count)
 })
 
-store.inc()
-// store.inc()
-// store.count++
+store.increment()
+store.increment()
 
 class App extends Component {
   render() {
