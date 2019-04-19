@@ -1,33 +1,26 @@
 // import React from 'react'
 // import renderer from 'react-test-renderer'
-import { createStore } from '../src/index'
+import { createStore } from '../example/src/index'
 
 test('useStore', () => {
-  const { useStore, dispatch } = createStore({
-    state: {
-      count: 1,
+  const { dispatch } = createStore({
+    count: 1,
+    increment(state, payload: any = 1) {
+      state.count += payload
     },
-    reducers: {
-      increment(state, payload: any = 1) {
-        state.count += payload
-      },
-      decrement(state) {
-        state.count--
-      },
+    decrement(state) {
+      state.count--
     },
-    effects: {
-      async asyncIncrement() {
-        await new Promise(resolve => {
-          setTimeout(() => {
-            resolve()
-          }, 1000)
-        })
-        dispatch(A => A.asyncIncrement)
-      },
+
+    async asyncIncrement() {
+      await new Promise(resolve => {
+        setTimeout(() => {
+          resolve()
+        }, 1000)
+      })
+      dispatch(A => A.asyncIncrement)
     },
   })
-
-  console.log(useStore)
 
   // const App = () => {
   //   const count = useStore(S => S.count)
