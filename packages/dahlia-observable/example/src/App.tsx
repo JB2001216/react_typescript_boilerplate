@@ -6,21 +6,25 @@ import { observable, observe } from './src'
 
 const store = observable({
   count: 1,
+  user: {
+    name: 'foo',
+  },
   get num(): number {
     return store.count + 1
   },
   inc() {
-    store.count++
+    // store.count++
+    store.user.name = 'bar'
   },
 })
 
 observe(() => {
-  console.log(store.count)
+  // console.log(store.count)
   console.log('num:', store.num)
 })
 
 store.inc()
-store.inc()
+// store.inc()
 // store.count++
 
 class App extends Component {
