@@ -3,15 +3,10 @@ import { action } from './action'
 import { globalState } from '../core/globalState'
 import { invokeRunners } from '../core/invokeRunners'
 
-export function observable<T extends object>(obj: T): T
-export function observable<T extends object>(obj: T, root?: boolean): T
-
-export function observable<T extends object>(obj: T, root?: boolean) {
-  if (root === undefined) root = true
-
+export function observable<T extends object>(obj: T) {
   if (!canObservable(obj)) return obj
 
-  const object: T = globalState.proxies.get(obj) || toObservable(obj, root)
+  const object: T = globalState.proxies.get(obj) || toObservable(obj)
   return object
 }
 
@@ -21,8 +16,8 @@ export const handler: ProxyHandler<any> = {
     const value = Reflect.get(target, key, receiver)
     const observableValue = globalState.proxies.get(value)
 
-    if (typeof value === 'object') {
-      return observableValue ? observableValue : observable(value, false)
+    if (typeof value === 'object' || typeof value === 'function') {
+      return observableValue ? observableValue : observable(value)
     }
     return value
   },
@@ -46,39 +41,16 @@ export const handler: ProxyHandler<any> = {
 
     return result
   },
+
+  apply: (target, thisArgs, argArray) => {
+    action(() => Reflect.apply(target, thisArgs, argArray))
+  },
 }
 
-export function toObservable<T extends object>(obj: T, init: boolean) {
-  // handle root object
-  if (init) {
-    // delay for getter
-    setTimeout(() => {
-      proxyAction(obj)
-    }, 0)
-  }
-
+export function toObservable<T extends object>(obj: T) {
   const observable: T = new Proxy(obj, handler)
 
   globalState.proxies.set(obj, observable)
   globalState.raws.set(observable, obj)
   return observable
-}
-
-function proxyAction(obj: any) {
-  const fnKeys = Object.keys(obj).reduce(
-    (result, key) => {
-      const isFn = typeof obj[key] === 'function'
-      return isFn ? [...result, key] : result
-    },
-    [] as string[],
-  )
-
-  for (const key of fnKeys) {
-    const fn = obj[key]
-    obj[key] = new Proxy(fn, {
-      apply: (target, thisArgs, argArray) => {
-        action(() => Reflect.apply(target, thisArgs, argArray))
-      },
-    })
-  }
 }
