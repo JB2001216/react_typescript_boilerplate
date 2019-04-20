@@ -60,7 +60,7 @@
     "/assets",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/forsigner/dahlia",
+  "homepage": "https://github.com/forsigner/dahlia/blob/master/packages/dahlia-cli/README.md",
   "keywords": [
     "oclif"
   ],
