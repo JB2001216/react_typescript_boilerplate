@@ -33,7 +33,7 @@
   "bugs": {
     "url": "https://.com/forsigner/dahlia/issues"
   },
-  "homepage": "https://github.com/forsigner/dahlia-modal#README",
+  "homepage": "https://github.com/forsigner/dahlia/blob/master/packages/dahlia-i18n/README.md",
   "devDependencies": {
     "@types/enzyme": "^3.9.0",
     "@types/graphql": "^14.0.7",
