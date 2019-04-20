@@ -13,7 +13,7 @@ yarn add dahlia-store
 ```js
 import React from 'react'
 
-import { createStore, Observer } from 'dahlia-store'
+import { createStore, observe } from 'dahlia-store'
 
 const store = createStore({
   count: 1,
@@ -29,14 +29,14 @@ const store = createStore({
   },
 })
 
-const App = () => (
+const App = observe(() => (
   <div>
-    <Observer>{() => <span>{store.count}</span>}</Observer>
+    <span>{store.count}</span>
     <button onClick={store.decrement}>-</button>
     <button onClick={store.increment}>+</button>
     <button onClick={store.asyncIncrement}>async+</button>
   </div>
-)
+))
 
 ReactDOM.render(<App />, document.getElementById('root'))
 ```

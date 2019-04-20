@@ -1,7 +1,7 @@
 {
   "name": "dahlia-store",
   "version": "1.2.17",
-  "description": "",
+  "description": "State management for Dahlia",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
@@ -33,7 +33,7 @@
   "bugs": {
     "url": "https://.com/forsigner/dahlia/issues"
   },
-  "homepage": "https://github.com/forsigner/dahlia#README",
+  "homepage": "https://github.com/forsigner/dahlia/blob/master/packages/dahlia-store/README.md",
   "devDependencies": {
     "@types/enzyme": "^3.9.0",
     "@types/graphql": "^14.0.7",
