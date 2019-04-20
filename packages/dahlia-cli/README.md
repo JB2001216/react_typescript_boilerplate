@@ -11,18 +11,16 @@
   - [dh start](#dh-start)
   - [dh test](#dh-test)
   - [dh build](#dh-build)
-  - [dh eject](#dh-eject)
 
 ## Installation
 
 ```sh-session
-$ yarn install -g dahlia-cli
+$ yarn global add dahlia-cli
 ```
 
 ## Usage
 
 ```sh-session
-$ yarn global add dahlia-cli
 $ dh new my-app
 $ cd my-app
 $ dh start
@@ -126,19 +124,4 @@ ALIASES
 
 EXAMPLE
   $ dh build
-```
-
-### `dh eject`
-
-```
-Expose all configurations to customize
-
-USAGE
-  $ dahlia eject
-
-ALIASES
-  $ dahlia e
-
-EXAMPLE
-  $ dh eject
 ```
