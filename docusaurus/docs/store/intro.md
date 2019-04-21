@@ -4,7 +4,7 @@ title: 简介
 sidebar_label: 简介
 ---
 
-Dahlia 有自己的状态管理方案，我们叫它 `dahlia-store`，在介绍它之前，我们先来看看 React 官方推荐并且最简单的状态管理方案，我觉得是 hooks 版本的 useState，它是这样用的：
+Dahlia 有自己的状态管理方案，我们叫它 `dahlia/store`，在介绍它之前，我们先来看看 React 官方推荐并且最简单的状态管理方案，我觉得是 hooks 版本的 useState，它是这样用的：
 
 ```jsx
 import React, { useState } from 'react'
@@ -32,7 +32,7 @@ function Example() {
 - 能让业务代码有良好地组织方式
 - 完美地支持 Typescript
 
-因此，根据这些想要的特性，便有了 `dahlia-store`。和官方推荐的解决方案类似，核心只有 state 和 action，核心 API 只有两个：createStore 和 observe。
+因此，根据这些想要的特性，便有了 `dahlia/store`。和官方推荐的解决方案类似，核心只有 state 和 action，核心 API 只有两个：createStore 和 observe。
 
 
 如何使用呢？请看 [Get Started](/docs/store/started)。

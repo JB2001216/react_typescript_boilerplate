@@ -4,8 +4,9 @@ title: computed
 sidebar_label: computed
 ---
 
-```jsx
+类似Mobx，dahlia/store 也可以使用计算值 (computed):
 
+```jsx
 import React from 'react'
 import { createStore, observe } from 'dahlia/store'
 
@@ -21,6 +22,4 @@ export default observe(() => (
     <span>Length: {store.len}</span>
   </div>
 ))
-
-
 ```
