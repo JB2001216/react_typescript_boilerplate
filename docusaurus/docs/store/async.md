@@ -1,8 +1,12 @@
 ---
 id: async
-title: Async
-sidebar_label: Async
+title: 异步 Action
+sidebar_label: 异步 Action
 ---
+
+在 dahlia/store 中，异步获取数据并且改变 state 非常简单，你只需创建一个异步的 Action，异步 Action 是一个普通的 async 函数。
+
+下面展示了一个异步获取 todo 列表的例子：
 
 ```jsx
 import React from 'react'
