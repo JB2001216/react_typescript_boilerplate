@@ -5,7 +5,9 @@ import { createStore, observe } from '../src'
 const store = createStore({
   numbers: [1, 2, 3, 4],
   get len() {
-    return store.numbers.length
+    console.log('store:', store)
+    // return store.numbers.length
+    return 3
   },
 })
 
