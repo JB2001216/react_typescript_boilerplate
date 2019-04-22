@@ -1,7 +1,7 @@
 import React from 'react'
-import { observe } from 'dahlia-store'
+import { observe, raw } from 'dahlia-store'
 
-import { getPath, createPage, useMount, useUnmount } from '../util'
+import { getPath, useMount, useUnmount, createPage } from '../util'
 import store from '../routerStore'
 import { Routes } from '../typings'
 
@@ -24,11 +24,12 @@ const Router = observe<{ routes: Routes }>(props => {
 
   const DefaultPage = defaultPage.component
 
-  if (currentPage && !Object.keys(currentPage).length) {
+  // TODO: handle default page
+  if (!currentPage) {
     return inited ? <DefaultPage /> : null
   }
 
-  return createPage([currentPage], [])
+  return createPage([raw(currentPage)], [])
 })
 
 export default Router
