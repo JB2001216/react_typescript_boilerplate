@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { Routes } from './dahlia-router'
+import { Routes } from 'dahlia-router'
 import { ModalConfig } from 'dahlia-modal'
 import { RestConfig } from 'dahlia-rest'
 import { GraphqlConfig } from 'dahlia-graphql'
