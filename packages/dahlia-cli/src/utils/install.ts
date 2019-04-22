@@ -8,10 +8,14 @@ function getInstallArgs(root: string) {
   const installCommand = useYarn ? 'add' : 'install'
   const args = [installCommand, '--save']
 
+  args.push('--registry')
+  args.push('https://registry.npm.taobao.org')
+
   if (useYarn) {
     args.push('--cwd')
     args.push(root)
   }
+
   return args.concat(deps.sort())
 }
 
