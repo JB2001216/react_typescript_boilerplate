@@ -905,6 +905,19 @@ csstype@^2.2.0:
   resolved "http://registry.npm.taobao.org/csstype/download/csstype-2.6.3.tgz#b701e5968245bf9b08d54ac83d00b624e622a9fa"
   integrity sha1-twHlloJFv5sI1UrIPQC2JOYiqfo=
 
+dahlia-observable@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/dahlia-observable/-/dahlia-observable-1.0.13.tgz#86d6368d230e800ce03774becd877b7f970de562"
+  integrity sha512-Qox4dW4j0lyEA8snEm7ILWCXqu47Q7Me0cGGvr/OV2uZJtdwHLkEdH4v2ZKQIvOT1j9Tf9HmWwrF+4vMAEWUGA==
+
+dahlia-store@^1.2.19:
+  version "1.2.19"
+  resolved "https://registry.yarnpkg.com/dahlia-store/-/dahlia-store-1.2.19.tgz#37ae4bd8e4da27f666a9ff2004ec753ecdbf44f8"
+  integrity sha512-6pRDyNQrdReObr8y+blEaq/vMza5f5SeGa5GD0COfNlRLxu1ASyoOLZcpWYRvdxbWBKP/aYSEY//mBLZ1pK0dg==
+  dependencies:
+    dahlia-observable "^1.0.13"
+    fast-deep-equal "^2.0.1"
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "http://registry.npm.taobao.org/dashdash/download/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"

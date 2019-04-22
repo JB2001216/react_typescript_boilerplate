@@ -1,5 +1,5 @@
 import React, { ComponentType, Fragment } from 'react'
-import { observe, raw } from 'dahlia-store'
+import { observe } from 'dahlia-store'
 import { DefaultModalContainer } from './DefaultModalContainer'
 import { modalStore } from './modalStore'
 import { ModalConfig } from './typings'
@@ -18,7 +18,7 @@ export const Modals: ComponentType<{ config: ModalConfig }> = observe<{ config: 
     if (!config) return null
     const { ModalContainer } = modalStore
 
-    const Modal = ModalContainer ? raw(ModalContainer) : DefaultModalContainer
+    const Modal = ModalContainer || DefaultModalContainer
     return (
       <Fragment>
         {config.map(({ name, component }) => {

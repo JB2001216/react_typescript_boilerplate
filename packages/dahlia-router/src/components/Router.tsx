@@ -1,5 +1,5 @@
 import React from 'react'
-import { observe, raw } from 'dahlia-store'
+import { observe } from 'dahlia-store'
 
 import { getPath, useMount, useUnmount, createPage } from '../util'
 import store from '../routerStore'
@@ -29,7 +29,7 @@ const Router = observe<{ routes: Routes }>(props => {
     return inited ? <DefaultPage /> : null
   }
 
-  return createPage([raw(currentPage)], [])
+  return createPage([currentPage], [])
 })
 
 export default Router
