@@ -464,17 +464,17 @@ dahlia-i18n@^1.0.3:
   dependencies:
     lodash.get "^4.4.2"
 
-dahlia-modal@^1.1.10:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/dahlia-modal/-/dahlia-modal-1.1.10.tgz#6413b138dc4ac6f4911970c3aa1b5da6976737b2"
-  integrity sha512-SDploPEUMbs7YhzWnGLmhJcejWmBiFW40KuuD8zywl33wMjoyaJ3whFYh69t0FuLTCSaW/3r2+lBgIKGgAQ2tg==
+dahlia-modal@^1.1.12:
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/dahlia-modal/-/dahlia-modal-1.1.12.tgz#1a0a9eccf1df49dba5ac5334c96f3c3a9afe99d5"
+  integrity sha512-2sLQf3usJ+fkF3bbtOLbjjraAPCsZWutWlQQFPuQq5mWzu2+lbgm6JercLld0simfXUPYjag11z7ioeuSGuCzQ==
   dependencies:
-    dahlia-store "^1.2.18"
+    dahlia-store "^1.2.19"
 
-dahlia-observable@^1.0.12:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/dahlia-observable/-/dahlia-observable-1.0.12.tgz#a0cb21bbd1c667bd46788129849d21b783208bf6"
-  integrity sha512-sGEHPrGvCCyipr4nYhBFlKDmF+OtmS6VuVEhlOnTsSV+DYGuzuRSBZ6H1fmnbK7iz9iYxJpFzlRCLYny/YFCzw==
+dahlia-observable@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/dahlia-observable/-/dahlia-observable-1.0.13.tgz#86d6368d230e800ce03774becd877b7f970de562"
+  integrity sha512-Qox4dW4j0lyEA8snEm7ILWCXqu47Q7Me0cGGvr/OV2uZJtdwHLkEdH4v2ZKQIvOT1j9Tf9HmWwrF+4vMAEWUGA==
 
 dahlia-request@^1.0.0:
   version "1.0.0"
@@ -491,26 +491,26 @@ dahlia-rest@^1.0.1:
   dependencies:
     dahlia-request "^1.0.0"
 
-dahlia-router@^1.1.9:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/dahlia-router/-/dahlia-router-1.1.9.tgz#57ff1085f984d83357d2f28e42638c57158c07e7"
-  integrity sha512-iVXi6F11yUUIyQhSc21xqaYs0365450Cs76dqq1jyRQYSacq601uDG6c1wlxiiV9KktWY2T322Zi9lW4FMuxyA==
+dahlia-router@^1.1.10:
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/dahlia-router/-/dahlia-router-1.1.10.tgz#1330ed62638ea5d5c67859a6cc5a43cb30c85642"
+  integrity sha512-0/KwWs5lt7Nrh3Q/O5AHTSo3llOcSTOANzjFI56KyDaSa5qhg5X+/E1+RQapUXetZPAMHVWRHkONGI+qHm95TQ==
   dependencies:
-    dahlia-store "^1.2.18"
+    dahlia-store "^1.2.19"
     path-parser "^4.2.0"
 
-dahlia-store@^1.2.18:
-  version "1.2.18"
-  resolved "https://registry.yarnpkg.com/dahlia-store/-/dahlia-store-1.2.18.tgz#3a4ce9181fa6d35c06afb3470bf342fe5db9d6ff"
-  integrity sha512-GKGgqPvzT//qevuB6oEasFtGlElzd7v+dQ9x5DFRamAGT/A6qzHumpZVfruWxgw1FTBFK8xt2UYZHM0HZocWfw==
+dahlia-store@^1.2.19:
+  version "1.2.19"
+  resolved "https://registry.yarnpkg.com/dahlia-store/-/dahlia-store-1.2.19.tgz#37ae4bd8e4da27f666a9ff2004ec753ecdbf44f8"
+  integrity sha512-6pRDyNQrdReObr8y+blEaq/vMza5f5SeGa5GD0COfNlRLxu1ASyoOLZcpWYRvdxbWBKP/aYSEY//mBLZ1pK0dg==
   dependencies:
-    dahlia-observable "^1.0.12"
+    dahlia-observable "^1.0.13"
     fast-deep-equal "^2.0.1"
 
-dahlia@^1.13.14:
-  version "1.13.14"
-  resolved "https://registry.yarnpkg.com/dahlia/-/dahlia-1.13.14.tgz#bc273b898e6ff673a5ecaf8b6d8157f60f0a7a43"
-  integrity sha512-cv93voAPcfYygJb65SciJnq1GetSMiRxc4LUlYoJcN88k3kVtfsVF8SWOwz+qWS1fEhmXbvpGo6bLaLNN/tL7Q==
+dahlia@^1.13.16:
+  version "1.13.16"
+  resolved "https://registry.yarnpkg.com/dahlia/-/dahlia-1.13.16.tgz#8dae28dd92186361fd579f17cb6a8cb4306d671e"
+  integrity sha512-uCxGjIfbK6xGByZh28G2DOLeCjdpBnIlKBFgOTJE/xbexyQW44DX1pz/XHF476A4lFyYvkG4CMPlbG105lO/QA==
   dependencies:
     "@types/styled-components" "^4.1.14"
     "@types/styled-jsx" "^2.2.8"
@@ -525,10 +525,10 @@ dahlia@^1.13.14:
     dahlia-form "^1.0.5"
     dahlia-graphql "^1.0.0"
     dahlia-i18n "^1.0.3"
-    dahlia-modal "^1.1.10"
+    dahlia-modal "^1.1.12"
     dahlia-rest "^1.0.1"
-    dahlia-router "^1.1.9"
-    dahlia-store "^1.2.18"
+    dahlia-router "^1.1.10"
+    dahlia-store "^1.2.19"
     gery "^1.1.3"
     gql-tag "^1.0.1"
     styled-components "^4.2.0"
