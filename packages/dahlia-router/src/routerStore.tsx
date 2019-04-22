@@ -1,5 +1,5 @@
 import React from 'react'
-import { createStore } from 'dahlia-store'
+import { createStore, raw } from 'dahlia-store'
 import { NO_ROUTE_MATCH } from './constant'
 import { interceptors } from './interceptor'
 
@@ -29,7 +29,7 @@ const defaultPage = {
   parentPath: '',
 } as Page
 const currentPath = ''
-const currentPage = {} as Page
+const currentPage = null as (Page | null)
 const pages: Page[] = []
 const params: {
   [key: string]: any
@@ -49,8 +49,8 @@ const store = createStore({
   },
   go({ path, replace }: { path: string; replace?: boolean }) {
     const { pages } = store
-    const rootPage = findRooPage(pages, path)
-    const params = getParams(pages)
+    const rootPage = findRooPage(raw(pages), path)
+    const params = getParams(raw(pages))
 
     // handle interceptors
     if (interceptors.length) {

@@ -30,10 +30,7 @@ export function replaceState(url: string): void {
   history.replaceState(null, '', url)
 }
 
-export function matchPath(
-  pagePath: string,
-  clientPath: string,
-): object | null | boolean {
+export function matchPath(pagePath: string, clientPath: string): object | null | boolean {
   try {
     const parser = new Path(pagePath)
     return parser.test(clientPath)
@@ -43,10 +40,7 @@ export function matchPath(
 }
 
 // TODO: need refactor
-function partialMatchPath(
-  page: Page,
-  paths: string[],
-): object | null | boolean {
+function partialMatchPath(page: Page, paths: string[]): object | null | boolean {
   const clientPath = getPath() + '/'
   const { path, parentPath, fullPath } = page
   try {
@@ -137,7 +131,6 @@ export function getParams(pages: Pages) {
         params = match
         break
       }
-
       if (item.children && item.children.length) {
         find(item.children)
       }
@@ -160,10 +153,7 @@ export function createPage(pages: Pages, paths: string[] = []): any {
     if (!item.children || !item.children.length) {
       return !!match ? <PG params={match} key={index} /> : null
     }
-    const currentPaths = item.children.reduce(
-      (result, cur) => [...result, cur.path],
-      [],
-    )
+    const currentPaths = item.children.reduce((result, cur) => [...result, cur.path], [])
 
     return (
       <PG params={match} key={index}>
