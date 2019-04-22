@@ -9,7 +9,7 @@ import gql from 'gql-tag'
 import { Config } from './config'
 
 function bootstrap(options: Config) {
-  const { routes, graphql, rest, root, modals, app } = options
+  const { routes, modals, graphql, rest, root, app } = options
   if (rest) configRest(rest)
   if (graphql) configGraphql(graphql)
 
