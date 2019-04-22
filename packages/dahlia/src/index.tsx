@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { render } from 'react-dom'
 import { config as configRest } from 'dahlia-rest'
 import { config as configGraphql } from 'dahlia-graphql'
-import { Router } from './dahlia-router'
+import { Router } from 'dahlia-router'
 import { Modals } from 'dahlia-modal'
 import gql from 'gql-tag'
 
