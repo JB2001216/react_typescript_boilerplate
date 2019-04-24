@@ -28,8 +28,8 @@ const UseFetchApp = () => {
 
   return (
     <div className="App">
-      <button onClick={() => refetch('/todos/2')}>refetch</button>
-      <button onClick={() => fetcher.getTodo.refetch('/todos/2')}>refetch with fetcher</button>
+      <button onClick={() => refetch()}>refetch</button>
+      <button onClick={() => fetcher.getTodo.refetch()}>refetch with fetcher</button>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   )

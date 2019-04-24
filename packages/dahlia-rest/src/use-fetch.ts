@@ -4,7 +4,7 @@ import fetcher from './fetcher'
 import { FetchResult, Refetch, Options } from './types'
 
 interface HooksResult<T> extends FetchResult<T> {
-  refetch: (url: any) => any
+  refetch: Refetch
 }
 
 type Deps = ReadonlyArray<any>
@@ -33,7 +33,7 @@ export function useFetch<T extends any>(url: string, optionsOrDeps?: Deps | Opti
   const [result, setState] = useState(initialState)
   const dependences = getDeps(optionsOrDeps, deps)
 
-  const fetchData = async (url: string, options?: Options) => {
+  const fetchData = async (options?: Options) => {
     setState(prev => ({ ...prev, loading: true }))
     try {
       const data: T = await fetch(url, options || {})
@@ -43,19 +43,19 @@ export function useFetch<T extends any>(url: string, optionsOrDeps?: Deps | Opti
     }
   }
 
-  const refetch: Refetch = (url: string, options?: Options): any => {
-    fetchData(url, options)
-  }
-
-  const { name } = getOptions(optionsOrDeps)
-  if (name) {
-    console.log('name:', name)
-    fetcher[name] = { refetch }
+  const refetch: Refetch = (options?: Options): any => {
+    fetchData(options)
   }
 
   useEffect(() => {
     const options = getOptions(optionsOrDeps)
-    fetchData(url, options)
+    fetchData(options)
+
+    // store refetch fn to fetcher
+    if (options.name) {
+      fetcher[options.name] = { refetch }
+    }
+
     return () => {
       unmounted = true
     }
