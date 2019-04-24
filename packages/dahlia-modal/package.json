@@ -1,6 +1,6 @@
 {
   "name": "dahlia-modal",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -54,6 +54,6 @@
     "typescript": "^3.4.2"
   },
   "dependencies": {
-    "dahlia-store": "^1.2.19"
+    "dahlia-store": "^1.2.20"
   }
 }
