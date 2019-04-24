@@ -2,8 +2,12 @@ import { Options as RequestOptions } from 'dahlia-request'
 
 export type Update = (updateOptions?: Options) => any
 
+export interface Param {
+  [key: string]: string | number | boolean
+}
 export interface Options extends RequestOptions {
   name?: string
+  param?: Param
 }
 
 export type Refetch = (options?: Options) => void
@@ -43,3 +47,9 @@ export interface Fetcher {
     refetch: Refetch
   }
 }
+
+export interface HooksResult<T> extends FetchResult<T> {
+  refetch: Refetch
+}
+
+export type Deps = ReadonlyArray<any>
