@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react'
 import { fetch } from './fetch'
 import fetcher from './fetcher'
-import { FetchResult, Refetch, Options } from './types'
-
-interface HooksResult<T> extends FetchResult<T> {
-  refetch: Refetch
-}
-
-type Deps = ReadonlyArray<any>
+import { FetchResult, Refetch, Options, HooksResult, Deps, Param } from './types'
 
 function getDeps(optionsOrDeps?: Deps | Options, deps?: Deps): Deps {
   if (deps) return deps
@@ -20,7 +14,20 @@ function getDeps(optionsOrDeps?: Deps | Options, deps?: Deps): Deps {
 
 function getOptions(optionsOrDeps?: Deps | Options): Options {
   if (!optionsOrDeps) return {} as Options
+  if (Array.isArray(optionsOrDeps)) return {}
   return optionsOrDeps as Options
+}
+
+function setUrlParam(url: string = '', param: Param) {
+  return url
+    .split('/')
+    .map(item => {
+      if (item.startsWith(':')) {
+        return param[item.replace(/^\:/, '')]
+      }
+      return item
+    })
+    .join('/')
 }
 
 export function useFetch<T extends any>(url: string, options?: Options, deps?: Deps): HooksResult<T>
@@ -28,6 +35,7 @@ export function useFetch<T extends any>(url: string, options?: Options): HooksRe
 export function useFetch<T extends any>(url: string, deps?: Deps): HooksResult<T>
 
 export function useFetch<T extends any>(url: string, optionsOrDeps?: Deps | Options, deps?: Deps) {
+  const originUrl = url
   let unmounted = false
   const initialState = { loading: true } as FetchResult<T>
   const [result, setState] = useState(initialState)
@@ -35,8 +43,10 @@ export function useFetch<T extends any>(url: string, optionsOrDeps?: Deps | Opti
 
   const fetchData = async (options?: Options) => {
     setState(prev => ({ ...prev, loading: true }))
+    const fetchOptions = getOptions(options)
+    if (fetchOptions.param) url = setUrlParam(originUrl, fetchOptions.param)
     try {
-      const data: T = await fetch(url, options || {})
+      const data: T = await fetch(url, fetchOptions || {})
       if (!unmounted) setState(prev => ({ ...prev, loading: false, data }))
     } catch (error) {
       if (!unmounted) setState(prev => ({ ...prev, loading: false, error }))
