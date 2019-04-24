@@ -6,13 +6,12 @@ export interface Options extends RequestOptions {
   name?: string
 }
 
-export type Refetch = (url: string, options?: Options) => any
+export type Refetch = (options?: Options) => void
 
 export interface FetchResult<T> {
   loading: boolean | undefined
   data: T
   error: any
-  refetch: Refetch
 }
 
 export interface UpdateResult<T> {
