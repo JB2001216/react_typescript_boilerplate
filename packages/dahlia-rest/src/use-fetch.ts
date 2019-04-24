@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Options } from 'dahlia-request'
 import { fetch } from './fetch'
-import { FetchResult } from './types'
+import fetcher from './fetcher'
+import { FetchResult, Refetch, Options } from './types'
 
 interface HooksResult<T> extends FetchResult<T> {
   refetch: (url: any) => any
@@ -36,15 +36,21 @@ export function useFetch<T extends any>(url: string, optionsOrDeps?: Deps | Opti
   const fetchData = async (url: string, options?: Options) => {
     setState(prev => ({ ...prev, loading: true }))
     try {
-      const data: T = await fetch(url, options)
+      const data: T = await fetch(url, options || {})
       if (!unmounted) setState(prev => ({ ...prev, loading: false, data }))
     } catch (error) {
       if (!unmounted) setState(prev => ({ ...prev, loading: false, error }))
     }
   }
 
-  const refetch = (url: string, options?: Options): any => {
-    fetchData(url, options || {})
+  const refetch: Refetch = (url: string, options?: Options): any => {
+    fetchData(url, options)
+  }
+
+  const { name } = getOptions(optionsOrDeps)
+  if (name) {
+    console.log('name:', name)
+    fetcher[name] = { refetch }
   }
 
   useEffect(() => {
