@@ -1,7 +1,7 @@
 import { observable, observe } from '../src'
 
 test('observable', () => {
-  let count: number
+  let count: number = 0
   const store = observable({
     count: 1,
     increment() {

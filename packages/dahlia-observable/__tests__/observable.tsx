@@ -9,9 +9,7 @@ test('observable', () => {
   })
 
   expect(store.count).toBe(1)
-
   store.increment()
-
   expect(store.count).toBe(2)
 })
 
