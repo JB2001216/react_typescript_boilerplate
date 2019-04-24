@@ -1,12 +1,18 @@
-import { Options } from 'dahlia-request'
+import { Options as RequestOptions } from 'dahlia-request'
 
 export type Update = (updateOptions?: Options) => any
+
+export interface Options extends RequestOptions {
+  name?: string
+}
+
+export type Refetch = (url: string, options?: Options) => any
 
 export interface FetchResult<T> {
   loading: boolean | undefined
   data: T
   error: any
-  refetch: (url: string) => any
+  refetch: Refetch
 }
 
 export interface UpdateResult<T> {
@@ -31,4 +37,10 @@ export interface RestConfig {
   endpoint: string
   interceptor?: Interceptor
   headers?: HeadersInit
+}
+
+export interface Fetcher {
+  [key: string]: {
+    refetch: Refetch
+  }
 }

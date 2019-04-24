@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { config, fetch, useFetch, useUpdate } from '../../src'
+import { config, fetch, useFetch, useUpdate, fetcher } from './src'
 
 config({
   endpoint: 'https://jsonplaceholder.typicode.com',
@@ -21,7 +21,7 @@ const FetchApp = () => {
 }
 
 const UseFetchApp = () => {
-  const { loading, data, error, refetch } = useFetch('/todos/1')
+  const { loading, data, error, refetch } = useFetch('/todos/1', { name: 'getTodo' })
 
   if (loading) return <div>loading....</div>
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>
@@ -29,6 +29,7 @@ const UseFetchApp = () => {
   return (
     <div className="App">
       <button onClick={() => refetch('/todos/2')}>refetch</button>
+      <button onClick={() => fetcher.getTodo.refetch('/todos/2')}>refetch with fetcher</button>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   )
