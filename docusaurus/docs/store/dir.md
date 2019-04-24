@@ -1,15 +1,16 @@
 ---
 id: dir
-title: 目录组织
-sidebar_label: 目录组织
+title: 目录结构
+sidebar_label: 目录结构
 ---
 
-
-推荐的目录组织方式：
+默认情况下，`dahlia/store` 是分形的，`dahlia/store`并不限制 store 的组织方式，你可以把 store 定义在任意位置，但为了提高项目的可维护性，推荐下面的目录结构组织方式：
 
 ```bash
 .
-└── stores
-    ├── userStore.tsx
-    └── uodoStore.tsx
+├── components
+├── pages
+└── stores # your store files
+    ├── userStore.ts
+    └── todoStore.ts
 ```

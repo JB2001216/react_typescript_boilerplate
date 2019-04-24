@@ -40,5 +40,4 @@ export default observe(() => (
     <button onClick={store.fetchTodos}>Fetch Todos</button>
   </div>
 ))
-
 ```
