@@ -21,10 +21,11 @@
     ],
     "网络请求(Rest)": [
       "rest/basic",
+      "rest/started",
       "rest/useFetch",
       "rest/useUpdate",
       "rest/fetch",
-      "rest/config",
+      "rest/reFetch",
       "rest/interceptor"
     ],
     "网络请求(GraphQL)": [

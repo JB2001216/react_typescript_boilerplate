@@ -1,7 +1,7 @@
 ---
 id: fetch
-title: fetch
-sidebar_label: fetch
+title: 网络请求 (fetch)
+sidebar_label: 网络请求 (fetch)
 ---
 
 ```jsx
@@ -22,5 +22,4 @@ export default () => {
 
   return <pre className="App">{JSON.stringify(todo, null, 2)}</pre>
 }
-
 ```
