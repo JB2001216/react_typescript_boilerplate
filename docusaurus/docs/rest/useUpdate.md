@@ -1,7 +1,7 @@
 ---
 id: useUpdate
-title: useUpdate
-sidebar_label: useUpdate
+title: 更新数据 (useUpdate)
+sidebar_label: 更新数据 (useUpdate)
 ---
 
 ```jsx
