@@ -100,7 +100,7 @@ const Todos = () => {
 import { fetcher } from 'dahlia/rest'
 
 const Todos = () => {
-  const { loading, data, error } = useFetch('/todos', { name: 'GetTodo' })
+  const { loading, data, error } = useFetch('/todos', { name: 'GetTodos' })
 
   if (loading) return <span>loading...</span>
   if (error) return <span>error!</span>
