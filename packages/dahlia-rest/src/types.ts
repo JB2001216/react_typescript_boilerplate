@@ -10,7 +10,7 @@ export interface Options extends RequestOptions {
   param?: Param
 }
 
-export type Refetch = (options?: Options) => void
+export type Refetch = <T>(options?: Options) => Promise<T>
 
 export interface FetchResult<T> {
   loading: boolean | undefined

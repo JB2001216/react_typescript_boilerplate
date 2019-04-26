@@ -48,13 +48,16 @@ export function useFetch<T extends any>(url: string, optionsOrDeps?: Deps | Opti
     try {
       const data: T = await fetch(url, fetchOptions || {})
       if (!unmounted) setState(prev => ({ ...prev, loading: false, data }))
+      return data
     } catch (error) {
       if (!unmounted) setState(prev => ({ ...prev, loading: false, error }))
+      throw error
     }
   }
 
-  const refetch: Refetch = (options?: Options): any => {
-    fetchData(options)
+  const refetch: Refetch = async <P = any>(options?: Options): Promise<P> => {
+    const refetchedData: any = await fetchData(options)
+    return refetchedData as P
   }
 
   useEffect(() => {
