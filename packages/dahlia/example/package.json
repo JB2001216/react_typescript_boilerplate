@@ -18,7 +18,7 @@
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
     "antd": "^3.16.4",
-    "dahlia": "^1.13.16",
+    "dahlia": "^1.13.17",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "typescript": "^3.4.4"
