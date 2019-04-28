@@ -464,10 +464,10 @@ dahlia-i18n@^1.0.3:
   dependencies:
     lodash.get "^4.4.2"
 
-dahlia-modal@^1.1.12:
-  version "1.1.12"
-  resolved "https://registry.yarnpkg.com/dahlia-modal/-/dahlia-modal-1.1.12.tgz#1a0a9eccf1df49dba5ac5334c96f3c3a9afe99d5"
-  integrity sha512-2sLQf3usJ+fkF3bbtOLbjjraAPCsZWutWlQQFPuQq5mWzu2+lbgm6JercLld0simfXUPYjag11z7ioeuSGuCzQ==
+dahlia-modal@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/dahlia-modal/-/dahlia-modal-1.1.13.tgz#09f2a8e73e4808a8ac3f78a91ea53cda7e45d650"
+  integrity sha512-5HHlfbU5wKjJY9fGAgewMaw7ql48vhjZ8Q3mknTTRDrwl05J4Dlatj0CTyoxMgnpMDTR/w4s9MSfnt4CgtOweA==
   dependencies:
     dahlia-store "^1.2.19"
 
@@ -491,10 +491,10 @@ dahlia-rest@^1.0.1:
   dependencies:
     dahlia-request "^1.0.0"
 
-dahlia-router@^1.1.10:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/dahlia-router/-/dahlia-router-1.1.10.tgz#1330ed62638ea5d5c67859a6cc5a43cb30c85642"
-  integrity sha512-0/KwWs5lt7Nrh3Q/O5AHTSo3llOcSTOANzjFI56KyDaSa5qhg5X+/E1+RQapUXetZPAMHVWRHkONGI+qHm95TQ==
+dahlia-router@^1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/dahlia-router/-/dahlia-router-1.1.11.tgz#38cfaf8acff3fdb3a73af617bd417ce583cf99f7"
+  integrity sha512-n0he7BHJg3qBXTy5x4opKQX0wy/Md2uOqdcgGBFs8y0MdX2PNUjXH0+JFlrVezX0mdFVgiSpfYhc1omYTxAHRw==
   dependencies:
     dahlia-store "^1.2.19"
     path-parser "^4.2.0"
@@ -507,10 +507,10 @@ dahlia-store@^1.2.19:
     dahlia-observable "^1.0.13"
     fast-deep-equal "^2.0.1"
 
-dahlia@^1.13.16:
-  version "1.13.16"
-  resolved "https://registry.yarnpkg.com/dahlia/-/dahlia-1.13.16.tgz#8dae28dd92186361fd579f17cb6a8cb4306d671e"
-  integrity sha512-uCxGjIfbK6xGByZh28G2DOLeCjdpBnIlKBFgOTJE/xbexyQW44DX1pz/XHF476A4lFyYvkG4CMPlbG105lO/QA==
+dahlia@^1.13.17:
+  version "1.13.17"
+  resolved "https://registry.yarnpkg.com/dahlia/-/dahlia-1.13.17.tgz#f2e8af507b90b5b9c24830ba6cd236565d56cf9b"
+  integrity sha512-BR3M7aM2QM+3CJ5G/gK5XOLlAlwAzDESjxycfsYkHHIdw6JRGvf8ZEFmhtVFTT7NlcecbAoBdbO7MKJq9hBPgw==
   dependencies:
     "@types/styled-components" "^4.1.14"
     "@types/styled-jsx" "^2.2.8"
@@ -525,9 +525,9 @@ dahlia@^1.13.16:
     dahlia-form "^1.0.5"
     dahlia-graphql "^1.0.0"
     dahlia-i18n "^1.0.3"
-    dahlia-modal "^1.1.12"
+    dahlia-modal "^1.1.13"
     dahlia-rest "^1.0.1"
-    dahlia-router "^1.1.10"
+    dahlia-router "^1.1.11"
     dahlia-store "^1.2.19"
     gery "^1.1.3"
     gql-tag "^1.0.1"

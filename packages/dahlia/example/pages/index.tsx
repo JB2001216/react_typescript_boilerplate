@@ -1,5 +1,5 @@
 import React from 'react'
-import { modalStore } from '../dahlia/dahlia-modal'
+import { modalStore } from 'dahlia/modal'
 
 export default () => (
   <div>
