@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { observe, createStore } from 'dahlia/store'
 
 import { config, fetch, useFetch, useUpdate, fetcher } from './src'
 
@@ -26,10 +27,22 @@ const FetchApp = () => {
   return <pre className="App">{JSON.stringify(data, null, 2)}</pre>
 }
 
-const UseFetchApp = () => {
+const store = createStore({
+  id: 1,
+  setId() {
+    store.id = 2
+  },
+})
+
+setTimeout(() => {
+  store.setId()
+}, 2000)
+
+const UseFetchApp = observe(() => {
   const { loading, data, error, refetch } = useFetch<Todo>('/todos/:id', {
     name: 'getTodo',
-    param: { id: 1 },
+    param: { id: store.id },
+    deps: [store.id],
   })
 
   const handleClick = async () => {
@@ -42,6 +55,7 @@ const UseFetchApp = () => {
 
   return (
     <div className="App">
+      <h2>useFetch</h2>
       <button onClick={handleClick}>refetch</button>
       <button onClick={() => fetcher.getTodo.refetch({ param: { id: 3 } })}>
         refetch with fetcher
@@ -49,7 +63,8 @@ const UseFetchApp = () => {
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   )
-}
+})
+
 const UseUpdateApp = () => {
   const [addTodo, { loading, data, error }] = useUpdate('/todos')
 
