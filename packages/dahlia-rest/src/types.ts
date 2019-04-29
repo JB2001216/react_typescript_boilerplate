@@ -5,9 +5,12 @@ export type Update = (updateOptions?: Options) => any
 export interface Param {
   [key: string]: string | number | boolean
 }
+
+export type Deps = ReadonlyArray<any>
 export interface Options extends RequestOptions {
   name?: string
   param?: Param
+  deps?: Deps
 }
 
 export type Refetch = <T>(options?: Options) => Promise<T>
@@ -51,5 +54,3 @@ export interface Fetcher {
 export interface HooksResult<T> extends FetchResult<T> {
   refetch: Refetch
 }
-
-export type Deps = ReadonlyArray<any>

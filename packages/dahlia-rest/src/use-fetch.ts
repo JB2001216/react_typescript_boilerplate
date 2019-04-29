@@ -3,19 +3,17 @@ import { fetch } from './fetch'
 import fetcher from './fetcher'
 import { FetchResult, Refetch, Options, HooksResult, Deps, Param } from './types'
 
-function getDeps(optionsOrDeps?: Deps | Options, deps?: Deps): Deps {
-  if (deps) return deps
-  if (!optionsOrDeps) return [] as Deps
-  if (Array.isArray(optionsOrDeps)) {
-    return optionsOrDeps
+function getDeps(options?: Options): Deps {
+  if (!options) return [] as Deps
+  if (options && Array.isArray(options.deps)) {
+    return options.deps
   }
   return [] as Deps
 }
 
-function getOptions(optionsOrDeps?: Deps | Options): Options {
-  if (!optionsOrDeps) return {} as Options
-  if (Array.isArray(optionsOrDeps)) return {}
-  return optionsOrDeps as Options
+function getOptions(options?: Options): Options {
+  if (!options) return {} as Options
+  return options
 }
 
 function setUrlParam(url: string = '', param: Param) {
@@ -30,20 +28,16 @@ function setUrlParam(url: string = '', param: Param) {
     .join('/')
 }
 
-export function useFetch<T extends any>(url: string, options?: Options, deps?: Deps): HooksResult<T>
-export function useFetch<T extends any>(url: string, options?: Options): HooksResult<T>
-export function useFetch<T extends any>(url: string, deps?: Deps): HooksResult<T>
-
-export function useFetch<T extends any>(url: string, optionsOrDeps?: Deps | Options, deps?: Deps) {
+export function useFetch<T extends any>(url: string, options?: Options) {
   const originUrl = url
   let unmounted = false
   const initialState = { loading: true } as FetchResult<T>
   const [result, setState] = useState(initialState)
-  const dependences = getDeps(optionsOrDeps, deps)
+  const dependences = getDeps(options)
 
-  const fetchData = async (options?: Options) => {
+  const fetchData = async (opt?: Options) => {
     setState(prev => ({ ...prev, loading: true }))
-    const fetchOptions = getOptions(options)
+    const fetchOptions = getOptions(opt)
     if (fetchOptions.param) url = setUrlParam(originUrl, fetchOptions.param)
     try {
       const data: T = await fetch(url, fetchOptions || {})
@@ -55,18 +49,18 @@ export function useFetch<T extends any>(url: string, optionsOrDeps?: Deps | Opti
     }
   }
 
-  const refetch: Refetch = async <P = any>(options?: Options): Promise<P> => {
-    const refetchedData: any = await fetchData(options)
+  const refetch: Refetch = async <P = any>(opt?: Options): Promise<P> => {
+    const refetchedData: any = await fetchData(opt)
     return refetchedData as P
   }
 
   useEffect(() => {
-    const options = getOptions(optionsOrDeps)
-    fetchData(options)
+    const fetchOptions = getOptions(options)
+    fetchData(fetchOptions)
 
     // store refetch fn to fetcher
-    if (options.name) {
-      fetcher[options.name] = { refetch }
+    if (fetchOptions.name) {
+      fetcher[fetchOptions.name] = { refetch }
     }
 
     return () => {
