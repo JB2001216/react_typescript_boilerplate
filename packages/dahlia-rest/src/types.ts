@@ -16,13 +16,13 @@ export interface Options extends RequestOptions {
 export type Refetch = <T>(options?: Options) => Promise<T>
 
 export interface FetchResult<T> {
-  loading: boolean | undefined
+  loading: boolean
   data: T
   error: any
 }
 
 export interface UpdateResult<T> {
-  loading: boolean | undefined
+  loading: boolean
   data: T
   error: any
 }
