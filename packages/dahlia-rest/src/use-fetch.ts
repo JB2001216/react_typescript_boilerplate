@@ -4,15 +4,12 @@ import fetcher from './fetcher'
 import { FetchResult, Refetch, Options, HooksResult, Deps, Param } from './types'
 
 function getDeps(options?: Options): Deps {
-  if (!options) return [] as Deps
-  if (options && Array.isArray(options.deps)) {
-    return options.deps
-  }
-  return [] as Deps
+  if (options && Array.isArray(options.deps)) return options.deps
+  return []
 }
 
 function getOptions(options?: Options): Options {
-  if (!options) return {} as Options
+  if (!options) return {}
   return options
 }
 
@@ -33,7 +30,7 @@ export function useFetch<T extends any>(url: string, options?: Options) {
   let unmounted = false
   const initialState = { loading: true } as FetchResult<T>
   const [result, setState] = useState(initialState)
-  const dependences = getDeps(options)
+  const deps = getDeps(options)
 
   const fetchData = async (opt?: Options) => {
     setState(prev => ({ ...prev, loading: true }))
@@ -66,7 +63,7 @@ export function useFetch<T extends any>(url: string, options?: Options) {
     return () => {
       unmounted = true
     }
-  }, dependences)
+  }, deps)
 
   return { ...result, refetch } as HooksResult<T>
 }
