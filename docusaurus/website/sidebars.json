@@ -25,12 +25,11 @@
       "rest/useFetch",
       "rest/useUpdate",
       "rest/fetch",
-      "rest/reFetch",
-      "rest/interceptor"
+      "rest/reFetch"
     ],
     "网络请求(GraphQL)": [
       "graphql/basic",
-      "graphql/config",
+      "graphql/started",
       "graphql/useQuery",
       "graphql/useMutate",
       "graphql/query"

@@ -1,8 +1,10 @@
 ---
 id: useQuery
-title: useQuery
-sidebar_label: useQuery
+title: 获取数据 (useQuery)
+sidebar_label: 获取数据 (useQuery)
 ---
+
+> const result = useQuery(url, options, deps)
 
 ```jsx
 import React from 'react'

@@ -8,9 +8,11 @@ sidebar_label: 简介
 
 下面我们看看和使用 Redux 有什么本质上的区别。
 
-假设我们要实现一个功能，获取一个 TodoList 数据，并且用 UI 渲染。TodoList 数据源：https://jsonplaceholder.typicode.com/todos 。
+假设我们要实现一个功能，获取一个 TodoList 数据，并且用 UI 渲染。
 
-## 使用 Dahlia
+TodoList 数据源：https://jsonplaceholder.typicode.com/todos 。
+
+## 使用 `dahlia/rest`
 
 我们使用 `dahlia/rest` 的 `useFetch` 获取数据，可以轻松的拿到数据的状态 `{ loading, data, error }`，然后渲染处理：
 
@@ -28,7 +30,7 @@ const Todos = () => {
 
   return (
     <ul>
-      {items.map(item => (
+      {data.map(item => (
         <li key={item.id}>{item.title}</li>
       ))}
     </ul>
@@ -155,4 +157,4 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(Todos)
 ```
 
-我们可以发现，使用 Redux 管理异步数据，代码量激增，是 `dahlia/rest` 5倍以上的代码量，不管开发效率还是开发体验，亦或是可以维护性和可读性，个人认为，类似的 redux 这样的解决方案并不优秀。Dahlia 版本简单直观，Redux 本地冗长，并且链路太长，需维护多个文件，更多的代码量。
+我们可以发现，使用 Redux 管理异步数据，代码量激增，是 `dahlia/rest` 5 倍以上的代码量，不管开发效率还是开发体验，亦或是可以维护性和可读性，个人认为，类似的 redux 这样的解决方案并不优秀。Dahlia 版本简单直观，Redux 本地冗长，并且链路太长，需维护多个文件，更多的代码量。

@@ -4,7 +4,7 @@ title: 获取数据 (useFetch)
 sidebar_label: 获取数据 (useFetch)
 ---
 
-> const result = useFetch(url, options, deps)
+> const result = useFetch(url, options)
 
 以简单高效的方式获取和管理异步数据是 Dahlia 的核心功能之一。接下来，你将学习如何通过 `useFetch` 获取数据并渲染成 UI。
 
@@ -99,22 +99,15 @@ const { loading, data, error } = useFetch('/todos/:id', {
 
 HTTP 请求头，和原生`fetch`的 [`Headers`](https://github.github.io/fetch/#Headers) 一致，但有默认值: `{ 'content-type': 'application/json; charset=utf-8' }`
 
-**`name?: string`**
-
-为该 HTTP 请求命名，对于 refetch 非常有用。
-
-## `deps?: Deps`
+**`deps?: Deps`**
 
 `useFetch` 是一个自定义的 React hooks，默认情况下，组件多次渲染，`useFetch` 只会执行一次，不过如果你设置了依赖 (deps)，并且依赖发生更新，`useFetch`会重新执行，就是会重新获取数据，其机制类似于 `useEffect` 的依赖，不同的是不设置任何依赖值时，当组件发生多次渲染，`useFetch` 只会执行一次，`useFetch` 执行多次。
 
-依赖 deps 的类型为：`type Deps = ReadonlyArray<any>`
+依赖值 deps 是个数组,类型为：`type Deps = ReadonlyArray<any>`
 
-依赖值是个数组，可以为`useFetch` 的第二或者第三个参数，如下：
+**`name?: string`**
 
-```js
-const result = useFetch(url, options, deps)
-const result = useFetch(url, deps)
-```
+为该 HTTP 请求命名，对于 refetch 非常有用。
 
 ## 结果 (Result)
 
