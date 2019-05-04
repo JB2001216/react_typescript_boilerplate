@@ -57,7 +57,7 @@ const Todos = () => {
 
 **`endpoint`**: string
 
-Rest Api 服务器短点， 默认为当前前端页面 host。
+Rest Api 服务器端点， 默认为当前前端页面 host。
 
 **`headers`**: object
 
@@ -65,7 +65,7 @@ Rest Api 服务器短点， 默认为当前前端页面 host。
 
 ## 下一步
 
-上面就是 Dahlia 使用 Rest Api 获取最简单的例子，如果你要深入了解如何使用 `dahlia/rest`，建议细看：
+上面就是 Dahlia 使用 Rest Api 获取数据最简单的例子，如果你要深入了解如何使用 `dahlia/rest`，建议细看：
 
 - [获取数据](/docs/rest/useFetch): 深入了解 `useFetch` 的使用
 - [更新数据](/docs/rest/useUpdate): 深入了解 `useUpdate` 的使用

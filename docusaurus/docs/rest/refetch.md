@@ -21,7 +21,7 @@ const Todos = () => {
 
   const getSecondPage = () => {
     refetch({
-      query: { _start: 5, _limit: 5 }, // first page
+      query: { _start: 5, _limit: 5 }, // second page
     })
   }
 
@@ -29,7 +29,7 @@ const Todos = () => {
     <div>
       <button onClick={getSecondPage}>Second Page</button>
       <ul>
-        {items.map(item => (
+        {data.map(item => (
           <li key={item.id}>{item.title}</li>
         ))}
       </ul>
@@ -45,10 +45,10 @@ const Todos = () => {
 首先，定义一个 store 用来存放依赖：
 
 ```tsx
-// /store/todoStore.ts
+// /stores/todoStore.ts
 const todoStore = createStore({
   params: {
-    _start: 5,
+    _start: 0,
     _limit: 5,
   },
   updateParams(params) {
@@ -60,28 +60,27 @@ const todoStore = createStore({
 在组件中，使用依赖：
 
 ```tsx
-import todoStore from '@store/todoStoreo'
+import todoStore from '@stores/todoStore'
 
 const Todos = () => {
   const { params } = todoStore
-  const { loading, data, error, refetch } = useFetch(
-    '/todos',
-    { query: params },
-    [params],
-  )
+  const { loading, data, error } = useFetch('/todos', {
+    query: params,
+    deps: [params],
+  })
 
   if (loading) return <span>loading...</span>
   if (error) return <span>error!</span>
 
   const updatePage = () => {
-    totoStore.updateParams({ _start: 5, _limit: 5 })
+    todoStore.updateParams({ _start: 5, _limit: 5 })
   }
 
   return (
     <div>
       <button onClick={updatePage}>Update Page</button>
       <ul>
-        {items.map(item => (
+        {data.map(item => (
           <li key={item.id}>{item.title}</li>
         ))}
       </ul>
@@ -90,7 +89,9 @@ const Todos = () => {
 }
 ```
 
-你可以在任意地方，不管组件内还是组件外，你都可以可以调用`totoStore.updateParams`更新依赖，从而实现数据更新。
+你可以在任意地方，不管组件内还是组件外，你都可以可以调用`todoStore.updateParams`更新依赖，从而实现数据更新。
+
+注意：这里的依赖是个对象，你必须更新整个对象的引用，如果你只更新对象的属性是无效的。
 
 ## 使用 fetcher
 
@@ -107,7 +108,7 @@ const Todos = () => {
 
   return (
     <ul>
-      {items.map(item => (
+      {data.map(item => (
         <li key={item.id}>{item.title}</li>
       ))}
     </ul>
