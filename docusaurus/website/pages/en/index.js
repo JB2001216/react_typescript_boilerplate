@@ -107,13 +107,26 @@ class Index extends React.Component {
       </div>
     )
 
-    const TryOut = () => (
-      <Block id="try">
+    const ShowCode = () => (
+      <Block>
+        {[
+          {
+            content: '优雅的数据获取方式',
+            image: `${baseUrl}img/use-fetch.png`,
+            imageAlign: 'left',
+            title: '数据获取',
+          },
+        ]}
+      </Block>
+    )
+
+    const ShowCode2 = () => (
+      <Block>
         {[
           {
             content: 'Talk about trying this out',
-            image: `${baseUrl}img/logo.png`,
-            imageAlign: 'left',
+            image: `${baseUrl}img/use-query.png`,
+            imageAlign: 'right',
             title: 'Try it Out',
           },
         ]}
@@ -139,7 +152,7 @@ class Index extends React.Component {
         {[
           {
             content: 'Talk about learning how to use this',
-            image: `${baseUrl}img/logo.png`,
+            image: `${baseUrl}img/use-fetch0.png`,
             imageAlign: 'right',
             title: 'Learn How',
           },
@@ -206,7 +219,8 @@ class Index extends React.Component {
           <Features />
           {/* <FeatureCallout /> */}
           {/* <LearnHow /> */}
-          {/* <TryOut /> */}
+          {/* <ShowCode /> */}
+          {/* <ShowCode2 /> */}
           {/* <Description /> */}
           {/* <Showcase /> */}
         </div>

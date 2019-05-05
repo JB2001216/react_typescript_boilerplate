@@ -46,6 +46,8 @@ const Todos = () => {
 
 ```tsx
 // /stores/todoStore.ts
+import { createStore } from 'dahlia-store'
+
 const todoStore = createStore({
   params: {
     _start: 0,
@@ -60,9 +62,10 @@ const todoStore = createStore({
 在组件中，使用依赖：
 
 ```tsx
+import { observe } from 'dahlia-store'
 import todoStore from '@stores/todoStore'
 
-const Todos = () => {
+const Todos = observe(() => {
   const { params } = todoStore
   const { loading, data, error } = useFetch('/todos', {
     query: params,
@@ -86,7 +89,7 @@ const Todos = () => {
       </ul>
     </div>
   )
-}
+})
 ```
 
 你可以在任意地方，不管组件内还是组件外，你都可以可以调用`todoStore.updateParams`更新依赖，从而实现数据更新。
@@ -98,7 +101,7 @@ const Todos = () => {
 有时候，你需要在组件外部重新获取数据，但`useFetch` 却没有任何可以被依赖的参数，这时你可以使用 fetcher
 
 ```tsx
-import { fetcher } from 'dahlia/rest'
+import { useFetch, fetcher } from 'dahlia/rest'
 
 const Todos = () => {
   const { loading, data, error } = useFetch('/todos', { name: 'GetTodos' })
@@ -116,7 +119,7 @@ const Todos = () => {
 }
 
 const Refresh = () => (
-  <button onClick={fetcher.GetTodos.refetch()}>refresh</button>
+  <button onClick={() => fetcher.GetTodos.refetch()}>refresh</button>
 )
 
 const TodoApp = () => (
