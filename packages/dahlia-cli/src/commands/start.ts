@@ -19,6 +19,7 @@ export default class Start extends Command {
 
   async run() {
     process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+    process.env.SKIP_PREFLIGHT_CHECK = 'true'
 
     await prepare()
     watcher()
