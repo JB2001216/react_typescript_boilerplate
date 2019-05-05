@@ -12,13 +12,24 @@ export const deps = [
 
 export const pkg = {
   version: '0.1.0',
+  private: true,
   scripts: {
     start: 'dh start ',
     build: 'dh build',
     test: 'dh test',
   },
-  browserslist: ['>0.2%', 'not dead', 'not ie <= 11', 'not op_mini all'],
-  private: true,
+  eslintConfig: {
+    extends: 'react-app',
+  },
+
+  browserslist: {
+    production: ['>0.2%', 'not dead', 'not op_mini all'],
+    development: [
+      'last 1 chrome version',
+      'last 1 firefox version',
+      'last 1 safari version',
+    ],
+  },
 }
 
 // TODO: check files
