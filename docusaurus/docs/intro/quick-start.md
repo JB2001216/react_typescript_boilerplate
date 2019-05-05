@@ -31,7 +31,7 @@ dh new myapp
 
 ```bash
 cd myapp
-dh dev
+dh start
 ```
 
 启动成功后，然后访问浏览器：
