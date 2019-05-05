@@ -2,6 +2,7 @@ import chalk from 'chalk'
 import download from 'download-git-repo'
 
 const DAHLIA_TEMPLATE = 'forsigner/dahlia-template'
+const { cyan } = chalk
 
 export async function createApp(root: string) {
   return new Promise((resolve, reject) => {
@@ -12,7 +13,7 @@ export async function createApp(root: string) {
       console.log()
       console.log('Installing packages. This might take a couple of minutes.')
       console.log(
-        `Installing ${chalk.cyan('react')}, ${chalk.cyan('react-dom')}, and ${chalk.cyan(
+        `Installing ${cyan('react')}, ${cyan('react-dom')}, and ${cyan(
           'dahlia',
         )}...`,
       )
