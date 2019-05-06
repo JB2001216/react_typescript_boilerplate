@@ -12,7 +12,7 @@ import { showTips } from '../utils/showTips'
 export default class New extends Command {
   static description = 'Create a new Dahlia app'
   static aliases = ['n']
-  static examples = [`$ dh new myapp`]
+  static examples = ['$ dahlia new myapp', '$ dh n myapp']
 
   static args = [{ name: 'appName' }]
 
