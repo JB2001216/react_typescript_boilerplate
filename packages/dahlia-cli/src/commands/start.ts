@@ -15,7 +15,7 @@ import { customizeWebpack } from '../utils/customizeWebpack'
 export default class Start extends Command {
   static description = 'Run a dev server for development'
   static aliases = ['s']
-  static examples = [`$ dh start`]
+  static examples = ['$ dahlia start', '$ dh s']
 
   async run() {
     process.env.NODE_ENV = process.env.NODE_ENV || 'development'

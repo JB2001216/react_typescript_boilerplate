@@ -11,7 +11,7 @@ import { customizeWebpack } from '../utils/customizeWebpack'
 export default class Build extends Command {
   static description = 'Build project for production'
   static aliases = ['b']
-  static examples = [`$ dh build`]
+  static examples = ['$ dahlia build', '$ dh b']
 
   async run() {
     process.env.NODE_ENV = 'production'
