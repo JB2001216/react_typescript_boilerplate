@@ -1,10 +1,10 @@
-import { formatCode } from './formatCode'
-
 export const deps = [
+  '@types/node',
   '@types/jest',
   '@types/react',
   '@types/react-dom',
   'dahlia',
+  'dahlia-cli',
   'react',
   'react-dom',
   'typescript',
@@ -16,12 +16,10 @@ export const pkg = {
   scripts: {
     start: 'dh start ',
     build: 'dh build',
-    test: 'dh test',
   },
   eslintConfig: {
     extends: 'react-app',
   },
-
   browserslist: {
     production: ['>0.2%', 'not dead', 'not op_mini all'],
     development: [

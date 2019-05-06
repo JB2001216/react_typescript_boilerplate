@@ -21,7 +21,7 @@ function getInstallArgs(root: string) {
 }
 
 export function install(root: string) {
-  const command = canUseYarn() ? 'yarn' : 'npm'
+  const command = canUseYarn() ? 'yarnpkg' : 'npm'
   const args = getInstallArgs(root)
 
   // for npm
