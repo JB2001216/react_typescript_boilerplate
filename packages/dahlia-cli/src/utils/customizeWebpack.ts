@@ -1,11 +1,9 @@
 import { join } from 'path'
-import override from 'dahlia-webpack-override'
-import styledJsx from 'dahlia-webpack-styled-jsx'
-import styleComponents from 'dahlia-webpack-styled-components'
-import alias from 'dahlia-webpack-alias'
 import { Configuration } from 'webpack'
 
 import { webpackConfigPath, appDir } from './paths'
+import { override } from './webpackOverride'
+import { alias } from './overrideAlias'
 import { overrideWebpackExclude } from './overrideWebpackExclude'
 import { getDahliaConfig } from './getDahliaConfig'
 import WebpackBar from 'webpackbar'
@@ -23,9 +21,7 @@ export const customizeWebpack = () => {
       config.plugins.push(new WebpackBar())
     }
 
-    const newConfig = override(config, env).pipe(
-      styleComponents(),
-      styledJsx(),
+    let newConfig = override(config, env).pipe(
       overrideWebpackExclude(),
       alias({
         '@utils': resolve('utils/'),
@@ -42,6 +38,16 @@ export const customizeWebpack = () => {
 
     const dahliaConfig = getDahliaConfig()
 
+    // handle config.plugins
+    if (dahliaConfig && dahliaConfig.plugins) {
+      for (const plugin of dahliaConfig.plugins) {
+        if (plugin.webpack) {
+          newConfig = plugin.webpack(newConfig, env)
+        }
+      }
+    }
+
+    // handle config.webpack
     if (dahliaConfig && dahliaConfig.webpack) {
       return dahliaConfig.webpack(newConfig, env)
     }
