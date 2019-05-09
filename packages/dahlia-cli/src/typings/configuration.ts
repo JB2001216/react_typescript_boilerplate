@@ -3,8 +3,7 @@ import { Configuration as ServerConfig } from 'webpack-dev-server'
 
 export interface Plugin {
   webpack?: (config: WebpackConfig, env?: string) => WebpackConfig
-  // TODO: configFunction
-  devServer?: (configFunction: any, env?: string) => ServerConfig
+  devServer?: (config: ServerConfig) => ServerConfig
 }
 
 export interface Configuration extends Plugin {
