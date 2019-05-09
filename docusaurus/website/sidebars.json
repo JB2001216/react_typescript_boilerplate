@@ -38,12 +38,13 @@
       "store/intro",
       "store/started",
       "store/async",
-      "store/computed",
       "store/ts",
       "store/dir"
     ],
     "表单": ["doc3"],
     "弹窗": ["modal/basic", "modal/antd"],
+    "配置": ["config/basic", "config/router"],
+    "自定义webpack配置": ["webpack/basic", "webpack/plugin"],
     "命令行工具": [
       "cli/dh-basic",
       "cli/dh-help",
