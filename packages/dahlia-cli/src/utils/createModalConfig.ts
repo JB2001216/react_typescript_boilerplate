@@ -34,6 +34,7 @@ function formatModals(modals: string[]) {
   return modals.map(item => {
     const modalName = getModalName(item)
     const cmpName = getCmpName(item)
+    item  = item.split(sep).join('/')
     const modalImportPath = item
       .replace(/^modals/, '../../modals')
       .replace(/\.tsx$/, '')
