@@ -1,4 +1,5 @@
 import fs from 'fs-extra'
+import { sep } from 'path'
 import jetpack from 'fs-jetpack'
 
 import {
@@ -18,7 +19,7 @@ function capitalizeFirstLetter(str: string) {
 }
 
 function getPageName(path: string = '') {
-  const fileName = last(path.split('/'))
+  const fileName = last(path.split(sep))
   const pageName = fileName.replace(/\.tsx$/, '').replace(/[\.\-\^\$]/g, '_')
   return capitalizeFirstLetter(pageName)
 }

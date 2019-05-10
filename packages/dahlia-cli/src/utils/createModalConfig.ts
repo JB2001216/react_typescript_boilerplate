@@ -1,4 +1,5 @@
 import fs from 'fs-extra'
+import { sep } from 'path'
 import jetpack from 'fs-jetpack'
 
 import {
@@ -18,13 +19,13 @@ function capitalizeFirstLetter(str: string) {
 }
 
 function getModalName(path: string = '') {
-  const fileName = last(path.split('/'))
+  const fileName = last(path.split(sep))
   const modalName = fileName.replace(/\.tsx$/, '')
   return modalName
 }
 
 function getCmpName(path: string = '') {
-  const fileName = last(path.split('/'))
+  const fileName = last(path.split(sep))
   const modalName = fileName.replace(/\.tsx$/, '').replace(/[\.\-\^\$]/g, '_')
   return capitalizeFirstLetter(modalName)
 }
