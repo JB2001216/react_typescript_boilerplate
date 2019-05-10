@@ -1,9 +1,11 @@
 import { Command } from '@oclif/command'
 import chalk from 'chalk'
 import path from 'path'
+import yosay from 'yosay'
 
 import { createAppDir } from '../utils/createAppDir'
 import { checkAppDir } from '../utils/checkAppDir'
+import { getProjectType } from '../utils/getProjectType'
 import { createApp } from '../utils/createApp'
 import { createPkgFile } from '../utils/createPkgFile'
 import { install } from '../utils/install'
@@ -26,7 +28,14 @@ export default class New extends Command {
 
     const root = path.resolve(appName)
 
+    console.log(yosay('您正在初始化 dahlia 项目...'))
+
     try {
+      const projectType = await getProjectType()
+      // TODO:
+      if (projectType === 'dahlia-admin') {
+        return this.log(chalk.green('开发中...'))
+      }
       createAppDir(root)
       checkAppDir(root, appName)
       await createApp(root)
