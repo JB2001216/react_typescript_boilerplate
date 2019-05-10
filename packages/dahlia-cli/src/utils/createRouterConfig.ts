@@ -29,6 +29,7 @@ function formatPages(pages: string[]) {
     const HOME_PAGE = 'pages/index.tsx'
     let routerPath: string
     const pageName = getPageName(item)
+    item  = item.split(sep).join('/')
     const pageImportPath = item
       .replace(/^pages/, '../../pages')
       .replace(/\.tsx$/, '')
