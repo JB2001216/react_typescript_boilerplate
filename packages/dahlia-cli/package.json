@@ -33,6 +33,7 @@
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.0",
     "tslib": "^1.9.3",
+    "typescript": "^3.4.5",
     "webpackbar": "^3.1.5",
     "yosay": "^2.0.2"
   },
@@ -52,8 +53,7 @@
     "globby": "^9.2.0",
     "mocha": "^6.1.2",
     "nyc": "^13.3.0",
-    "ts-node": "^8.0.3",
-    "typescript": "^3.4.5"
+    "ts-node": "^8.0.3"
   },
   "engines": {
     "node": ">=8.0.0"
