@@ -7,9 +7,11 @@ import { createAppDir } from '../utils/createAppDir'
 import { checkAppDir } from '../utils/checkAppDir'
 import { getProjectType } from '../utils/getProjectType'
 import { createApp } from '../utils/createApp'
-import { createPkgFile } from '../utils/createPkgFile'
+import { setAppName } from '../utils/setAppName'
 import { install } from '../utils/install'
 import { showTips } from '../utils/showTips'
+
+const { green, yellow } = chalk
 
 export default class New extends Command {
   static description = 'Create a new Dahlia app'
@@ -23,7 +25,10 @@ export default class New extends Command {
 
     const appName: string = args.appName
     if (!appName) {
-      return this.log(chalk.red('required project name, eg: dh new myapp'))
+      return this.log(
+        yellow('required project name, eg: '),
+        green('dh new myapp'),
+      )
     }
 
     const root = path.resolve(appName)
@@ -32,14 +37,11 @@ export default class New extends Command {
 
     try {
       const projectType = await getProjectType()
-      // TODO:
-      if (projectType === 'dahlia-admin') {
-        return this.log(chalk.green('开发中...'))
-      }
+      const type = projectType === 'dahlia-admin' ? 'admin' : 'basic'
       createAppDir(root)
       checkAppDir(root, appName)
-      await createApp(root)
-      createPkgFile(root, appName)
+      await createApp(root, type)
+      setAppName(root, appName)
       await install(root)
       showTips(root, appName)
     } catch (error) {
