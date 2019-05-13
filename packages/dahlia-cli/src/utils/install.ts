@@ -3,21 +3,14 @@ import spawn from 'cross-spawn'
 
 import { canUseYarn } from './canUseYarn'
 
-function getInstallArgs(root: string) {
+export function install(root: string) {
   const useYarn = canUseYarn()
-  const args = ['--registry', 'https://registry.npm.taobao.org']
-
+  const command = useYarn ? 'yarnpkg' : 'npm'
+  const args: string[] = []
   if (useYarn) {
     args.push('--cwd')
     args.push(root)
   }
-
-  return args
-}
-
-export function install(root: string) {
-  const command = canUseYarn() ? 'yarnpkg' : 'npm'
-  const args = getInstallArgs(root)
 
   // for npm
   if (!canUseYarn()) process.chdir(root)
