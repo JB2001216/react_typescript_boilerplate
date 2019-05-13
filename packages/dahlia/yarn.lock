@@ -1035,7 +1035,7 @@ cross-fetch@^2.2.3:
 
 cross-fetch@^3.0.1:
   version "3.0.2"
-  resolved "http://registry.npm.taobao.org/cross-fetch/download/cross-fetch-3.0.2.tgz#b7136491967031949c7f86b15903aef4fa3f1768"
+  resolved "https://registry.npm.taobao.org/cross-fetch/download/cross-fetch-3.0.2.tgz#b7136491967031949c7f86b15903aef4fa3f1768"
   integrity sha1-txNkkZZwMZScf4axWQOu9Po/F2g=
   dependencies:
     node-fetch "2.3.0"
@@ -1085,8 +1085,8 @@ csstype@^2.2.0:
 
 dahlia-form@^1.0.5:
   version "1.0.5"
-  resolved "https://registry.yarnpkg.com/dahlia-form/-/dahlia-form-1.0.5.tgz#20e06ea0413ba1414cdaf60ec0da2fe075864fd5"
-  integrity sha512-CGw8jOa3aa29APke2J1DFYygezxz5g01NH/bWKoy+WkfnIVsPRdMQZoOY/WAReIbasWOcYyBW36BvbggDbA4Fg==
+  resolved "https://registry.npm.taobao.org/dahlia-form/download/dahlia-form-1.0.5.tgz#20e06ea0413ba1414cdaf60ec0da2fe075864fd5"
+  integrity sha1-IOBuoEE7oUFM2vYOwNov4HWGT9U=
   dependencies:
     checkok "^1.1.1"
     deepmerge "^3.2.0"
@@ -1098,66 +1098,66 @@ dahlia-form@^1.0.5:
 
 dahlia-graphql-client@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dahlia-graphql-client/-/dahlia-graphql-client-1.0.0.tgz#59b98f693856a76a9877f04dea4451b334e8d010"
-  integrity sha512-OgDjkAKZlevudgS0iEMIdqVx0/1Vw5gsgxzhE+2hqyTTxSnTAcMmb7xXpdCn+G0FzNk3kltAwCsQhMzxXkLzxQ==
+  resolved "https://registry.npm.taobao.org/dahlia-graphql-client/download/dahlia-graphql-client-1.0.0.tgz#59b98f693856a76a9877f04dea4451b334e8d010"
+  integrity sha1-WbmPaThWp2qYd/BN6kRRszTo0BA=
   dependencies:
     dahlia-request "^1.0.0"
 
-dahlia-graphql@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dahlia-graphql/-/dahlia-graphql-1.0.0.tgz#0300f04590c13945076f3c9d0492f1c67125060d"
-  integrity sha512-7GKSDaNs64pjX0cFob+Ai8iti3gcJMMOJSbQoBZLRw9CBc3oaYbMfNoNJM/QUfiw4EyYF1ix0TUpSnOhlb2tKg==
+dahlia-graphql@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/dahlia-graphql/download/dahlia-graphql-1.0.1.tgz#e5abaa5af589cafa03bd8a61058db6271681a361"
+  integrity sha1-5auqWvWJyvoDvYphBY22JxaBo2E=
   dependencies:
     dahlia-graphql-client "^1.0.0"
 
 dahlia-i18n@^1.0.3:
   version "1.0.3"
-  resolved "https://registry.yarnpkg.com/dahlia-i18n/-/dahlia-i18n-1.0.3.tgz#230e967f8fd6d64e3a7e84a57a9b6be0b710c85f"
-  integrity sha512-Tz4SWJJUQspEmHnx3fq8ud690PA/aO+tV2uaN7Zq7EWWxmr5LY3HC6NhrvmQrJjXy9SrJpMns5QRCT4clZZ0KQ==
+  resolved "https://registry.npm.taobao.org/dahlia-i18n/download/dahlia-i18n-1.0.3.tgz#230e967f8fd6d64e3a7e84a57a9b6be0b710c85f"
+  integrity sha1-Iw6Wf4/W1k46foSleptr4LcQyF8=
   dependencies:
     lodash.get "^4.4.2"
 
-dahlia-modal@^1.1.12:
-  version "1.1.12"
-  resolved "https://registry.yarnpkg.com/dahlia-modal/-/dahlia-modal-1.1.12.tgz#1a0a9eccf1df49dba5ac5334c96f3c3a9afe99d5"
-  integrity sha512-2sLQf3usJ+fkF3bbtOLbjjraAPCsZWutWlQQFPuQq5mWzu2+lbgm6JercLld0simfXUPYjag11z7ioeuSGuCzQ==
+dahlia-modal@^1.1.14:
+  version "1.1.14"
+  resolved "https://registry.npm.taobao.org/dahlia-modal/download/dahlia-modal-1.1.14.tgz#75472b24021f679ee2b834988f75e9c16c6c0ec2"
+  integrity sha1-dUcrJAIfZ57iuDSYj3XpwWxsDsI=
   dependencies:
-    dahlia-store "^1.2.19"
+    dahlia-store "^1.2.20"
 
-dahlia-observable@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/dahlia-observable/-/dahlia-observable-1.0.13.tgz#86d6368d230e800ce03774becd877b7f970de562"
-  integrity sha512-Qox4dW4j0lyEA8snEm7ILWCXqu47Q7Me0cGGvr/OV2uZJtdwHLkEdH4v2ZKQIvOT1j9Tf9HmWwrF+4vMAEWUGA==
+dahlia-observable@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.14.tgz#2c9bf3ee111c01b2765f8e578959eeee9c1fc1db"
+  integrity sha1-LJvz7hEcAbJ2X45XiVnu7pwfwds=
 
 dahlia-request@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dahlia-request/-/dahlia-request-1.0.0.tgz#2e7c164f042821f52f72172aa4eb22ebccee1151"
-  integrity sha512-IoLKLzrc6TlFdIVygXZJJhyL/UhQUecmDoWU5n0ofYzeJI6RbYoXSsEdLguYhNuAW59JFlKAxweX7tJWV56RTg==
+  resolved "https://registry.npm.taobao.org/dahlia-request/download/dahlia-request-1.0.0.tgz#2e7c164f042821f52f72172aa4eb22ebccee1151"
+  integrity sha1-LnwWTwQoIfUvchcqpOsi68zuEVE=
   dependencies:
     cross-fetch "^3.0.1"
     qs "^6.7.0"
 
-dahlia-rest@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/dahlia-rest/-/dahlia-rest-1.0.1.tgz#cb1ba976bcba6018861b627ea5d1d2f471fe40da"
-  integrity sha512-NmSCSaV6EDMYj/2NlXHAYPkH/0UE3tP41C6CyI72cMD547SzAPHdcwSwECNClVU1vmwRGSQy5vmZfXztXnX3sQ==
+dahlia-rest@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npm.taobao.org/dahlia-rest/download/dahlia-rest-1.0.3.tgz#d4f854bc063efc1127e4da89d7dbe31895a12ae6"
+  integrity sha1-1PhUvAY+/BEn5NqJ19vjGJWhKuY=
   dependencies:
     dahlia-request "^1.0.0"
 
-dahlia-router@^1.1.10:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/dahlia-router/-/dahlia-router-1.1.10.tgz#1330ed62638ea5d5c67859a6cc5a43cb30c85642"
-  integrity sha512-0/KwWs5lt7Nrh3Q/O5AHTSo3llOcSTOANzjFI56KyDaSa5qhg5X+/E1+RQapUXetZPAMHVWRHkONGI+qHm95TQ==
+dahlia-router@^1.1.12:
+  version "1.1.12"
+  resolved "https://registry.npm.taobao.org/dahlia-router/download/dahlia-router-1.1.12.tgz#2dcde301d377b6338b12455bed472c8fdfc2846b"
+  integrity sha1-Lc3jAdN3tjOLEkVb7Ucsj9/ChGs=
   dependencies:
-    dahlia-store "^1.2.19"
+    dahlia-store "^1.2.20"
     path-parser "^4.2.0"
 
-dahlia-store@^1.2.19:
-  version "1.2.19"
-  resolved "https://registry.yarnpkg.com/dahlia-store/-/dahlia-store-1.2.19.tgz#37ae4bd8e4da27f666a9ff2004ec753ecdbf44f8"
-  integrity sha512-6pRDyNQrdReObr8y+blEaq/vMza5f5SeGa5GD0COfNlRLxu1ASyoOLZcpWYRvdxbWBKP/aYSEY//mBLZ1pK0dg==
+dahlia-store@^1.2.20:
+  version "1.2.20"
+  resolved "https://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.20.tgz#e9718b9ee6b7a77dafd613738efd0cce6634f3f1"
+  integrity sha1-6XGLnua3p32v1hNzjv0MzmY08/E=
   dependencies:
-    dahlia-observable "^1.0.13"
+    dahlia-observable "^1.0.14"
     fast-deep-equal "^2.0.1"
 
 dashdash@^1.12.0:
@@ -1212,7 +1212,7 @@ deep-is@~0.1.3:
 
 deepmerge@^3.2.0:
   version "3.2.0"
-  resolved "http://registry.npm.taobao.org/deepmerge/download/deepmerge-3.2.0.tgz#58ef463a57c08d376547f8869fdc5bcee957f44e"
+  resolved "https://registry.npm.taobao.org/deepmerge/download/deepmerge-3.2.0.tgz#58ef463a57c08d376547f8869fdc5bcee957f44e"
   integrity sha1-WO9GOlfAjTdlR/iGn9xbzulX9E4=
 
 default-require-extensions@^2.0.0:
@@ -1763,7 +1763,7 @@ ignore-walk@^3.0.1:
 
 immer@^2.1.1:
   version "2.1.5"
-  resolved "http://registry.npm.taobao.org/immer/download/immer-2.1.5.tgz#0389947455c5a2c7a47f1e6f415c9d1a62a1ebed"
+  resolved "https://registry.npm.taobao.org/immer/download/immer-2.1.5.tgz#0389947455c5a2c7a47f1e6f415c9d1a62a1ebed"
   integrity sha1-A4mUdFXFosekfx5vQVydGmKh6+0=
 
 import-local@^2.0.0:
@@ -2598,12 +2598,12 @@ locate-path@^3.0.0:
 
 lodash.get@^4.4.2:
   version "4.4.2"
-  resolved "http://registry.npm.taobao.org/lodash.get/download/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  resolved "https://registry.npm.taobao.org/lodash.get/download/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
 lodash.set@^4.3.2:
   version "4.3.2"
-  resolved "http://registry.npm.taobao.org/lodash.set/download/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
+  resolved "https://registry.npm.taobao.org/lodash.set/download/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
   integrity sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
 
 lodash.sortby@^4.7.0:
@@ -2833,7 +2833,7 @@ node-fetch@2.1.2:
 
 node-fetch@2.3.0:
   version "2.3.0"
-  resolved "http://registry.npm.taobao.org/node-fetch/download/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
+  resolved "https://registry.npm.taobao.org/node-fetch/download/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
   integrity sha1-Gh2UC7+5FqHT4CGfA36J5x+MX6U=
 
 node-int64@^0.4.0:
@@ -3124,7 +3124,7 @@ path-parse@^1.0.6:
 
 path-parser@^4.2.0:
   version "4.2.0"
-  resolved "http://registry.npm.taobao.org/path-parser/download/path-parser-4.2.0.tgz#2fbb3df2d49659a9a4cac88be7d8d5f4666814fb"
+  resolved "https://registry.npm.taobao.org/path-parser/download/path-parser-4.2.0.tgz#2fbb3df2d49659a9a4cac88be7d8d5f4666814fb"
   integrity sha1-L7s98tSWWamkysiL59jV9GZoFPs=
   dependencies:
     search-params "2.1.3"
@@ -3237,7 +3237,7 @@ punycode@^2.1.0, punycode@^2.1.1:
 
 qs@^6.7.0:
   version "6.7.0"
-  resolved "http://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
+  resolved "https://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
 
 qs@~6.5.2:
@@ -3542,7 +3542,7 @@ scheduler@^0.13.6:
 
 search-params@2.1.3:
   version "2.1.3"
-  resolved "http://registry.npm.taobao.org/search-params/download/search-params-2.1.3.tgz#90b98964eaf3d0edef0f73e6e8307d1480020413"
+  resolved "https://registry.npm.taobao.org/search-params/download/search-params-2.1.3.tgz#90b98964eaf3d0edef0f73e6e8307d1480020413"
   integrity sha1-kLmJZOrz0O3vD3Pm6DB9FIACBBM=
 
 "semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5, semver@^5.5.0:
@@ -4084,7 +4084,7 @@ util-deprecate@~1.0.1:
 
 util-is-array@^1.0.0:
   version "1.0.0"
-  resolved "http://registry.npm.taobao.org/util-is-array/download/util-is-array-1.0.0.tgz#fd9d8a0d9f960d27ad86874065a1d5733a718ddd"
+  resolved "https://registry.npm.taobao.org/util-is-array/download/util-is-array-1.0.0.tgz#fd9d8a0d9f960d27ad86874065a1d5733a718ddd"
   integrity sha1-/Z2KDZ+WDSethodAZaHVczpxjd0=
 
 util-is-email@^1.0.0:
@@ -4175,7 +4175,7 @@ whatwg-fetch@2.0.4:
 
 whatwg-fetch@3.0.0:
   version "3.0.0"
-  resolved "http://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
+  resolved "https://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
   integrity sha1-/IBORYzEYACbGiuWa8iBfSV4rvs=
 
 whatwg-mimetype@^2.1.0, whatwg-mimetype@^2.2.0:
