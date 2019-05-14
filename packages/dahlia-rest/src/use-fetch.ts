@@ -44,7 +44,7 @@ function getFetcherName(url: string, options: Options = {}) {
 }
 
 export function useFetch<T extends any>(url: string, options?: Options) {
-  let reqUrl: string
+  let reqUrl: string = url
   let unmounted = false
   const initialState = { loading: true } as FetchResult<T>
   const [result, setState] = useState(initialState)
