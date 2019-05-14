@@ -8,8 +8,8 @@ config({
 })
 
 enum Api {
-  GetTodo = '/todos/:id',
-  GetTodos = '/todos',
+  GetTodo = 'GET /todos/:id',
+  CreateTodo = 'POST /todos',
 }
 
 interface Todo {
@@ -71,7 +71,7 @@ const UseFetchApp = observe(() => {
 })
 
 const UseUpdateApp = () => {
-  const [addTodo, { loading, data, error }] = useUpdate(Api.GetTodos)
+  const [addTodo, { loading, data, error }] = useUpdate(Api.CreateTodo)
 
   return (
     <div className="App">

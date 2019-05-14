@@ -8,7 +8,18 @@ export async function fetch<T = any>(url: string, options?: Options): Promise<T>
 
   const { endpoint, interceptor: configInterceptors } = restConfig
   const isAbsoluteURL = /http:\/\/|https:\/\//.test(url)
-  reqURL = isAbsoluteURL ? url : endpoint + url
+
+  if (isAbsoluteURL) {
+    reqURL = url
+  } else {
+    const arr = url.split(/\s+/)
+    // handle something like: 'POST: /todos'
+    if (arr.length === 2) {
+      reqURL = `${arr[0]} ${endpoint + arr[1]}`
+    } else {
+      reqURL = endpoint + arr[0]
+    }
+  }
 
   if (configInterceptors) interceptor = configInterceptors
 
