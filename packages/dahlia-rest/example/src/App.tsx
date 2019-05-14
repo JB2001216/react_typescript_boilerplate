@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { observe, createStore } from 'dahlia/store'
+import { observe, createStore } from 'dahlia-store'
 
 import { config, fetch, useFetch, useUpdate, fetcher } from '../../src'
 
 config({
   endpoint: 'https://jsonplaceholder.typicode.com',
 })
+
+enum Api {
+  GetTodo = '/todos/:id',
+  GetTodos = '/todos',
+}
 
 interface Todo {
   id: number
@@ -36,11 +41,11 @@ const store = createStore({
 
 setTimeout(() => {
   store.setId()
+  console.log(fetcher)
 }, 2000)
 
 const UseFetchApp = observe(() => {
-  const { loading, data, error, refetch } = useFetch<Todo>('/todos/:id', {
-    name: 'getTodo',
+  const { loading, data, error, refetch } = useFetch<Todo>(Api.GetTodo, {
     param: { id: store.id },
     deps: [store.id],
   })
@@ -57,7 +62,7 @@ const UseFetchApp = observe(() => {
     <div className="App">
       <h2>useFetch</h2>
       <button onClick={handleClick}>refetch</button>
-      <button onClick={() => fetcher.getTodo.refetch({ param: { id: 3 } })}>
+      <button onClick={() => fetcher[Api.GetTodo].refetch({ param: { id: 3 } })}>
         refetch with fetcher
       </button>
       <pre>{JSON.stringify(data, null, 2)}</pre>
@@ -66,7 +71,7 @@ const UseFetchApp = observe(() => {
 })
 
 const UseUpdateApp = () => {
-  const [addTodo, { loading, data, error }] = useUpdate('/todos')
+  const [addTodo, { loading, data, error }] = useUpdate(Api.GetTodos)
 
   return (
     <div className="App">

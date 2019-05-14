@@ -1,19 +1,17 @@
 {
-  "name": "example",
+  "name": "exampl",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/jest": "24.0.11",
-    "@types/node": "11.13.4",
-    "@types/react": "16.8.13",
+    "@types/jest": "24.0.13",
+    "@types/node": "12.0.1",
+    "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
-    "apollo-client": "^2.5.1",
-    "dahlia-graphql-client": "^0.1.1",
-    "gql-tag": "^1.0.1",
+    "dahlia-store": "^1.2.20",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8",
-    "typescript": "3.4.3"
+    "react-scripts": "3.0.1",
+    "typescript": "3.4.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,10 +22,16 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

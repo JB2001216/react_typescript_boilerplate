@@ -1,7 +1,7 @@
 {
   "name": "dahlia-rest",
   "version": "1.0.3",
-  "description": "",
+  "description": "Restful client for Dahlia",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
@@ -33,19 +33,19 @@
   "homepage": "https://github.com/forsigner/dahlia/blob/master/packages/dahlia-rest/README.md",
   "devDependencies": {
     "@types/fetch-mock": "^7.2.3",
-    "@types/jest": "^24.0.11",
-    "@types/react": "^16.8.13",
+    "@types/jest": "^24.0.13",
+    "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
-    "jest": "^24.7.1",
+    "jest": "^24.8.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "rimraf": "^2.6.3",
-    "rollup": "^1.10.0",
+    "rollup": "^1.11.3",
     "rollup-plugin-auto-external": "^2.0.0",
-    "rollup-plugin-typescript2": "^0.20.1",
-    "standard-version": "^5.0.2",
+    "rollup-plugin-typescript2": "^0.21.0",
+    "standard-version": "^6.0.1",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.4.3"
+    "typescript": "^3.4.5"
   },
   "dependencies": {
     "dahlia-request": "^1.0.0"

@@ -25,8 +25,12 @@ function setUrlParam(url: string = '', param: Param) {
     .join('/')
 }
 
+function getFetcherName(options: Options, url: string) {
+  return options.name || url
+}
+
 export function useFetch<T extends any>(url: string, options?: Options) {
-  const originUrl = url
+  let reqUrl: string
   let unmounted = false
   const initialState = { loading: true } as FetchResult<T>
   const [result, setState] = useState(initialState)
@@ -35,9 +39,9 @@ export function useFetch<T extends any>(url: string, options?: Options) {
   const fetchData = async (opt?: Options) => {
     setState(prev => ({ ...prev, loading: true }))
     const fetchOptions = getOptions(opt)
-    if (fetchOptions.param) url = setUrlParam(originUrl, fetchOptions.param)
+    if (fetchOptions.param) reqUrl = setUrlParam(url, fetchOptions.param)
     try {
-      const data: T = await fetch(url, fetchOptions || {})
+      const data: T = await fetch(reqUrl, fetchOptions || {})
       if (!unmounted) setState(prev => ({ ...prev, loading: false, data }))
       return data
     } catch (error) {
@@ -56,9 +60,8 @@ export function useFetch<T extends any>(url: string, options?: Options) {
     fetchData(fetchOptions)
 
     // store refetch fn to fetcher
-    if (fetchOptions.name) {
-      fetcher[fetchOptions.name] = { refetch }
-    }
+    const name = getFetcherName(fetchOptions, url)
+    fetcher[name] = { refetch }
 
     return () => {
       unmounted = true
