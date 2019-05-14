@@ -5,9 +5,20 @@ import { Options, Body, Param } from './types'
 // method with json
 const methods = ['POST', 'PUT', 'PATCH', 'DELETE']
 
-function getDefaultOpt(options: Options = {}): RequestInit {
-  const baseOpt = { headers: {} } as Options
-  const { method } = options
+function last<T>(arr: T[]): T {
+  return arr[arr.length - 1]
+}
+
+function getMethod(url: string, options: Options = {}) {
+  const arr = url.split(/\s+/)
+  if (arr.length === 2) return arr[0]
+  const { method = 'GET' } = options
+  return method
+}
+
+function getDefaultOpt(url: string, options: Options = {}): RequestInit {
+  const method = getMethod(url, options)
+  const baseOpt = { method, headers: {} } as Options
   const isJsonTypeMethod = method && methods.includes(method)
   if (isJsonTypeMethod) {
     baseOpt.headers = { 'content-type': 'application/json; charset=utf-8' }
@@ -28,6 +39,9 @@ function setUrlParam(url: string = '', param: Param) {
 }
 
 function getURL(url: string, options?: Options) {
+  // handle something like fetch('POST /todos')
+  url = last(url.split(/\s+/))
+
   if (options && options.param) url = setUrlParam(url, options.param)
 
   const qs = getQueryString(options)
@@ -50,19 +64,19 @@ function getBody(body?: Body): Body {
   return body
 }
 
-function getOpt(options?: Options): RequestInit {
-  const defaultOpt = getDefaultOpt(options)
+function getOpt(url: string, options?: Options): RequestInit {
+  const defaultOpt = getDefaultOpt(url, options)
   if (!options) return defaultOpt
   const body = getBody(options.body)
   if (body) options.body = body
   const { headers } = options
   options.headers = { ...defaultOpt.headers, ...headers }
-  return options as RequestInit
+  return { ...defaultOpt, ...options } as RequestInit
 }
 
 export async function request<T = any>(url: string, options?: Options): Promise<T> {
   const input = getURL(url, options)
-  const init = getOpt(options)
+  const init = getOpt(url, options)
 
   try {
     const response = await fetch(input, init)
