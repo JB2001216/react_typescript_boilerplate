@@ -1075,6 +1075,14 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   resolved "http://registry.npm.taobao.org/core-util-is/download/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
+cross-fetch@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.npm.taobao.org/cross-fetch/download/cross-fetch-3.0.2.tgz#b7136491967031949c7f86b15903aef4fa3f1768"
+  integrity sha1-txNkkZZwMZScf4axWQOu9Po/F2g=
+  dependencies:
+    node-fetch "2.3.0"
+    whatwg-fetch "3.0.0"
+
 cross-spawn@^6.0.0:
   version "6.0.5"
   resolved "http://registry.npm.taobao.org/cross-spawn/download/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
@@ -1109,6 +1117,14 @@ currently-unhandled@^0.4.1:
   integrity sha1-mI3zP+qxke95mmE2nddsF635V+o=
   dependencies:
     array-find-index "^1.0.1"
+
+dahlia-request@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/dahlia-request/download/dahlia-request-1.1.0.tgz#05d3d14531d24689f34495b757b62ff66f717fd1"
+  integrity sha1-BdPRRTHSRonzRJW3V7Yv9m9xf9E=
+  dependencies:
+    cross-fetch "^3.0.1"
+    qs "^6.7.0"
 
 dargs@^4.0.1:
   version "4.1.0"
@@ -2950,6 +2966,11 @@ nice-try@^1.0.4:
   resolved "http://registry.npm.taobao.org/nice-try/download/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha1-ozeKdpbOfSI+iPybdkvX7xCJ42Y=
 
+node-fetch@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.npm.taobao.org/node-fetch/download/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
+  integrity sha1-Gh2UC7+5FqHT4CGfA36J5x+MX6U=
+
 node-int64@^0.4.0:
   version "0.4.0"
   resolved "http://registry.npm.taobao.org/node-int64/download/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
@@ -3410,6 +3431,11 @@ q@^1.5.1:
   version "1.5.1"
   resolved "http://registry.npm.taobao.org/q/download/q-1.5.1.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fq%2Fdownload%2Fq-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
+
+qs@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fqs%2Fdownload%2Fqs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
+  integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
 
 qs@~6.5.2:
   version "6.5.2"
@@ -4409,6 +4435,11 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
   integrity sha1-WrrPd3wyFmpR0IXWtPPn0nET3bA=
   dependencies:
     iconv-lite "0.4.24"
+
+whatwg-fetch@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
+  integrity sha1-/IBORYzEYACbGiuWa8iBfSV4rvs=
 
 whatwg-mimetype@^2.1.0, whatwg-mimetype@^2.2.0:
   version "2.3.0"
