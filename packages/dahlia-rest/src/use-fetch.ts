@@ -3,6 +3,10 @@ import { fetch } from './fetch'
 import fetcher from './fetcher'
 import { FetchResult, Refetch, Options, HooksResult, Deps, Param } from './types'
 
+function last<T>(arr: T[]): T {
+  return arr[arr.length - 1]
+}
+
 function getDeps(options?: Options): Deps {
   if (options && Array.isArray(options.deps)) return options.deps
   return []
@@ -25,8 +29,18 @@ function setUrlParam(url: string = '', param: Param) {
     .join('/')
 }
 
-function getFetcherName(options: Options, url: string) {
-  return options.name || url
+function getMethod(url: string, options: Options = {}) {
+  const arr = url.split(/\s+/)
+  if (arr.length === 2) return arr[0]
+  const { method = 'GET' } = options
+  return method
+}
+
+function getFetcherName(url: string, options: Options = {}) {
+  if (options.name) return options.name
+  const method = getMethod(url, options)
+  url = last(url.split(/\s+/))
+  return `${method} ${url}`
 }
 
 export function useFetch<T extends any>(url: string, options?: Options) {
@@ -60,7 +74,7 @@ export function useFetch<T extends any>(url: string, options?: Options) {
     fetchData(fetchOptions)
 
     // store refetch fn to fetcher
-    const name = getFetcherName(fetchOptions, url)
+    const name = getFetcherName(url, fetchOptions)
     fetcher[name] = { refetch }
 
     return () => {
