@@ -1,6 +1,6 @@
 {
   "name": "dahlia-cli",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "CLI tool for Dahlia",
   "author": "forsigner",
   "bin": {
@@ -12,7 +12,7 @@
     "chalk": "^2.4.2",
     "chokidar": "^2.1.5",
     "cross-spawn": "^6.0.5",
-    "dahlia": "^1.14.0",
+    "dahlia": "^1.14.1",
     "download-git-repo": "^1.1.0",
     "fs-extra": "^7.0.1",
     "fs-jetpack": "^2.2.2",
