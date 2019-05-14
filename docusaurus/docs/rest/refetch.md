@@ -98,7 +98,7 @@ const Todos = observe(() => {
 
 ## 使用 fetcher
 
-有时候，你需要在组件外部重新获取数据，但`useFetch` 却没有任何可以被依赖的参数，这时你可以使用 fetcher
+有时候，你需要在组件外部重新获取数据，但`useFetch` 却没有任何可以被依赖的参数，这时你可以使用 fetcher:
 
 ```tsx
 import { useFetch, fetcher } from 'dahlia/rest'
@@ -131,3 +131,44 @@ const TodoApp = () => (
 ```
 
 使用 fetcher 是，你需要为`useFetch` 提供 name 参数，用法是：`fetcher['name'].refetch()`，这里的 `refetch` 和内部 `refetch` 是同一个函数，所以它也有 options 参数。
+
+## 高级用法
+
+使用 fetcher 时，为一个 HTTP 请求命名 (name) 不是必须的，每个 HTTP 请求都有一个默认的名字，默认名字为该请求的 url 参数。
+
+为了项目代码的可维护性，推荐把所以 Api 的 url 集中化，比如：
+
+```tsx
+// apiService.ts
+enum Api {
+  GetTodo = 'GET /todos/:id',
+  GetTodos = 'GET /todos',
+}
+
+export default Api
+```
+
+在组件中:
+
+```tsx
+import { useFetch, fetcher } from 'dahlia/rest'
+import Api from '@service/apiService'
+
+const Todos = () => {
+  const { loading, data, error } = useFetch(Api.GetTodos)
+
+  if (loading) return <span>loading...</span>
+  if (error) return <span>error!</span>
+
+  return (
+    <div>
+      <button onClick={() => fetcher[Api.GetTodos]refetch()}>refresh</button>
+      <ul>
+        {data.map(item => (
+          <li key={item.id}>{item.title}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```

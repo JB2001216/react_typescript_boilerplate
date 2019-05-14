@@ -107,7 +107,13 @@ HTTP 请求头，和原生`fetch`的 [`Headers`](https://github.github.io/fetch/
 
 **`name?: string`**
 
-为该 HTTP 请求命名，对于 refetch 非常有用。
+为该 HTTP 请求命名，对于 refetch 非常有用。默认是为 `${method} ${url}`，比如请求如下:
+
+```js
+const { loading, data } = useFetch('/todos', { method: 'POST' })
+```
+
+那默认的 name 为: `POST /todos`
 
 ## 结果 (Result)
 
