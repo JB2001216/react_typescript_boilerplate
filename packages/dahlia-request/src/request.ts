@@ -67,8 +67,8 @@ export async function request<T = any>(url: string, options?: Options): Promise<
   try {
     const response = await fetch(input, init)
     if (response.status >= 200 && response.status < 300) {
-      // TODO: should handle not json response
-      const data: T = await response.json()
+      const { type = 'json' } = options || ({} as Options)
+      const data: T = await response[type]()
       return data
     } else {
       throw response
