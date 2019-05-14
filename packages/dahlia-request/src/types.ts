@@ -19,9 +19,14 @@ export type Body =
   | any[]
   | null
 
+export interface Param {
+  [key: string]: string | number | boolean
+}
+
 export interface Options {
   query?: Query
   body?: Body
+  param?: Param
   cache?: RequestCache
   credentials?: RequestCredentials
   headers?: HeadersInit
