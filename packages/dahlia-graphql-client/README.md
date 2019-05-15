@@ -25,7 +25,7 @@ const GET_PERSONS = gql`
 
 const endpoint = 'https://api.graph.cool/simple/v1/swapi'
 
-query(endpoint, GET_PERSONS).then(data => console.log(data))
+const data = await query(endpoint, GET_PERSONS)
 ```
 
 ## Use Client
@@ -46,7 +46,7 @@ const GraphQLClient = new GraphQLClient({
   endpoint: 'https://api.graph.cool/simple/v1/swapi',
 })
 
-GraphQLClient.query(GET_PERSONS).then(data => console.log(data))
+const data = await GraphQLClient.query(GET_PERSONS)
 ```
 
 ## Variables
