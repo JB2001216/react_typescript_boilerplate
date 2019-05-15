@@ -1,6 +1,5 @@
 export interface Result<T> {
   data?: T
-  extensions?: any
   headers: Headers
   status: number
   errors?: any
