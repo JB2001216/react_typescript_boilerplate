@@ -5,7 +5,7 @@
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
-    "lib": ["es7", "dom", "esnext.asynciterable"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "preserve",
@@ -28,6 +28,7 @@
     "paths": {
       "@/*": ["./*"],
       "@utils/*": ["utils/*"],
+      "@services/*": ["services/*"],
       "@stores/*": ["stores/*"],
       "@components/*": ["components/*"],
       "@layouts/*": ["layouts/*"],
@@ -44,6 +45,6 @@
     "scripts",
     "acceptance-tests",
     "webpack",
-    "jest",
+    "jest"
   ]
 }
