@@ -25,7 +25,7 @@ export const customizeWebpack = () => {
       overrideWebpackExclude(),
       alias({
         '@utils': resolve('utils/'),
-        '@services': resolve('/services'),
+        '@services': resolve('services/'),
         '@stores': resolve('stores/'),
         '@components': resolve('components/'),
         '@layouts': resolve('layouts/'),
