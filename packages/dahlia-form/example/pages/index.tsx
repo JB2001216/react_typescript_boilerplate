@@ -47,7 +47,6 @@ const SelectRule: React.FC<any> = ({ field }) => {
 }
 
 export default () => {
-  console.log('render...')
   return (
     <div>
       <form onSubmit={store.handleSubmit}>
