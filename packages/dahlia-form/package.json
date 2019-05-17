@@ -51,9 +51,8 @@
   },
   "dependencies": {
     "checkok": "^1.1.1",
-    "deepmerge": "^3.2.0",
+    "dahlia-store": "^1.2.20",
     "fast-deep-equal": "^2.0.1",
-    "immer": "^2.1.1",
     "lodash.get": "^4.4.2",
     "lodash.set": "^4.3.2",
     "util-is-array": "^1.0.0"
