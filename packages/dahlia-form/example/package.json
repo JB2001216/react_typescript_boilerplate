@@ -1,0 +1,43 @@
+{
+  "name": "exampl",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "dh start ",
+    "deploy": "dh build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "checkok": "^1.1.1",
+    "checkok-min": "^1.0.1",
+    "checkok-required": "^1.0.0",
+    "dahlia": "^1.14.2",
+    "dahlia-antd": "^1.0.0",
+    "dahlia-less": "^1.0.0",
+    "dahlia-styled-jsx": "^1.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "dahlia-cli": "^1.3.20",
+    "typescript": "^3.4.5"
+  }
+}
