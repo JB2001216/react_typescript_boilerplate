@@ -15,8 +15,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createForm } from 'dahlia-form'
 
-
-const loginForm = createForm({
+const { Field, store } = createForm({
   initialValues: {
     email: '',
     password: '',
@@ -28,12 +27,16 @@ const loginForm = createForm({
 })
 
 const App = () => {
-  const { submitting } = loginForm.useForm()
   return (
-    <form ref={loginForm.useRef()}>
-      <input name="email" type="text" />
-      <input name="password" type="password" />
-      <button type="submit" disabled={submitting}>
+    <form onSubmit={store.handleSubmit}>
+      <Field name="email">
+        <input type="text" />
+      </Field>
+
+      <Field name="password">
+        <input type="password" />
+      </Field>
+      <button type="submit" disabled={store.submitting}>
         submit
       </button>
     </form>
