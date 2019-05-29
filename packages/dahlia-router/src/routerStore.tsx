@@ -47,7 +47,17 @@ const store = createStore({
     store.pages = pages
     store.defaultPage = findDefaultPage(pages) || store.defaultPage
   },
-  go({ path, replace }: { path: string; replace?: boolean }) {
+  go({ to, replace }: { to: string; replace?: boolean }) {
+    let path: string = '',
+      search: string = ''
+    if (to.indexOf('?') > -1) {
+      const arr = to.split('?')
+      path = arr[0]
+      search = '?' + arr[1]
+    } else {
+      path = to
+    }
+
     const { pages } = store
     const rootPage = findRooPage(pages, path)
     const params = getParams(pages)
@@ -78,7 +88,7 @@ const store = createStore({
       store.currentPath = path
       store.currentPage = rootPage
       store.params = params || {}
-      replace ? replaceState(path) : pushState(path)
+      replace ? replaceState(path + search) : pushState(path + search)
     }
   },
 })
