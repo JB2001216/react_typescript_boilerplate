@@ -1,38 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Link, Routes, routerStore } from './src/index'
-
-const Home = () => (
-  <div>
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <h1>Home</h1>
-  </div>
-)
-
-const About = () => (
-  <div>
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <h1>About</h1>
-  </div>
-)
-
-const User = () => {
-  const { params } = routerStore
-  return (
-    <div>
-      <h1>User Name: {params.name}</h1>
-    </div>
-  )
-}
+import { Router, Routes } from './src/index'
+import About from './pages/About'
+import Home from './pages/Home'
+import User from './pages/User'
 
 const NotFound = () => <div>404 not found</div>
 
 const routes: Routes = [
   {
     path: '/',
-    component: Home,
+    component: Home
   },
   {
     path: '/about',
@@ -40,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: '/users/:name',
-    component: User,
+    component: User
   },
   {
     path: '**',

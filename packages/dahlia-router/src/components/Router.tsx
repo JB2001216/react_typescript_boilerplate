@@ -1,12 +1,12 @@
 import React from 'react'
 import { observe } from 'dahlia-store'
 
-import { getPath, useMount, useUnmount, createPage } from '../util'
+import { getFullPath, useMount, useUnmount, createPage } from '../util'
 import store from '../routerStore'
 import { Routes } from '../typings'
 
 const handlePop = () => {
-  store.go({ path: getPath(), replace: false })
+  store.go({ to: getFullPath(), replace: false })
 }
 
 const Router = observe<{ routes: Routes }>(props => {
@@ -15,7 +15,7 @@ const Router = observe<{ routes: Routes }>(props => {
   useMount(() => {
     addEventListener('popstate', handlePop)
     store.init(props.routes)
-    store.go({ path: getPath() })
+    store.go({ to: getFullPath() })
   })
 
   useUnmount(() => {
