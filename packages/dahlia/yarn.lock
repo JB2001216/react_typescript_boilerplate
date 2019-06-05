@@ -978,10 +978,15 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.19.0, commander@~2.19.0:
+commander@^2.19.0:
   version "2.19.0"
   resolved "http://registry.npm.taobao.org/commander/download/commander-2.19.0.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha1-9hmKqE5bg8RgVLlN3tv+1e6f8So=
+
+commander@~2.20.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
+  integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
 
 compare-versions@^3.2.1:
   version "3.4.0"
@@ -1083,32 +1088,31 @@ csstype@^2.2.0:
   resolved "http://registry.npm.taobao.org/csstype/download/csstype-2.6.3.tgz#b701e5968245bf9b08d54ac83d00b624e622a9fa"
   integrity sha1-twHlloJFv5sI1UrIPQC2JOYiqfo=
 
-dahlia-form@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npm.taobao.org/dahlia-form/download/dahlia-form-1.0.5.tgz#20e06ea0413ba1414cdaf60ec0da2fe075864fd5"
-  integrity sha1-IOBuoEE7oUFM2vYOwNov4HWGT9U=
+dahlia-form@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/dahlia-form/-/dahlia-form-1.1.0.tgz#50efe69eab3fafb71f4e3c54944e3d41d22781bf"
+  integrity sha512-FvKPh3tTAVAApnsMK7x7drxfEskfhuN0gK8wVNA8pWQicQXIrAPW+CO3/uM2Qn96OiBIZk3CBfQg22ve3JL5kQ==
   dependencies:
     checkok "^1.1.1"
-    deepmerge "^3.2.0"
+    dahlia-store "^1.2.20"
     fast-deep-equal "^2.0.1"
-    immer "^2.1.1"
     lodash.get "^4.4.2"
     lodash.set "^4.3.2"
     util-is-array "^1.0.0"
 
-dahlia-graphql-client@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/dahlia-graphql-client/download/dahlia-graphql-client-1.1.0.tgz#6bdf080c27b1a48091b59a373352bafdf0ba1749"
-  integrity sha1-a98IDCexpICRtZo3M1K6/fC6F0k=
+dahlia-graphql-client@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/dahlia-graphql-client/-/dahlia-graphql-client-1.1.2.tgz#64c0d4ff5d04c313bee68dd9d3ceb655e6833112"
+  integrity sha512-9ykVy6dx3po6/FcPq7OL7Lw6bsShG+yJHkE4Lf+j3aDLyVJglM/YtT8gj8vZakEvsVj0Y4mfyT+GKxf16floSA==
   dependencies:
     dahlia-request "^1.1.0"
 
-dahlia-graphql@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/dahlia-graphql/download/dahlia-graphql-1.1.0.tgz#1859564788ca31b870d09e80294d4610fb7be6eb"
-  integrity sha1-GFlWR4jKMbhw0J6AKU1GEPt75us=
+dahlia-graphql@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/dahlia-graphql/-/dahlia-graphql-1.1.2.tgz#7a24153e992bc3f053aa7abab66191b125b3a7eb"
+  integrity sha512-tdsaR+PK1VBsdzPpnUJyAvoXv7EheQVMrWftG3ZpIxkt7nt7X6zRDVsgz03UGGTOlbwjD6tnuvdDBSK3GcwK4Q==
   dependencies:
-    dahlia-graphql-client "^1.1.0"
+    dahlia-graphql-client "^1.1.2"
 
 dahlia-i18n@^1.0.3:
   version "1.0.3"
@@ -1129,14 +1133,6 @@ dahlia-observable@^1.0.14:
   resolved "https://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.14.tgz#2c9bf3ee111c01b2765f8e578959eeee9c1fc1db"
   integrity sha1-LJvz7hEcAbJ2X45XiVnu7pwfwds=
 
-dahlia-request@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/dahlia-request/download/dahlia-request-1.0.0.tgz#2e7c164f042821f52f72172aa4eb22ebccee1151"
-  integrity sha1-LnwWTwQoIfUvchcqpOsi68zuEVE=
-  dependencies:
-    cross-fetch "^3.0.1"
-    qs "^6.7.0"
-
 dahlia-request@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/dahlia-request/download/dahlia-request-1.1.0.tgz#05d3d14531d24689f34495b757b62ff66f717fd1"
@@ -1145,17 +1141,17 @@ dahlia-request@^1.1.0:
     cross-fetch "^3.0.1"
     qs "^6.7.0"
 
-dahlia-rest@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npm.taobao.org/dahlia-rest/download/dahlia-rest-1.0.3.tgz#d4f854bc063efc1127e4da89d7dbe31895a12ae6"
-  integrity sha1-1PhUvAY+/BEn5NqJ19vjGJWhKuY=
+dahlia-rest@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/dahlia-rest/-/dahlia-rest-1.1.2.tgz#0ca7d49c69f6708e427298d0ec9c4fdf3d2695e1"
+  integrity sha512-/ManwlaM3nnnxRDPIcgA5I0Ga8Q4y3lvtdVvX9dWzc/7TfjYioyx4/iz3J7ag40kXem056mAriePAdu5S9cAiA==
   dependencies:
-    dahlia-request "^1.0.0"
+    dahlia-request "^1.1.0"
 
-dahlia-router@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npm.taobao.org/dahlia-router/download/dahlia-router-1.2.0.tgz#e825019bfa778cd5eab9f5725bc29ef98439386a"
-  integrity sha1-6CUBm/p3jNXqufVyW8Ke+YQ5OGo=
+dahlia-router@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/dahlia-router/-/dahlia-router-1.2.1.tgz#a38a13b40e708f2c5bf7642d28fb75eabee34753"
+  integrity sha512-NYKwdDfBd0TmrV+BNaW9ohe7vz/0YRKBtLBmC1KxQw7rOHHTA+bW2qPk0PWwKrYNb5uPwtvVMwFbb4eAqFfkhg==
   dependencies:
     dahlia-store "^1.2.20"
     path-parser "^4.2.0"
@@ -1217,11 +1213,6 @@ deep-is@~0.1.3:
   version "0.1.3"
   resolved "http://registry.npm.taobao.org/deep-is/download/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   integrity sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
-
-deepmerge@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.npm.taobao.org/deepmerge/download/deepmerge-3.2.0.tgz#58ef463a57c08d376547f8869fdc5bcee957f44e"
-  integrity sha1-WO9GOlfAjTdlR/iGn9xbzulX9E4=
 
 default-require-extensions@^2.0.0:
   version "2.0.0"
@@ -1658,9 +1649,9 @@ growly@^1.3.0:
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
 
 handlebars@^4.1.0:
-  version "4.1.1"
-  resolved "http://registry.npm.taobao.org/handlebars/download/handlebars-4.1.1.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fhandlebars%2Fdownload%2Fhandlebars-4.1.1.tgz#6e4e41c18ebe7719ae4d38e5aca3d32fa3dd23d3"
-  integrity sha1-bk5BwY6+dxmuTTjlrKPTL6PdI9M=
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.2.tgz#b6b37c1ced0306b221e094fc7aca3ec23b131b67"
+  integrity sha512-nvfrjqvt9xQ8Z/w0ijewdD/vvWDTOweBUm96NTr66Wfvo1mJenBLwcYmPs3TIBP5ruzYGD7Hx/DaM9RmhroGPw==
   dependencies:
     neo-async "^2.6.0"
     optimist "^0.6.1"
@@ -1768,11 +1759,6 @@ ignore-walk@^3.0.1:
   integrity sha1-qD5i59JyrA47VRqqgoMaGbafgvg=
   dependencies:
     minimatch "^3.0.4"
-
-immer@^2.1.1:
-  version "2.1.5"
-  resolved "https://registry.npm.taobao.org/immer/download/immer-2.1.5.tgz#0389947455c5a2c7a47f1e6f415c9d1a62a1ebed"
-  integrity sha1-A4mUdFXFosekfx5vQVydGmKh6+0=
 
 import-local@^2.0.0:
   version "2.0.0"
@@ -2745,7 +2731,7 @@ minimist@^1.1.1, minimist@^1.2.0:
 
 minimist@~0.0.1:
   version "0.0.10"
-  resolved "http://registry.npm.taobao.org/minimist/download/minimist-0.0.10.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fminimist%2Fdownload%2Fminimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
   integrity sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
 
 minipass@^2.2.1, minipass@^2.3.4:
@@ -2825,9 +2811,9 @@ needle@^2.2.1:
     sax "^1.2.4"
 
 neo-async@^2.6.0:
-  version "2.6.0"
-  resolved "http://registry.npm.taobao.org/neo-async/download/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
-  integrity sha1-udFeTXHGdikIZUtRg+04t1M0CDU=
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
+  integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -3001,7 +2987,7 @@ once@^1.3.0, once@^1.3.1, once@^1.4.0:
 
 optimist@^0.6.1:
   version "0.6.1"
-  resolved "http://registry.npm.taobao.org/optimist/download/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
+  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
   integrity sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
   dependencies:
     minimist "~0.0.1"
@@ -4038,11 +4024,11 @@ typescript@^3.4.2:
   integrity sha1-ntTmR12Qb1iSABk74Fb1kTyu1IE=
 
 uglify-js@^3.1.4:
-  version "3.5.2"
-  resolved "http://registry.npm.taobao.org/uglify-js/download/uglify-js-3.5.2.tgz#dc0c7ac2da0a4b7d15e84266818ff30e82529474"
-  integrity sha1-3Ax6wtoKS30V6EJmgY/zDoJSlHQ=
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.0.tgz#704681345c53a8b2079fb6cec294b05ead242ff5"
+  integrity sha512-W+jrUHJr3DXKhrsS7NUVxn3zqMOFn0hL/Ei6v0anCIMoKC93TjcflTagwIHLW7SfMFfiQuktQyFVCFHGUE0+yg==
   dependencies:
-    commander "~2.19.0"
+    commander "~2.20.0"
     source-map "~0.6.1"
 
 union-value@^1.0.0:
@@ -4230,7 +4216,7 @@ wide-align@^1.1.0:
 
 wordwrap@~0.0.2:
   version "0.0.3"
-  resolved "http://registry.npm.taobao.org/wordwrap/download/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
+  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
   integrity sha1-o9XabNXAvAAI03I0u68b7WMFkQc=
 
 wordwrap@~1.0.0:
