@@ -1,56 +1,37 @@
 import React from 'react'
-<<<<<<< Updated upstream
 import { Form, Input, Select, Radio } from 'antd'
-import { check } from 'checkok'
 import required from 'checkok-required'
 import min from 'checkok-min'
-import { createForm } from 'dahlia-from'
+// import { createForm } from 'dahlia-from'
+import { createForm } from '../src'
 
-import './index.css'
 
 const { Option } = Select
 
-const { Field, ErrorMessage, store } = createForm({
+const { Form: DahliaForm, Field, ErrorMessage, store } = createForm({
   initialValues: {
     email: 'test@email.com',
-    password: 10,
+    password: 'pass',
+    age: 10,
     phone: 158,
     drone: 'dewey',
     desc: 'intro..',
     removed: false,
     selected: 'audi',
     checks: ['horns'],
-=======
-import { createForm } from '../dahlia-form'
-
-import './index.css'
-
-const { Field, store } = createForm({
-  initialValues: {
-    email: 'test@email.com',
-    password: 10,
->>>>>>> Stashed changes
     user: {
       name: 'livia',
     },
   },
-<<<<<<< Updated upstream
   validator: {
-    email: [required('require email'), min(60, 'email too short')],
-    password: values =>
-      check(values.password).pipe(
-        required('need password'),
-        min(6, 'password too short'),
-      ),
+    email: [required('require email'), min(5, 'email too short')],
+    password: () => [required('need password'), min(6, 'password too short')],
   },
-=======
->>>>>>> Stashed changes
   onSubmit: values => {
     alert(JSON.stringify(values, null, 2))
   },
 })
 
-<<<<<<< Updated upstream
 const SelectRule: React.FC<any> = ({ field }) => {
   console.log('fied:', field)
   return (
@@ -64,7 +45,7 @@ const SelectRule: React.FC<any> = ({ field }) => {
 export default () => {
   return (
     <div>
-      <form onSubmit={store.handleSubmit}>
+      <DahliaForm>
         <pre>{JSON.stringify(store, null, 2)}</pre>
         <Field name="phone" component={SelectRule} />
         <Form.Item label="是否该移除">
@@ -116,6 +97,12 @@ export default () => {
           <label htmlFor="louie">Louie</label>
         </span>
 
+        {store.values.drone === 'louie' && (
+          <Field name="age">
+            <Input placeholder="age" />
+          </Field>
+        )}
+
         <br />
         <span>
           <Field name="checks">
@@ -141,23 +128,10 @@ export default () => {
 
         <div>
           <button type="submit" disabled={!store.valid}>
-=======
-export default () => {
-  console.log('render...')
-  return (
-    <div>
-      <form onSubmit={store.handleSubmit}>
-        <pre>{JSON.stringify(store.values, null, 2)}</pre>
-        <Field name="email" placeholder="Email" />
-        <Field name="password" placeholder="Email" />
-
-        <div>
-          <button type="submit" disabled={store.submitting}>
->>>>>>> Stashed changes
             submit
           </button>
         </div>
-      </form>
+      </DahliaForm>
     </div>
   )
 }
