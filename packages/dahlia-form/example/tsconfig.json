@@ -5,11 +5,7 @@
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
-<<<<<<< Updated upstream
     "lib": ["dom", "dom.iterable", "esnext"],
-=======
-    "lib": ["es7", "dom", "esnext.asynciterable"],
->>>>>>> Stashed changes
     "sourceMap": true,
     "allowJs": true,
     "jsx": "preserve",
@@ -32,10 +28,7 @@
     "paths": {
       "@/*": ["./*"],
       "@utils/*": ["utils/*"],
-<<<<<<< Updated upstream
       "@services/*": ["services/*"],
-=======
->>>>>>> Stashed changes
       "@stores/*": ["stores/*"],
       "@components/*": ["components/*"],
       "@layouts/*": ["layouts/*"],
@@ -52,10 +45,6 @@
     "scripts",
     "acceptance-tests",
     "webpack",
-<<<<<<< Updated upstream
     "jest"
-=======
-    "jest",
->>>>>>> Stashed changes
   ]
 }

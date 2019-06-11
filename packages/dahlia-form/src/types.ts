@@ -50,6 +50,7 @@ export interface FieldProps {
   name: string
   children?: ReactElement
   component?: React.ComponentType
+  label?: any // TODO:
 }
 
 export interface ErrorMessageProps<V> {

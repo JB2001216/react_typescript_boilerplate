@@ -19,7 +19,7 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'antd'],
   plugins: [
     autoExternal(),
     typescript({

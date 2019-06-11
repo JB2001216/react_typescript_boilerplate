@@ -1,11 +1,13 @@
-import React, { FormEvent, Fragment, createElement } from 'react'
+import React, { ReactElement, FormEvent, Fragment, createElement } from 'react'
 import { createStore } from 'dahlia-store'
 import { check } from 'checkok'
 import get from 'lodash.get'
 import set from 'lodash.set'
 import isArray from 'util-is-array'
+import { Form } from 'antd'
+import { FormItemProps } from 'antd/lib/form'
+
 import {
-  FieldProps,
   Touched,
   Errors,
   Store,
@@ -16,7 +18,15 @@ import {
 } from './types'
 import { val } from './val'
 
-export function createForm<V>(options: Options<V>) {
+const { Item } = Form
+
+interface FieldProps extends FormItemProps {
+  name?: string
+  children?: ReactElement
+  component?: React.ComponentType
+}
+
+export function createAntdForm<V>(options: Options<V>) {
   const { initialValues = {} as V, validate, validator, onSubmit } = options
 
   checkValidateOptions<V>(validate, validator)
@@ -40,6 +50,7 @@ export function createForm<V>(options: Options<V>) {
         store.errors[name] = error
       }
     },
+
     setErrors(errors) {
       store.errors = errors
     },
@@ -109,7 +120,7 @@ export function createForm<V>(options: Options<V>) {
 
     if (isTouched(name)) {
       runValidate()
-      // validateField(name)
+      if (validator) validateField(name)
       store.setValid(checkValid(store.errors))
     }
   }
@@ -141,23 +152,22 @@ export function createForm<V>(options: Options<V>) {
   function validateField(name: string) {
     const fieldValidator: any = get(validator, name)
     let error: string | null = null
+    let result: any
     if (!fieldValidator) return
     if (typeof fieldValidator === 'function') {
-      const { message } = fieldValidator(store.values)
-      error = message
+      const validatorFns = fieldValidator(store.values)
+      result = check(store.values[name]).pipe(...validatorFns)
     }
 
     if (isArray(fieldValidator)) {
-      const result = check(store.values[name]).pipe(...fieldValidator)
-
-      if (!result.ok && result.message) {
-        error = result.message
-      }
+      result = check(store.values[name]).pipe(...fieldValidator)
     }
 
-    if (error) {
-      store.setError(name, error)
+    if (!result.ok && result.message) {
+      error = result.message
     }
+
+    store.setError(name, error)
   }
 
   function runValidate() {
@@ -210,7 +220,11 @@ export function createForm<V>(options: Options<V>) {
   }
 
   const Field: React.FC<FieldProps> = props => {
-    const { name, children, component } = props
+    const { name, children, component, label = '', ...rest } = props
+
+    if (!name) {
+      return <Item {...props} />
+    }
 
     const { values } = store
     // TODO:: handle any
@@ -218,6 +232,22 @@ export function createForm<V>(options: Options<V>) {
       name,
       onChange: (...e: any[]) => handleChange(name, ...e),
       onBlur: () => handleBlur(name),
+    }
+
+    const itemProps = {
+      ...rest,
+      label,
+    } as FieldProps
+
+    const error = get(store.errors, name)
+    if (error) {
+      itemProps.validateStatus = 'error'
+      itemProps.help = error
+    }
+
+    if (!error && isTouched(name)) {
+      itemProps.validateStatus = 'success'
+      itemProps.hasFeedback = true
     }
 
     if (children && typeof children !== 'function') {
@@ -233,7 +263,9 @@ export function createForm<V>(options: Options<V>) {
         field.value = values[name]
       }
 
-      return React.cloneElement(children, { ...field })
+      return (
+        <Item {...itemProps}>{React.cloneElement(children, { ...field })}</Item>
+      )
     }
 
     if (component) {
@@ -242,6 +274,10 @@ export function createForm<V>(options: Options<V>) {
       return <Item field={field} />
     }
     return null
+  }
+
+  Field.defaultProps = {
+    hasFeedback: false,
   }
 
   /**
@@ -267,7 +303,12 @@ export function createForm<V>(options: Options<V>) {
     component: 'div',
   }
 
+  const Form: React.FC = props => {
+    return <form {...props} onSubmit={store.handleSubmit} />
+  }
+
   return {
+    Form,
     Field,
     store,
     ErrorMessage,
