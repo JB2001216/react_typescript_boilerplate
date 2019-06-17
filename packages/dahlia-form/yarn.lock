@@ -1316,17 +1316,17 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
-dahlia-observable@^1.0.14:
-  version "1.0.14"
-  resolved "https://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.0.14.tgz#2c9bf3ee111c01b2765f8e578959eeee9c1fc1db"
-  integrity sha1-LJvz7hEcAbJ2X45XiVnu7pwfwds=
+dahlia-observable@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/dahlia-observable/download/dahlia-observable-1.1.0.tgz#bbea49baf26d9ebd8fe840a0903ee0d83b5c140d"
+  integrity sha1-u+pJuvJtnr2P6ECgkD7g2DtcFA0=
 
-dahlia-store@^1.2.20:
-  version "1.2.20"
-  resolved "https://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.2.20.tgz#e9718b9ee6b7a77dafd613738efd0cce6634f3f1"
-  integrity sha1-6XGLnua3p32v1hNzjv0MzmY08/E=
+dahlia-store@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.npm.taobao.org/dahlia-store/download/dahlia-store-1.3.0.tgz#ac7bb5dce71407c757222de6ccbd7efb6c515e0a"
+  integrity sha1-rHu13OcUB8dXIi3mzL1++2xRXgo=
   dependencies:
-    dahlia-observable "^1.0.14"
+    dahlia-observable "^1.1.0"
     fast-deep-equal "^2.0.1"
 
 dargs@^4.0.1:
