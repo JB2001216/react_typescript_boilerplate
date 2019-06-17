@@ -9,6 +9,10 @@
   },
   "bugs": "https://github.com/forsigner/dahlia/issues",
   "dependencies": {
+    "@oclif/command": "^1.5.12",
+    "@oclif/config": "^1.12.12",
+    "@oclif/dev-cli": "^1.22.0",
+    "@oclif/plugin-help": "^2.1.6",
     "chalk": "^2.4.2",
     "chokidar": "^2.1.6",
     "cross-spawn": "^6.0.5",
@@ -17,7 +21,8 @@
     "fs-jetpack": "^2.2.2",
     "inquirer": "^6.3.1",
     "json-ts": "^1.6.4",
-    "prettier": "^1.16.4",
+    "globby": "^9.2.0",
+    "nyc": "^14.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.0",
@@ -27,10 +32,6 @@
     "yosay": "^2.0.2"
   },
   "devDependencies": {
-    "@oclif/command": "^1.5.12",
-    "@oclif/config": "^1.12.12",
-    "@oclif/dev-cli": "^1.22.0",
-    "@oclif/plugin-help": "^2.1.6",
     "@oclif/test": "^1.2.4",
     "@oclif/tslint": "^3.1.1",
     "@types/chai": "^4.1.7",
@@ -49,9 +50,8 @@
     "@types/webpackbar": "^2.6.0",
     "@types/yosay": "^0.0.29",
     "chai": "^4.2.0",
-    "globby": "^9.2.0",
     "mocha": "^6.1.4",
-    "nyc": "^14.1.1",
+    "prettier": "^1.16.4",
     "ts-node": "^8.1.0"
   },
   "engines": {
@@ -84,6 +84,5 @@
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts",
-  "gitHead": "e6d939195791861407fcf5122c80f0d16e8dc9ef"
+  "types": "lib/index.d.ts"
 }
