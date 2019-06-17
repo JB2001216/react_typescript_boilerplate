@@ -1,6 +1,6 @@
 {
   "name": "dahlia-cli",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "CLI tool for Dahlia",
   "author": "forsigner",
   "bin": {
@@ -19,9 +19,9 @@
     "download-git-repo": "^1.1.0",
     "fs-extra": "^8.0.1",
     "fs-jetpack": "^2.2.2",
+    "globby": "^9.2.0",
     "inquirer": "^6.3.1",
     "json-ts": "^1.6.4",
-    "globby": "^9.2.0",
     "nyc": "^14.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
