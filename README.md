@@ -6,22 +6,30 @@
 
 ## Quick Start
 
-
 ```bash
-# Install Dahlia CLI
-yarn global add dahlia-cli
 
 # New a Dahlia app
-dh new myapp
+npx create-dahlia-app my-app
 
 # Run dev server:
-cd myapp && dh start
+cd my-app && npm start
 
 # Build to deploy
-dh build
+npm build
 ```
 
-![dh](http://forsigner.com/images/dahlia/dahlia-app.png)
+<p align='center'>
+<img src='http://forsigner.com/images/dahlia/dahlia-app.png' width='700' alt='npm start'>
+</p>
+
+### Other choices
+
+```bash
+npm init dahlia-app my-app # use npm init
+yarn create dahlia-app my-app ## yarn create
+yarn global add create-dahlia-app ## use as cli
+```
+
 
 ## License
 
