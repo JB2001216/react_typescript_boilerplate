@@ -4,22 +4,17 @@ title: 快速上手
 sidebar_label: 快速上手
 ---
 
-## 安装 Dahlia CLI
+## 快速开始
 
 ```bash
-yarn global add dahlia-cli
-```
-
-## 初始化应用
-
-```bash
-dh new myapp
+npx create-dahlia-app myapp
+cd myapp
+npm start
 ```
 
 它将在当前文件夹中创建一个名为 myapp 的目录，目录结构如下：
 
 ```bash
-
 .
 ├── package.json
 ├── pages
@@ -27,15 +22,39 @@ dh new myapp
 └── tsconfig.json
 ```
 
-**启动开发服务器**
-
-```bash
-cd myapp
-dh start
-```
-
 启动成功后，然后访问浏览器：
 
 <img src="http://forsigner.com/images/dahlia/dahlia-app.png" width="900" />
 
-至此，你已经完成了 Dahlia 的基本体验。
+## 几种初始化应用方式
+
+### 使用 npx
+
+```bash
+npx create-dahlia-app myapp
+```
+
+## 使用 npm
+
+```bash
+npm init dahlia-app myapp
+```
+
+## 使用 yarn
+
+```bash
+yarn create dahlia-app myapp
+```
+
+## 全局安装
+
+```bash
+yarn global add create-dahlia-app
+create-dahlia-app myapp
+```
+
+## 可用脚本
+
+- `npm start` - 启动开发服务器
+- `npm test` - 启动单元测试
+- `npm build` - 生产环境打包

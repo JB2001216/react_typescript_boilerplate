@@ -45,14 +45,6 @@
     "弹窗": ["modal/basic", "modal/antd"],
     "配置": ["config/basic", "config/router"],
     "自定义webpack配置": ["webpack/basic", "webpack/plugin"],
-    "命令行工具": [
-      "cli/dh-basic",
-      "cli/dh-help",
-      "cli/dh-new",
-      "cli/dh-start",
-      "cli/dh-build",
-      "cli/dh-generate"
-    ],
     "例子": ["doc3"],
     "FAQ": ["faq"]
   }
