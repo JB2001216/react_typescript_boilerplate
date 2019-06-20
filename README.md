@@ -7,29 +7,57 @@
 ## Quick Start
 
 ```bash
+npx create-dahlia-app myapp
+cd myapp
+npm start
+```
 
-# New a Dahlia app
-npx create-dahlia-app my-app
+It will create a directory called myapp inside the current folder:
 
-# Run dev server:
-cd my-app && npm start
-
-# Build to deploy
-npm build
+```bash
+.
+├── package.json
+├── pages
+│   └── index.tsx
+└── tsconfig.json
 ```
 
 <p align='center'>
-<img src='http://forsigner.com/images/dahlia/dahlia-app.png' width='700' alt='npm start'>
+  <img src='http://forsigner.com/images/dahlia/dahlia-app.png' width='700' alt='npm start'>
 </p>
 
-### Other choices
+## Other choices
+
+### npx
 
 ```bash
-npm init dahlia-app my-app # use npm init
-yarn create dahlia-app my-app ## yarn create
-yarn global add create-dahlia-app ## use as cli
+npx create-dahlia-app myapp
 ```
 
+## npm
+
+```bash
+npm init dahlia-app myapp
+```
+
+## yarn
+
+```bash
+yarn create dahlia-app myapp
+```
+
+## globally
+
+```bash
+yarn global add create-dahlia-app
+create-dahlia-app myapp
+```
+
+## Scripts
+
+- `npm start` -
+- `npm test` -
+- `npm build` -
 
 ## License
 
