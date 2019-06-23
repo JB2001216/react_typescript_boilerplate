@@ -61,6 +61,7 @@ const store = createStore({
     const { pages } = store
     const rootPage = findRooPage(pages, path)
     const params = getParams(pages)
+    console.log('params:', params)
 
     // handle interceptors
     if (interceptors.length) {

@@ -137,10 +137,10 @@ export function getParams(pages: Pages) {
   function find(pages: Pages) {
     for (const item of pages) {
       // TODO:
-      const match = partialMatchPath(item, [])
+      const match = partialMatchPath(item, []) as any
+
       if (!!match && Object.keys(match).length) {
         params = match
-        break
       }
       if (item.children && item.children.length) {
         find(item.children)

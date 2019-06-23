@@ -4,13 +4,14 @@ import { Router, Routes } from './src/index'
 import About from './pages/About'
 import Home from './pages/Home'
 import User from './pages/User'
+import Params from './pages/Params'
 
 const NotFound = () => <div>404 not found</div>
 
 const routes: Routes = [
   {
     path: '/',
-    component: Home
+    component: Home,
   },
   {
     path: '/about',
@@ -18,7 +19,13 @@ const routes: Routes = [
   },
   {
     path: '/users/:name',
-    component: User
+    component: User,
+    children: [
+      {
+        path: '/params/:id',
+        component: Params,
+      },
+    ],
   },
   {
     path: '**',
