@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { routerStore } from '../src/index'
 
-export default () => {
+const User: FC = ({ children }) => {
   const { params } = routerStore
   return (
     <div>
       <h1>User Name: {params.name}</h1>
+      {children}
     </div>
   )
 }
+
+export default User
