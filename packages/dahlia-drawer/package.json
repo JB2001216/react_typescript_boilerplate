@@ -1,0 +1,60 @@
+{
+  "name": "dahlia-drawer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "clean:dist": "rimraf dist/*",
+    "min": "terser dist/index.js -o dist/index.min.js",
+    "build": "npm run clean:dist && rollup -c && npm run min",
+    "build:watch": "npm run clean:dist && rollup -c -w",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/examples/",
+      "/.history/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/forsigner/dahlia.git"
+  },
+  "author": "forsigner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://.com/forsigner/dahlia/issues"
+  },
+  "homepage": "https://github.com/forsigner/dahlia/blob/master/packages/dahlia-drawer/README.md",
+  "devDependencies": {
+    "@types/enzyme": "^3.9.1",
+    "@types/graphql": "^14.2.0",
+    "@types/jest": "^24.0.11",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.3",
+    "@types/react-test-renderer": "^16.8.1",
+    "antd": "^3.19.8",
+    "jest": "^24.7.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "16.8.6",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.9.0",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "terser": "^3.17.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.2"
+  },
+  "dependencies": {
+    "dahlia-store": "^1.3.1"
+  }
+}
