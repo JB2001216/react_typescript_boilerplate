@@ -17,6 +17,9 @@ export const pageFiles = `${appDir}/pages/**/*.{ts,tsx}`
 export const modalsDir = `${appDir}/modals`
 export const modalFiles = `${appDir}/modals/**/*.{ts,tsx}`
 
+export const drawersDir = `${appDir}/drawers`
+export const drawerFiles = `${appDir}/drawers/**/*.{ts,tsx}`
+
 export const configPaths = [
   {
     origin: `${appDir}/config/config.local.ts`,
@@ -76,6 +79,8 @@ export const tmpRouterConfigPath = `${tmpDir}/config/router.config.ts`
 
 export const modalConfigPath = `${appDir}/config/modal.config.ts`
 export const tmpModalsConfigPath = `${tmpDir}/config/modal.config.ts`
+export const drawerConfigPath = `${appDir}/config/drawer.config.ts`
+export const tmpDrawersConfigPath = `${tmpDir}/config/drawer.config.ts`
 
 export const entryPath = `${tmpDir}/index.tsx`
 export const htmlPath = `${tmpDir}/index.html`
