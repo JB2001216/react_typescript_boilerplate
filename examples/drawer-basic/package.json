@@ -1,0 +1,29 @@
+{
+  "name": "modal-basic",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "dahlia-scripts start ",
+    "build": "dahlia-scripts build",
+    "test": "dahlia-scripts test"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/react": "^16.8.10",
+    "@types/react-dom": "^16.8.3",
+    "antd": "^3.19.8",
+    "dahlia": "^1.13.5",
+    "dahlia-drawer": "^0.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "typescript": "^3.4.1"
+  },
+  "devDependencies": {
+    "dahlia-scripts": "^1.0.1"
+  }
+}
