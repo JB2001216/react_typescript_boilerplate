@@ -19,6 +19,11 @@ const About = () => (
   </span>
 )
 
+About.drawerProps = {
+  title: 'about me',
+  width: '80%',
+}
+
 const config: DrawerConfig = [
   {
     name: 'about',

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Drawers, DrawerConfig, drawerStore } from '../src'
+import { Drawers, DrawerConfig, drawerStore } from '../../src'
 
 import 'antd/dist/antd.css'
 
@@ -11,7 +11,7 @@ const About = () => (
 )
 
 About.drawerProps = {
-  title: 'haha',
+  title: 'about me',
   width: '80%',
 }
 
