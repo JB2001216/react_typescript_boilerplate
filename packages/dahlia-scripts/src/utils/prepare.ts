@@ -8,6 +8,7 @@ import { createCommonFiles } from './createCommonFiles'
 import { createConfigFile } from './createConfigFile'
 import { createRouterConfig } from './createRouterConfig'
 import { createModalConfig } from './createModalConfig'
+import { createDrawerConfig } from './createDrawerConfig'
 import { createLocaleTypings } from './createLocaleTypings'
 import { createLocalesFiles } from './createLocalesFiles'
 import { createInterceptorFiles } from './createInterceptorFiles'
@@ -26,6 +27,7 @@ export async function prepare() {
   createConfigFile()
   createRouterConfig()
   createModalConfig()
+  createDrawerConfig()
   createLocalesFiles()
   await createLocaleTypings()
   createInterceptorFiles()
