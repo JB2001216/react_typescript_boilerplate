@@ -28,11 +28,13 @@ import Dahlia, { Config } from 'dahlia'
 import { ResponseInterceptor } from 'dahlia/rest'
 import { modalStore } from 'dahlia/modal'
 
+
 import configDefault from './config/config.default'
 import configLocal from './config/config.local'
 import configProd from './config/config.prod'
 import routes from './config/router.config'
 import modals from './config/modal.config'
+import drawers from './config/drawer.config'
 import response from './interceptors/response'
 import App from './common/App'
 import Modal from './common/Modal'
@@ -46,6 +48,7 @@ const { NODE_ENV } = process.env
 const config = {
   routes,
   modals,
+  drawers,
   graphql: {
     endpoint: '/graphql',
   },
