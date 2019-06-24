@@ -1,6 +1,6 @@
 {
   "name": "dahlia-drawer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Drawer for Dahlia",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
