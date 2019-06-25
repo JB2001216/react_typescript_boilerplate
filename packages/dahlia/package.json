@@ -6,6 +6,9 @@
   "module": "index.es.js",
   "files": [
     "config.d.ts",
+    "drawer.d.ts",
+    "drawer.js",
+    "drawer.js.map",
     "form.d.ts",
     "form.js",
     "form.js.map",
