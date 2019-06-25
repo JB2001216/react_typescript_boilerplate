@@ -1,43 +1,63 @@
 # Dahlia
 
-[![npm](https://img.shields.io/npm/v/dahlia.svg)](https://www.npmjs.com/package/dahlia) [![Build Status](https://travis-ci.org/forsigner/dahlia.svg?branch=master)](https://travis-ci.org/forsigner/dahlia) [](https://coveralls.io/github/forsigner/dahlia?branch=master)
-[![npm](https://img.shields.io/badge/TypeScript-%E2%9C%93-007ACC.svg)](https://www.typescriptlang.org/) [![GitHub license](https://img.shields.io/github/license/forsigner/dahlia.svg)](https://github.com/forsigner/dahlia/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/dahlia.svg)](https://www.npmjs.com/package/dahlia) [![npm](https://img.shields.io/badge/TypeScript-%E2%9C%93-007ACC.svg)](https://www.typescriptlang.org/) [![GitHub license](https://img.shields.io/github/license/forsigner/dahlia.svg)](https://github.com/forsigner/dahlia/blob/master/LICENSE)
 
 > An opinionated React Framework for building modern web applications.
 
 ## Quick Start
 
-Install Dahlia CLI:
-
 ```bash
-yarn global add dahlia-cli
+npx create-dahlia-app myapp
+cd myapp
+npm start
 ```
 
-New a Dahlia app:
-
-```bash
-dh new myapp
-```
-
-You will get:
+It will create a directory called myapp inside the current folder:
 
 ```bash
 .
-├── README.md
 ├── package.json
 ├── pages
 │   └── index.tsx
 └── tsconfig.json
 ```
 
-Run dev server:
+<p align='center'>
+  <img src='http://forsigner.com/images/dahlia/dahlia-app.png' width='700' alt='npm start'>
+</p>
+
+## Other choices
+
+### npx
 
 ```bash
-cd myapp
-dh start
+npx create-dahlia-app myapp
 ```
 
-![dh](http://forsigner.com/images/dahlia/dahlia-app.png)
+## npm
+
+```bash
+npm init dahlia-app myapp
+```
+
+## yarn
+
+```bash
+yarn create dahlia-app myapp
+```
+
+## globally
+
+```bash
+yarn global add create-dahlia-app
+create-dahlia-app myapp
+```
+
+## Scripts
+
+- `npm start` -
+- `npm test` -
+- `npm build` -
 
 ## License
 
