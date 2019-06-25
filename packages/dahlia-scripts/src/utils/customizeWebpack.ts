@@ -33,6 +33,7 @@ export const customizeWebpack = () => {
         '@modals': resolve('modals/'),
         '@drawers': resolve('drawers/'),
         '@hooks': resolve('hooks/'),
+        '@dto': resolve('dto/'),
         '@constants': resolve('constants/'),
         '@images': resolve('images/'),
         '@fonts': resolve('fonts/'),
