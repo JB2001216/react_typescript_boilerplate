@@ -19,13 +19,13 @@ function capitalizeFirstLetter(str: string) {
 }
 
 function getModalName(path: string = '') {
-  const fileName = last(path.split(sep))
+  const fileName = path.split(sep)[1]
   const modalName = fileName.replace(/\.tsx$/, '')
   return modalName
 }
 
 function getCmpName(path: string = '') {
-  const fileName = last(path.split(sep))
+  const fileName = path.split(sep)[1]
   const modalName = fileName.replace(/\.tsx$/, '').replace(/[\.\-\^\$]/g, '_')
   return capitalizeFirstLetter(modalName)
 }
@@ -34,7 +34,7 @@ function formatModals(modals: string[]) {
   return modals.map(item => {
     const modalName = getModalName(item)
     const cmpName = getCmpName(item)
-    item  = item.split(sep).join('/')
+    item = item.split(sep).join('/')
     const modalImportPath = item
       .replace(/^modals/, '../../modals')
       .replace(/\.tsx$/, '')
@@ -95,9 +95,21 @@ export const createModalConfig = () => {
     return
   }
 
-  const modals: string[] = fs.existsSync(modalsDir)
+  const paths: string[] = fs.existsSync(modalsDir)
     ? jetpack.find(modalsDir, { matching: '**/*.tsx' })
     : []
+
+  const modals = paths.filter(path => {
+    const arr = path.split(sep)
+    // modal 为文件，不是目录
+    if (arr.length === 2) return true
+
+    // 两层文件, index 文件才是
+    if (arr.length === 3 && last(arr) === 'index.tsx') {
+      return true
+    }
+    return false // 其他都不 modal
+  })
 
   const modasText = getModalsConfig(modals)
   const code = formatCode(modasText)
