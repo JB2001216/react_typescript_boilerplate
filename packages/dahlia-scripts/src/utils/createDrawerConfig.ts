@@ -19,13 +19,13 @@ function capitalizeFirstLetter(str: string) {
 }
 
 function getDrawerName(path: string = '') {
-  const fileName = last(path.split(sep))
+  const fileName = path.split(sep)[1] // 第二个
   const drawerName = fileName.replace(/\.tsx$/, '')
   return drawerName
 }
 
 function getCmpName(path: string = '') {
-  const fileName = last(path.split(sep))
+  const fileName = path.split(sep)[1]
   const drawerName = fileName.replace(/\.tsx$/, '').replace(/[\.\-\^\$]/g, '_')
   return capitalizeFirstLetter(drawerName)
 }
@@ -34,7 +34,7 @@ function formatDrawers(drawers: string[]) {
   return drawers.map(item => {
     const drawerName = getDrawerName(item)
     const cmpName = getCmpName(item)
-    item  = item.split(sep).join('/')
+    item = item.split(sep).join('/')
     const drawerImportPath = item
       .replace(/^drawers/, '../../drawers')
       .replace(/\.tsx$/, '')
@@ -48,6 +48,7 @@ function formatDrawers(drawers: string[]) {
 }
 
 function getDrawersConfig(drawers: string[]) {
+
   const drawerArr = formatDrawers(drawers)
   const importFiles = drawerArr
     .map(item => {
@@ -95,9 +96,21 @@ export const createDrawerConfig = () => {
     return
   }
 
-  const drawers: string[] = fs.existsSync(drawersDir)
+  const paths: string[] = fs.existsSync(drawersDir)
     ? jetpack.find(drawersDir, { matching: '**/*.tsx' })
     : []
+
+  const drawers = paths.filter(path => {
+    const arr = path.split(sep)
+    // drawer 为文件，不是目录
+    if (arr.length === 2) return true
+
+    // 两层文件, index 文件才是
+    if (arr.length === 3 && last(arr) === 'index.tsx') {
+      return true
+    }
+    return false // 其他都不 drawer
+  })
 
   const modasText = getDrawersConfig(drawers)
   const code = formatCode(modasText)
