@@ -1,10 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import { observe, createStore } from 'dahlia-store'
 
-import { config, fetch, useFetch, useUpdate, fetcher } from '../../src'
+import { config, fetch, useFetch, useUpdate, fetcher } from './src'
 
 config({
   endpoint: 'https://jsonplaceholder.typicode.com',
+  interceptor: {
+    responses: [
+      data => {
+        return data
+      },
+    ],
+    requests: [
+      config => {
+        config.headers = {
+          ...config.headers,
+          uid: 'test',
+        }
+        return config
+      },
+    ],
+  },
 })
 
 enum Api {
