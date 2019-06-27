@@ -1,7 +1,0 @@
-export { request } from './request'
-export { query } from './query'
-export { useQuery } from './use-query'
-export { useMutate } from './use-mutate'
-export { useFetch } from './use-fetch'
-export { useUpdate } from './use-update'
-export * from './config'
