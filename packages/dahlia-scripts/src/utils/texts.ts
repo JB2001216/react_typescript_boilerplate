@@ -25,9 +25,8 @@ const htmlText = formatCode(
 
 export const entryText = formatCode(`
 import Dahlia, { Config } from 'dahlia'
-import { ResponseInterceptor } from 'dahlia/rest'
+import { ResponseInterceptor, RequestInterceptor } from 'dahlia/rest'
 import { modalStore } from 'dahlia/modal'
-
 
 import configDefault from './config/config.default'
 import configLocal from './config/config.local'
@@ -42,6 +41,10 @@ import Modal from './common/Modal'
 const responseInterceptors: ResponseInterceptor[] = Array.isArray(response)
   ? response
   : [response]
+
+const requestInterceptors: RequestInterceptor[] = Array.isArray(request)
+  ? request
+  : [request]
 
 const { NODE_ENV } = process.env
 
@@ -75,6 +78,7 @@ const finalConfig = {
 
 finalConfig.rest.interceptor = {} as any
 finalConfig.rest.interceptor.responses = responseInterceptors
+finalConfig.rest.interceptor.requests = requestInterceptors
 
 const lang = localStorage.getItem('__lang__') || 'default'
 
