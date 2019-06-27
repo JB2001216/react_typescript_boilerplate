@@ -24,6 +24,21 @@ export async function fetch<T = any>(url: string, options?: Options): Promise<T>
   if (configInterceptors) interceptor = configInterceptors
 
   try {
+    if (interceptor.requests) {
+      interceptor.requests.forEach(item => {
+        // TODO:
+        const opt = options
+          ? options
+          : {
+              headers: {},
+            }
+        options = {
+          ...options,
+          ...item(opt as any),
+        }
+      })
+    }
+
     let res = await request(reqURL, options)
     if (interceptor.responses) {
       interceptor.responses.forEach(item => {

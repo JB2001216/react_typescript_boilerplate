@@ -1,6 +1,6 @@
 import { Options as RequestOptions } from 'dahlia-request'
 
-export type Update = (updateOptions?: Options) => any
+export type Update = (updateOptions?: RequestOptions) => any
 
 export interface Param {
   [key: string]: string | number | boolean
@@ -27,7 +27,7 @@ export interface UpdateResult<T> {
   error: any
 }
 
-export type RequestInterceptor = (config: any) => any
+export type RequestInterceptor = (config: Options) => any
 export type RequestErrorInterceptor = (config: any) => any
 export type ResponseInterceptor = (error: any) => any
 export type ResponseErrorInterceptor = (error: any) => any
