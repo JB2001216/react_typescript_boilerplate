@@ -35,6 +35,7 @@ import routes from './config/router.config'
 import modals from './config/modal.config'
 import drawers from './config/drawer.config'
 import response from './interceptors/response'
+import request from './interceptors/request'
 import App from './common/App'
 import Modal from './common/Modal'
 
