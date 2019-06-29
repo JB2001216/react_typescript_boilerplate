@@ -5,7 +5,6 @@ import min from 'checkok-min'
 // import { createForm } from 'dahlia-from'
 import { createForm } from '../src'
 
-
 const { Option } = Select
 
 const { Form: DahliaForm, Field, ErrorMessage, store } = createForm({
@@ -33,7 +32,6 @@ const { Form: DahliaForm, Field, ErrorMessage, store } = createForm({
 })
 
 const SelectRule: React.FC<any> = ({ field }) => {
-  console.log('fied:', field)
   return (
     <Select {...field} style={{ width: 200 }}>
       <Option value="86">+86</Option>
@@ -44,7 +42,7 @@ const SelectRule: React.FC<any> = ({ field }) => {
 
 export default () => {
   return (
-    <div>
+    <div style={{ margin: '200px' }}>
       <DahliaForm>
         <pre>{JSON.stringify(store, null, 2)}</pre>
         <Field name="phone" component={SelectRule} />
@@ -129,6 +127,11 @@ export default () => {
         <div>
           <button type="submit" disabled={!store.valid}>
             submit
+          </button>
+
+          <br />
+          <button type="button" onClick={store.resetForm}>
+            reset
           </button>
         </div>
       </DahliaForm>
