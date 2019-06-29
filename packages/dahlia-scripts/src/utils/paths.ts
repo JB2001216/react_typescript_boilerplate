@@ -35,6 +35,8 @@ export const configPaths = [
   },
 ]
 
+
+export const interceptorFiles = `${appDir}/interceptors/**/*.{ts,tsx}`
 export const interceptorPaths = [
   {
     origin: `${appDir}/interceptors/response.ts`,
