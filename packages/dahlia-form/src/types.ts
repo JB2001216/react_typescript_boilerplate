@@ -68,6 +68,7 @@ export interface Options<V> {
     values: V,
     options: { setSubmitting: (submitting: boolean) => any },
   ) => any
+  onReset?: () => any
   validate?: Validate<V>
   validator?: Validator<V>
 }

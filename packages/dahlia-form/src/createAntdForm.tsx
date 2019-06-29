@@ -27,7 +27,13 @@ interface FieldProps extends FormItemProps {
 }
 
 export function createAntdForm<V>(options: Options<V>) {
-  const { initialValues = {} as V, validate, validator, onSubmit } = options
+  const {
+    initialValues = {} as V,
+    validate,
+    validator,
+    onSubmit,
+    onReset,
+  } = options
 
   checkValidateOptions<V>(validate, validator)
 
@@ -65,6 +71,9 @@ export function createAntdForm<V>(options: Options<V>) {
     resetForm() {
       // TODO: handle clone
       store.values = JSON.parse(JSON.stringify(store.initialValues))
+      if (onReset && typeof onReset === 'function') {
+        onReset()
+      }
     },
     setSubmitCount(count: number) {
       store.submitCount += count
