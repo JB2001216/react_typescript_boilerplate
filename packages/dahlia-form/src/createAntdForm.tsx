@@ -50,7 +50,6 @@ export function createAntdForm<V>(options: Options<V>) {
         store.errors[name] = error
       }
     },
-
     setErrors(errors) {
       store.errors = errors
     },
@@ -62,6 +61,10 @@ export function createAntdForm<V>(options: Options<V>) {
     },
     setValid(valid) {
       store.valid = valid
+    },
+    resetForm() {
+      // TODO: handle clone
+      store.values = JSON.parse(JSON.stringify(store.initialValues))
     },
     setSubmitCount(count: number) {
       store.submitCount += count

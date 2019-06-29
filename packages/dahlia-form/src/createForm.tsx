@@ -56,6 +56,10 @@ export function createForm<V>(options: Options<V>) {
     setSubmitCount(count: number) {
       store.submitCount += count
     },
+    resetForm() {
+      // TODO: handle clone
+      store.values = JSON.parse(JSON.stringify(store.initialValues))
+    },
     setSubmitting(submitting) {
       store.submitting = submitting
     },
