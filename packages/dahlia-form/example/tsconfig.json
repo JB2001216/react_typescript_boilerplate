@@ -26,7 +26,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "paths": {
-      "@/*": ["./*"],
       "@utils/*": ["utils/*"],
       "@services/*": ["services/*"],
       "@stores/*": ["stores/*"],

@@ -3,13 +3,13 @@ import { Form, Button, Input, Select, Radio } from 'antd'
 import required from 'checkok-required'
 import min from 'checkok-min'
 // import { createForm } from 'dahlia-from'
-import { createForm } from '../src/createAntFrom'
+import { createAntdForm } from '../src'
 
 import 'antd/dist/antd.css'
 
 const { Option } = Select
 
-const { Field, store } = createForm({
+const { Field, store } = createAntdForm({
   initialValues: {
     email: '',
     password: '',
@@ -67,8 +67,11 @@ export default () => {
           </Button>
         </Field>
 
-        <div>
-        </div>
+        <Button type="default" onClick={store.resetForm}>
+          reset
+        </Button>
+
+        <div></div>
       </Form>
     </div>
   )
