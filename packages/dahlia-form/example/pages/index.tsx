@@ -29,6 +29,9 @@ const { Form: DahliaForm, Field, ErrorMessage, store } = createForm({
   onSubmit: values => {
     alert(JSON.stringify(values, null, 2))
   },
+  onReset() {
+    console.log('reset.....');
+  }
 })
 
 const SelectRule: React.FC<any> = ({ field }) => {

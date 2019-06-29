@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "antd": "^3.19.8",
-    "dahlia": "^1.15.6",
+    "dahlia": "^1.15.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -34,7 +34,7 @@
     "@types/react-dom": "^16.8.4",
     "dahlia-antd": "^1.0.0",
     "dahlia-less": "^1.0.0",
-    "dahlia-scripts": "^1.0.5",
+    "dahlia-scripts": "^1.0.6",
     "dahlia-styled-jsx": "^1.0.0",
     "typescript": "^3.4.5"
   }
