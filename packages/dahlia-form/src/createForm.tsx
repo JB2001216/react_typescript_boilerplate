@@ -17,7 +17,13 @@ import {
 import { val } from './val'
 
 export function createForm<V>(options: Options<V>) {
-  const { initialValues = {} as V, validate, validator, onSubmit } = options
+  const {
+    initialValues = {} as V,
+    validate,
+    validator,
+    onSubmit,
+    onReset,
+  } = options
 
   checkValidateOptions<V>(validate, validator)
 
@@ -59,10 +65,14 @@ export function createForm<V>(options: Options<V>) {
     resetForm() {
       // TODO: handle clone
       store.values = JSON.parse(JSON.stringify(store.initialValues))
+      if (onReset && typeof onReset === 'function') {
+        onReset()
+      }
     },
     setSubmitting(submitting) {
       store.submitting = submitting
     },
+
     handleSubmit(e: Event | FormEvent<HTMLFormElement>) {
       if (e && e.preventDefault) e.preventDefault()
       store.setSubmitCount(1)
