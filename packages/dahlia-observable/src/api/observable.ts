@@ -1,5 +1,5 @@
 import { canObservable } from '../utils/canObservable'
-import { action } from '../api/action'
+import { action } from './action'
 import { globalState } from '../core/globalState'
 import { invokeRunners } from '../core/invokeRunners'
 
@@ -25,8 +25,8 @@ export function toObservable<T extends object>(obj: T, init: boolean) {
     for (const key of fnKeys) {
       const fn = obj[key]
       obj[key] = new Proxy(fn, {
-        apply: (target, thisArgs, argArray) => {
-          action(() => Reflect.apply(target, thisArgs, argArray))
+        apply: async (target, thisArgs, argArray) => {
+          return await action(() => Reflect.apply(target, thisArgs, argArray))
         },
       })
     }
