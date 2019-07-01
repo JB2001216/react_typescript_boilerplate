@@ -1,4 +1,5 @@
 import React, { ComponentType } from 'react'
+import debounce from 'lodash.debounce'
 
 import { observe as run, unobserve } from 'dahlia-observable'
 import equal from 'fast-deep-equal'
@@ -8,7 +9,9 @@ export function observe<P>(Comp: ComponentType<P>) {
     constructor(props: P) {
       super(props)
       this.render = run(this.render, {
-        scheduler: () => this.setState({}),
+        scheduler: debounce(() => {
+          this.setState({})
+        }, 10),
         lazy: true,
       })
     }

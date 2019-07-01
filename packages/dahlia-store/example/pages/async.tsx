@@ -1,5 +1,4 @@
 import React from 'react'
-import { Table } from 'antd'
 
 import { createStore, observe } from '../src'
 
@@ -14,37 +13,30 @@ interface Todo {
 const store = createStore({
   todos: [] as Todo[],
   async fetchTodos() {
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    // await new Promise(resolve => setTimeout(resolve, 1000))
     const todos = await (await fetch('https://jsonplaceholder.typicode.com/todos')).json()
     store.todos = todos
+    // store.todos = store.todos
+    console.log('11111111111')
+    return todos
   },
 })
 
-const columns = [
-  {
-    title: 'id',
-    dataIndex: 'id',
-    key: 'id',
-  },
-  {
-    title: 'title',
-    dataIndex: 'title',
-    key: 'title',
-  },
-]
-
 export default observe(() => {
+  const loadTodos = async () => {
+    const todos = await store.fetchTodos()
+    console.log('loaded todos:', todos)
+    console.log('333333')
+  }
   React.useEffect(() => {
-    store.fetchTodos()
+    loadTodos()
   }, [])
-  console.log('store.todos:', store.todos)
-  console.log('store.todos.len:', store.todos.length)
+  console.log('render.......')
   return (
     <div>
-      <Table dataSource={store.todos} columns={columns} />
       <span>
         {store.todos.map(todo => (
-          <div>
+          <div key={todo.id}>
             <span>{todo.title}</span>
             <span>{todo.completed}</span>p
           </div>
