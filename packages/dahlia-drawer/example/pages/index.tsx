@@ -1,5 +1,5 @@
 import React from 'react'
-import { Drawers, DrawerConfig, drawerStore } from '../../src'
+import { Drawers, DrawerConfig, drawerStore } from 'dahlia-drawer'
 
 import 'antd/dist/antd.css'
 
