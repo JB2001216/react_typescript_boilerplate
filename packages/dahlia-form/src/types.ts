@@ -36,7 +36,8 @@ export interface Store<V> {
   handleSubmit: (e: FormEvent<HTMLFormElement>) => any
   handleChange: (e: ChangeEvent<FieldElement>) => any
   handleBlur: (e: FocusEvent<FieldElement>) => any
-  setValues: (name: string, value: any) => void
+  setValue: (name: string, value: any) => void
+  setValues: (values: V) => void
   setError: (name: string, errors: any) => void
   setErrors: (errors: Errors<V>) => void
   setTouched: (touched: Touched<V>) => void

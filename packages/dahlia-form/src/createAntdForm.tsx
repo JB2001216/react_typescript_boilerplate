@@ -46,8 +46,11 @@ export function createAntdForm<V>(options: Options<V>) {
     valid: true,
     submitCount: 0,
     submitting: false,
-    setValues(name, value) {
+    setValue(name, value) {
       set(store.values as any, name, value)
+    },
+    setValues(values) {
+      store.values = values
     },
     setError(name, error) {
       if (!error) {
@@ -106,7 +109,7 @@ export function createAntdForm<V>(options: Options<V>) {
 
     // for custom element
     if (typeof e !== 'object') {
-      store.setValues(name, e)
+      store.setValue(name, e)
       return
     }
 
@@ -124,10 +127,10 @@ export function createAntdForm<V>(options: Options<V>) {
       } else {
         newCheckedValues = checkedValues.filter((item: any) => item !== value)
       }
-      store.setValues(name, newCheckedValues)
+      store.setValue(name, newCheckedValues)
       return
     } else {
-      store.setValues(name, val($node))
+      store.setValue(name, val($node))
     }
 
     if (isTouched(name)) {
