@@ -1,7 +1,7 @@
 {
   "name": "dahlia-popup",
   "version": "0.1.0",
-  "description": "Popup for Dahlia",
+  "description": "Popup for Dahlia base on Antd Popover",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
