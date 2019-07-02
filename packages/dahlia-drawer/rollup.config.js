@@ -19,7 +19,7 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['react', 'react-dom', 'antd'],
+  external: ['react', 'react-dom', 'antd', 'dahlia-store'],
   plugins: [
     autoExternal(),
     typescript({
