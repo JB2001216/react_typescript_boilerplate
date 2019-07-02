@@ -1,6 +1,6 @@
 {
   "name": "dahlia-store",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "State management for Dahlia",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
