@@ -57,7 +57,6 @@
   "dependencies": {
     "dahlia-observable": "^1.1.1",
     "fast-deep-equal": "^2.0.1",
-    "lodash.debounce": "^4.0.8",
-    "react-easy-state": "^6.1.3"
+    "lodash.debounce": "^4.0.8"
   }
 }

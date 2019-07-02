@@ -19,7 +19,7 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'lodash.debounce', 'dahlia-observable', 'fast-deep-equal'],
   plugins: [
     autoExternal(),
     typescript({
