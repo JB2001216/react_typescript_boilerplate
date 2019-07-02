@@ -43,6 +43,9 @@ store.js.map
 modal.d.ts
 modal.js
 modal.js.map
+popup.d.ts
+popup.js
+popup.js.map
 i18n.d.ts
 i18n.js
 i18n.js.map
