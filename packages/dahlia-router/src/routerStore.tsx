@@ -20,6 +20,9 @@ interface Route {
   children?: Routes
 }
 type Routes = Route[]
+interface Params {
+  [key: string]: any
+}
 
 const defaultPage = {
   fullPath: '**',
@@ -31,9 +34,7 @@ const defaultPage = {
 const currentPath = ''
 const currentPage = null as (Page | null)
 const pages: Page[] = []
-const params: {
-  [key: string]: any
-} = {}
+const params: Params = {}
 
 const store = createStore({
   inited: false,
@@ -50,6 +51,7 @@ const store = createStore({
   go({ to, replace }: { to: string; replace?: boolean }) {
     let path: string = '',
       search: string = ''
+
     if (to.indexOf('?') > -1) {
       const arr = to.split('?')
       path = arr[0]
@@ -60,7 +62,6 @@ const store = createStore({
 
     const { pages } = store
     const rootPage = findRooPage(pages, path)
-    const params = getParams(pages)
 
     // handle interceptors
     if (interceptors.length) {
@@ -85,6 +86,7 @@ const store = createStore({
     }
 
     if (rootPage) {
+      const params = getParams([rootPage], to)
       store.currentPath = path
       store.currentPage = rootPage
       store.params = params || {}

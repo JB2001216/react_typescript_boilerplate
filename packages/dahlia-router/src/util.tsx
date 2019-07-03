@@ -43,28 +43,32 @@ export function matchPath(
 }
 
 // TODO: need refactor
-function partialMatchPath(
-  page: Page,
-  paths: string[],
-): object | null | boolean {
+function matchPage(page: Page, paths: string[]): object | null | boolean {
+  const matchHome = getPath() === '/' && page.path === getPath()
+  if (matchHome) return true
+
   const clientPath = getPath() + '/'
   const { path, parentPath, fullPath } = page
   try {
     if (!paths.length || !parentPath) {
-      return new Path(fullPath).partialTest(clientPath)
+      // return new Path(fullPath).partialTest(clientPath)
+      return new Path(fullPath).test(clientPath)
     }
     if (path === '/') {
       const fullPaths = paths
         .map(i => parentPath + i)
         .filter(i => {
-          return new Path(i).partialTest(clientPath)
+          // return new Path(i).partialTest(clientPath)
+          return new Path(i).test(clientPath)
         })
       if (fullPaths.length > 1) {
         return false
       }
-      return new Path(fullPath).partialTest(clientPath)
+      // return new Path(fullPath).partialTest(clientPath)
+      return new Path(fullPath).test(clientPath)
     }
-    return new Path(fullPath).partialTest(clientPath)
+    // return new Path(fullPath).partialTest(clientPath)
+    return new Path(fullPath).test(clientPath)
   } catch (e) {
     return false
   }
@@ -131,17 +135,16 @@ export function findRooPage(pages: Pages, path: string): Page | null {
   return finded
 }
 
-export function getParams(pages: Pages) {
+export function getParams(pages: Pages, path: string) {
   let params = {}
 
   function find(pages: Pages) {
     for (const item of pages) {
-      // TODO:
-      const match = partialMatchPath(item, []) as any
-
-      if (!!match && Object.keys(match).length) {
-        params = match
+      const result = new Path(item.fullPath).partialTest(path)
+      if (result) {
+        params = { ...params, ...result }
       }
+
       if (item.children && item.children.length) {
         find(item.children)
       }
@@ -158,21 +161,18 @@ export function findDefaultPage(pages: Pages): Page | undefined {
 
 export function createPage(pages: Pages, paths: string[] = []): any {
   return pages.map((item, index) => {
-    const match = partialMatchPath(item, paths)
+    const match = matchPage(item, paths)
     const PG = item.component
 
     if (!item.children || !item.children.length) {
-      return !!match ? <PG params={match} key={index} /> : null
+      return !!match ? <PG key={index} /> : null
     }
+
     const currentPaths = item.children.reduce(
       (result, cur) => [...result, cur.path],
       [],
     )
 
-    return (
-      <PG params={match} key={index}>
-        {createPage(item.children, currentPaths)}
-      </PG>
-    )
+    return <PG key={index}>{createPage(item.children, currentPaths)}</PG>
   })
 }
