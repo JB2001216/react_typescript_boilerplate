@@ -40,7 +40,10 @@ export function createForm<V>(options: Options<V>) {
       set(store.values as any, name, value)
     },
     setValues(values) {
-      store.values = values
+      store.values = {
+        ...store.values,
+        ...values,
+      }
     },
     setError(name, error) {
       if (!error) {
