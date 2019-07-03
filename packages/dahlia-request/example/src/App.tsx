@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import { request } from 'dahlia-request'
-import { request } from './src'
+import { request } from '../../src'
 
 class App extends Component {
   state = {
