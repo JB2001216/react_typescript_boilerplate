@@ -1,18 +1,12 @@
-import React, { useEffect, Suspense, lazy } from 'react'
-import { Link } from '../src/index'
+import React, { Suspense, lazy } from 'react'
 
 const Test = lazy(() => import('./Test'))
 
 export default () => {
-  console.log('home....')
-  useEffect(() => {
-    console.log('mouted....')
-  }, [])
   return (
     <div>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
       <h1>Home</h1>
+      home content....
       <Suspense fallback="loading....">
         <Test />
       </Suspense>
