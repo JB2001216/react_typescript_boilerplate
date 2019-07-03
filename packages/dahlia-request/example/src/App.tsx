@@ -11,7 +11,7 @@ class App extends Component {
       query: {
         foo: 'bar',
       },
-      param: {
+      params: {
         id: 1,
       },
     })

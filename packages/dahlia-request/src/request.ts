@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch'
 import { stringify } from 'qs'
-import { Options, Body, Param } from './types'
+import { Options, Body, Params } from './types'
 
 // method with json
 const methods = ['POST', 'PUT', 'PATCH', 'DELETE']
@@ -26,12 +26,12 @@ function getDefaultOpt(url: string, options: Options = {}): RequestInit {
   return baseOpt as RequestInit
 }
 
-function setUrlParam(url: string = '', param: Param) {
+function setUrlParam(url: string = '', params: Params) {
   return url
     .split('/')
     .map(item => {
       if (item.startsWith(':')) {
-        return param[item.replace(/^\:/, '')]
+        return params[item.replace(/^\:/, '')]
       }
       return item
     })
@@ -42,7 +42,7 @@ function getURL(url: string, options?: Options) {
   // handle something like fetch('POST /todos')
   url = last(url.split(/\s+/))
 
-  if (options && options.param) url = setUrlParam(url, options.param)
+  if (options && options.params) url = setUrlParam(url, options.params)
 
   const qs = getQueryString(options)
   if (!qs) return url
