@@ -13,6 +13,10 @@ export type Touched<V> = {
   [K in keyof V]?: V[K] extends object ? Touched<V[K]> : boolean
 }
 
+export type Optional<V> = {
+  [K in keyof V]?: V[K] extends object ? Optional<V[K]> : any
+}
+
 type ValidatorFn<V> = (values: V) => any
 export type Validate<V> = (values: V) => any
 export type Validator<V> =
@@ -37,7 +41,7 @@ export interface Store<V> {
   handleChange: (e: ChangeEvent<FieldElement>) => any
   handleBlur: (e: FocusEvent<FieldElement>) => any
   setValue: (name: string, value: any) => void
-  setValues: (values: V) => void
+  setValues: (values: Optional<V>) => void
   setError: (name: string, errors: any) => void
   setErrors: (errors: Errors<V>) => void
   setTouched: (touched: Touched<V>) => void
