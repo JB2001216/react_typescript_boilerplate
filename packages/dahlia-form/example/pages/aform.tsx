@@ -2,8 +2,7 @@ import React from 'react'
 import { Form, Button, Input, Select, Radio } from 'antd'
 import required from 'checkok-required'
 import min from 'checkok-min'
-// import { createForm } from 'dahlia-from'
-import { createAntdForm } from '../../src'
+import { createAntdForm } from '../src'
 
 import 'antd/dist/antd.css'
 
@@ -77,9 +76,16 @@ export default () => {
           </Button>
         </Field>
 
-        <Button type="default" onClick={store.resetForm}>
-          reset
-        </Button>
+        <Field label="重置">
+          <Button type="default" onClick={store.resetForm}>
+            reset
+          </Button>
+        </Field>
+        <Field label="手动触发">
+          <Button type="default" onClick={store.submitForm}>
+            submitForm
+          </Button>
+        </Field>
 
         <div></div>
       </Form>

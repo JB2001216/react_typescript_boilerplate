@@ -48,6 +48,7 @@ export interface Store<V> {
   setTouchedByName: (name: string, value: boolean) => void
   setValid: (value: boolean) => void
   resetForm: () => void
+  submitForm: () => any
   setSubmitCount: (count: number) => void
   setSubmitting: (submitting: boolean) => void
 }

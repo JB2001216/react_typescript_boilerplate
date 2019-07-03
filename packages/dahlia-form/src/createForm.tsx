@@ -78,29 +78,35 @@ export function createForm<V>(options: Options<V>) {
     setSubmitting(submitting) {
       store.submitting = submitting
     },
-
+    submitForm() {
+      submit()
+    },
     handleSubmit(e: Event | FormEvent<HTMLFormElement>) {
       if (e && e.preventDefault) e.preventDefault()
-      store.setSubmitCount(1)
-      store.setSubmitting(true)
-      if (validate) {
-        const nextErrors = validate(store.values)
-        if (nextErrors) store.setErrors(nextErrors)
-      }
-      if (validator) {
-        const nextErrors = runValidator(store.values)
-        if (nextErrors) store.setErrors(nextErrors)
-      }
-      const isValid = checkValid(store.errors)
-      store.setValid(isValid)
-      if (!isValid && onError) {
-        onError(store.errors, store)
-      }
-      if (isValid && onSubmit) {
-        onSubmit(store.values, store)
-      }
+      submit()
     },
   } as Store<V>)
+
+  const submit = () => {
+    store.setSubmitCount(1)
+    store.setSubmitting(true)
+    if (validate) {
+      const nextErrors = validate(store.values)
+      if (nextErrors) store.setErrors(nextErrors)
+    }
+    if (validator) {
+      const nextErrors = runValidator(store.values)
+      if (nextErrors) store.setErrors(nextErrors)
+    }
+    const isValid = checkValid(store.errors)
+    store.setValid(isValid)
+    if (!isValid && onError) {
+      onError(store.errors, store)
+    }
+    if (isValid && onSubmit) {
+      onSubmit(store.values, store)
+    }
+  }
 
   const handleChange = (...params: any[]) => {
     const [name, e] = params
