@@ -2,14 +2,14 @@ import { Options as RequestOptions } from 'dahlia-request'
 
 export type Update = (updateOptions?: RequestOptions) => any
 
-export interface Param {
+export interface Params {
   [key: string]: string | number | boolean
 }
 
 export type Deps = ReadonlyArray<any>
 export interface Options extends RequestOptions {
   name?: string
-  param?: Param
+  params?: Params
   deps?: Deps
 }
 
