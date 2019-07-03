@@ -69,10 +69,8 @@ export interface ErrorMessageProps<V> {
 
 export interface Options<V> {
   initialValues?: V
-  onSubmit: (
-    values: V,
-    options: { setSubmitting: (submitting: boolean) => any },
-  ) => any
+  onSubmit?: (values: V, store: Store<V>) => any
+  onError?: (errors: Errors<V>, store: Store<V>) => any
   onReset?: () => any
   validate?: Validate<V>
   validator?: Validator<V>

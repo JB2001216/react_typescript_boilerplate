@@ -22,6 +22,7 @@ export function createForm<V>(options: Options<V>) {
     validate,
     validator,
     onSubmit,
+    onError,
     onReset,
   } = options
 
@@ -92,8 +93,11 @@ export function createForm<V>(options: Options<V>) {
       }
       const isValid = checkValid(store.errors)
       store.setValid(isValid)
-      if (isValid) {
-        onSubmit(store.values, { setSubmitting: store.setSubmitting })
+      if (!isValid && onError) {
+        onError(store.errors, store)
+      }
+      if (isValid && onSubmit) {
+        onSubmit(store.values, store)
       }
     },
   } as Store<V>)
