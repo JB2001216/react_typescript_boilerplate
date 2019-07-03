@@ -62,7 +62,7 @@ setTimeout(() => {
 
 const UseFetchApp = observe(() => {
   const { loading, data, error, refetch } = useFetch<Todo>(Api.GetTodo, {
-    param: { id: store.id },
+    params: { id: store.id },
     deps: [store.id],
   })
 

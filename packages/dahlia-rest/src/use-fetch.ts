@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { fetch } from './fetch'
 import fetcher from './fetcher'
-import { FetchResult, Refetch, Options, HooksResult, Deps, Param } from './types'
+import { FetchResult, Refetch, Options, HooksResult, Deps, Params } from './types'
 
 function last<T>(arr: T[]): T {
   return arr[arr.length - 1]
@@ -17,12 +17,12 @@ function getOptions(options?: Options): Options {
   return options
 }
 
-function setUrlParam(url: string = '', param: Param) {
+function setUrlParam(url: string = '', params: Params) {
   return url
     .split('/')
     .map(item => {
       if (item.startsWith(':')) {
-        return param[item.replace(/^\:/, '')]
+        return params[item.replace(/^\:/, '')]
       }
       return item
     })
@@ -53,7 +53,7 @@ export function useFetch<T extends any>(url: string, options?: Options) {
   const fetchData = async (opt?: Options) => {
     setState(prev => ({ ...prev, loading: true }))
     const fetchOptions = getOptions(opt)
-    if (fetchOptions.param) reqUrl = setUrlParam(url, fetchOptions.param)
+    if (fetchOptions.params) reqUrl = setUrlParam(url, fetchOptions.params)
     try {
       const data: T = await fetch(reqUrl, fetchOptions || {})
       if (!unmounted) setState(prev => ({ ...prev, loading: false, data }))
