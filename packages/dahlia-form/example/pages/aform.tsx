@@ -3,7 +3,7 @@ import { Form, Button, Input, Select, Radio } from 'antd'
 import required from 'checkok-required'
 import min from 'checkok-min'
 // import { createForm } from 'dahlia-from'
-import { createAntdForm } from '../src'
+import { createAntdForm } from '../../src'
 
 import 'antd/dist/antd.css'
 
@@ -20,8 +20,14 @@ const { Field, store } = createAntdForm({
     email: [required('require email'), min(5, 'email too short')],
     password: () => [required('need password'), min(6, 'password too short')],
   },
-  onSubmit: values => {
-    alert(JSON.stringify(values, null, 2))
+  onError(errors) {
+    console.log('errors:', errors)
+  },
+  onSubmit(values, store) {
+    // alert(JSON.stringify(values, null, 2))
+    setTimeout(() => {
+      store.setSubmitting(false)
+    }, 3000)
   },
 })
 
@@ -62,7 +68,11 @@ export default () => {
         </Field>
 
         <Field label="提交">
-          <Button type="primary" htmlType="submit" disabled={!store.valid}>
+          <Button
+            type="primary"
+            htmlType="submit"
+            disabled={!store.valid || store.submitting}
+          >
             submit
           </Button>
         </Field>
