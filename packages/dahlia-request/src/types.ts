@@ -19,7 +19,7 @@ export type Body =
   | any[]
   | null
 
-export interface Param {
+export interface Params {
   [key: string]: string | number | boolean
 }
 
@@ -28,7 +28,7 @@ export type Type = 'text' | 'json' | 'blob' | 'arrayBuffer' | 'formData'
 export interface Options {
   query?: Query
   body?: Body
-  param?: Param
+  params?: Params
   cache?: RequestCache
   credentials?: RequestCredentials
   headers?: HeadersInit
