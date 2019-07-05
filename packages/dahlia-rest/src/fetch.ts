@@ -27,11 +27,7 @@ export async function fetch<T = any>(url: string, options?: Options): Promise<T>
     if (interceptor.requests) {
       interceptor.requests.forEach(item => {
         // TODO:
-        const opt = options
-          ? options
-          : {
-              headers: {},
-            }
+        const opt = options || { headers: {} }
         options = {
           ...options,
           ...item(opt as any),
