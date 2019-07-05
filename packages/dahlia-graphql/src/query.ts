@@ -20,22 +20,20 @@ export const query = async <T = any>(input: string, options?: Options) => {
   if (interceptor.requests) {
     interceptor.requests.forEach(item => {
       // TODO:
-      opt = options
-        ? options
-        : {
-            headers: {},
-          }
-      opt = {
-        ...opt,
-        ...item(opt as any),
-      }
+      opt = options || { headers: {} }
+      opt = { ...opt, ...item(opt as any) }
     })
   }
 
   try {
     const client = new GraphQLClient({ endpoint, headers: { ...headers, ...opt.headers } })
-    const data = await client.query<T>(input, variables)
-    return data
+    let res = await client.query<T>(input, variables)
+    if (interceptor.responses) {
+      interceptor.responses.forEach(item => {
+        res = item(res)
+      })
+    }
+    return res
   } catch (error) {
     throw error
   }
