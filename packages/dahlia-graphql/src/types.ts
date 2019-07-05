@@ -1,4 +1,4 @@
-export interface Options {
+export interface Variables {
   [key: string]: any
 }
 
@@ -8,7 +8,7 @@ export type Deps = ReadonlyArray<any>
 
 export interface Options {
   name?: string
-  variables?: Options
+  variables?: Variables
   deps?: Deps
 }
 
