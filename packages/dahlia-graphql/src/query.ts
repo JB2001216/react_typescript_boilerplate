@@ -4,29 +4,22 @@ import { Options, Variables } from './types'
 import { Interceptor } from './types'
 
 export const query = async <T = any>(input: string, options?: Options) => {
-  let opt: any
+  const defaultOpt = { headers: {} }
+  let opt: Options = options || defaultOpt
   let interceptor = {} as Interceptor
   const { endpoint, interceptor: configInterceptors } = graphqlConfig
-
-  let variables: Variables = {}
-  let headers: any = {}
-  if (options) {
-    variables = options.variables || {}
-    headers = options.headers || {}
-  }
+  const variables: Variables = opt.variables || {}
 
   if (configInterceptors) interceptor = configInterceptors
 
   if (interceptor.requests) {
     interceptor.requests.forEach(item => {
-      // TODO:
-      opt = options || { headers: {} }
-      opt = { ...opt, ...item(opt as any) }
+      opt = item(opt) || {}
     })
   }
 
   try {
-    const client = new GraphQLClient({ endpoint, headers: { ...headers, ...opt.headers } })
+    const client = new GraphQLClient({ endpoint, headers: opt.headers as any })
     let res = await client.query<T>(input, variables)
     if (interceptor.responses) {
       interceptor.responses.forEach(item => {
