@@ -38,8 +38,9 @@ export const customizeWebpack = () => {
         '@images': resolve('images/'),
         '@fonts': resolve('fonts/'),
         '@config': resolve('config/'),
-        '@interfaces': resolve('interfaces/'),
         '@locales': resolve('locales/'),
+        '@interfaces': resolve('interfaces/'),
+        '@typings': resolve('typings/'),
       }),
     )
 
