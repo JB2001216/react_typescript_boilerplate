@@ -25,18 +25,19 @@ function getPageName(path: string = '') {
 }
 
 function formatPages(pages: string[]) {
+  console.log('pages:', pages)
   return pages.map(item => {
-    const HOME_PAGE = 'pages/index.tsx'
+    const HOME_PAGE = 'src/pages/index.tsx'
     let routerPath: string
     const pageName = getPageName(item)
-    item  = item.split(sep).join('/')
+    item = item.split(sep).join('/')
     const pageImportPath = item
-      .replace(/^pages/, '../../pages')
+      .replace(/^src\/pages/, '@pages')
       .replace(/\.tsx$/, '')
     if (item === HOME_PAGE) {
       routerPath = '/'
     } else {
-      routerPath = item.replace(/^pages/, '').replace(/\.tsx$/, '')
+      routerPath = item.replace(/^src\/pages/, '').replace(/\.tsx$/, '')
     }
     return {
       pageName,
@@ -48,6 +49,7 @@ function formatPages(pages: string[]) {
 
 function getRoutesConfig(pages: string[]) {
   const pagesArr = formatPages(pages)
+
   const importFiles = pagesArr
     .map(item => {
       return `import ${item.pageName} from '${item.pageImportPath}'`
@@ -80,10 +82,10 @@ function writeFile(text: string) {
 function writeFileFromRoutesFile() {
   const routesConfig = fs.readFileSync(routerConfigPath, { encoding: 'utf8' })
   const text = routesConfig
-    .replace(/\.\.\/pages/g, '../../pages')
-    .replace(/\.\.\/layouts/g, '../../layouts')
-    .replace(/@pages/g, '../../pages')
-    .replace(/@layouts/g, '../../layouts')
+    .replace(/\.\.\/pages/g, '@pages')
+    .replace(/\.\.\/layouts/g, '@layouts')
+    .replace(/@pages/g, '@pages')
+    .replace(/@layouts/g, '@layouts')
   writeFile(text)
 }
 
