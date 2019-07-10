@@ -19,13 +19,13 @@ function capitalizeFirstLetter(str: string) {
 }
 
 function getDrawerName(path: string = '') {
-  const fileName = path.split(sep)[1] // 第二个
+  const fileName = path.split(sep)[2] // 第三个
   const drawerName = fileName.replace(/\.tsx$/, '')
   return drawerName
 }
 
 function getCmpName(path: string = '') {
-  const fileName = path.split(sep)[1]
+  const fileName = path.split(sep)[2]
   const drawerName = fileName.replace(/\.tsx$/, '').replace(/[\.\-\^\$]/g, '_')
   return capitalizeFirstLetter(drawerName)
 }
@@ -36,7 +36,7 @@ function formatDrawers(drawers: string[]) {
     const cmpName = getCmpName(item)
     item = item.split(sep).join('/')
     const drawerImportPath = item
-      .replace(/^drawers/, '../../drawers')
+      .replace(/^src\/drawers/, '@drawers')
       .replace(/\.tsx$/, '')
 
     return {
@@ -48,7 +48,6 @@ function formatDrawers(drawers: string[]) {
 }
 
 function getDrawersConfig(drawers: string[]) {
-
   const drawerArr = formatDrawers(drawers)
   const importFiles = drawerArr
     .map(item => {
@@ -102,11 +101,12 @@ export const createDrawerConfig = () => {
 
   const drawers = paths.filter(path => {
     const arr = path.split(sep)
+
     // drawer 为文件，不是目录
-    if (arr.length === 2) return true
+    if (arr.length === 3) return true
 
     // 两层文件, index 文件才是
-    if (arr.length === 3 && last(arr) === 'index.tsx') {
+    if (arr.length === 4 && last(arr) === 'index.tsx') {
       return true
     }
     return false // 其他都不 drawer

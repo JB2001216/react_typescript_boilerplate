@@ -19,13 +19,13 @@ function capitalizeFirstLetter(str: string) {
 }
 
 function getModalName(path: string = '') {
-  const fileName = path.split(sep)[1]
+  const fileName = path.split(sep)[2]
   const modalName = fileName.replace(/\.tsx$/, '')
   return modalName
 }
 
 function getCmpName(path: string = '') {
-  const fileName = path.split(sep)[1]
+  const fileName = path.split(sep)[2]
   const modalName = fileName.replace(/\.tsx$/, '').replace(/[\.\-\^\$]/g, '_')
   return capitalizeFirstLetter(modalName)
 }
@@ -36,7 +36,7 @@ function formatModals(modals: string[]) {
     const cmpName = getCmpName(item)
     item = item.split(sep).join('/')
     const modalImportPath = item
-      .replace(/^modals/, '../../modals')
+      .replace(/^src\/modals/, '@modals')
       .replace(/\.tsx$/, '')
 
     return {

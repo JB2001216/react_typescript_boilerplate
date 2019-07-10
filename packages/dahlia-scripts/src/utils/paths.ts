@@ -3,7 +3,7 @@ import fs from 'fs'
 
 export const baseDir = path.join(__dirname, '..', '..')
 
-export const appDir = path.resolve(fs.realpathSync(process.cwd()))
+export const appDir = path.resolve(fs.realpathSync(process.cwd()), 'src')
 
 export const tmpDir = `${appDir}/.dahlia`
 export const tmpConfigDir = `${tmpDir}/config`
@@ -34,7 +34,6 @@ export const configPaths = [
     target: `${tmpDir}/config/config.prod.ts`,
   },
 ]
-
 
 export const interceptorFiles = `${appDir}/interceptors/**/*.{ts,tsx}`
 export const interceptorPaths = [
@@ -94,7 +93,7 @@ export const defaultLocalePath = `${appDir}/locales/default.json`
 export const tmpDefaultLocalePath = `${tmpDir}/locales/default.json`
 export const localeFiles = `${appDir}/locales/**/*.json`
 export const localeTypingsPath = path.join(
-  appDir,
+  fs.realpathSync(process.cwd()),
   'node_modules',
   'dahlia-i18n',
   'dist',
