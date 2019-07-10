@@ -3,110 +3,111 @@ import fs from 'fs'
 
 export const baseDir = path.join(__dirname, '..', '..')
 
-export const appDir = path.resolve(fs.realpathSync(process.cwd()), 'src')
+export const appDir = path.resolve(fs.realpathSync(process.cwd()))
+export const srcDir = path.resolve(fs.realpathSync(process.cwd()), 'src')
 
-export const tmpDir = `${appDir}/.dahlia`
+export const tmpDir = `${srcDir}/.dahlia`
 export const tmpConfigDir = `${tmpDir}/config`
 
 export const dahliaConfigPath = `${appDir}/dahlia.config.ts`
 export const tmpDahliaConfigPath = `${tmpDir}/dahlia.config.js`
 
-export const pagesDir = `${appDir}/pages`
-export const pageFiles = `${appDir}/pages/**/*.{ts,tsx}`
+export const pagesDir = `${srcDir}/pages`
+export const pageFiles = `${srcDir}/pages/**/*.{ts,tsx}`
 
-export const modalsDir = `${appDir}/modals`
-export const modalFiles = `${appDir}/modals/**/*.{ts,tsx}`
+export const modalsDir = `${srcDir}/modals`
+export const modalFiles = `${srcDir}/modals/**/*.{ts,tsx}`
 
-export const drawersDir = `${appDir}/drawers`
-export const drawerFiles = `${appDir}/drawers/**/*.{ts,tsx}`
+export const drawersDir = `${srcDir}/drawers`
+export const drawerFiles = `${srcDir}/drawers/**/*.{ts,tsx}`
 
 export const configPaths = [
   {
-    origin: `${appDir}/config/config.local.ts`,
+    origin: `${srcDir}/config/config.local.ts`,
     target: `${tmpDir}/config/config.local.ts`,
   },
   {
-    origin: `${appDir}/config/config.default.ts`,
+    origin: `${srcDir}/config/config.default.ts`,
     target: `${tmpDir}/config/config.default.ts`,
   },
   {
-    origin: `${appDir}/config/config.prod.ts`,
+    origin: `${srcDir}/config/config.prod.ts`,
     target: `${tmpDir}/config/config.prod.ts`,
   },
 ]
 
-export const interceptorFiles = `${appDir}/interceptors/**/*.{ts,tsx}`
+export const interceptorFiles = `${srcDir}/interceptors/**/*.{ts,tsx}`
 export const interceptorPaths = [
   {
-    origin: `${appDir}/interceptors/response.ts`,
+    origin: `${srcDir}/interceptors/response.ts`,
     target: `${tmpDir}/interceptors/response.ts`,
   },
   {
-    origin: `${appDir}/interceptors/responseError.ts`,
+    origin: `${srcDir}/interceptors/responseError.ts`,
     target: `${tmpDir}/interceptors/responseError.ts`,
   },
   {
-    origin: `${appDir}/interceptors/request.ts`,
+    origin: `${srcDir}/interceptors/request.ts`,
     target: `${tmpDir}/interceptors/request.ts`,
   },
   {
-    origin: `${appDir}/interceptors/requestError.ts`,
+    origin: `${srcDir}/interceptors/requestError.ts`,
     target: `${tmpDir}/interceptors/requestError.ts`,
   },
 ]
 
 export const tmpCommonDir = `${tmpDir}/common`
-export const commonDir = `${appDir}/common`
-export const commonFiles = `${appDir}/common/**/*.{ts,tsx}`
+export const commonDir = `${srcDir}/common`
+export const commonFiles = `${srcDir}/common/**/*.{ts,tsx}`
 export const commonPaths = [
   {
     name: 'App.tsx',
-    origin: `${appDir}/common/App.tsx`,
+    origin: `${srcDir}/common/App.tsx`,
     target: `${tmpDir}/common/App.tsx`,
   },
   {
     name: 'Modal.tsx',
-    origin: `${appDir}/common/Modal.tsx`,
+    origin: `${srcDir}/common/Modal.tsx`,
     target: `${tmpDir}/common/Modal.tsx`,
   },
 ]
 
-export const devConfigPath = `${appDir}/config/config.dev.ts`
+export const devConfigPath = `${srcDir}/config/config.dev.ts`
 export const tmpDevConfigPath = `${tmpDir}/config/config.dev.ts`
 export const tmpProdConfigPath = `${tmpDir}/config/config.prod.ts`
 
-export const routerConfigPath = `${appDir}/config/router.config.ts`
+export const routerConfigPath = `${srcDir}/config/router.config.ts`
 export const tmpRouterConfigPath = `${tmpDir}/config/router.config.ts`
 
-export const modalConfigPath = `${appDir}/config/modal.config.ts`
+export const modalConfigPath = `${srcDir}/config/modal.config.ts`
 export const tmpModalsConfigPath = `${tmpDir}/config/modal.config.ts`
-export const drawerConfigPath = `${appDir}/config/drawer.config.ts`
+export const drawerConfigPath = `${srcDir}/config/drawer.config.ts`
 export const tmpDrawersConfigPath = `${tmpDir}/config/drawer.config.ts`
 
 export const entryPath = `${tmpDir}/index.tsx`
 export const htmlPath = `${tmpDir}/index.html`
 export const publicDir = `${tmpDir}/public`
 
-export const localesDir = `${appDir}/locales`
+export const localesDir = `${srcDir}/locales`
 export const tmpLocalesDir = `${tmpDir}/locales`
-export const defaultLocalePath = `${appDir}/locales/default.json`
+export const defaultLocalePath = `${srcDir}/locales/default.json`
 export const tmpDefaultLocalePath = `${tmpDir}/locales/default.json`
-export const localeFiles = `${appDir}/locales/**/*.json`
+export const localeFiles = `${srcDir}/locales/**/*.json`
 export const localeTypingsPath = path.join(
-  fs.realpathSync(process.cwd()),
+  appDir,
   'node_modules',
   'dahlia-i18n',
   'dist',
   'typings.d.ts',
 )
 
-export const interceptorsDir = `${appDir}/interceptors`
+export const interceptorsDir = `${srcDir}/interceptors`
 export const tmpInterceptorsDir = `${tmpDir}/interceptors`
 
 export const tscScript = path.join(appDir, 'node_modules', '.bin', 'tsc')
 
 export const reactScripts = path.join(
-  appDir,
+  srcDir,
   'node_modules',
   '.bin',
   'react-scripts',
