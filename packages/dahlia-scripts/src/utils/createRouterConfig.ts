@@ -25,7 +25,6 @@ function getPageName(path: string = '') {
 }
 
 function formatPages(pages: string[]) {
-  console.log('pages:', pages)
   return pages.map(item => {
     const HOME_PAGE = 'src/pages/index.tsx'
     let routerPath: string

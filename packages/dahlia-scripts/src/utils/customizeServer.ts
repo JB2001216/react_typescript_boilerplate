@@ -1,6 +1,6 @@
 import { join } from 'path'
 import { Configuration } from 'webpack-dev-server'
-import { devServerConfigPath, appDir } from './paths'
+import { devServerConfigPath, srcDir, appDir } from './paths'
 import { getDahliaConfig } from './getDahliaConfig'
 
 export const customizeServer = () => {
@@ -8,7 +8,7 @@ export const customizeServer = () => {
 
   let config: Configuration = devServerConfig()
   config.contentBase = [
-    join(appDir, '.dahlia', 'public'),
+    join(srcDir, '.dahlia', 'public'),
     join(appDir, 'public'),
   ]
 

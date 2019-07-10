@@ -102,10 +102,10 @@ export const createModalConfig = () => {
   const modals = paths.filter(path => {
     const arr = path.split(sep)
     // modal 为文件，不是目录
-    if (arr.length === 2) return true
+    if (arr.length === 3) return true
 
     // 两层文件, index 文件才是
-    if (arr.length === 3 && last(arr) === 'index.tsx') {
+    if (arr.length === 4 && last(arr) === 'index.tsx') {
       return true
     }
     return false // 其他都不 modal

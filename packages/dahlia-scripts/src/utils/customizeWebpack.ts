@@ -1,7 +1,7 @@
 import { join } from 'path'
 import { Configuration } from 'webpack'
 
-import { webpackConfigPath, appDir } from './paths'
+import { webpackConfigPath, srcDir } from './paths'
 import { override } from './webpackOverride'
 import { alias } from './overrideAlias'
 import { overrideWebpackExclude } from './overrideWebpackExclude'
@@ -9,7 +9,7 @@ import { getDahliaConfig } from './getDahliaConfig'
 import WebpackBar from 'webpackbar'
 
 function resolve(path: string) {
-  return join(appDir, path)
+  return join(srcDir, path)
 }
 
 export const customizeWebpack = () => {
