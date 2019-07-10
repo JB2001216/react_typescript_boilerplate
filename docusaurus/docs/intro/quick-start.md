@@ -17,8 +17,9 @@ npm start
 ```bash
 .
 ├── package.json
-├── pages
-│   └── index.tsx
+├── src
+│   └── pages
+│       └── index.tsx
 └── tsconfig.json
 ```
 
