@@ -1,6 +1,6 @@
 {
   "name": "dahlia-rest",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Restful client for Dahlia",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -48,6 +48,6 @@
     "typescript": "3.4.5"
   },
   "dependencies": {
-    "dahlia-request": "^1.1.1"
+    "dahlia-request": "^1.1.2"
   }
 }

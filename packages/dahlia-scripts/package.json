@@ -1,6 +1,6 @@
 {
   "name": "dahlia-scripts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Dahlia Scripts",
   "author": "forsigner",
   "bin": {
@@ -27,9 +27,9 @@
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1",
     "tslib": "^1.10.0",
+    "typescript": "3.4.5",
     "webpackbar": "^3.1.5",
-    "yosay": "^2.0.2",
-    "typescript": "3.4.5"
+    "yosay": "^2.0.2"
   },
   "devDependencies": {
     "@oclif/test": "^1.2.4",
