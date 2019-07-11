@@ -53,7 +53,7 @@
     "rollup-plugin-typescript2": "^0.20.1",
     "terser": "^3.17.0",
     "ts-jest": "^24.0.0",
-    "typescript": "^3.3.3333"
+    "typescript": "3.4.5"
   },
   "dependencies": {
     "lodash.get": "^4.4.2"

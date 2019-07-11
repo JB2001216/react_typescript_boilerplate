@@ -45,7 +45,7 @@
     "rollup-plugin-typescript2": "^0.20.1",
     "standard-version": "^5.0.2",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.4.3"
+    "typescript": "3.4.5"
   },
   "dependencies": {
     "dahlia-graphql-client": "^1.1.4"
