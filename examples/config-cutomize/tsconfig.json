@@ -1,20 +1,16 @@
 {
   "compilerOptions": {
-    "outDir": "build/dist",
+    "baseUrl": "./src",
+    "rootDir": ".",
     "module": "esnext",
     "target": "es5",
-    "lib": [
-      "es7",
-      "dom",
-      "esnext.asynciterable"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "preserve",
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": false,
@@ -27,18 +23,24 @@
     "strict": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@utils/*": ["utils/*"],
+      "@services/*": ["services/*"],
+      "@stores/*": ["stores/*"],
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@pages/*": ["pages/*"],
+      "@modals/*": ["modals/*"],
+      "@drawers/*": ["drawers/*"],
+      "@hooks/*": ["hooks/*"],
+      "@dto/*": ["dto/*"],
+      "@images/*": ["images/*"],
+      "@config/*": ["config/*"],
+      "@constants/*": ["constants/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@locales/*": ["locales/*"]
+    }
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-    "src/setupTests.ts"
-  ],
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

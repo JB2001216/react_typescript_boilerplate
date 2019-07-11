@@ -1,5 +1,5 @@
 {
-  "name": "drawer-b",
+  "name": "basic",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,17 +22,19 @@
     ]
   },
   "dependencies": {
-    "antd": "^3.19.8",
-    "dahlia": "^1.15.3",
+    "antd": "^3.20.1",
+    "dahlia": "^1.15.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.12",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.8.17",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.0.10",
+    "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
-    "dahlia-scripts": "^1.0.2",
+    "dahlia-antd": "^1.0.0",
+    "dahlia-less": "^1.0.0",
+    "dahlia-scripts": "^1.0.6",
     "typescript": "^3.4.5"
   }
 }

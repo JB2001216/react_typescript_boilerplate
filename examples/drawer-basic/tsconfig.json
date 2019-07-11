@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "rootDir": ".",
-    "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -33,17 +32,15 @@
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
       "@modals/*": ["modals/*"],
+      "@drawers/*": ["drawers/*"],
+      "@hooks/*": ["hooks/*"],
+      "@dto/*": ["dto/*"],
+      "@images/*": ["images/*"],
       "@config/*": ["config/*"],
+      "@constants/*": ["constants/*"],
       "@interfaces/*": ["interfaces/*"],
       "@locales/*": ["locales/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest"
-  ]
+  "include": ["src"]
 }
