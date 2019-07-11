@@ -14,10 +14,9 @@ Dahlia.bootstrap({
 ```
 
 ```javascript
-// routes.ts
-
+// src/router.config.ts
 import { Routes } from 'Dahlia'
-import { Home } from './pages/Home'
+import { Home } from '@pages/Home'
 
 export const routes: Routes = [
   {

@@ -7,11 +7,11 @@ sidebar_label: 配置文件
 配置包含两类，普通配置和路由配置，Dahlia 约定把配置文件放在 `config` 目录中。
 
 ```bash
-config
-├── config.default.ts
-├── config.local.ts
-├── config.prod.ts
-└── router.config.ts
+src/config
+      ├── config.default.ts
+      ├── config.local.ts
+      ├── config.prod.ts
+      └── router.config.ts
 ```
 
 ## 普通配置
