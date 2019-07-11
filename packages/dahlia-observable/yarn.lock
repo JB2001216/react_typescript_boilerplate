@@ -3476,10 +3476,10 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
-typescript@^3.3.3333:
-  version "3.3.3333"
-  resolved "http://registry.npm.taobao.org/typescript/download/typescript-3.3.3333.tgz#171b2c5af66c59e9431199117a3bcadc66fdcfd6"
-  integrity sha1-FxssWvZsWelDEZkRejvK3Gb9z9Y=
+typescript@3.4.5:
+  version "3.4.5"
+  resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
+  integrity sha1-LSYY0Qu1ZlcrjXqtUYDYQlfXCpk=
 
 uglify-js@^3.1.4:
   version "3.6.0"

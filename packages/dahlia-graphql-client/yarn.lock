@@ -867,10 +867,10 @@ csstype@^2.2.0:
   resolved "https://registry.npm.taobao.org/csstype/download/csstype-2.6.5.tgz#1cd1dff742ebf4d7c991470ae71e12bb6751e034"
   integrity sha1-HNHf90Lr9NfJkUcK5x4Su2dR4DQ=
 
-dahlia-request@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/dahlia-request/download/dahlia-request-1.1.0.tgz#05d3d14531d24689f34495b757b62ff66f717fd1"
-  integrity sha1-BdPRRTHSRonzRJW3V7Yv9m9xf9E=
+dahlia-request@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npm.taobao.org/dahlia-request/download/dahlia-request-1.1.1.tgz#50a76a1b35e7bf9017e571e7dbb720a4f42afb26"
+  integrity sha1-UKdqGzXnv5AX5XHn27cgpPQq+yY=
   dependencies:
     cross-fetch "^3.0.1"
     qs "^6.7.0"
@@ -3550,10 +3550,10 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
-typescript@^3.4.5:
-  version "3.5.2"
-  resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.5.2.tgz#a09e1dc69bc9551cadf17dba10ee42cf55e5d56c"
-  integrity sha1-oJ4dxpvJVRyt8X26EO5Cz1Xl1Ww=
+typescript@3.4.5:
+  version "3.4.5"
+  resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
+  integrity sha1-LSYY0Qu1ZlcrjXqtUYDYQlfXCpk=
 
 uglify-js@^3.1.4:
   version "3.6.0"

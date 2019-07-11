@@ -52,7 +52,7 @@
     "rollup-plugin-typescript2": "^0.20.1",
     "terser": "^3.17.0",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.4.2"
+    "typescript": "3.4.5"
   },
   "dependencies": {
     "dahlia-drawer": "^1.0.2",
