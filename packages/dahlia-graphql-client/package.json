@@ -1,6 +1,6 @@
 {
   "name": "dahlia-graphql-client",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "GraphQL client for Dahlia",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -46,6 +46,6 @@
     "typescript": "3.4.5"
   },
   "dependencies": {
-    "dahlia-request": "^1.1.1"
+    "dahlia-request": "^1.1.2"
   }
 }
