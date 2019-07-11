@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "rootDir": ".",
-    "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
-    "lib": ["es7", "dom", "esnext.asynciterable"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "preserve",
@@ -26,24 +25,22 @@
     "isolatedModules": true,
     "noEmit": true,
     "paths": {
-      "@/*": ["./*"],
       "@utils/*": ["utils/*"],
+      "@services/*": ["services/*"],
       "@stores/*": ["stores/*"],
       "@components/*": ["components/*"],
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
       "@modals/*": ["modals/*"],
+      "@drawers/*": ["drawers/*"],
+      "@hooks/*": ["hooks/*"],
+      "@dto/*": ["dto/*"],
+      "@images/*": ["images/*"],
       "@config/*": ["config/*"],
+      "@constants/*": ["constants/*"],
       "@interfaces/*": ["interfaces/*"],
       "@locales/*": ["locales/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-  ]
+  "include": ["src"]
 }

@@ -1,13 +1,10 @@
-import { Config } from 'dahlia'
-import { routes } from './routes'
-
-export const config: Config = {
-  routes,
+ const config = {
   rest: {
     endpoint: '/',
   },
   graphql: {
     endpoint: '/',
   },
-  root: '#root',
 }
+
+export default config
