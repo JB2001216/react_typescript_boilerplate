@@ -7,7 +7,7 @@ sidebar_label: 使用 `<Link>`
 假设你有两个页面：Home 和 About，使用 `<Link>` 组件进行页面跳转：
 
 ```js
-// pages/index.js
+// src/pages/index.js
 import { Link } from 'dahlia/router'
 
 function Home() {
@@ -23,7 +23,7 @@ export default Home
 ```
 
 ```js
-// pages/about.js
+// pages/src/about.js
 function About() {
   return <p>Page About!</p>
 }
