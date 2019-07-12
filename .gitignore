@@ -13,3 +13,4 @@ lerna-debug.log
 *.swp
 
 .dahlia
+yarn.lock
