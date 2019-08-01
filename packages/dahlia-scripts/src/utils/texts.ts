@@ -28,9 +28,7 @@ import Dahlia, { Config } from 'dahlia'
 import { ResponseInterceptor, RequestInterceptor } from 'dahlia/rest'
 import { modalStore } from 'dahlia/modal'
 
-import configDefault from './config/config.default'
-import configLocal from './config/config.local'
-import configProd from './config/config.prod'
+import userConfig from './config/config'
 import routes from './config/router.config'
 import modals from './config/modal.config'
 import drawers from './config/drawer.config'
@@ -67,10 +65,6 @@ const config = {
 modalStore.setModalContainer(Modal)
 
 const isProd = NODE_ENV === 'production'
-
-const userConfig = isProd
-  ? { ...configDefault, ...configProd }
-  : { ...configDefault, ...configLocal }
 
 const finalConfig = {
   ...config,

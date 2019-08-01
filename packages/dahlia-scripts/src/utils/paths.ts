@@ -23,16 +23,8 @@ export const drawerFiles = `${srcDir}/drawers/**/*.{ts,tsx}`
 
 export const configPaths = [
   {
-    origin: `${srcDir}/config/config.local.ts`,
-    target: `${tmpDir}/config/config.local.ts`,
-  },
-  {
-    origin: `${srcDir}/config/config.default.ts`,
-    target: `${tmpDir}/config/config.default.ts`,
-  },
-  {
-    origin: `${srcDir}/config/config.prod.ts`,
-    target: `${tmpDir}/config/config.prod.ts`,
+    origin: `${srcDir}/config/config.ts`,
+    target: `${tmpDir}/config/config.ts`,
   },
 ]
 
