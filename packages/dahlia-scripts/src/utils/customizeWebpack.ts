@@ -40,10 +40,13 @@ export const customizeWebpack = () => {
         '@do': resolve('do/'),
         '@constants': resolve('constants/'),
         '@images': resolve('images/'),
+        '@css': resolve('css/'),
+        '@stylesheets': resolve('/stylesheets'),
         '@fonts': resolve('fonts/'),
         '@locales': resolve('locales/'),
         '@interfaces': resolve('interfaces/'),
         '@typings': resolve('typings/'),
+        '@types': resolve('types/'),
       }),
     )
 
