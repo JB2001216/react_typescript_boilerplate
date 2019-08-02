@@ -18,7 +18,6 @@ export function useQuery<T = any>(input: string, options?: Options) {
   const fetchData = async (opt: Options = {}) => {
     setState(prev => ({ ...prev, loading: true }))
     try {
-      console.log('options---------:', opt)
       const data = await query<T>(input, opt || {})
       if (!unmounted) setState(prev => ({ ...prev, loading: false, data }))
       return data
