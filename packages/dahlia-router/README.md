@@ -29,11 +29,7 @@ const About = () => (
   </div>
 )
 
-const NotFound = () => (
-  <div>
-    404 not found
-  </div>
-)
+const NotFound = () => <div>404 not found</div>
 
 const routes = [
   {
@@ -53,6 +49,20 @@ const routes = [
 const App = () => <Router routes={routes} />
 
 ReactDOM.render(<App />, document.getElementById('root'))
+```
+
+## Interceptor
+
+```ts
+import { navigate, intercept } from 'dahlia-router'
+
+intercept((ctx, next) => {
+  if (ctx.to === '/') {
+    navigate('/dashboard')
+  } else {
+    return next()
+  }
+})
 ```
 
 ## License
