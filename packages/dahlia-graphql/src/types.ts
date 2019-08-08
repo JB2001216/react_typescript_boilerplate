@@ -28,6 +28,12 @@ export interface MutateResult<T> {
   error: any
 }
 
+export interface SubscribeResult<T> {
+  loading: boolean
+  data: T
+  error: any
+}
+
 export type RequestInterceptor = (config: Options) => any
 export type RequestErrorInterceptor = (config: any) => any
 export type ResponseInterceptor = (error: any) => any
@@ -42,6 +48,7 @@ export interface Interceptor {
 
 export interface GraphqlConfig {
   endpoint: string
+  subscriptionsEndpoint?: string
   interceptor?: Interceptor
   headers?: HeadersInit
 }
