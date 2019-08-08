@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react'
 import gql from 'gql-tag'
 import { createStore, observe } from 'dahlia-store'
 
-import { config, query, useQuery, useMutate, fetcher } from './src'
+import { config, query, useQuery, useMutate, fetcher, useSubscribe } from '../../src'
 
-config({ endpoint: 'https://graphql-compose.herokuapp.com/user' })
+config({
+  // endpoint: 'http://localhost:7001/graphql',
+  endpoint: 'https://graphql-compose.herokuapp.com/user',
+  subscriptionsEndpoint: 'ws://localhost:7001/graphql',
+})
 
 const GET_USER = gql`
   query User {
@@ -27,6 +31,39 @@ const GET_USER_BY_ID = gql`
     }
   }
 `
+
+const SUB = gql`
+  subscription notice {
+    normalSubscription {
+      id
+      date
+      message
+    }
+  }
+`
+
+const GET_NOTICE = gql`
+  {
+    notification {
+      id
+      message
+      date
+    }
+  }
+`
+
+const SubApp = () => {
+  const { data = {} } = useSubscribe(SUB, {
+    initialQuery: {
+      query: GET_NOTICE,
+    },
+  })
+  return (
+    <div className="App">
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  )
+}
 
 const QueryApp = () => {
   const [data, setData] = useState()
@@ -72,7 +109,7 @@ const store = createStore({
 // }, 2000)
 
 const UseQueryById = observe(() => {
-  const { loading, data, error, refetch } = useQuery(GET_USER_BY_ID, {
+  const { loading, data, error, refetch } = useQuery<any>(GET_USER_BY_ID, {
     name: 'getUserById',
     variables: { _id: store._id },
     deps: [store._id],
@@ -120,6 +157,7 @@ const UseMutateApp = () => {
 
 export default () => (
   <div>
+    <SubApp></SubApp>
     <QueryApp />
     <UseQueryById />
     <UseQueryApp />

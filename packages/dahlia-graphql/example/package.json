@@ -9,12 +9,15 @@
     "@types/react-dom": "16.8.4",
     "apollo-client": "^2.5.1",
     "dahlia": "^1.13.18",
-    "dahlia-graphql-client": "^0.1.1",
+    "dahlia-graphql-client": "^1.2.0",
     "dahlia-store": "^1.2.20",
     "gql-tag": "^1.0.1",
+    "graphql": "^14.4.2",
+    "graphql-tag": "^2.10.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
+    "subscriptions-transport-ws": "^0.9.16",
     "typescript": "3.4.3"
   },
   "scripts": {
