@@ -58,3 +58,13 @@ export interface Fetcher {
     refetch: Refetch
   }
 }
+
+export interface Clients {
+  graphqlClient: any
+  subscriptionClient: any
+}
+
+export interface Clients {
+  graphqlClient: any
+  subscriptionClient: any
+}
