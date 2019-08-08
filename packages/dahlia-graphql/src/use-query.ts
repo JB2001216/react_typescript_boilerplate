@@ -23,7 +23,6 @@ export function useQuery<T = any>(input: string, options?: Options) {
       return data
     } catch (error) {
       if (!unmounted) setState(prev => ({ ...prev, loading: false, error }))
-      throw error
     }
   }
 
