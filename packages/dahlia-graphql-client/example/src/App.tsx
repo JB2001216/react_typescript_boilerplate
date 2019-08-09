@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { query } from '../../src'
+import { query, GraphQLClient } from './src'
 import gql from 'gql-tag' // editor helper
 
 class App extends Component {
@@ -17,10 +17,12 @@ class App extends Component {
       }
     `
 
-    const endpoint = 'https://api.graph.cool/simple/v1/swapix'
+    const endpoint = 'https://api.graph.cool/simple/v1/swapi'
 
-    const data = await query(endpoint, GET_PERSONS)
-    console.log('data:', data)
+    const client = new GraphQLClient({ endpoint })
+    client.query(GET_PERSONS, {}, { headers: { for: 'signer' } })
+
+    const data = await query(endpoint, GET_PERSONS, {}, { headers: { Auto: 'bar' } })
     this.setState({ data })
   }
 
