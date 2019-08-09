@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import gql from 'gql-tag'
 import { createStore, observe } from 'dahlia-store'
 
-import { config, query, useQuery, useMutate, fetcher, useSubscribe } from './src'
+import { config, query, useQuery, useMutate, fetcher, useSubscribe, fromSubscription } from './src'
 
 function handleResponse(result: any) {
   if (typeof result !== 'object') return result
@@ -62,6 +62,12 @@ const GET_NOTICE = gql`
     }
   }
 `
+
+fromSubscription(SUB).subscribe({
+  next(data:any) {
+    console.log('data:', data)
+  },
+})
 
 const SubApp = () => {
   const { data = {} } = useSubscribe(SUB, {

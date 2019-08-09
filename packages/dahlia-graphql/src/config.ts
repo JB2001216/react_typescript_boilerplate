@@ -1,6 +1,4 @@
-import { GraphQLClient } from 'dahlia-graphql-client'
-import { SubscriptionClient } from 'subscriptions-transport-ws'
-import { GraphqlConfig, Options } from './types'
+import { GraphqlConfig } from './types'
 import clients from './clients'
 
 export let graphqlConfig = {
