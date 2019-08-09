@@ -74,6 +74,21 @@ function getOpt(url: string, options?: Options): RequestInit {
   return { ...defaultOpt, ...options } as RequestInit
 }
 
+async function getErrorMsg(error: any): Promise<any> {
+  if (!error) throw 'network error!'
+  if (typeof error !== 'object') throw error
+  if ('json' in error) {
+    const msg = await error.json()
+    if (msg) return msg
+  }
+
+  if ('blob' in error) {
+    const msg = await error.blob()
+    if (msg) return msg
+  }
+  return error
+}
+
 export async function request<T = any>(url: string, options?: Options): Promise<T> {
   const input = getURL(url, options)
   const init = getOpt(url, options)
@@ -88,6 +103,7 @@ export async function request<T = any>(url: string, options?: Options): Promise<
       throw response
     }
   } catch (error) {
-    throw error
+    // TODO: need to support raw response
+    throw await getErrorMsg(error)
   }
 }
