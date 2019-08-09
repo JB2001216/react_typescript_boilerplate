@@ -2,12 +2,23 @@ import React, { useState, useEffect } from 'react'
 import gql from 'gql-tag'
 import { createStore, observe } from 'dahlia-store'
 
-import { config, query, useQuery, useMutate, fetcher, useSubscribe } from '../../src'
+import { config, query, useQuery, useMutate, fetcher, useSubscribe } from './src'
+
+function handleResponse(result: any) {
+  if (typeof result !== 'object') return result
+  if (Object.keys(result).length === 1) {
+    return result[Object.keys(result)[0]]
+  }
+  return result
+}
 
 config({
-  // endpoint: 'http://localhost:7001/graphql',
-  endpoint: 'https://graphql-compose.herokuapp.com/user',
+  endpoint: 'http://localhost:7001/graphql',
+  // endpoint: 'https://graphql-compose.herokuapp.com/user',
   subscriptionsEndpoint: 'ws://localhost:7001/graphql',
+  interceptor: {
+    responses: [handleResponse],
+  },
 })
 
 const GET_USER = gql`
