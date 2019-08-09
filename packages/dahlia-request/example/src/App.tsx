@@ -7,7 +7,7 @@ class App extends Component {
     data: '...',
   }
   async componentDidMount() {
-    const data = await request('https://jsonplaceholder.typicode.com/todos/:id', {
+    const data = await request('https://jsonplaceholder.typicode.com/todosx/:id', {
       query: {
         foo: 'bar',
       },
