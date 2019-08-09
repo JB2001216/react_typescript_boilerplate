@@ -12,6 +12,7 @@ export interface Config {
   graphql?: GraphqlConfig
   rest?: RestConfig
   root: string
+  host: string
   app?: ComponentType<any>
 }
 
