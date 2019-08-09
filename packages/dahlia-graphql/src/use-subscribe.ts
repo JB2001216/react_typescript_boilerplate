@@ -1,26 +1,14 @@
 import { useState, useEffect } from 'react'
 import gql from 'graphql-tag'
-import { SubscriptionClient } from 'subscriptions-transport-ws'
 import { graphqlConfig } from './config'
 import { query } from './query'
-import { SubscribeResult, Variables, Interceptor } from './types'
-
-export interface SubscriptionOption {
-  variables?: Object
-  operationName?: string
-  initialQuery?: {
-    query: string
-    variables?: Variables
-  }
-}
+import clients from './clients'
+import { SubscribeResult, Interceptor, SubscriptionOption } from './types'
 
 export function useSubscribe<T = any>(input: string, options?: SubscriptionOption) {
-  const { subscriptionsEndpoint = '', interceptor: configInterceptors } = graphqlConfig
+  const { interceptor: configInterceptors } = graphqlConfig
   const { variables = {}, operationName = '', initialQuery = '' } =
     options || ({} as SubscriptionOption)
-  const client = new SubscriptionClient(subscriptionsEndpoint, {
-    reconnect: true,
-  })
 
   let unmounted = false
   let interceptor = {} as Interceptor
@@ -46,11 +34,12 @@ export function useSubscribe<T = any>(input: string, options?: SubscriptionOptio
       return data
     } catch (error) {
       if (!unmounted) setState(prev => ({ ...prev, loading: false, error }))
+      return error
     }
   }
 
   const fetchData = async () => {
-    client
+    clients.subscriptionClient
       .request({
         query: gql`
           ${input}

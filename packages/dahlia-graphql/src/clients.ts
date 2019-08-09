@@ -1,4 +1,24 @@
-import { Fetcher } from './types'
+import { GraphQLClient } from 'dahlia-graphql-client'
+import { SubscriptionClient } from 'subscriptions-transport-ws'
+import { GraphqlConfig, Options } from './types'
 
-const fetcher: Fetcher = {}
-export default fetcher
+const NULL_AS: any = null
+
+const clients = {
+  graphqlClient: NULL_AS as GraphQLClient,
+  subscriptionClient: NULL_AS as SubscriptionClient,
+  setupGraphqlClient(options: GraphqlConfig) {
+    const { endpoint } = options
+    const defaultOpt = { headers: {} }
+    let opt: Options = options || defaultOpt
+    clients.graphqlClient = new GraphQLClient({ endpoint, headers: opt.headers as any })
+  },
+
+  setupSubscriptionClient(options: GraphqlConfig) {
+    const { subscriptionsEndpoint = '' } = options
+    clients.subscriptionClient = new SubscriptionClient(subscriptionsEndpoint, {
+      reconnect: true,
+    })
+  },
+}
+export default clients
