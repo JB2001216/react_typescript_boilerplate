@@ -3,7 +3,7 @@ import gql from 'graphql-tag'
 import { SubscriptionClient } from 'subscriptions-transport-ws'
 import { graphqlConfig } from './config'
 import { query } from './query'
-import { SubscribeResult, Variables } from './types'
+import { SubscribeResult, Variables, Interceptor } from './types'
 
 export interface SubscriptionOption {
   variables?: Object
@@ -15,7 +15,7 @@ export interface SubscriptionOption {
 }
 
 export function useSubscribe<T = any>(input: string, options?: SubscriptionOption) {
-  const { subscriptionsEndpoint = '' } = graphqlConfig
+  const { subscriptionsEndpoint = '', interceptor: configInterceptors } = graphqlConfig
   const { variables = {}, operationName = '', initialQuery = '' } =
     options || ({} as SubscriptionOption)
   const client = new SubscriptionClient(subscriptionsEndpoint, {
@@ -23,15 +23,25 @@ export function useSubscribe<T = any>(input: string, options?: SubscriptionOptio
   })
 
   let unmounted = false
+  let interceptor = {} as Interceptor
   const initialState = { loading: true } as SubscribeResult<T>
   const [result, setState] = useState(initialState)
+
+  if (configInterceptors) interceptor = configInterceptors
 
   const initQuery = async () => {
     if (!initialQuery) return
 
     setState(prev => ({ ...prev, loading: true }))
     try {
-      const data = await query<T>(initialQuery.query, initialQuery.variables || {})
+      let data = await query<T>(initialQuery.query, initialQuery.variables || {})
+
+      if (interceptor.responses) {
+        interceptor.responses.forEach(item => {
+          data = item(data)
+        })
+      }
+
       if (!unmounted) setState(prev => ({ ...prev, loading: false, data }))
       return data
     } catch (error) {
