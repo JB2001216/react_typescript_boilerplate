@@ -1,3 +1,5 @@
+import { GraphQLClient } from 'dahlia-graphql-client'
+import { SubscriptionClient } from 'subscriptions-transport-ws'
 export interface Variables {
   [key: string]: any
 }
@@ -59,12 +61,15 @@ export interface Fetcher {
   }
 }
 
-export interface Clients {
-  graphqlClient: any
-  subscriptionClient: any
+export interface SubscriptionOption {
+  variables?: Object
+  operationName?: string
+  initialQuery?: {
+    query: string
+    variables?: Variables
+  }
 }
 
-export interface Clients {
-  graphqlClient: any
-  subscriptionClient: any
+export interface FromSubscriptionOption {
+  variables?: Object
 }
