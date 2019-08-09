@@ -19,7 +19,9 @@ export const query = async <T = any>(input: string, options?: Options) => {
   }
 
   try {
-    let res = await clients.graphqlClient.query<T>(input, variables)
+    let res = await clients.graphqlClient.query<T>(input, variables, {
+      headers: opt.headers || ({} as any),
+    })
     if (interceptor.responses) {
       interceptor.responses.forEach(item => {
         res = item(res)
