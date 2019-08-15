@@ -1,26 +1,24 @@
 import clients from './clients'
 import { graphqlConfig } from './config'
-import { Options, Variables } from './types'
+import { Options } from './types'
 import { Interceptor } from './types'
 
-export const query = async <T = any>(input: string, options?: Options) => {
-  const defaultOpt = { headers: {} }
-  let opt: Options = options || defaultOpt
+export const query = async <T = any>(input: string, options: Options = {}) => {
+  const { variables = {} } = options
   let interceptor = {} as Interceptor
   const { interceptor: configInterceptors } = graphqlConfig
-  const variables: Variables = opt.variables || {}
 
   if (configInterceptors) interceptor = configInterceptors
 
   if (interceptor.requests) {
     interceptor.requests.forEach(item => {
-      opt = item(opt) || {}
+      options = item(options) || {}
     })
   }
 
   try {
     let res = await clients.graphqlClient.query<T>(input, variables, {
-      headers: opt.headers || ({} as any),
+      headers: options.headers || ({} as any),
     })
     if (interceptor.responses) {
       interceptor.responses.forEach(item => {

@@ -5,10 +5,9 @@ import { query } from './query'
 import clients from './clients'
 import { SubscribeResult, Interceptor, SubscriptionOption } from './types'
 
-export function useSubscribe<T = any>(input: string, options?: SubscriptionOption) {
+export function useSubscribe<T = any>(input: string, options: SubscriptionOption = {}) {
   const { interceptor: configInterceptors } = graphqlConfig
-  const { variables = {}, operationName = '', initialQuery = '' } =
-    options || ({} as SubscriptionOption)
+  const { variables = {}, operationName = '', initialQuery = '' } = options
 
   let unmounted = false
   let interceptor = {} as Interceptor
