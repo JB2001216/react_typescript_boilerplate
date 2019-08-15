@@ -6,21 +6,21 @@ export interface QueryOptions {
 }
 
 export class GraphQLClient {
-  private options: Options
+  constructor(private readonly options: Options) {}
 
-  constructor(options: Options) {
-    this.options = options
-  }
-
-  async query<T = any>(input: string, variables?: Variables, options?: QueryOptions): Promise<T> {
-    const { endpoint, headers = {} } = this.options
-    const { headers: queryOptionsHeaders = {} } = options || ({} as QueryOptions)
+  async query<T = any>(
+    input: string,
+    variables: Variables = {},
+    options: QueryOptions = { headers: {} },
+  ): Promise<T> {
+    const { headers: queryOptionsHeaders } = options
+    const { endpoint, headers: optionsHeaders } = this.options
     const body = { query: input, variables }
     try {
       const res = await request(endpoint, {
         method: 'POST',
         body,
-        headers: { ...headers, ...queryOptionsHeaders },
+        headers: { ...optionsHeaders, ...queryOptionsHeaders },
       })
       if (res.data) return res.data
       throw res
