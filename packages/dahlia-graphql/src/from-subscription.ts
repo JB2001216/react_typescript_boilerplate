@@ -18,11 +18,15 @@ export interface Observer<T> {
   complete?: () => void
 }
 
-export function fromSubscription<T = any>(input: string, options?: FromSubscriptionOption) {
+export function fromSubscription<T = any>(input: string, options: FromSubscriptionOption = {}) {
   const { interceptor: configInterceptors } = graphqlConfig
-  const { variables = {} } = options || ({} as FromSubscriptionOption)
+  const { variables = {} } = options
   let interceptor = {} as Interceptor
   if (configInterceptors) interceptor = configInterceptors
+
+  if (!clients.subscriptionClient) {
+    throw new Error('require subscriptionsEndpoint config')
+  }
 
   return {
     subscribe(observer: Observer<T>) {

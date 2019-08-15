@@ -9,7 +9,7 @@ function getDeps(options?: Options): Deps {
   return []
 }
 
-export function useQuery<T = any>(input: string, options?: Options) {
+export function useQuery<T = any>(input: string, options: Options = {}) {
   let unmounted = false
   const initialState = { loading: true } as QueryResult<T>
   const deps = getDeps(options)

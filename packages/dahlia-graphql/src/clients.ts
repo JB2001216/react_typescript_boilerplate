@@ -16,6 +16,7 @@ const clients = {
 
   setupSubscriptionClient(options: GraphqlConfig) {
     const { subscriptionsEndpoint = '' } = options
+    if (!subscriptionsEndpoint) return
     clients.subscriptionClient = new SubscriptionClient(subscriptionsEndpoint, {
       reconnect: true,
     })
