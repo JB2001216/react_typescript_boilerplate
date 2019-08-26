@@ -1,21 +1,12 @@
-import path from 'path'
 import spawn from 'cross-spawn'
-
-import { canUseYarn } from './canUseYarn'
+import path from 'path'
 
 export function install(root: string) {
-  const useYarn = canUseYarn()
-  const command = useYarn ? 'yarnpkg' : 'npm'
-  const args: string[] = []
-  if (useYarn) {
-    args.push('--cwd')
-    args.push(root)
-  }
+  const command = 'npm'
+  process.chdir(root)
+  const args: string[] = ['i']
 
-  // for npm
-  if (!canUseYarn()) process.chdir(root)
-
-  const child = spawn(command, args, { stdio: 'inherit' })
+  const child = spawn(command, args, {stdio: 'inherit'})
 
   return new Promise((resolve, reject) => {
     child.on('close', code => {

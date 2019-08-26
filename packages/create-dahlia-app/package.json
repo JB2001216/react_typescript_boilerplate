@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@oclif/test": "^1",
-    "@oclif/tslint": "^3",
     "@types/chai": "^4",
     "@types/chalk": "^2.2.0",
     "@types/fs-extra": "^7.0.0",
