@@ -1,4 +1,3 @@
-
 export const filesToCheck = [
   'package.json',
   'public',

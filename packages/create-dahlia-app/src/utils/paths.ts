@@ -99,12 +99,7 @@ export const tmpInterceptorsDir = `${tmpDir}/interceptors`
 
 export const tscScript = path.join(appDir, 'node_modules', '.bin', 'tsc')
 
-export const reactScripts = path.join(
-  appDir,
-  'node_modules',
-  '.bin',
-  'react-scripts',
-)
+export const reactScripts = path.join(appDir, 'node_modules', '.bin', 'react-scripts')
 
 const reactScriptsModulePath = 'react-scripts'
 
@@ -113,9 +108,4 @@ const devServerConfigPath = `${reactScriptsModulePath}/config/webpackDevServer.c
 
 const reactScriptsPaths = `${reactScriptsModulePath}/config/paths`
 
-export {
-  reactScriptsModulePath,
-  webpackConfigPath,
-  devServerConfigPath,
-  reactScriptsPaths,
-}
+export { reactScriptsModulePath, webpackConfigPath, devServerConfigPath, reactScriptsPaths }

@@ -6,7 +6,7 @@ export function install(root: string) {
   process.chdir(root)
   const args: string[] = ['i']
 
-  const child = spawn(command, args, {stdio: 'inherit'})
+  const child = spawn(command, args, { stdio: 'inherit' })
 
   return new Promise((resolve, reject) => {
     child.on('close', code => {
