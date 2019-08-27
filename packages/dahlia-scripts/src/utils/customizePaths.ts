@@ -1,5 +1,5 @@
 import { join } from 'path'
-import { srcDir, reactScriptsPaths, entryPath, publicDir } from './paths'
+import { srcDir, reactScriptsPaths, entryPath, tmpPublicDir } from './paths'
 import { getDahliaConfig } from './getDahliaConfig'
 
 export const customizePaths = () => {
@@ -7,9 +7,8 @@ export const customizePaths = () => {
 
   paths.appSrc = srcDir
   paths.appIndexJs = entryPath
-  paths.appHtml = join(srcDir, '.dahlia', 'index.html')
-  paths.appPublic = publicDir
-  paths.appPublic = publicDir
+  paths.appPublic = tmpPublicDir
+  paths.appHtml = join(srcDir, '.dahlia', 'public','index.html')
 
   // customize build dir
   const dahliaConfig = getDahliaConfig()

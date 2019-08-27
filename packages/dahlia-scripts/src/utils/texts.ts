@@ -1,28 +1,5 @@
 import { formatCode } from './formatCode'
 
-const htmlText = formatCode(
-  `
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <title>%TITLE%</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-  </body>
-</html>
-`,
-  'html',
-)
-
 export const entryText = formatCode(`
 import Dahlia, { Config } from 'dahlia'
 import { ResponseInterceptor, RequestInterceptor } from 'dahlia/rest'
@@ -102,7 +79,6 @@ export default config
 
 export default {
   entry: entryText,
-  html: htmlText,
   interceptor,
   config,
 }

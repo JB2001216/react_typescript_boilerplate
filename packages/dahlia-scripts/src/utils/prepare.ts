@@ -2,7 +2,6 @@ import { rmTmpDir } from './rmTmpDir'
 import { createDahliaConfig } from './createDahliaConfig'
 import { customizeAppInfo } from './customizeAppInfo'
 import { createEntryFile } from './createEntryFile'
-import { createHtmlFile } from './createHtmlFile'
 import { createPublicFiles } from './createPublicFiles'
 import { createCommonFiles } from './createCommonFiles'
 import { createConfigFile } from './createConfigFile'
@@ -17,18 +16,19 @@ export async function prepare() {
   rmTmpDir()
   createDahliaConfig()
 
-  customizeAppInfo()
 
   // create file
   createEntryFile()
   createPublicFiles()
   createCommonFiles()
-  createHtmlFile()
   createConfigFile()
   createRouterConfig()
   createModalConfig()
   createDrawerConfig()
   createLocalesFiles()
+
   await createLocaleTypings()
   createInterceptorFiles()
+
+  customizeAppInfo()
 }
