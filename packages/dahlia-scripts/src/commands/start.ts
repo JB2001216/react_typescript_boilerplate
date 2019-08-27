@@ -1,4 +1,5 @@
 import { Command } from '@oclif/command'
+import ora from 'ora';
 
 import { reactScriptsModulePath } from '../utils/paths'
 import { prepare } from '../utils/prepare'
@@ -18,6 +19,7 @@ export default class Start extends Command {
   static examples = ['$ dahlia start', '$ dh s']
 
   async run() {
+    const spinner = ora('dahlia prepare...').start();
     process.env.NODE_ENV = process.env.NODE_ENV || 'development'
     process.env.SKIP_PREFLIGHT_CHECK = 'true'
 
@@ -33,6 +35,8 @@ export default class Start extends Command {
     disableCheckRequiredFilesPath()
     disableClearConsole()
     disableCheckTS()
+
+    spinner.stop()
 
     require(`${reactScriptsModulePath}/scripts/start`)
   }
