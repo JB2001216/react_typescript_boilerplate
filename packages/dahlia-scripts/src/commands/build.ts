@@ -1,4 +1,5 @@
 import { Command } from '@oclif/command'
+import ora from 'ora';
 
 import { reactScriptsModulePath } from '../utils/paths'
 import { prepare } from '../utils/prepare'
@@ -14,6 +15,7 @@ export default class Build extends Command {
   static examples = ['$ dahlia build', '$ dh b']
 
   async run() {
+    const spinner = ora('dahlia prepare...').start();
     process.env.NODE_ENV = 'production'
 
     prepare()
@@ -25,6 +27,8 @@ export default class Build extends Command {
 
     // TODO: hack
     customizePaths()
+
+    spinner.stop()
 
     // run original script
     require(`${reactScriptsModulePath}/scripts/build`)
