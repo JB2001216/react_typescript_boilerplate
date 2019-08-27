@@ -77,8 +77,10 @@ export const drawerConfigPath = `${srcDir}/config/drawer.config.ts`
 export const tmpDrawersConfigPath = `${tmpDir}/config/drawer.config.ts`
 
 export const entryPath = `${tmpDir}/index.tsx`
-export const htmlPath = `${tmpDir}/index.html`
-export const publicDir = `${tmpDir}/public`
+export const tmpPublicDir = `${tmpDir}/public`
+export const publicDir = `${appDir}/public`
+export const tmpHtmlPath = `${tmpDir}/public/index.html`
+
 
 export const localesDir = `${srcDir}/locales`
 export const tmpLocalesDir = `${tmpDir}/locales`
