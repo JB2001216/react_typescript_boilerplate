@@ -36,26 +36,26 @@ class Footer extends React.Component {
             )}
           </a>
           <div>
-            <h5>文档</h5>
-            <a href={this.docUrl('intro/about.html', this.props.language)}>关于</a>
+            <h5>Documentation</h5>
+            <a href={this.docUrl('intro/about.html', this.props.language)}>Introduction</a>
             <a
               href={this.docUrl('intro/quick-start.html', this.props.language)}
-            >快速开始</a>
+            >Quick Start</a>
           </div>
           <div>
-            <h5>社区</h5>
+            <h5>Community</h5>
             <a
-              href="http://stackoverflow.com/questions/tagged/dahlia"
+              href="http://stackoverflow.com/"
               target="_blank"
               rel="noreferrer noopener"
             >
               Stack Overflow
             </a>
-            <a href="https://github.com/forsigner/dahlia/issues">Issue</a>
+            <a href="https://github.com/">Issue</a>
           </div>
           <div>
-            <h5>更多</h5>
-            <a href="https://github.com/forsigner/dahlia">GitHub</a>
+            <h5>More</h5>
+            <a href="https://github.com/">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}

@@ -1,5 +1,5 @@
 {
-  "name": "dahlia-project",
+  "name": "react_typescript_boilerplate",
   "scripts": {
     "build": "lerna run --parallel --stream build",
     "build:watch": "lerna run --parallel --stream build:watch",
@@ -20,10 +20,6 @@
       "/.history/"
     ]
   },
-  "bugs": {
-    "url": "https://github.com/forsigner/dahlia/issues"
-  },
-  "homepage": "https://github.com/forsigner/dahlia#README",
   "devDependencies": {
     "@types/jest": "^23.3.10",
     "coveralls": "^3.0.2",

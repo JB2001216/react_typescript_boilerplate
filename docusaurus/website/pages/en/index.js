@@ -69,7 +69,7 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
             <Button className="started" href={docUrl('intro/quick-start.html')}>
-              快速开始
+              Quick Start
             </Button>
           </PromoSection>
         </div>
@@ -111,10 +111,10 @@ class Index extends React.Component {
       <Block>
         {[
           {
-            content: '优雅的数据获取方式',
+            content: 'Data Collection',
             image: `${baseUrl}img/use-fetch.png`,
             imageAlign: 'left',
-            title: '数据获取',
+            title: 'Data Collection',
           },
         ]}
       </Block>
@@ -164,18 +164,18 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: '**TypeScript** 是一等公民，提供良好的开发体验',
+            content: '**TypeScript** developer',
             imageAlign: 'top',
             title: 'TypeScript',
           },
           {
             content:
-              '基于 **create-react-app**，不用关心 Webpack 配置，享受 React 社区最优秀的 setup、develop、build 工具',
+              '**create-react-app**',
             imageAlign: 'top',
             title: 'Create React App',
           },
           {
-            content: '开箱即用，可以快速上手，也可以开发复杂应用',
+            content: 'Can develop Quickly',
             imageAlign: 'top',
             title: 'Progressive',
           },
